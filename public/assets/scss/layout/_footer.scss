@@ -1,0 +1,64 @@
+footer {
+
+    .socials {
+        text-align: center;
+        padding-top: 30px;
+        padding-bottom: 30px;
+        ul {
+            li {
+                padding: 0 10px;
+                img {
+                    width: 25px;
+                }
+            }
+        }
+        @include breakpoint($sm-down)   {
+            ul {
+                li {
+                    padding: 0 10px 10px;
+                }
+            }
+        }
+        @include breakpoint($xs)   {
+            padding-bottom: 20px;
+            padding-top: 20px;
+            ul {
+                font-size: 0;
+                li {
+                    width: 20%;
+                }
+            }
+        }
+    }
+    .menu {
+        text-align: center;
+        padding-bottom: 30px;
+        ul {
+            li {
+                padding: 0 20px;
+                a {
+                    color: $light_gray;
+                    font-size: 20px;
+                    font-weight: bold;
+                    &:hover {
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
+        @include breakpoint($xs)    {
+            padding-bottom: 20px;
+            ul {
+                li {
+                    padding: 3px 10px;
+                    a {
+                        font-size: 14px;
+                    }
+                    &.separator {
+                        padding: 3px 0;
+                    }
+                }
+            }
+        }
+    }
+}

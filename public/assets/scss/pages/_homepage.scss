@@ -1,0 +1,173 @@
+.homepage-container {
+    .intro {
+        position: relative;
+        .upper-box {
+            position: absolute;
+            left: 0;
+            width: 100%;
+            top: 10%;
+        }
+        .down-box {
+            position: absolute;
+            left: 0;
+            width: 100%;
+            top: 67%;
+        }
+        @media only screen and (max-width: 2000px) {
+            .down-box {
+                margin-left: 66.66666667%;
+                width: 25%;
+            }
+        }
+        @media only screen and (max-width: 1650px) {
+            .down-box {
+                margin-left: 60%;
+                top: 65%;
+                width: 35%;
+            }
+        }
+        @media only screen and (max-width: 1100px) {
+            .down-box {
+                margin-left: 58%;
+                top: 65%;
+                width: 40%;
+            }
+        }
+        picture {
+            img {
+                width: 100%;
+            }
+        }
+    }
+    .dentists-report {
+        margin-top: -7%;
+        background-color: #f6f6f6;
+        .paragraph {
+            color: #555555;
+        }
+        .list {
+            border-left: 2px solid $dark_blue;
+            .list-row {
+                figure {
+                    width: 140px;
+                    text-align: center;
+                    img {
+                        width: 70px;
+                    }
+                }
+                .text {
+                    width: calc(100% - 140px);
+                    font-size: 20px;
+                    color: black;
+                }
+            }
+        }
+        @include breakpoint($lgl) {
+            margin-top: -4.4%;
+        }
+    }
+    .bonus-for-early-patients {
+        position: relative;
+        background-color: $dark_blue;
+        color: white;
+        background-image: url(/assets/images/left-angles.svg), url(/assets/images/right-angles.svg);
+        background-repeat: no-repeat, no-repeat;
+        background-size: auto 100%, auto 100%;
+        background-position: center left 0, center right 0;
+        @include simple_transition(.7s);
+        &:hover {
+            background-position: center left -50%, center right -50%;
+        }
+    }
+    .testimonials-slider {
+        .single-testimonial {
+            padding: 0 15px;
+            height: auto;
+            .img-title-job {
+                min-height: 70px;
+                figure {
+                    border: 2px solid #000;
+                    width: 50px;
+                    height: 50px;
+                    overflow: hidden;
+                    position: relative;
+                    @include rounded(50%);
+                    img {
+                        @include vertical-horizontal-align(absolute);
+                    }
+                }
+                .title-job {
+                    width: calc(100% - 50px);
+                    padding-left: 10px;
+                    .title {
+                        color: black;
+                        font-size: 18px;
+                        font-family: 'Calibri-Bold';
+                        text-decoration: underline;
+                    }
+                    .job {
+                        color: #777777;
+                        font-size: 14px;
+                        font-family: Calibri;
+                    }
+                }
+            }
+            .description {
+                padding-top: 5px;
+                font-size: 16px;
+                font-family: Calibri;
+                color: #3e3e3e;
+            }
+        }
+    }
+    .below-testimonials {
+        figure {
+            text-align: center;
+        }
+    }
+    .applications {
+        background-image: url('/assets/images/dentacoin-hub-background.jpg');
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        .list {
+            button {
+                margin-bottom: 25px;
+                &:focus {
+                    outline: 5px auto white;
+                    outline-offset: -2px;
+                }
+                figure {
+                    text-align: center;
+                    cursor: pointer;
+                    figcaption {
+                        color: white;
+                        font-size: 18px;
+                        padding-top: 15px;
+                    }
+                }
+            }
+        }
+    }
+    .google-map {
+        iframe {
+            width: 100%;
+            border: 0;
+            height: 555px;
+        }
+    }
+    .how-to-become-dentacoin-dentist {
+        background-image: url('/assets/uploads/dentacoin-partner.jpg');
+        background-position: center 100%;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    .options {
+        .single {
+            border-right: 2px solid $blue_green;
+            &:last-child {
+                border: 0;
+            }
+        }
+    }
+}

@@ -1,0 +1,35 @@
+header {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    height: 70px;
+    z-index: 100;
+    background-color: white;
+    @include box-shadow(0 2px 10px 0 rgba(0,0,0,.1));
+    >.container {
+        @include vertical-horizontal-align(absolute);
+    }
+    .logo {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+    nav {
+        text-align: center;
+        ul {
+            li {
+                font-family: "Lato-Semibold";
+                padding: 0 25px;
+                a {
+                    color: $dark_blue;
+                    font-size: 16px;
+                    @include breakpoint($lgl) {
+                        font-size: 18px;
+                    }
+                }
+            }
+        }
+    }
+}
