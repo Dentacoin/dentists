@@ -32,4 +32,41 @@ header {
             }
         }
     }
+    .btns-container {
+        .mobile-ham {
+            display: none;
+            font-size: 34px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            color: black;
+        }
+    }
+    @include breakpoint($md-only) {
+        nav {
+            ul {
+                li {
+                    padding: 0 15px;
+                }
+            }
+        }
+    }
+    @include breakpoint($sm-down) {
+        nav {
+            display: none !important;
+        }
+        .btns-container {
+            text-align: right;
+            .register {
+                display: none;
+            }
+            .mobile-ham {
+                display: inline-block;
+            }
+        }
+    }
+    @include breakpoint($xs) {
+        >.container {
+            width: 100%;
+        }
+    }
 }

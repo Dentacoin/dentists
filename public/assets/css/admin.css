@@ -96,6 +96,8 @@
   .white-dark-blue-btn:hover {
     color: #002248;
     background-color: white; }
+  .white-dark-blue-btn:focus {
+    color: white; }
 
 .dark-blue-white-btn {
   font-size: 20px;
@@ -117,6 +119,8 @@
   .dark-blue-white-btn:hover {
     color: white;
     background-color: #002248; }
+  .dark-blue-white-btn:focus {
+    color: #002248; }
 
 .main_color {
   color: #333333; }

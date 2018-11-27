@@ -1,3 +1,12 @@
+body.home {
+    @include breakpoint($xs)    {
+        .modal-backdrop.in {
+            background-color: white;
+            opacity: 1;
+        }
+    }
+}
+
 .homepage-container {
     .intro {
         position: relative;
@@ -6,6 +15,22 @@
             left: 0;
             width: 100%;
             top: 10%;
+            .btn-container {
+                .mobile {
+                    display: none;
+                }
+            }
+            @include breakpoint($sm-down) {
+                position: static;
+                .btn-container {
+                    .mobile {
+                        display: inline-block;
+                    }
+                    .desktop {
+                        display: none;
+                    }
+                }
+            }
         }
         .down-box {
             position: absolute;
@@ -38,6 +63,28 @@
                 width: 100%;
             }
         }
+        @include breakpoint($sm-down) {
+            text-align: center;
+            .upper-box {
+                padding-top: 30px;
+                background-image: url('/assets/uploads/mobile-background.jpg');
+                background-position: center bottom 0;
+                background-repeat: no-repeat;
+                background-size: cover;
+                .btn-container {
+                    transform: translateY(50%);
+                }
+            }
+            picture {
+                display: none;
+            }
+            .down-box {
+                width: 100%;
+                position: static;
+                margin-left: 0;
+                padding-top: 50px;
+            }
+        }
     }
     .dentists-report {
         margin-top: -7%;
@@ -65,6 +112,24 @@
         @include breakpoint($lgl) {
             margin-top: -4.4%;
         }
+        @include breakpoint($sm-down) {
+            margin-top: auto;
+        }
+        @include breakpoint($xs) {
+            .list {
+                border: 0;
+                .list-row {
+                    width: 70%;
+                    margin: 0 auto;
+                    figure {
+                        width: 100%;
+                    }
+                    .text {
+                        width: 100%;
+                    }
+                }
+            }
+        }
     }
     .bonus-for-early-patients {
         position: relative;
@@ -77,6 +142,9 @@
         @include simple_transition(.7s);
         &:hover {
             background-position: center left -50%, center right -50%;
+        }
+        @include breakpoint($sm-down) {
+            background-image: none;
         }
     }
     .testimonials-slider {
@@ -154,6 +222,9 @@
             width: 100%;
             border: 0;
             height: 555px;
+            @include breakpoint($xs) {
+                height: 610px;
+            }
         }
     }
     .how-to-become-dentacoin-dentist {
@@ -163,10 +234,21 @@
         background-size: cover;
     }
     .options {
-        .single {
-            border-right: 2px solid $blue_green;
-            &:last-child {
-                border: 0;
+        .flex {
+            .single {
+                border-right: 2px solid $blue_green;
+                &:last-child {
+                    border: 0;
+                }
+            }
+        }
+        @include breakpoint($sm-down) {
+            .flex {
+                display: block;
+                .single {
+                    border: 0;
+                    padding-bottom: 50px;
+                }
             }
         }
     }

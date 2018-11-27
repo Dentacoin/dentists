@@ -45,10 +45,26 @@
             </div>
         </div>
     @endif
+    @if($mobile)
+        <div class="mobile-nav">
+            <div class="close-btn">
+                <a href="javascript:void(0)">
+                    <img src="{{URL::asset('assets/images/close-mobile-nav.svg') }}" alt=""/>
+                </a>
+            </div>
+            <nav>
+                <ul itemscope="" itemtype="http://schema.org/SiteNavigationElement">
+                    @foreach(\App\Http\Controllers\Controller::instance()->getMenu('header') as $menu_el)
+                        <li><a @if($menu_el->new_window) target="_blank" @endif itemprop="url" href="{{$menu_el->url}}" class="{{$menu_el->class_attribute}}" @if(!empty($menu_el->id_attribute)) id="{{$menu_el->id_attribute}}" @endif><span itemprop="name">{{$menu_el->name}}</span></a></li>
+                    @endforeach
+                </ul>
+            </nav>
+        </div>
+    @endif
     <header>
         <div class="container">
             <div class="row fs-0">
-                <figure itemscope="" itemtype="http://schema.org/Organization" class="col-xs-2 inline-block">
+                <figure itemscope="" itemtype="http://schema.org/Organization" class="col-xs-6 col-md-2 inline-block">
                     <a itemprop="url" href="{{ route('home') }}" @if(!empty(Route::current())) @if(Route::current()->getName() == "home") tabindex="=-1" @endif @endif>
                         <img src="{{URL::asset('assets/images/dentists-logo.svg') }}" itemprop="logo" class="max-width-220" alt="Dentacoin logo"/>
                     </a>
@@ -60,8 +76,9 @@
                         @endforeach
                     </ul>
                 </nav>
-                <div class="col-xs-2 inline-block">
-                    <a href="javascript:void(0)" onclick="return alert('COMING SOON')" class="white-dark-blue-btn">REGISTER</a>
+                <div class="col-xs-6 col-md-2 inline-block btns-container">
+                    <a href="javascript:void(0)" onclick="return alert('COMING SOON')" class="white-dark-blue-btn register">REGISTER</a>
+                    <a href="javascript:void(0)" class="mobile-ham"><i class="fa fa-bars" aria-hidden="true"></i></a>
                 </div>
             </div>
         </div>

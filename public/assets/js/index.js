@@ -4,7 +4,7 @@ $(document).ready(function() {
 });
 
 $(window).on('load', function() {
-
+    scrollToSection();
 });
 
 $(window).on("load", function()   {
@@ -16,14 +16,12 @@ $(window).on("load", function()   {
 $(window).on('resize', function(){
     if($('.homepage-container').length > 0) {
         optionsDescriptionsEqualHeight();
-        setLargeImages();
     }
 });
 
 $(window).on('scroll', function()  {
     homepageHowToBecomeDentacoinDentistBackgroundParallax();
 });
-setLargeImages();
 
 $.fn.isInViewport = function() {
     var elementTop = $(this).offset().top;
@@ -94,7 +92,29 @@ if($('.homepage-container').length > 0) {
         autoplay: true,
         autoplaySpeed: 8000,
         dots: true,
-        adaptiveHeight: true
+        adaptiveHeight: true,
+        responsive: [
+            {
+                breakpoint: 1200,
+                settings: {
+                    slidesToShow: 3
+                }
+            },
+            {
+                breakpoint: 992,
+                settings: {
+                    slidesToShow: 2,
+                    dots: false
+                }
+            },
+            {
+                breakpoint: 768,
+                settings: {
+                    slidesToShow: 1,
+                    dots: false
+                }
+            }
+        ]
     });
 
     jQuery('.homepage-container .testimonials-slider').on('beforeChange', function(event, slick, currentSlide, nextSlide){
@@ -165,7 +185,7 @@ if($('.show-external-form-button').length > 0) {
         $('.hidden-external-form').removeClass('visible');
         $('body').removeClass('overflow-hidden');
     });
-}
+}/*
 
 //change images src on different resolutions (only the ones with data attributes for this)
 function setLargeImages() {
@@ -182,11 +202,38 @@ function setLargeImages() {
         }
         $('body').removeClass('overflow-hidden');
     }
-}
+}*/
 
 function initScrollingToEvents() {
     if($('.scrolling-to-section').length > 0) {
-
+        $('.scrolling-to-section').click(function() {
+            $(this).blur();  
+            window.history.pushState($(this).find('span').html(), '', '/#'+$(this).attr('id'));
+            $("html, body").animate({scrollTop: $('[data-scroll-here="'+$(this).attr('id')+'"]').offset().top - $('header').outerHeight()}, 300);
+            return false;
+        });
     }
 }
 initScrollingToEvents();
+
+function scrollToSection(){
+    $('[data-scroll-here]').each(function(){
+        if(window.location.href.indexOf('/#' + $(this).attr('data-scroll-here')) != -1){
+            $("html, body").animate({scrollTop: $(this).offset().top - $('header').outerHeight()}, 300);
+            return false;
+        }
+    })
+}
+
+function initMobileMenuActions()    {
+    if(basic.isMobile)    {
+        jQuery('header .mobile-ham').click(function()   {
+            jQuery('.mobile-nav').addClass('active');
+        });
+
+        jQuery('.mobile-nav .close-btn').click(function()   {
+            jQuery('.mobile-nav').removeClass('active');
+        });
+    }
+}
+initMobileMenuActions();

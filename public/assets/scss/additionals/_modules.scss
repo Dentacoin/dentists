@@ -12,6 +12,9 @@
         color: $dark_blue;
         background-color: white;
     }
+    &:focus {
+        color: white;
+    }
 }
 
 .dark-blue-white-btn {
@@ -27,6 +30,9 @@
     &:hover {
         color: white;
         background-color: $dark_blue;
+    }
+    &:focus {
+        color: $dark_blue;
     }
 }
 

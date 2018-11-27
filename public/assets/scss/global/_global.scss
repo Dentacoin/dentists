@@ -43,6 +43,38 @@ body {
 }
 
 @for $i from 0 through 20 * 2 {
+    @include breakpoint($sm-only)    {
+        .padding-bottom-sm-#{$i * 5} {
+            padding-bottom: 0px + $i * 5!important;
+        }
+    }
+}
+
+@for $i from 0 through 20 * 2 {
+    @include breakpoint($sm-only) {
+        .padding-top-sm-#{$i * 5} {
+            padding-top: 0px + $i * 5 !important;
+        }
+    }
+}
+
+@for $i from 0 through 20 * 2 {
+    @include breakpoint($sm-only) {
+        .padding-left-sm-#{$i * 5} {
+            padding-left: 0px + $i * 5 !important;
+        }
+    }
+}
+
+@for $i from 0 through 20 * 2 {
+    @include breakpoint($sm-only) {
+        .padding-right-sm-#{$i * 5} {
+            padding-right: 0px + $i * 5 !important;
+        }
+    }
+}
+
+@for $i from 0 through 20 * 2 {
     @include breakpoint($xs)    {
         .padding-bottom-xs-#{$i * 5} {
             padding-bottom: 0px + $i * 5!important;
@@ -375,7 +407,11 @@ main.main-container {
     display: block;
     font-size: 0;
     border: 0;
-    cursor: pointer; }
+    cursor: pointer;
+    @include breakpoint($md-down) {
+        left: -15px;
+    }
+}
 
 .slick-next {
     position: absolute;
@@ -392,7 +428,11 @@ main.main-container {
     display: block;
     font-size: 0;
     border: 0;
-    cursor: pointer; }
+    cursor: pointer;
+    @include breakpoint($md-down) {
+        right: -15px;
+    }
+}
 
 .bootbox {
     .close {
@@ -480,6 +520,45 @@ main.main-container {
             }
         }
     }
+    @include breakpoint($xs)    {
+        a.white-blue-rounded-btn {
+            font-size: 14px;
+            padding: 10px 0;
+            width: 100%;
+            max-width: 220px;
+            display: block;
+            text-align: center;
+        }
+        .bootbox-close-button {
+            font-size: 32px;
+        }
+        &.application-popup {
+            text-align: center;
+            .modal-dialog {
+                .modal-content {
+                    border: 0;
+                    @include box-shadow(none);
+                    @include rounded(6px);
+                }
+                .container-fluid {
+                    padding-top: 20px;
+                    padding-bottom: 20px;
+                    .content {
+                        padding: 0;
+                        .logo {
+                            margin: 0 auto;
+                        }
+                        .description {
+                            text-align: left;
+                        }
+                    }
+                    .gif {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
 }
 
 @include breakpoint($lg-up) {
@@ -530,6 +609,17 @@ main.main-container {
     &.visible {
         visibility: visible;
     }
+    @include breakpoint($xs) {
+        background-color: white;
+        .popup-body {
+            width: 100%;
+            max-width: none;
+            margin: 0;
+            position: static;
+            transform: none;
+            @include box-shadow(none);
+        }
+    }
 }
 
 .privacy-policy-cookie {
@@ -560,5 +650,52 @@ main.main-container {
             font-size: 16px;
             padding: 10px 0;
         }
+    }
+}
+
+.mobile-nav {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: 11000;
+    background-color: white;
+    top: 0;
+    left: 0;
+    overflow-x: hidden;
+    transform: translateY(-100%);
+    @include simple_transition(.3s);
+    .sub-menu {
+        display: none;
+    }
+    .close-btn {
+        position: absolute;
+        right: 30px;
+        top: 20px;
+        z-index: 10;
+        img {
+            width: 100%;
+            max-width: 25px;
+        }
+    }
+    nav {
+        text-align: center;
+        @include vertical-horizontal-align(absolute);
+        ul {
+            padding: 0;
+            margin: 0;
+            li {
+                list-style: none;
+                a {
+                    display: block;
+                    padding: 5px 10px;
+                    font-size: 32px;
+                    color: $dark_blue;
+                    text-transform: uppercase;
+                }
+            }
+        }
+    }
+    &.active {
+        transform: translateY(0%);
     }
 }
