@@ -16,7 +16,7 @@ class HomeController extends Controller
             $application->media_url = DB::connection('mysql2')->table('media')->where('id', $application->media_id)->select('media.name')->get()->first()->name;
             $application->popup_logo_url = DB::connection('mysql2')->table('media')->where('id', $application->popup_logo_id)->select('media.name')->get()->first()->name;
         }
-        return view("pages/homepage", ['testimonials' => $testimonials, 'applications' => $applications, 'latest_blog_articles' => $latest_blog_articles]);
+        return view('pages/homepage', ['testimonials' => $testimonials, 'applications' => $applications, 'latest_blog_articles' => $latest_blog_articles]);
     }
 }
 

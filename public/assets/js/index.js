@@ -8,13 +8,13 @@ $(window).on('load', function() {
 });
 
 $(window).on("load", function()   {
-    if($('.homepage-container').length > 0) {
+    if($('body').hasClass('home')) {
         optionsDescriptionsEqualHeight();
     }
 });
 
 $(window).on('resize', function(){
-    if($('.homepage-container').length > 0) {
+    if($('body').hasClass('home')) {
         optionsDescriptionsEqualHeight();
     }
 });
@@ -85,8 +85,9 @@ function initCaptchaRefreshEvent()  {
 } 
 initCaptchaRefreshEvent();
 
-if($('.homepage-container').length > 0) {
-    jQuery('.homepage-container .testimonials-slider').slick({
+// ================== PAGES ==================
+if($('body').hasClass('home')) {
+    jQuery('.testimonials-slider-section').slick({
         slidesToShow: 4,
         slidesToScroll: 4,
         autoplay: true,
@@ -97,13 +98,15 @@ if($('.homepage-container').length > 0) {
             {
                 breakpoint: 1200,
                 settings: {
-                    slidesToShow: 3
+                    slidesToShow: 3,
+                    slidesToScroll: 3
                 }
             },
             {
                 breakpoint: 992,
                 settings: {
                     slidesToShow: 2,
+                    slidesToScroll: 2,
                     dots: false
                 }
             },
@@ -111,20 +114,21 @@ if($('.homepage-container').length > 0) {
                 breakpoint: 768,
                 settings: {
                     slidesToShow: 1,
+                    slidesToScroll: 1,
                     dots: false
                 }
             }
         ]
     });
 
-    jQuery('.homepage-container .testimonials-slider').on('beforeChange', function(event, slick, currentSlide, nextSlide){
+    jQuery('.testimonials-slider-section').on('beforeChange', function(event, slick, currentSlide, nextSlide){
         var height = 0;
         for(var i = 0, len = 4; i < len; i+=1)  {
             if($('.slick-slide').eq((nextSlide + 4) + i).height() > height) {
                 height = $('.slick-slide').eq((nextSlide + 4) + i).height();
             }
         }
-        $('.homepage-container .slick-list').animate({height: height}, 500);
+        $('.testimonials-slider-section .slick-list').animate({height: height}, 500);
     });
 
     //logic for open application popup
@@ -146,6 +150,12 @@ if($('.homepage-container').length > 0) {
         var html = '<div class="container-fluid"><div class="row"><figure class="col-sm-6 gif"><img src="'+this_btn.attr('data-image')+'?'+new Date().getTime()+'" alt="'+this_btn.attr('data-image-alt')+'"/></figure><div class="col-sm-6 col-xs-12 content"><figure class="logo"><img src="'+this_btn.attr('data-popup-logo')+'" alt="'+this_btn.attr('data-popup-logo-alt')+'"/></figure><div class="title">'+this_btn.find('figcaption').html()+'</div><div class="description">'+description+'</div>'+extra_html+'</div></div></div>';
         basic.showDialog(html, 'application-popup', this_btn.attr('data-slug'));
     });
+}else if($('body').hasClass('faq')) {
+    if($('.list .question').length > 0) {
+        $('.list .question').click(function()   {
+            $(this).closest('li').find('.question-content').toggle(300);
+        });
+    }
 }
 
 //make equal height for all descriptions in options section
@@ -161,14 +171,14 @@ function optionsDescriptionsEqualHeight() {
 
 //homepage parallax background
 function homepageHowToBecomeDentacoinDentistBackgroundParallax() {
-    if($('section.how-to-become-dentacoin-dentist').isInViewport() && !basic.isMobile()) {
+    if($('body').hasClass('home') && $('section.how-to-become-dentacoin-dentist-section').isInViewport() && !basic.isMobile()) {
         var current = $(window).scrollTop();
-        var start = $('section.how-to-become-dentacoin-dentist').offset().top - $('section.how-to-become-dentacoin-dentist').outerHeight();
-        var max = $('section.how-to-become-dentacoin-dentist').offset().top;
+        var start = $('section.how-to-become-dentacoin-dentist-section').offset().top - $('section.how-to-become-dentacoin-dentist-section').outerHeight();
+        var max = $('section.how-to-become-dentacoin-dentist-section').offset().top;
 
         var percentage = (((current - start) / (max - start)) * 100) / 2 + 30;
         if(percentage > 0 && percentage < 100) {
-            $('section.how-to-become-dentacoin-dentist').css({'background-position' : 'center ' + (100 - percentage) + '%'});
+            $('section.how-to-become-dentacoin-dentist-section').css({'background-position' : 'center ' + (100 - percentage) + '%'});
         }
         //$('.stella-artois-and-wimbledon .custom-widget').eq(i).css({'top' : (10 + 50 * (percentage / 100)) + '%'});
     }
@@ -204,10 +214,11 @@ function setLargeImages() {
     }
 }*/
 
+//scroll to sections events
 function initScrollingToEvents() {
-    if($('.scrolling-to-section').length > 0) {
+    if($('.scrolling-to-section').length > 0 && $('body').hasClass('home')) {
         $('.scrolling-to-section').click(function() {
-            $(this).blur();  
+            $(this).blur();
             window.history.pushState($(this).find('span').html(), '', '/#'+$(this).attr('id'));
             $("html, body").animate({scrollTop: $('[data-scroll-here="'+$(this).attr('id')+'"]').offset().top - $('header').outerHeight()}, 300);
             return false;
@@ -216,6 +227,7 @@ function initScrollingToEvents() {
 }
 initScrollingToEvents();
 
+//on page load if we have #parameter in the URL scroll down to section
 function scrollToSection(){
     $('[data-scroll-here]').each(function(){
         if(window.location.href.indexOf('/#' + $(this).attr('data-scroll-here')) != -1){
@@ -225,6 +237,7 @@ function scrollToSection(){
     })
 }
 
+//mobile menu events
 function initMobileMenuActions()    {
     if(basic.isMobile)    {
         jQuery('header .mobile-ham').click(function()   {
@@ -237,3 +250,47 @@ function initMobileMenuActions()    {
     }
 }
 initMobileMenuActions();
+
+//on button click next time when you hover the button the color is bugged until you click some other element (until you move out the focus from this button)
+function fixButtonsFocus() {
+    if($('.white-dark-blue-btn').length > 0) {
+        $('.white-dark-blue-btn').click(function() {
+            $(this).blur();
+        });
+    }
+    if($('.dark-blue-white-btn').length > 0) {
+        $('.dark-blue-white-btn').click(function() {
+            $(this).blur();
+        });
+    }
+}
+fixButtonsFocus();
+
+//checking if submitted email is valid
+function newsletterRegisterValidation() {
+    $('.newsletter-register form').on('submit', function(event)  {
+        var this_form = $(this);
+        var errors = [];
+        if(!basic.validateEmail(this_form.find('input[type="email"]').val().trim()))    {
+            this_form.addClass('not-valid').append('<div class="alert alert-danger">'+this_form.find('input[type="email"]').closest('.form-row').attr('data-valid-email-message')+'</div>');
+            errors.push(this_form.find('input[type="email"]').closest('.form-row').attr('data-valid-email-message'));
+        }
+        if(!this_form.find('#agree-with-privacy-policy').is(':checked'))  {
+            errors.push(this_form.find('#agree-with-privacy-policy').closest('.form-row').attr('data-valid-message'));
+        }
+
+        if(errors.length > 0)   {
+            event.preventDefault();
+            this_form.addClass('not-valid').find('.alert').remove();
+            for(var i = 0, len = errors.length; i < len; i+=1)  {
+                this_form.append('<div class="alert alert-danger">'+errors[i]+'</div>');
+            }
+        }else {
+            this_form.removeClass('not-valid').find('.alert').remove();
+            //this_form.find('input[type="email"]').val('');
+            //this_form.find('#agree-with-privacy-policy').prop('checked', false);
+            this_form.append('<div class="alert alert-success">'+this_form.attr('data-success-message')+'</div>');
+        }
+    });
+}
+newsletterRegisterValidation();

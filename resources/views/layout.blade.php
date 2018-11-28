@@ -45,7 +45,10 @@
             </div>
         </div>
     @endif
-    @if($mobile)
+    @if(!empty(Route::current()))
+        @php($header_menu = \App\Http\Controllers\Controller::instance()->getMenu('header'))
+    @endif
+    @if(!empty($mobile) && $mobile && !empty($header_menu))
         <div class="mobile-nav">
             <div class="close-btn">
                 <a href="javascript:void(0)">
@@ -55,7 +58,7 @@
             <nav>
                 <ul itemscope="" itemtype="http://schema.org/SiteNavigationElement">
                     @foreach(\App\Http\Controllers\Controller::instance()->getMenu('header') as $menu_el)
-                        <li><a @if($menu_el->new_window) target="_blank" @endif itemprop="url" href="{{$menu_el->url}}" class="{{$menu_el->class_attribute}}" @if(!empty($menu_el->id_attribute)) id="{{$menu_el->id_attribute}}" @endif><span itemprop="name">{{$menu_el->name}}</span></a></li>
+                        <li><a itemprop="url" class="{{$menu_el->class_attribute}}" @if(!empty($menu_el->id_attribute)) id="{{$menu_el->id_attribute}}" @endif @if(!empty(Route::current()) && Route::current()->getName() != 'home' && strpos($menu_el->class_attribute, 'scrolling-to-section') !== false) href="{{route('home')}}#{{$menu_el->id_attribute}}" @else @if($menu_el->new_window) target="_blank" @endif href="{{$menu_el->url}}" @endif><span itemprop="name">{{$menu_el->name}}</span></a></li>
                     @endforeach
                 </ul>
             </nav>
@@ -70,11 +73,13 @@
                     </a>
                 </figure>
                 <nav class="col-xs-8 inline-block">
-                    <ul itemscope="" itemtype="http://schema.org/SiteNavigationElement">
-                        @foreach(\App\Http\Controllers\Controller::instance()->getMenu('header') as $menu_el)
-                            <li class="inline-block"><a @if($menu_el->new_window) target="_blank" @endif itemprop="url" href="{{$menu_el->url}}" class="{{$menu_el->class_attribute}}" @if(!empty($menu_el->id_attribute)) id="{{$menu_el->id_attribute}}" @endif><span itemprop="name">{{$menu_el->name}}</span></a></li>
-                        @endforeach
-                    </ul>
+                    @if(!empty($header_menu))
+                        <ul itemscope="" itemtype="http://schema.org/SiteNavigationElement">
+                            @foreach($header_menu as $menu_el)
+                                <li class="inline-block"><a itemprop="url" class="{{$menu_el->class_attribute}}" @if(!empty($menu_el->id_attribute)) id="{{$menu_el->id_attribute}}" @endif @if(!empty(Route::current()) && Route::current()->getName() != 'home' && strpos($menu_el->class_attribute, 'scrolling-to-section') !== false) href="{{route('home')}}#{{$menu_el->id_attribute}}" @else @if($menu_el->new_window) target="_blank" @endif href="{{$menu_el->url}}" @endif><span itemprop="name">{{$menu_el->name}}</span></a></li>
+                            @endforeach
+                        </ul>
+                    @endif
                 </nav>
                 <div class="col-xs-6 col-md-2 inline-block btns-container">
                     <a href="javascript:void(0)" onclick="return alert('COMING SOON')" class="white-dark-blue-btn register">REGISTER</a>
@@ -87,7 +92,22 @@
     <footer>
         <div class="container padding-top-50">
             <div class="row">
-                <h2 class="fs-50 lato-light dark_blue text-center col-xs-12 padding-bottom-50">Subscribe</h2>
+                <h2 class="fs-50 lato-light dark-blue text-center col-xs-12 padding-bottom-50">Subscribe</h2>
+            </div>
+            <div class="row newsletter-register">
+                <div class="">
+                    <form action="//dentacoin.us15.list-manage.com/subscribe/post?u=2db886e44db15e869246f6964&amp;id=6906b05278" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="col-xs-12 col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4" target="_blank" data-success-message="Thank you for signing up!">
+                        <div class="form-row fs-0 flex" data-valid-email-message="Please enter valid email.">
+                            <input type="email" name="EMAIL" id="input-email" placeholder="Enter your email" aria-label="Email" aria-required="true">
+                            <button type="submit" name="subscribe">Subscribe</button>
+                            <input type="hidden" name="b_2db886e44db15e869246f6964_6906b05278" tabindex="-1" value="">
+                        </div>
+                        <div class="form-row fs-0" data-valid-message="Please agree with our Privacy Policy.">
+                            <div class="inline-block-top checkbox-wrapper"><input type="checkbox" id="agree-with-privacy-policy" aria-required="true"/></div>
+                            <label for="agree-with-privacy-policy" class="inline-block-top">By submitting the form, you agree to our <a href="//dentacoin.com/privacy-policy" target="_blank">Privacy Policy</a>.</label>
+                        </div>
+                    </form>
+                </div>
             </div>
             @if(!empty($socials))
                 <div class="row socials">
@@ -107,7 +127,9 @@
                     </div>
                 </div>
             @endif
-            @php($footer_menu = \App\Http\Controllers\Controller::instance()->getMenu('footer'))
+            @if(!empty(Route::current()))
+                @php($footer_menu = \App\Http\Controllers\Controller::instance()->getMenu('footer'))
+            @endif
             @if(!empty($footer_menu))
                 <div class="row menu">
                     <nav class="col-xs-12">

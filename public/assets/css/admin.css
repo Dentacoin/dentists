@@ -122,28 +122,37 @@
   .dark-blue-white-btn:focus {
     color: #002248; }
 
-.main_color {
+.main-color {
   color: #333333; }
 
-.main_color-bg {
+.main-color-bg {
   background-color: #333333; }
 
-.dark_blue {
+.dark-blue {
   color: #002248; }
 
-.dark_blue-bg {
+.dark-blue-bg {
   background-color: #002248; }
 
-.color_white {
+.color-white {
   color: white; }
 
-.color_black {
+.color-black {
   color: black; }
 
-.blue_green {
+.color-black-bg {
+  background-color: black; }
+
+.blue-green {
   color: #126585; }
 
-.light_gray_background {
+.blue-green-bg {
+  background-color: #126585; }
+
+.color-beige {
+  color: #fafafa; }
+
+.beige-bg {
   background-color: #fafafa; }
 
 body {

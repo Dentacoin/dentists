@@ -36,34 +36,46 @@
     }
 }
 
-.main_color {
+.main-color {
     color: $main_color;
 }
 
-.main_color-bg {
+.main-color-bg {
     background-color: $main_color;
 }
 
-.dark_blue {
+.dark-blue {
     color: $dark_blue;
 }
 
-.dark_blue-bg {
+.dark-blue-bg {
     background-color: $dark_blue;
 }
 
-.color_white {
+.color-white {
     color: white;
 }
 
-.color_black {
+.color-black {
     color: black;
 }
 
-.blue_green {
+.color-black-bg {
+    background-color: black;
+}
+
+.blue-green {
     color: $blue_green;
 }
 
-.light_gray_background {
-    background-color: #fafafa;
+.blue-green-bg {
+    background-color: $blue_green;
+}
+
+.color-beige {
+    color: $light_beige;
+}
+
+.beige-bg {
+    background-color: $light_beige;
 }

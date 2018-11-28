@@ -1,5 +1,69 @@
 footer {
-
+    border-top: 2px solid $solid_gray;
+    .newsletter-register {
+        padding-bottom: 30px;
+        form {
+            .form-row {
+                padding-top: 10px;
+                input[type='email'] {
+                    width: 70%;
+                    font-size: 16px;
+                    padding: 5px 10px;
+                    border-top: 1px solid $solid_gray;
+                    border-bottom: 1px solid $solid_gray;
+                    border-left: 1px solid $solid_gray;
+                    border-right: 0;
+                    @include rounded(4px 0 0 4px);
+                }
+                button[type='submit'] {
+                    width: 30%;
+                    font-size: 16px;
+                    background-color: $solid_gray;
+                    border: 1px solid $solid_gray;;
+                    @include rounded(0 4px 4px 0);
+                }
+                .checkbox-wrapper {
+                    width: 20px;
+                }
+                label {
+                    width: calc(100% - 20px);
+                    font-size: 14px;
+                    cursor: pointer;
+                    a {
+                        text-decoration: underline;
+                    }
+                }
+                @include breakpoint($xs)    {
+                    input[type='email'] {
+                        width: 65%;
+                        font-size: 16px;
+                        font-family: 'Calibri-Bold';
+                    }
+                    button[type='submit'] {
+                        width: 35%;
+                        font-size: 16px;
+                        font-family: 'Calibri-Bold';
+                    }
+                }
+            }
+            &.not-valid {
+                input[type='email'], button[type='submit'] {
+                    border-color: red;
+                    border-width: 2px;
+                }
+                .alert {
+                    margin-top: 5px;
+                    margin-bottom: 10px;
+                }
+            }
+        }
+        @include breakpoint($sm-down)   {
+            padding-top: 10px;
+        }
+        @include breakpoint($xs)    {
+            padding-bottom: 10px;
+        }
+    }
     .socials {
         text-align: center;
         padding-top: 30px;

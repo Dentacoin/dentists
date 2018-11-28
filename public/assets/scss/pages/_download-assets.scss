@@ -1,0 +1,17 @@
+.download-assets {
+    .title {
+        hr {
+            border-color: #002248;
+        }
+    }
+    .banners {
+        figure {
+            img {
+                @include simple_transition(.3s);
+                &:hover {
+                    @include box-shadow(0 0 15px rgba(33,33,33,.5));
+                }
+            }
+        }
+    }
+}

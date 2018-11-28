@@ -19,6 +19,12 @@ Route::group(['prefix' => '/', 'middleware' => 'frontEndMiddleware'], function (
 
     Route::get('/', 'HomeController@getView')->name('home');
 
+    Route::get('/faq', 'FaqController@getView')->name('faq');
+
+    Route::get('/download-assets', 'DownloadAssetsController@getView')->name('download-assets');
+
+    Route::get('sitemap.xml', 'Controller@getSitemap')->name('sitemap');
+
     //======================================= AJAX ========================================
 
 });

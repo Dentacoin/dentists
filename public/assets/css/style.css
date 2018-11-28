@@ -105,14 +105,15 @@ body {
   color: #333333;
   position: relative;
   font-size: 16px; }
-  body.overflow-hidden {
-    overflow: hidden; }
   body.overflow-visible {
     overflow: visible !important; }
   body.padding-right-0 {
     padding-right: 0 !important; }
   body.modal-open {
     overflow: hidden; }
+
+.overflow-hidden {
+  overflow: hidden; }
 
 .padding-bottom-0 {
   padding-bottom: 0px !important; }
@@ -4318,28 +4319,37 @@ main.main-container {
   .dark-blue-white-btn:focus {
     color: #002248; }
 
-.main_color {
+.main-color {
   color: #333333; }
 
-.main_color-bg {
+.main-color-bg {
   background-color: #333333; }
 
-.dark_blue {
+.dark-blue {
   color: #002248; }
 
-.dark_blue-bg {
+.dark-blue-bg {
   background-color: #002248; }
 
-.color_white {
+.color-white {
   color: white; }
 
-.color_black {
+.color-black {
   color: black; }
 
-.blue_green {
+.color-black-bg {
+  background-color: black; }
+
+.blue-green {
   color: #126585; }
 
-.light_gray_background {
+.blue-green-bg {
+  background-color: #126585; }
+
+.color-beige {
+  color: #fafafa; }
+
+.beige-bg {
   background-color: #fafafa; }
 
 header {
@@ -4399,139 +4409,196 @@ header {
     header > .container {
       width: 100%; } }
 
-footer .socials {
-  text-align: center;
-  padding-top: 30px;
-  padding-bottom: 30px; }
-  footer .socials ul li {
-    padding: 0 10px; }
-    footer .socials ul li img {
-      width: 25px; }
-  @media screen and (max-width: 991px) {
+footer {
+  border-top: 2px solid #aaaaaa; }
+  footer .newsletter-register {
+    padding-bottom: 30px; }
+    footer .newsletter-register form .form-row {
+      padding-top: 10px; }
+      footer .newsletter-register form .form-row input[type='email'] {
+        width: 70%;
+        font-size: 16px;
+        padding: 5px 10px;
+        border-top: 1px solid #aaaaaa;
+        border-bottom: 1px solid #aaaaaa;
+        border-left: 1px solid #aaaaaa;
+        border-right: 0;
+        -webkit-border-radius: 4px 0 0 4px;
+        -moz-border-radius: 4px 0 0 4px;
+        -ms-border-radius: 4px 0 0 4px;
+        border-radius: 4px 0 0 4px; }
+      footer .newsletter-register form .form-row button[type='submit'] {
+        width: 30%;
+        font-size: 16px;
+        background-color: #aaaaaa;
+        border: 1px solid #aaaaaa;
+        -webkit-border-radius: 0 4px 4px 0;
+        -moz-border-radius: 0 4px 4px 0;
+        -ms-border-radius: 0 4px 4px 0;
+        border-radius: 0 4px 4px 0; }
+      footer .newsletter-register form .form-row .checkbox-wrapper {
+        width: 20px; }
+      footer .newsletter-register form .form-row label {
+        width: calc(100% - 20px);
+        font-size: 14px;
+        cursor: pointer; }
+        footer .newsletter-register form .form-row label a {
+          text-decoration: underline; }
+      @media screen and (max-width: 767px) {
+        footer .newsletter-register form .form-row input[type='email'] {
+          width: 65%;
+          font-size: 16px;
+          font-family: 'Calibri-Bold'; }
+        footer .newsletter-register form .form-row button[type='submit'] {
+          width: 35%;
+          font-size: 16px;
+          font-family: 'Calibri-Bold'; } }
+    footer .newsletter-register form.not-valid input[type='email'], footer .newsletter-register form.not-valid button[type='submit'] {
+      border-color: red;
+      border-width: 2px; }
+    footer .newsletter-register form.not-valid .alert {
+      margin-top: 5px;
+      margin-bottom: 10px; }
+    @media screen and (max-width: 991px) {
+      footer .newsletter-register {
+        padding-top: 10px; } }
+    @media screen and (max-width: 767px) {
+      footer .newsletter-register {
+        padding-bottom: 10px; } }
+  footer .socials {
+    text-align: center;
+    padding-top: 30px;
+    padding-bottom: 30px; }
     footer .socials ul li {
-      padding: 0 10px 10px; } }
-  @media screen and (max-width: 767px) {
-    footer .socials {
-      padding-bottom: 20px;
-      padding-top: 20px; }
-      footer .socials ul {
-        font-size: 0; }
-        footer .socials ul li {
-          width: 20%; } }
-footer .menu {
-  text-align: center;
-  padding-bottom: 30px; }
-  footer .menu ul li {
-    padding: 0 20px; }
-    footer .menu ul li a {
-      color: #3e3e3e;
-      font-size: 20px;
-      font-weight: bold; }
-      footer .menu ul li a:hover {
-        text-decoration: underline; }
-  @media screen and (max-width: 767px) {
-    footer .menu {
-      padding-bottom: 20px; }
-      footer .menu ul li {
-        padding: 3px 10px; }
-        footer .menu ul li a {
-          font-size: 14px; }
-        footer .menu ul li.separator {
-          padding: 3px 0; } }
+      padding: 0 10px; }
+      footer .socials ul li img {
+        width: 25px; }
+    @media screen and (max-width: 991px) {
+      footer .socials ul li {
+        padding: 0 10px 10px; } }
+    @media screen and (max-width: 767px) {
+      footer .socials {
+        padding-bottom: 20px;
+        padding-top: 20px; }
+        footer .socials ul {
+          font-size: 0; }
+          footer .socials ul li {
+            width: 20%; } }
+  footer .menu {
+    text-align: center;
+    padding-bottom: 30px; }
+    footer .menu ul li {
+      padding: 0 20px; }
+      footer .menu ul li a {
+        color: #3e3e3e;
+        font-size: 20px;
+        font-weight: bold; }
+        footer .menu ul li a:hover {
+          text-decoration: underline; }
+    @media screen and (max-width: 767px) {
+      footer .menu {
+        padding-bottom: 20px; }
+        footer .menu ul li {
+          padding: 3px 10px; }
+          footer .menu ul li a {
+            font-size: 14px; }
+          footer .menu ul li.separator {
+            padding: 3px 0; } }
 
 @media screen and (max-width: 767px) {
   body.home .modal-backdrop.in {
     background-color: white;
     opacity: 1; } }
 
-.homepage-container .intro {
+.intro-section {
   position: relative; }
-  .homepage-container .intro .upper-box {
+  .intro-section .upper-box {
     position: absolute;
     left: 0;
     width: 100%;
     top: 10%; }
-    .homepage-container .intro .upper-box .btn-container .mobile {
+    .intro-section .upper-box .btn-container .mobile {
       display: none; }
     @media screen and (max-width: 991px) {
-      .homepage-container .intro .upper-box {
+      .intro-section .upper-box {
         position: static; }
-        .homepage-container .intro .upper-box .btn-container .mobile {
+        .intro-section .upper-box .btn-container .mobile {
           display: inline-block; }
-        .homepage-container .intro .upper-box .btn-container .desktop {
+        .intro-section .upper-box .btn-container .desktop {
           display: none; } }
-  .homepage-container .intro .down-box {
+  .intro-section .down-box {
     position: absolute;
     left: 0;
     width: 100%;
     top: 67%; }
   @media only screen and (max-width: 2000px) {
-    .homepage-container .intro .down-box {
+    .intro-section .down-box {
       margin-left: 66.66666667%;
       width: 25%; } }
   @media only screen and (max-width: 1650px) {
-    .homepage-container .intro .down-box {
+    .intro-section .down-box {
       margin-left: 60%;
       top: 65%;
       width: 35%; } }
   @media only screen and (max-width: 1100px) {
-    .homepage-container .intro .down-box {
+    .intro-section .down-box {
       margin-left: 58%;
       top: 65%;
       width: 40%; } }
-  .homepage-container .intro picture img {
+  .intro-section picture img {
     width: 100%; }
   @media screen and (max-width: 991px) {
-    .homepage-container .intro {
+    .intro-section {
       text-align: center; }
-      .homepage-container .intro .upper-box {
+      .intro-section .upper-box {
         padding-top: 30px;
         background-image: url("/assets/uploads/mobile-background.jpg");
         background-position: center bottom 0;
         background-repeat: no-repeat;
         background-size: cover; }
-        .homepage-container .intro .upper-box .btn-container {
+        .intro-section .upper-box .btn-container {
           transform: translateY(50%); }
-      .homepage-container .intro picture {
+      .intro-section picture {
         display: none; }
-      .homepage-container .intro .down-box {
+      .intro-section .down-box {
         width: 100%;
         position: static;
         margin-left: 0;
         padding-top: 50px; } }
-.homepage-container .dentists-report {
+
+.dentists-report-section {
   margin-top: -7%;
   background-color: #f6f6f6; }
-  .homepage-container .dentists-report .paragraph {
+  .dentists-report-section .paragraph {
     color: #555555; }
-  .homepage-container .dentists-report .list {
+  .dentists-report-section .list {
     border-left: 2px solid #002248; }
-    .homepage-container .dentists-report .list .list-row figure {
+    .dentists-report-section .list .list-row figure {
       width: 140px;
       text-align: center; }
-      .homepage-container .dentists-report .list .list-row figure img {
+      .dentists-report-section .list .list-row figure img {
         width: 70px; }
-    .homepage-container .dentists-report .list .list-row .text {
+    .dentists-report-section .list .list-row .text {
       width: calc(100% - 140px);
-      font-size: 20px;
-      color: black; }
+      font-size: 20px; }
   @media screen and (min-width: 1400px) {
-    .homepage-container .dentists-report {
+    .dentists-report-section {
       margin-top: -4.4%; } }
   @media screen and (max-width: 991px) {
-    .homepage-container .dentists-report {
+    .dentists-report-section {
       margin-top: auto; } }
   @media screen and (max-width: 767px) {
-    .homepage-container .dentists-report .list {
+    .dentists-report-section .list {
       border: 0; }
-      .homepage-container .dentists-report .list .list-row {
+      .dentists-report-section .list .list-row {
         width: 70%;
         margin: 0 auto; }
-        .homepage-container .dentists-report .list .list-row figure {
+        .dentists-report-section .list .list-row figure {
           width: 100%; }
-        .homepage-container .dentists-report .list .list-row .text {
+        .dentists-report-section .list .list-row .text {
           width: 100%; } }
-.homepage-container .bonus-for-early-patients {
+
+.bonus-for-early-patients-section {
   position: relative;
   background-color: #002248;
   color: white;
@@ -4544,17 +4611,18 @@ footer .menu {
   -o-transition: 0.7s;
   -ms-transition: 0.7s;
   transition: 0.7s; }
-  .homepage-container .bonus-for-early-patients:hover {
+  .bonus-for-early-patients-section:hover {
     background-position: center left -50%, center right -50%; }
   @media screen and (max-width: 991px) {
-    .homepage-container .bonus-for-early-patients {
+    .bonus-for-early-patients-section {
       background-image: none; } }
-.homepage-container .testimonials-slider .single-testimonial {
+
+.testimonials-slider-section .single-testimonial {
   padding: 0 15px;
   height: auto; }
-  .homepage-container .testimonials-slider .single-testimonial .img-title-job {
+  .testimonials-slider-section .single-testimonial .img-title-job {
     min-height: 70px; }
-    .homepage-container .testimonials-slider .single-testimonial .img-title-job figure {
+    .testimonials-slider-section .single-testimonial .img-title-job figure {
       border: 2px solid #000;
       width: 50px;
       height: 50px;
@@ -4564,70 +4632,146 @@ footer .menu {
       -moz-border-radius: 50%;
       -ms-border-radius: 50%;
       border-radius: 50%; }
-      .homepage-container .testimonials-slider .single-testimonial .img-title-job figure img {
+      .testimonials-slider-section .single-testimonial .img-title-job figure img {
         position: absolute;
         top: 50%;
         left: 50%;
         -webkit-transform: translate(-50%, -50%);
         -ms-transform: translate(-50%, -50%);
         transform: translate(-50%, -50%); }
-    .homepage-container .testimonials-slider .single-testimonial .img-title-job .title-job {
+    .testimonials-slider-section .single-testimonial .img-title-job .title-job {
       width: calc(100% - 50px);
       padding-left: 10px; }
-      .homepage-container .testimonials-slider .single-testimonial .img-title-job .title-job .title {
-        color: black;
+      .testimonials-slider-section .single-testimonial .img-title-job .title-job .title {
         font-size: 18px;
         font-family: 'Calibri-Bold';
         text-decoration: underline; }
-      .homepage-container .testimonials-slider .single-testimonial .img-title-job .title-job .job {
+      .testimonials-slider-section .single-testimonial .img-title-job .title-job .job {
         color: #777777;
         font-size: 14px;
         font-family: Calibri; }
-  .homepage-container .testimonials-slider .single-testimonial .description {
+  .testimonials-slider-section .single-testimonial .description {
     padding-top: 5px;
     font-size: 16px;
     font-family: Calibri;
     color: #3e3e3e; }
-.homepage-container .below-testimonials figure {
+
+.below-testimonials-section figure {
   text-align: center; }
-.homepage-container .applications {
+
+.applications-section {
   background-image: url("/assets/images/dentacoin-hub-background.jpg");
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover; }
-  .homepage-container .applications .list button {
+  .applications-section .list button {
     margin-bottom: 25px; }
-    .homepage-container .applications .list button:focus {
+    .applications-section .list button:focus {
       outline: 5px auto white;
       outline-offset: -2px; }
-    .homepage-container .applications .list button figure {
+    .applications-section .list button figure {
       text-align: center;
       cursor: pointer; }
-      .homepage-container .applications .list button figure figcaption {
+      .applications-section .list button figure figcaption {
         color: white;
         font-size: 18px;
         padding-top: 15px; }
-.homepage-container .google-map iframe {
+
+.google-map-section iframe {
   width: 100%;
   border: 0;
   height: 555px; }
   @media screen and (max-width: 767px) {
-    .homepage-container .google-map iframe {
+    .google-map-section iframe {
       height: 610px; } }
-.homepage-container .how-to-become-dentacoin-dentist {
+
+.how-to-become-dentacoin-dentist-section {
   background-image: url("/assets/uploads/dentacoin-partner.jpg");
   background-position: center 100%;
   background-repeat: no-repeat;
   background-size: cover; }
-.homepage-container .options .flex .single {
+
+.options-section .flex .single {
   border-right: 2px solid #126585; }
-  .homepage-container .options .flex .single:last-child {
+  .options-section .flex .single:last-child {
     border: 0; }
 @media screen and (max-width: 991px) {
-  .homepage-container .options .flex {
+  .options-section .flex {
     display: block; }
-    .homepage-container .options .flex .single {
+    .options-section .flex .single {
       border: 0;
       padding-bottom: 50px; } }
+
+.faq-container .title hr {
+  border-color: #002248; }
+.faq-container .list .section-row ul {
+  padding-left: 20px; }
+  .faq-container .list .section-row ul li .question {
+    padding: 15px 40px 15px 20px;
+    margin-bottom: 15px;
+    background-image: url(/assets/images/angle-down-solid.svg);
+    background-repeat: no-repeat;
+    background-size: 15px auto;
+    background-position: center right 20px;
+    background-color: white;
+    display: block; }
+    .faq-container .list .section-row ul li .question span {
+      color: #126585;
+      display: inline-block;
+      padding-right: 5px; }
+  .faq-container .list .section-row ul li .question-content {
+    display: none; }
+@media screen and (max-width: 767px) {
+  .faq-container .list .section-row ul {
+    padding-left: 0; }
+    .faq-container .list .section-row ul li .question {
+      padding: 15px 30px 15px 10px;
+      background-position: center right 10px; } }
+
+.download-assets .title hr {
+  border-color: #002248; }
+.download-assets .banners figure img {
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -o-transition: 0.3s;
+  -ms-transition: 0.3s;
+  transition: 0.3s; }
+  .download-assets .banners figure img:hover {
+    -webkit-box-shadow: 0 0 15px rgba(33, 33, 33, 0.5);
+    -moz-box-shadow: 0 0 15px rgba(33, 33, 33, 0.5);
+    -ms-box-shadow: 0 0 15px rgba(33, 33, 33, 0.5);
+    box-shadow: 0 0 15px rgba(33, 33, 33, 0.5); }
+
+.container-404 {
+  padding-bottom: 100px;
+  background-image: url("/assets/images/dentacoin-symbol-background.png");
+  background-position: center bottom;
+  background-repeat: no-repeat;
+  background-size: contain; }
+  .container-404 figure {
+    padding-top: 70px;
+    padding-bottom: 50px; }
+  .container-404 .ops {
+    font-size: 20px; }
+  .container-404 .homepage-link {
+    padding-top: 20px;
+    font-family: 'Calibri-Bold'; }
+    .container-404 .homepage-link a {
+      font-size: 18px;
+      -webkit-border-radius: 4px;
+      -moz-border-radius: 4px;
+      -ms-border-radius: 4px;
+      border-radius: 4px; }
+      .container-404 .homepage-link a:hover {
+        border: 2px solid #002248; }
+  @media screen and (max-width: 767px) {
+    .container-404 {
+      padding-bottom: 50px; }
+      .container-404 figure {
+        padding-top: 30px; }
+      .container-404 .ops {
+        font-size: 18px; }
+      .container-404 .homepage-link a {
+        font-size: 14px; } }
 
 /*# sourceMappingURL=style.css.map */
