@@ -81,7 +81,7 @@
                     @endif
                 </nav>
                 <div class="col-xs-6 col-md-2 inline-block btns-container">
-                    <a href="javascript:void(0)" onclick="return alert('COMING SOON')" class="white-dark-blue-btn register">REGISTER</a>
+                    <a href="//reviews.dentacoin.com/en/register" target="_blank" class="white-dark-blue-btn register">REGISTER</a>
                     <a href="javascript:void(0)" class="mobile-ham"><i class="fa fa-bars" aria-hidden="true"></i></a>
                 </div>
             </div>
