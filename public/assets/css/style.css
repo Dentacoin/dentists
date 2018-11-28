@@ -4347,10 +4347,10 @@ main.main-container {
   background-color: #126585; }
 
 .color-beige {
-  color: #fafafa; }
+  color: #f7f7f7; }
 
 .beige-bg {
-  background-color: #fafafa; }
+  background-color: #f7f7f7; }
 
 header {
   padding-top: 10px;
@@ -4409,101 +4409,99 @@ header {
     header > .container {
       width: 100%; } }
 
-footer {
-  border-top: 2px solid #aaaaaa; }
-  footer .newsletter-register {
-    padding-bottom: 30px; }
-    footer .newsletter-register form .form-row {
-      padding-top: 10px; }
+footer .newsletter-register {
+  padding-bottom: 30px; }
+  footer .newsletter-register form .form-row {
+    padding-top: 10px; }
+    footer .newsletter-register form .form-row input[type='email'] {
+      width: 70%;
+      font-size: 16px;
+      padding: 5px 10px;
+      border-top: 1px solid #aaaaaa;
+      border-bottom: 1px solid #aaaaaa;
+      border-left: 1px solid #aaaaaa;
+      border-right: 0;
+      -webkit-border-radius: 4px 0 0 4px;
+      -moz-border-radius: 4px 0 0 4px;
+      -ms-border-radius: 4px 0 0 4px;
+      border-radius: 4px 0 0 4px; }
+    footer .newsletter-register form .form-row button[type='submit'] {
+      width: 30%;
+      font-size: 16px;
+      background-color: #aaaaaa;
+      border: 1px solid #aaaaaa;
+      -webkit-border-radius: 0 4px 4px 0;
+      -moz-border-radius: 0 4px 4px 0;
+      -ms-border-radius: 0 4px 4px 0;
+      border-radius: 0 4px 4px 0; }
+    footer .newsletter-register form .form-row .checkbox-wrapper {
+      width: 20px; }
+    footer .newsletter-register form .form-row label {
+      width: calc(100% - 20px);
+      font-size: 14px;
+      cursor: pointer; }
+      footer .newsletter-register form .form-row label a {
+        text-decoration: underline; }
+    @media screen and (max-width: 767px) {
       footer .newsletter-register form .form-row input[type='email'] {
-        width: 70%;
+        width: 65%;
         font-size: 16px;
-        padding: 5px 10px;
-        border-top: 1px solid #aaaaaa;
-        border-bottom: 1px solid #aaaaaa;
-        border-left: 1px solid #aaaaaa;
-        border-right: 0;
-        -webkit-border-radius: 4px 0 0 4px;
-        -moz-border-radius: 4px 0 0 4px;
-        -ms-border-radius: 4px 0 0 4px;
-        border-radius: 4px 0 0 4px; }
+        font-family: 'Calibri-Bold'; }
       footer .newsletter-register form .form-row button[type='submit'] {
-        width: 30%;
+        width: 35%;
         font-size: 16px;
-        background-color: #aaaaaa;
-        border: 1px solid #aaaaaa;
-        -webkit-border-radius: 0 4px 4px 0;
-        -moz-border-radius: 0 4px 4px 0;
-        -ms-border-radius: 0 4px 4px 0;
-        border-radius: 0 4px 4px 0; }
-      footer .newsletter-register form .form-row .checkbox-wrapper {
-        width: 20px; }
-      footer .newsletter-register form .form-row label {
-        width: calc(100% - 20px);
-        font-size: 14px;
-        cursor: pointer; }
-        footer .newsletter-register form .form-row label a {
-          text-decoration: underline; }
-      @media screen and (max-width: 767px) {
-        footer .newsletter-register form .form-row input[type='email'] {
-          width: 65%;
-          font-size: 16px;
-          font-family: 'Calibri-Bold'; }
-        footer .newsletter-register form .form-row button[type='submit'] {
-          width: 35%;
-          font-size: 16px;
-          font-family: 'Calibri-Bold'; } }
-    footer .newsletter-register form.not-valid input[type='email'], footer .newsletter-register form.not-valid button[type='submit'] {
-      border-color: red;
-      border-width: 2px; }
-    footer .newsletter-register form.not-valid .alert {
-      margin-top: 5px;
-      margin-bottom: 10px; }
-    @media screen and (max-width: 991px) {
-      footer .newsletter-register {
-        padding-top: 10px; } }
-    @media screen and (max-width: 767px) {
-      footer .newsletter-register {
-        padding-bottom: 10px; } }
-  footer .socials {
-    text-align: center;
-    padding-top: 30px;
-    padding-bottom: 30px; }
+        font-family: 'Calibri-Bold'; } }
+  footer .newsletter-register form.not-valid input[type='email'], footer .newsletter-register form.not-valid button[type='submit'] {
+    border-color: red;
+    border-width: 2px; }
+  footer .newsletter-register form.not-valid .alert {
+    margin-top: 5px;
+    margin-bottom: 10px; }
+  @media screen and (max-width: 991px) {
+    footer .newsletter-register {
+      padding-top: 10px; } }
+  @media screen and (max-width: 767px) {
+    footer .newsletter-register {
+      padding-bottom: 10px; } }
+footer .socials {
+  text-align: center;
+  padding-top: 30px;
+  padding-bottom: 30px; }
+  footer .socials ul li {
+    padding: 0 10px; }
+    footer .socials ul li img {
+      width: 25px; }
+  @media screen and (max-width: 991px) {
     footer .socials ul li {
-      padding: 0 10px; }
-      footer .socials ul li img {
-        width: 25px; }
-    @media screen and (max-width: 991px) {
-      footer .socials ul li {
-        padding: 0 10px 10px; } }
-    @media screen and (max-width: 767px) {
-      footer .socials {
-        padding-bottom: 20px;
-        padding-top: 20px; }
-        footer .socials ul {
-          font-size: 0; }
-          footer .socials ul li {
-            width: 20%; } }
-  footer .menu {
-    text-align: center;
-    padding-bottom: 30px; }
-    footer .menu ul li {
-      padding: 0 20px; }
-      footer .menu ul li a {
-        color: #3e3e3e;
-        font-size: 20px;
-        font-weight: bold; }
-        footer .menu ul li a:hover {
-          text-decoration: underline; }
-    @media screen and (max-width: 767px) {
-      footer .menu {
-        padding-bottom: 20px; }
-        footer .menu ul li {
-          padding: 3px 10px; }
-          footer .menu ul li a {
-            font-size: 14px; }
-          footer .menu ul li.separator {
-            padding: 3px 0; } }
+      padding: 0 10px 10px; } }
+  @media screen and (max-width: 767px) {
+    footer .socials {
+      padding-bottom: 20px;
+      padding-top: 20px; }
+      footer .socials ul {
+        font-size: 0; }
+        footer .socials ul li {
+          width: 20%; } }
+footer .menu {
+  text-align: center;
+  padding-bottom: 30px; }
+  footer .menu ul li {
+    padding: 0 20px; }
+    footer .menu ul li a {
+      color: #3e3e3e;
+      font-size: 20px;
+      font-weight: bold; }
+      footer .menu ul li a:hover {
+        text-decoration: underline; }
+  @media screen and (max-width: 767px) {
+    footer .menu {
+      padding-bottom: 20px; }
+      footer .menu ul li {
+        padding: 3px 10px; }
+        footer .menu ul li a {
+          font-size: 14px; }
+        footer .menu ul li.separator {
+          padding: 3px 0; } }
 
 @media screen and (max-width: 767px) {
   body.home .modal-backdrop.in {
