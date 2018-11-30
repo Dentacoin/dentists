@@ -1,6 +1,6 @@
 @extends("layout")
 @section("content")
-    <section class="intro-section">
+    {{--<section class="intro-section">
         <div class="container-fluid upper-box">
             <div class="row">
                 <div class="col-xs-12 col-md-5 col-md-offset-6">
@@ -138,8 +138,8 @@
                 <h2 class="col-xs-12 fs-50 fs-xs-25 lato-light dark-blue text-center padding-top-30 padding-bottom-70 padding-bottom-xs-30 padding-top-xs-30">Dentacoin Network Speaking</h2>
             </div>
         </div>
-    </section>
-
+    </section>--}}
+    {!! $sections[0]->html !!}
     <section class="container padding-bottom-70">
         <div class="row">
             <div class="col-xs-12">
@@ -195,10 +195,10 @@
             <img alt="Two dentists" itemprop="contentUrl" src="/assets/uploads/two-dentists.png" />
         </figure>
     </section>
-    {{--{!! $sections[1]->html !!}--}}
+    {!! $sections[1]->html !!}
 
 
-    <section class="options-section padding-top-30 padding-bottom-70 padding-bottom-xs-30">
+    {{--<section class="options-section padding-top-30 padding-bottom-70 padding-bottom-xs-30">
         <div class="container">
             <div class="row text-center">
                 <div class="col-xs-12">
@@ -281,6 +281,6 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section>--}}
 
 @endsection
