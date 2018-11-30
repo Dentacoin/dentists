@@ -121,6 +121,8 @@
     background-color: #002248; }
   .dark-blue-white-btn:focus {
     color: #002248; }
+  .dark-blue-white-btn.blue-border {
+    border: 2px solid #002248; }
 
 .main-color {
   color: #333333; }

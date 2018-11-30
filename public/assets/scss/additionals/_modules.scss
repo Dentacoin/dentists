@@ -34,6 +34,9 @@
     &:focus {
         color: $dark_blue;
     }
+    &.blue-border {
+        border: 2px solid $dark_blue;
+    }
 }
 
 .main-color {

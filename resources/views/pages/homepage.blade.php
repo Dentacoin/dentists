@@ -1,16 +1,16 @@
 @extends("layout")
 @section("content")
-    {{--<section class="intro-section">
+    <section class="intro-section">
         <div class="container-fluid upper-box">
             <div class="row">
                 <div class="col-xs-12 col-md-5 col-md-offset-6">
-                    <figure itemscope="" itemtype="http://schema.org/ImageObject"><img alt="Text logo dark blue" class="max-width-310" itemprop="contentUrl" src="/assets/uploads/text-logo-dark-blue.svg" /></figure>
+                    <figure itemscope="" itemtype="http://schema.org/ImageObject"><img alt="Text logo dark blue" class="max-width-310 max-width-xs-200" itemprop="contentUrl" src="/assets/uploads/text-logo-dark-blue.svg" /></figure>
 
-                    <h1 class="fs-40 fs-xs-25 lato-black dark-blue padding-bottom-40 padding-bottom-xs-20 padding-top-15 line-height-40">Intelligent Solutions Transforming the Future of Dentistry</h1>
+                    <h1 class="fs-40 fs-xs-25 lato-black dark-blue padding-bottom-40 padding-bottom-xs-0 padding-top-15 line-height-50 line-height-xs-30">Intelligent Solutions Transforming the Future of Dentistry</h1>
+                    <figure itemscope="" itemtype="http://schema.org/ImageObject" class="visible-on-mobile"><img alt="Dentist transperant background" itemprop="contentUrl" src="/assets/uploads/dentist-mobile.png" /></figure>
+                    <div class="fs-25 fs-xs-18 line-height-xs-25 lato-semibold dark-blue padding-bottom-40 padding-bottom-xs-10 line-height-30 mobile-white-bg">&quot;Dentacoin helps me build strong patient relations and maximize my profits.&quot;</div>
 
-                    <div class="fs-25 lato-semibold dark-blue padding-bottom-40 padding-bottom-xs-20 line-height-30">&quot;Dentacoin helps me build strong patient relations and maximize my profits.&quot;</div>
-
-                    <div class="btn-container"><a class="white-dark-blue-btn scrolling-to-section mobile" href="javascript:void(0);" id="benefits">YOUR BENEFITS</a> <a class="scrolling-to-section desktop margin-top-animation" href="javascript:void(0);" id="bitcoin-dentistry"><img src="/assets/images/scroll.svg" alt=""/></a></div>
+                    <div class="btn-container"><a class="scrolling-to-section desktop margin-top-animation" href="javascript:void(0);" id="bitcoin-dentistry"><img alt="" src="/assets/images/scroll.svg" /></a></div>
                 </div>
             </div>
         </div>
@@ -28,7 +28,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-lg-8 col-lg-offset-2">
-                    <h2 class="dark-blue fs-50 fs-xs-32 text-center lato-light padding-bottom-xs-10">Dentacoin Dentists Report*</h2>
+                    <h2 class="dark-blue fs-50 fs-xs-25 text-center lato-light padding-bottom-xs-10">Dentacoin Dentists Report*</h2>
 
                     <div class="paragraph text-center lato-light padding-bottom-30">* Research among 1800 dentists using Dentacoin tools and currency.</div>
 
@@ -36,31 +36,31 @@
                         <div class="list-row text-center-xs padding-bottom-xs-35 padding-bottom-25 fs-0">
                             <figure class="inline-block" itemscope="" itemtype="http://schema.org/ImageObject"><img alt="" itemprop="contentUrl" src="/assets/uploads/benefit1.svg" /></figure>
 
-                            <div class="text color-black inline-block fs-xs-16 padding-top-xs-10">Higher levels of patient engagement, satisfaction and retention</div>
+                            <div class="text color-black inline-block fs-xs-18 padding-top-xs-10">Higher levels of patient engagement, satisfaction and retention</div>
                         </div>
 
                         <div class="list-row text-center-xs padding-bottom-xs-35 padding-bottom-25 fs-0">
                             <figure class="inline-block" itemscope="" itemtype="http://schema.org/ImageObject"><img alt="" itemprop="contentUrl" src="/assets/uploads/benefit2.svg" /></figure>
 
-                            <div class="text color-black inline-block fs-xs-16 padding-top-xs-10">Innovative payment option preferred by young patients - Dentacoin cryptocurrency</div>
+                            <div class="text color-black inline-block fs-xs-18 padding-top-xs-10">Innovative payment option preferred by young patients - Dentacoin cryptocurrency</div>
                         </div>
 
                         <div class="list-row text-center-xs padding-bottom-xs-35 padding-bottom-25 fs-0">
                             <figure class="inline-block" itemscope="" itemtype="http://schema.org/ImageObject"><img alt="" itemprop="contentUrl" src="/assets/uploads/benefit3.svg" /></figure>
 
-                            <div class="text color-black inline-block fs-xs-16 padding-top-xs-10">Additional regular income through incentives and monthly Assurance premiums</div>
+                            <div class="text color-black inline-block fs-xs-18 padding-top-xs-10">Additional regular income through incentives and monthly Assurance premiums</div>
                         </div>
 
                         <div class="list-row text-center-xs padding-bottom-xs-35 padding-bottom-25 fs-0">
                             <figure class="inline-block" itemscope="" itemtype="http://schema.org/ImageObject"><img alt="" itemprop="contentUrl" src="/assets/uploads/benefit4.svg" /></figure>
 
-                            <div class="text color-black inline-block fs-xs-16 padding-top-xs-10">Free market knowledge through up-to-date market research data on DentaVox</div>
+                            <div class="text color-black inline-block fs-xs-18 padding-top-xs-10">Free market knowledge through up-to-date market research data on DentaVox</div>
                         </div>
 
                         <div class="list-row text-center-xs padding-bottom-xs-35 fs-0">
                             <figure class="inline-block" itemscope="" itemtype="http://schema.org/ImageObject"><img alt="" itemprop="contentUrl" src="/assets/uploads/benefit5.svg" /></figure>
 
-                            <div class="text color-black inline-block fs-xs-16 padding-top-xs-10">Valuable feedback to improve upon through trusted patient reviews</div>
+                            <div class="text color-black inline-block fs-xs-18 padding-top-xs-10">Valuable feedback to improve upon through trusted patient reviews</div>
                         </div>
                     </div>
                 </div>
@@ -72,7 +72,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-xs-12 text-center">
-                    <h2 class="title fs-50 fs-xs-32 lato-light padding-bottom-35 padding-bottom-xs-20">BONUS FOR EARLY PARTNERS:</h2>
+                    <h2 class="title fs-50 fs-xs-25 lato-light padding-bottom-35 padding-bottom-xs-20">BONUS FOR EARLY PARTNERS:</h2>
 
                     <div class="fs-20 fs-xs-16 padding-bottom-10">✔ ​Free of charge advertising &amp; PR about our partnership</div>
 
@@ -135,11 +135,11 @@
     <section class="testimonials-section" data-scroll-here="testimonials">
         <div class="container">
             <div class="row">
-                <h2 class="col-xs-12 fs-50 fs-xs-32 lato-light dark-blue text-center padding-top-30 padding-bottom-70 padding-bottom-xs-30 padding-top-xs-30">Dentacoin Network Speaking</h2>
+                <h2 class="col-xs-12 fs-50 fs-xs-25 lato-light dark-blue text-center padding-top-30 padding-bottom-70 padding-bottom-xs-30 padding-top-xs-30">Dentacoin Network Speaking</h2>
             </div>
         </div>
-    </section>--}}
-    {!! $sections[0]->html !!}
+    </section>
+
     <section class="container padding-bottom-70">
         <div class="row">
             <div class="col-xs-12">
@@ -171,7 +171,7 @@
     <section class="applications-section padding-top-80 padding-top-xs-30" data-scroll-here="tools">
         <div class="container">
             <div class="row text-center padding-bottom-70 padding-bottom-xs-30 color-white">
-                <h2 class="col-xs-12 fs-50 fs-xs-32 lato-light">Dentacoin Tools of Change</h2>
+                <h2 class="col-xs-12 fs-50 fs-xs-25 lato-light">Dentacoin Tools of Change</h2>
                 <div class="col-xs-12 fs-20 fs-xs-15 lato-semibold">Simple and free registration. No installations needed.</div>
             </div>
             <div class="row list">
@@ -195,11 +195,16 @@
             <img alt="Two dentists" itemprop="contentUrl" src="/assets/uploads/two-dentists.png" />
         </figure>
     </section>
-    {!! $sections[1]->html !!}
+    {{--{!! $sections[1]->html !!}--}}
 
 
-   {{-- <section class="options-section padding-top-80 padding-bottom-70 padding-top-xs-30 padding-bottom-xs-30">
+    <section class="options-section padding-top-30 padding-bottom-70 padding-bottom-xs-30">
         <div class="container">
+            <div class="row text-center">
+                <div class="col-xs-12">
+                    <h2 class="fs-50 fs-xs-25 lato-light dark-blue text-center padding-bottom-50">How To Become a Dentacoin Dentist</h2>
+                </div>
+            </div>
             <div class="row text-center flex fs-0">
                 <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-4 col-md-offset-0 single">
                     <div class="blue-green fs-50 lato-black">01</div>
@@ -208,7 +213,7 @@
 
                     <div class="fs-18 padding-bottom-50 description">It&rsquo;s simple, fast and free! Our onboarding team will check your profile and contact you.</div>
 
-                    <div class="btn-container padding-bottom-10"><a class="white-dark-blue-btn" href="//reviews.dentacoin.com/en/register" target="_blank">REGISTER</a></div>
+                    <div class="btn-container padding-bottom-10"><a class="blue-border dark-blue-white-btn" href="//reviews.dentacoin.com/en/register" target="_blank">REGISTER</a></div>
                 </div>
 
                 <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-4 col-md-offset-0 single">
@@ -218,7 +223,7 @@
 
                     <div class="fs-18 padding-bottom-50 description">We deliver the payment infrastructure for your practice and guide you through the process.</div>
 
-                    <div class="btn-container padding-bottom-10"><a class="white-dark-blue-btn" href="/faq">LEARN MORE</a></div>
+                    <div class="btn-container padding-bottom-10"><a class="blue-border dark-blue-white-btn" href="/faq">LEARN MORE</a></div>
                 </div>
 
                 <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-4 col-md-offset-0 single">
@@ -228,7 +233,7 @@
 
                     <div class="fs-18 padding-bottom-50 description">&hellip; to your website and social profiles. We&rsquo;ll also help promote your practice online for free!</div>
 
-                    <div class="btn-container padding-bottom-10"><a class="white-dark-blue-btn" href="/download-assets">DOWNLOAD ASSETS</a></div>
+                    <div class="btn-container padding-bottom-10"><a class="blue-border dark-blue-white-btn" href="/download-assets">DOWNLOAD ASSETS</a></div>
                 </div>
             </div>
         </div>
@@ -238,7 +243,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-xs-12">
-                    <h2 class="fs-50 fs-xs-32 lato-light dark-blue text-center">Join The Largest Global Dental Community</h2>
+                    <h2 class="fs-50 fs-xs-25 lato-light dark-blue text-center">Join The Largest Global Dental Community</h2>
                 </div>
             </div>
         </div>
@@ -276,6 +281,6 @@
                 </div>
             </div>
         </div>
-    </section>--}}
+    </section>
 
 @endsection

@@ -181,6 +181,14 @@ body {
     }
 }
 
+@for $i from 0 through 80 {
+    @include breakpoint($xs)    {
+        .line-height-xs-#{$i} {
+            line-height: 0px + $i!important;
+        }
+    }
+}
+
 .italic {
     font-style: italic;
 }

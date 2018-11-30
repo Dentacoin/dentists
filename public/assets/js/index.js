@@ -209,7 +209,16 @@ if($('.open-video-popup').length > 0) {
         $('.custom-popup.video').removeClass('visible');
         $('body').removeClass('overflow-hidden');
     });
-}/*
+}
+$('body').click(function(event) {
+    if($(event.target).is('#custom-popup')) {
+        $('.custom-popup').removeClass('visible');
+        $('body').removeClass('overflow-hidden');
+    }
+});
+
+
+/*
 
 //change images src on different resolutions (only the ones with data attributes for this)
 function setLargeImages() {

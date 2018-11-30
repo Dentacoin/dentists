@@ -42,9 +42,6 @@
                     @foreach($header_menu as $menu_el)
                         <li><a itemprop="url" class="{{$menu_el->class_attribute}}" @if(!empty($menu_el->id_attribute)) id="{{$menu_el->id_attribute}}" @endif @if(!empty(Route::current()) && Route::current()->getName() != 'home' && strpos($menu_el->class_attribute, 'scrolling-to-section') !== false) href="{{route('home')}}#{{$menu_el->id_attribute}}" @else @if($menu_el->new_window) target="_blank" @endif href="{{$menu_el->url}}" @endif><span itemprop="name">{{$menu_el->name}}</span></a></li>
                     @endforeach
-                    @if(!empty($mobile) && $mobile)
-                        <li><a href="javascript:void(0)" class="white-dark-blue-btn show-external-form-button register inline-block-important" itemprop="url">SEND AN INQUIRY</a></li>
-                    @endif
                 </ul>
             </div>
         </nav>
@@ -64,9 +61,9 @@
     <header>
         <div class="container">
             <div class="row fs-0">
-                <figure itemscope="" itemtype="http://schema.org/Organization" class="col-xs-6 inline-block">
+                <figure itemscope="" itemtype="http://schema.org/Organization" class="col-xs-4 inline-block">
                     <a itemprop="url" href="{{ route('home') }}" @if(!empty(Route::current())) @if(Route::current()->getName() == "home") tabindex="=-1" @endif @endif>
-                        <img src="{{URL::asset('assets/images/dentists-logo.svg') }}" itemprop="logo" class="max-width-220" alt="Dentacoin logo"/>
+                        <img src="{{URL::asset('assets/images/logo.svg') }}" itemprop="logo" class="max-width-50" alt="Dentacoin logo"/>
                     </a>
                 </figure>
                 {{--<nav class="col-xs-8 inline-block">
@@ -78,10 +75,16 @@
                         </ul>
                     @endif
                 </nav>--}}
-                <div class="col-xs-6 inline-block btns-container">
-                    @if(isset($mobile) && !$mobile)
-                        <a href="javascript:void(0)" class="white-dark-blue-btn show-external-form-button register inline-block">SEND AN INQUIRY</a>
-                    @endif
+                <div class="col-xs-8 inline-block btns-container">
+                    <a href="javascript:void(0)" class="white-dark-blue-btn show-external-form-button register inline-block">
+                        @if(isset($mobile))
+                            @if($mobile)
+                                INQUIRY
+                            @else
+                                SEND AN INQUIRY
+                            @endif
+                        @endif
+                    </a>
                     <a href="javascript:void(0)" class="hamburger inline-block"><i class="fa fa-bars" aria-hidden="true"></i></a>
                 </div>
             </div>
@@ -153,7 +156,7 @@
             </div>
         </div>
     </footer>
-    <div class="custom-popup external-form">
+    <div class="custom-popup external-form" id="custom-popup">
         <div class="popup-body">
             <button type="button" class="close-btn" data-dismiss="modal" aria-hidden="true">×</button>
             <div class="wrapper">
@@ -166,7 +169,7 @@
             </div>
         </div>
     </div>
-    <div class="custom-popup video">
+    <div class="custom-popup video" id="custom-popupcustom-popup">
         <div class="popup-body">
             <button type="button" class="close-btn" data-dismiss="modal" aria-hidden="true">×</button>
             <div class="wrapper">
