@@ -16,52 +16,14 @@ header {
         padding-top: 10px;
         padding-bottom: 10px;
     }
-    nav {
-        text-align: center;
-        ul {
-            li {
-                font-family: "Lato-Semibold";
-                padding: 0 25px;
-                a {
-                    color: $dark_blue;
-                    font-size: 16px;
-                    @include breakpoint($lgl) {
-                        font-size: 18px;
-                    }
-                }
-            }
-        }
-    }
     .btns-container {
-        .mobile-ham {
-            display: none;
+        text-align: right;
+        .hamburger {
             font-size: 34px;
             padding-top: 10px;
             padding-bottom: 10px;
             color: black;
-        }
-    }
-    @include breakpoint($md-only) {
-        nav {
-            ul {
-                li {
-                    padding: 0 15px;
-                }
-            }
-        }
-    }
-    @include breakpoint($sm-down) {
-        nav {
-            display: none !important;
-        }
-        .btns-container {
-            text-align: right;
-            .register {
-                display: none;
-            }
-            .mobile-ham {
-                display: inline-block;
-            }
+            margin-left: 20px;
         }
     }
     @include breakpoint($xs) {

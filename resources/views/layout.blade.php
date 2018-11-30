@@ -23,6 +23,7 @@
         <link rel="canonical" href="{{route('home')}}" />
     @endif
     <style>
+
     </style>
     <link rel="stylesheet" type="text/css" href="/dist/css/front-libs-style.css">
     <link rel="stylesheet" type="text/css" href="/assets/css/style.css">
@@ -32,6 +33,22 @@
     <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/shell.js"></script>
 </head>
 <body class="@if(!empty(Route::current())) {{Route::current()->getName()}} @else class-404 @endif">
+    @if(!empty(Route::current()))
+        @php($header_menu = \App\Http\Controllers\Controller::instance()->getMenu('header'))
+        <nav class="sidenav">
+            <div class="wrapper">
+                <a href="javascript:void(0)" class="close-btn"><i class="fa fa-times" aria-hidden="true"></i></a>
+                <ul itemscope="" itemtype="http://schema.org/SiteNavigationElement">
+                    @foreach($header_menu as $menu_el)
+                        <li><a itemprop="url" class="{{$menu_el->class_attribute}}" @if(!empty($menu_el->id_attribute)) id="{{$menu_el->id_attribute}}" @endif @if(!empty(Route::current()) && Route::current()->getName() != 'home' && strpos($menu_el->class_attribute, 'scrolling-to-section') !== false) href="{{route('home')}}#{{$menu_el->id_attribute}}" @else @if($menu_el->new_window) target="_blank" @endif href="{{$menu_el->url}}" @endif><span itemprop="name">{{$menu_el->name}}</span></a></li>
+                    @endforeach
+                    @if(!empty($mobile) && $mobile)
+                        <li><a href="//reviews.dentacoin.com/en/register" target="_blank" class="white-dark-blue-btn register inline-block-important" itemprop="url">SEND AN INQUIRY</a></li>
+                    @endif
+                </ul>
+            </div>
+        </nav>
+    @endif
     @if(!empty($privacy_policy_cookie))
         <div class="privacy-policy-cookie">
             <div class="container">
@@ -44,34 +61,15 @@
             </div>
         </div>
     @endif
-    @if(!empty(Route::current()))
-        @php($header_menu = \App\Http\Controllers\Controller::instance()->getMenu('header'))
-    @endif
-    @if(!empty($mobile) && $mobile && !empty($header_menu))
-        <div class="mobile-nav">
-            <div class="close-btn">
-                <a href="javascript:void(0)">
-                    <img src="{{URL::asset('assets/images/close-mobile-nav.svg') }}" alt=""/>
-                </a>
-            </div>
-            <nav>
-                <ul itemscope="" itemtype="http://schema.org/SiteNavigationElement">
-                    @foreach(\App\Http\Controllers\Controller::instance()->getMenu('header') as $menu_el)
-                        <li><a itemprop="url" class="{{$menu_el->class_attribute}}" @if(!empty($menu_el->id_attribute)) id="{{$menu_el->id_attribute}}" @endif @if(!empty(Route::current()) && Route::current()->getName() != 'home' && strpos($menu_el->class_attribute, 'scrolling-to-section') !== false) href="{{route('home')}}#{{$menu_el->id_attribute}}" @else @if($menu_el->new_window) target="_blank" @endif href="{{$menu_el->url}}" @endif><span itemprop="name">{{$menu_el->name}}</span></a></li>
-                    @endforeach
-                </ul>
-            </nav>
-        </div>
-    @endif
     <header>
         <div class="container">
             <div class="row fs-0">
-                <figure itemscope="" itemtype="http://schema.org/Organization" class="col-xs-6 col-md-2 inline-block">
+                <figure itemscope="" itemtype="http://schema.org/Organization" class="col-xs-6 inline-block">
                     <a itemprop="url" href="{{ route('home') }}" @if(!empty(Route::current())) @if(Route::current()->getName() == "home") tabindex="=-1" @endif @endif>
                         <img src="{{URL::asset('assets/images/dentists-logo.svg') }}" itemprop="logo" class="max-width-220" alt="Dentacoin logo"/>
                     </a>
                 </figure>
-                <nav class="col-xs-8 inline-block">
+                {{--<nav class="col-xs-8 inline-block">
                     @if(!empty($header_menu))
                         <ul itemscope="" itemtype="http://schema.org/SiteNavigationElement">
                             @foreach($header_menu as $menu_el)
@@ -79,10 +77,12 @@
                             @endforeach
                         </ul>
                     @endif
-                </nav>
-                <div class="col-xs-6 col-md-2 inline-block btns-container">
-                    <a href="//reviews.dentacoin.com/en/register" target="_blank" class="white-dark-blue-btn register">REGISTER</a>
-                    <a href="javascript:void(0)" class="mobile-ham"><i class="fa fa-bars" aria-hidden="true"></i></a>
+                </nav>--}}
+                <div class="col-xs-6 inline-block btns-container">
+                    @if(isset($mobile) && !$mobile)
+                        <a href="//reviews.dentacoin.com/en/register" target="_blank" class="white-dark-blue-btn register inline-block">SEND AN INQUIRY</a>
+                    @endif
+                    <a href="javascript:void(0)" class="hamburger inline-block"><i class="fa fa-bars" aria-hidden="true"></i></a>
                 </div>
             </div>
         </div>
@@ -166,10 +166,10 @@
             </div>
         </div>
     </div>
-    {{--<script src="/assets/js/basic.js"></script>--}}
+    <script src="/assets/js/basic.js"></script>
     <script src="/dist/js/front-libs-script.js?v=1.0.15"></script>
     @yield("script_block")
-    <script src="/dist/js/front-script.js?v=1.0.13"></script>
-    {{--<script src="/assets/js/index.js"></script>--}}
+{{--<script src="/dist/js/front-script.js?v=1.0.13"></script>--}}
+    <script src="/assets/js/index.js"></script>
 </body>
 </html>

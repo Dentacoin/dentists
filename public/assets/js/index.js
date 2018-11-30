@@ -87,7 +87,7 @@ initCaptchaRefreshEvent();
 
 // ================== PAGES ==================
 if($('body').hasClass('home')) {
-    jQuery('.testimonials-slider-section').slick({
+    $('.testimonials-slider-section').slick({
         slidesToShow: 4,
         slidesToScroll: 4,
         autoplay: true,
@@ -121,7 +121,7 @@ if($('body').hasClass('home')) {
         ]
     });
 
-    jQuery('.testimonials-slider-section').on('beforeChange', function(event, slick, currentSlide, nextSlide){
+    $('.testimonials-slider-section').on('beforeChange', function(event, slick, currentSlide, nextSlide){
         var height = 0;
         for(var i = 0, len = 4; i < len; i+=1)  {
             if($('.slick-slide').eq((nextSlide + 4) + i).height() > height) {
@@ -238,18 +238,29 @@ function scrollToSection(){
 }
 
 //mobile menu events
+/*
 function initMobileMenuActions()    {
     if(basic.isMobile)    {
-        jQuery('header .mobile-ham').click(function()   {
-            jQuery('.mobile-nav').addClass('active');
+        $('header .mobile-ham').click(function()   {
+            $('.mobile-nav').addClass('active');
         });
 
-        jQuery('.mobile-nav .close-btn').click(function()   {
-            jQuery('.mobile-nav').removeClass('active');
+        $('.mobile-nav .close-btn').click(function()   {
+            $('.mobile-nav').removeClass('active');
         });
     }
 }
 initMobileMenuActions();
+*/
+
+//header menu events
+$('header .hamburger').click(function()    {
+    $('nav.sidenav').addClass('active');
+});
+
+$('nav.sidenav .close-btn, nav.sidenav ul li a').click(function()    {
+    $('nav.sidenav').removeClass('active');
+});
 
 //on button click next time when you hover the button the color is bugged until you click some other element (until you move out the focus from this button)
 function fixButtonsFocus() {
