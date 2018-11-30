@@ -10,7 +10,7 @@
 
                     <div class="fs-25 lato-semibold dark-blue padding-bottom-40 padding-bottom-xs-20 line-height-30">&quot;Dentacoin helps me build strong patient relations and maximize my profits.&quot;</div>
 
-                    <div class="btn-container"><a class="white-dark-blue-btn scrolling-to-section mobile" href="javascript:void(0);" id="benefits">YOUR BENEFITS</a> <a class="white-dark-blue-btn scrolling-to-section desktop" href="javascript:void(0);" id="bitcoin-dentistry">TRANSFORM YOUR PRACTICE</a></div>
+                    <div class="btn-container"><a class="white-dark-blue-btn scrolling-to-section mobile" href="javascript:void(0);" id="benefits">YOUR BENEFITS</a> <a class="scrolling-to-section desktop margin-top-animation" href="javascript:void(0);" id="bitcoin-dentistry"><img src="/assets/images/scroll.svg" alt=""/></a></div>
                 </div>
             </div>
         </div>
@@ -83,6 +83,7 @@
             </div>
         </div>
     </section>
+
     <section class="below-testimonials-section padding-top-100 padding-bottom-70 padding-top-xs-50 padding-bottom-xs-50">
         <div class="container">
             <div class="row fs-0 text-center">
@@ -108,7 +109,7 @@
 
                         <div class="fs-50 lato-light padding-top-10">190K+</div>
 
-                        <div class="fs-20 lato-semibold">Active Users & Subscribers</div>
+                        <div class="fs-20 lato-semibold">Active Users &amp; Subscribers</div>
                     </div>
 
                     <div class="single inline-block-top">
@@ -130,6 +131,7 @@
             </div>
         </div>
     </section>
+
     <section class="testimonials-section" data-scroll-here="testimonials">
         <div class="container">
             <div class="row">

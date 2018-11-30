@@ -84,6 +84,63 @@
     opacity: 0; }
   to {
     opacity: 1; } }
+@keyframes marginTop {
+  0% {
+    margin-top: 0; }
+  50% {
+    margin-top: 15px; }
+  100% {
+    margin-top: 0; } }
+@-moz-keyframes marginTop {
+  /* Firefox */
+  0% {
+    margin-top: 0; }
+  50% {
+    margin-top: 15px; }
+  100% {
+    margin-top: 0; } }
+@-webkit-keyframes marginTop {
+  /* Safari and Chrome */
+  0% {
+    margin-top: 0; }
+  50% {
+    margin-top: 15px; }
+  100% {
+    margin-top: 0; } }
+@-o-keyframes marginTop {
+  /* Opera */
+  0% {
+    margin-top: 0; }
+  50% {
+    margin-top: 15px; }
+  100% {
+    margin-top: 0; } }
+.margin-top-animation {
+  -webkit-animation-fill-mode: forwards;
+  -moz-animation-fill-mode: forwards;
+  -o-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+  -webkit-animation-delay: 0s;
+  -moz-animation-delay: 0s;
+  animation-delay: 0s;
+  -o-animation-delay: 0s;
+  -webkit-animation-name: marginTop;
+  -moz-animation-name: marginTop;
+  animation-name: marginTop;
+  -o-animation-name: marginTop;
+  -webkit-animation-duration: 2s;
+  -moz-animation-duration: 2s;
+  animation-duration: 2s;
+  -o-animation-duration: 2s;
+  -o-animation-timing-function: ease;
+  -webkit-animation-timing-function: ease;
+  -moz-animation-timing-function: ease;
+  animation-timing-function: ease;
+  animation-iteration-count: infinite;
+  -webkit-animation-iteration-count: infinite;
+  -o-animation-iteration-count: infinite;
+  -moz-animation-iteration-count: infinite; }
+
 @media screen and (max-width: 400px) {
   .col-xxs-12 {
     width: 100%; }
@@ -4514,8 +4571,19 @@ footer .menu {
     left: 0;
     width: 100%;
     top: 10%; }
-    .intro-section .upper-box .btn-container .mobile {
-      display: none; }
+    .intro-section .upper-box .btn-container {
+      text-align: center; }
+      .intro-section .upper-box .btn-container .mobile {
+        display: none; }
+      .intro-section .upper-box .btn-container .desktop {
+        display: inline-block;
+        -webkit-transition: 0.3s;
+        -moz-transition: 0.3s;
+        -o-transition: 0.3s;
+        -ms-transition: 0.3s;
+        transition: 0.3s; }
+        .intro-section .upper-box .btn-container .desktop img {
+          width: 25px; }
     @media screen and (max-width: 991px) {
       .intro-section .upper-box {
         position: static; }

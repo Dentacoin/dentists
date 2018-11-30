@@ -15,8 +15,16 @@ body.home {
         width: 100%;
         top: 10%;
         .btn-container {
+            text-align: center;
             .mobile {
                 display: none;
+            }
+            .desktop {
+                display: inline-block;
+                @include simple_transition(.3s);
+                img {
+                    width: 25px;
+                }
             }
         }
         @include breakpoint($sm-down) {

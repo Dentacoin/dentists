@@ -30,3 +30,29 @@
         opacity: 1;
     }
 }
+
+
+@keyframes marginTop {
+    0%   {margin-top: 0;}
+    50%  {margin-top: 15px;}
+    100% {margin-top: 0;}
+}
+@-moz-keyframes marginTop { /* Firefox */
+    0%   {margin-top: 0;}
+    50%  {margin-top: 15px;}
+    100% {margin-top: 0;}
+}
+@-webkit-keyframes marginTop { /* Safari and Chrome */
+    0%   {margin-top: 0;}
+    50%  {margin-top: 15px;}
+    100% {margin-top: 0;}
+}
+@-o-keyframes marginTop { /* Opera */
+    0%   {margin-top: 0;}
+    50%  {margin-top: 15px;}
+    100% {margin-top: 0;}
+}
+
+.margin-top-animation {
+    @include animation(0s, 2s, marginTop, infinite);
+}
