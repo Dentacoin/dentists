@@ -43,7 +43,7 @@
                         <li><a itemprop="url" class="{{$menu_el->class_attribute}}" @if(!empty($menu_el->id_attribute)) id="{{$menu_el->id_attribute}}" @endif @if(!empty(Route::current()) && Route::current()->getName() != 'home' && strpos($menu_el->class_attribute, 'scrolling-to-section') !== false) href="{{route('home')}}#{{$menu_el->id_attribute}}" @else @if($menu_el->new_window) target="_blank" @endif href="{{$menu_el->url}}" @endif><span itemprop="name">{{$menu_el->name}}</span></a></li>
                     @endforeach
                     @if(!empty($mobile) && $mobile)
-                        <li><a href="//reviews.dentacoin.com/en/register" target="_blank" class="white-dark-blue-btn register inline-block-important" itemprop="url">SEND AN INQUIRY</a></li>
+                        <li><a href="javascript:void(0)" class="white-dark-blue-btn show-external-form-button register inline-block-important" itemprop="url">SEND AN INQUIRY</a></li>
                     @endif
                 </ul>
             </div>
@@ -80,7 +80,7 @@
                 </nav>--}}
                 <div class="col-xs-6 inline-block btns-container">
                     @if(isset($mobile) && !$mobile)
-                        <a href="//reviews.dentacoin.com/en/register" target="_blank" class="white-dark-blue-btn register inline-block">SEND AN INQUIRY</a>
+                        <a href="javascript:void(0)" class="white-dark-blue-btn show-external-form-button register inline-block">SEND AN INQUIRY</a>
                     @endif
                     <a href="javascript:void(0)" class="hamburger inline-block"><i class="fa fa-bars" aria-hidden="true"></i></a>
                 </div>
