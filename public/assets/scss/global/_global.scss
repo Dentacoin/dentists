@@ -205,6 +205,26 @@ body {
     }
 }
 
+.text-left-xs {
+    @include breakpoint($xs)    {
+        text-align: left !important;
+    }
+}
+
+.text-left {
+    text-align: left !important;
+}
+
+.text-right {
+    text-align: right !important;
+}
+
+.text-right-xs {
+    @include breakpoint($xs)    {
+        text-align: right !important;
+    }
+}
+
 .clear-bootstrap-row {
     @include breakpoint($xs)    {
         margin-left: -15px !important;

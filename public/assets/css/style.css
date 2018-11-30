@@ -4126,6 +4126,20 @@ body {
     text-align: center !important; } }
 
 @media screen and (max-width: 767px) {
+  .text-left-xs {
+    text-align: left !important; } }
+
+.text-left {
+  text-align: left !important; }
+
+.text-right {
+  text-align: right !important; }
+
+@media screen and (max-width: 767px) {
+  .text-right-xs {
+    text-align: right !important; } }
+
+@media screen and (max-width: 767px) {
   .clear-bootstrap-row {
     margin-left: -15px !important;
     margin-right: -15px !important; } }
