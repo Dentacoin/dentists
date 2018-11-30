@@ -20,7 +20,7 @@ $(window).on('resize', function(){
 });
 
 $(window).on('scroll', function()  {
-    homepageHowToBecomeDentacoinDentistBackgroundParallax();
+    //homepageHowToBecomeDentacoinDentistBackgroundParallax();
 });
 
 $.fn.isInViewport = function() {
@@ -161,16 +161,16 @@ if($('body').hasClass('home')) {
 //make equal height for all descriptions in options section
 function optionsDescriptionsEqualHeight() {
     var descriptions_height = 0;
-    for(var i = 0, len = $('.options .description').length; i < len; i+=1)  {
-        if($('.options .description').eq(i).outerHeight() > descriptions_height) {
-            descriptions_height = $('.options .description').eq(i).outerHeight();
+    for(var i = 0, len = $('.options-section .description').length; i < len; i+=1)  {
+        if($('.options-section .description').eq(i).outerHeight() > descriptions_height) {
+            descriptions_height = $('.options-section .description').eq(i).outerHeight();
         }
     }
-    $('.options .description').outerHeight(descriptions_height);
+    $('.options-section .description').outerHeight(descriptions_height);
 }
 
 //homepage parallax background
-function homepageHowToBecomeDentacoinDentistBackgroundParallax() {
+/*function homepageHowToBecomeDentacoinDentistBackgroundParallax() {
     if($('body').hasClass('home') && $('section.how-to-become-dentacoin-dentist-section').isInViewport() && !basic.isMobile()) {
         var current = $(window).scrollTop();
         var start = $('section.how-to-become-dentacoin-dentist-section').offset().top - $('section.how-to-become-dentacoin-dentist-section').outerHeight();
@@ -182,17 +182,31 @@ function homepageHowToBecomeDentacoinDentistBackgroundParallax() {
         }
         //$('.stella-artois-and-wimbledon .custom-widget').eq(i).css({'top' : (10 + 50 * (percentage / 100)) + '%'});
     }
-}
+}*/
 
 //external generated form
 if($('.show-external-form-button').length > 0) {
     $('.show-external-form-button').click(function() {
-        $('.hidden-external-form').addClass('visible');
+        $('.custom-popup.external-form').addClass('visible');
         $('body').addClass('overflow-hidden');
     });
 
-    $('.hidden-external-form .close-btn').click(function()    {
-        $('.hidden-external-form').removeClass('visible');
+    $('.custom-popup.external-form .close-btn').unbind().click(function()    {
+        $('.custom-popup.external-form').removeClass('visible');
+        $('body').removeClass('overflow-hidden');
+    });
+}
+
+if($('.open-video-popup').length > 0) {
+    $('.open-video-popup').click(function() {
+        $('.custom-popup.video .wrapper').html('<iframe src="https://www.youtube.com/embed/GntlhUrzqSw"></iframe>');
+        $('.custom-popup.video').addClass('visible');
+        $('body').addClass('overflow-hidden');
+    });
+
+    $('.custom-popup.video .close-btn').unbind().click(function()    {
+        $('.custom-popup.video .wrapper').html('');
+        $('.custom-popup.video').removeClass('visible');
         $('body').removeClass('overflow-hidden');
     });
 }/*

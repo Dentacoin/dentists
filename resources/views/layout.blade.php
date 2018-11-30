@@ -153,7 +153,7 @@
             </div>
         </div>
     </footer>
-    <div class="hidden-external-form">
+    <div class="custom-popup external-form">
         <div class="popup-body">
             <button type="button" class="close-btn" data-dismiss="modal" aria-hidden="true">×</button>
             <div class="wrapper">
@@ -163,6 +163,14 @@
                         formId: "0711fe44-e5c7-4536-beda-ac216a2b2b17"
                     });
                 </script>
+            </div>
+        </div>
+    </div>
+    <div class="custom-popup video">
+        <div class="popup-body">
+            <button type="button" class="close-btn" data-dismiss="modal" aria-hidden="true">×</button>
+            <div class="wrapper">
+
             </div>
         </div>
     </div>

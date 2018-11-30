@@ -181,12 +181,22 @@ body.home {
     figure {
         text-align: center;
     }
+    .single {
+        width: 20%;
+        padding-left: 10px;
+        padding-right: 10px;
+        @include breakpoint($sm-down) {
+            width: 100%;
+            padding-bottom: 25px;
+        }
+    }
 }
 .applications-section {
-    background-image: url('/assets/images/dentacoin-hub-background.jpg');
+    background-image: url('/assets/images/bg.svg');
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
+    position: relative;
     .list {
         button {
             margin-bottom: 25px;

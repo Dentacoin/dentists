@@ -1,4 +1,9 @@
 .download-assets {
+    .container {
+        @include breakpoint($lgl) {
+            width: 65% !important;
+        }
+    }
     .title {
         hr {
             border-color: #002248;

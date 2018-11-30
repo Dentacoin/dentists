@@ -569,7 +569,7 @@ main.main-container {
     }
 }
 
-.hidden-external-form {
+.custom-popup {
     visibility: hidden;
     z-index: 200;
     width: 100%;
@@ -578,6 +578,23 @@ main.main-container {
     position: fixed;
     top: 0;
     overflow: auto;
+    &.video {
+        .popup-body {
+            margin-top: 0;
+            margin-bottom: 0;
+            .wrapper {
+                width: 100%;
+                iframe {
+                    border: 0;
+                    width: 100%;
+                    height: 500px;
+                    @include breakpoint($xs) {
+                        height: 300px;
+                    }
+                }
+            }
+        }
+    }
     .popup-body {
         max-width: 700px;
         width: 90%;
