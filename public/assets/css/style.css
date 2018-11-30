@@ -4720,6 +4720,11 @@ header {
       padding-bottom: 10px;
       color: black;
       margin-left: 20px; }
+    @media screen and (max-width: 767px) {
+      header .btns-container.center-important {
+        text-align: center; }
+        header .btns-container.center-important .register {
+          padding: 5px 20px; } }
   @media screen and (max-width: 767px) {
     header > .container {
       width: 100%; } }

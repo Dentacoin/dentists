@@ -61,9 +61,9 @@
     <header>
         <div class="container">
             <div class="row fs-0">
-                <figure itemscope="" itemtype="http://schema.org/Organization" class="col-xs-4 inline-block">
+                <figure itemscope="" itemtype="http://schema.org/Organization" class="col-xs-3 inline-block">
                     <a itemprop="url" href="{{ route('home') }}" @if(!empty(Route::current())) @if(Route::current()->getName() == "home") tabindex="=-1" @endif @endif>
-                        <img src="{{URL::asset('assets/images/logo.svg') }}" itemprop="logo" class="max-width-50" alt="Dentacoin logo"/>
+                        <img src="{{URL::asset('assets/images/logo.svg') }}" itemprop="logo" class="max-width-50 max-width-xs-40" alt="Dentacoin logo"/>
                     </a>
                 </figure>
                 {{--<nav class="col-xs-8 inline-block">
@@ -75,18 +75,21 @@
                         </ul>
                     @endif
                 </nav>--}}
-                <div class="col-xs-8 inline-block btns-container">
-                    <a href="javascript:void(0)" class="white-dark-blue-btn show-external-form-button register inline-block">
-                        @if(isset($mobile))
-                            @if($mobile)
-                                INQUIRY
-                            @else
-                                SEND AN INQUIRY
-                            @endif
-                        @endif
-                    </a>
-                    <a href="javascript:void(0)" class="hamburger inline-block"><i class="fa fa-bars" aria-hidden="true"></i></a>
-                </div>
+                @if(isset($mobile))
+                    @if($mobile)
+                        <div class="col-xs-6 inline-block btns-container center-important">
+                            <a href="javascript:void(0)" class="white-dark-blue-btn show-external-form-button register inline-block">INQUIRY</a>
+                        </div>
+                        <div class="col-xs-3 inline-block btns-container">
+                            <a href="javascript:void(0)" class="hamburger inline-block"><i class="fa fa-bars" aria-hidden="true"></i></a>
+                        </div>
+                    @else
+                        <div class="col-xs-9 inline-block btns-container">
+                            <a href="javascript:void(0)" class="white-dark-blue-btn show-external-form-button register inline-block">SEND AN INQUIRY</a>
+                            <a href="javascript:void(0)" class="hamburger inline-block"><i class="fa fa-bars" aria-hidden="true"></i></a>
+                        </div>
+                    @endif
+                @endif
             </div>
         </div>
     </header>

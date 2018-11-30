@@ -1,5 +1,5 @@
 @extends("layout")
-@section("content")
+@section("content"){{--
     <section class="intro-section">
         <div class="container-fluid upper-box">
             <div class="row">
@@ -141,9 +141,9 @@
                 <h2 class="col-xs-12 fs-50 fs-xs-28 lato-light dark-blue text-center padding-top-30 padding-bottom-70 padding-bottom-xs-50 padding-top-xs-10 ">Dentacoin Network Speaking</h2>
             </div>
         </div>
-    </section>
+    </section>--}}
 
-    {{--{!! $sections[0]->html !!}--}}
+    {!! $sections[0]->html !!}
     <section class="container padding-bottom-70">
         <div class="row">
             <div class="col-xs-12">
@@ -196,29 +196,29 @@
             </div>
         </div>
     </section>
+    {!! $sections[1]->html !!}{{--
+
     <section class="two-dentists-section">
         <picture class="two-dentists">
             <source media="(max-width: 768px)" srcset="/assets/uploads/dentist-two-mobile.png" />
             <img alt="Two dentists" itemprop="contentUrl" src="/assets/uploads/two-dentists.png"/>
         </picture>
     </section>
-    {!! $sections[1]->html !!}
-
-
-    {{--<section class="options-section padding-top-30 padding-bottom-70 padding-bottom-xs-30">
+    <section class="options-section padding-top-30 padding-bottom-70 padding-bottom-xs-30">
         <div class="container">
             <div class="row text-center">
                 <div class="col-xs-12">
-                    <h2 class="fs-50 fs-xs-25 lato-light dark-blue text-center padding-bottom-50">How To Become a Dentacoin Dentist</h2>
+                    <h2 class="fs-50 fs-xs-28 lato-light dark-blue text-center padding-bottom-50 padding-bottom-xs-30 ">How To Become a Dentacoin Dentist</h2>
                 </div>
             </div>
+
             <div class="row text-center flex fs-0">
                 <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-4 col-md-offset-0 single">
                     <div class="blue-green fs-50 lato-black">01</div>
 
                     <div class="fs-18 lato-black padding-top-20 padding-bottom-20">Register on the Dentacoin Tools.</div>
 
-                    <div class="fs-18 padding-bottom-50 description">It&rsquo;s simple, fast and free! Our onboarding team will check your profile and contact you.</div>
+                    <div class="fs-18 fs-xs-16 padding-bottom-50 padding-bottom-xs-30 description">It&rsquo;s simple, fast and free! Our onboarding team will check your profile and contact you.</div>
 
                     <div class="btn-container padding-bottom-10"><a class="blue-border dark-blue-white-btn" href="//reviews.dentacoin.com/en/register" target="_blank">REGISTER</a></div>
                 </div>
@@ -228,7 +228,7 @@
 
                     <div class="fs-18 lato-black padding-top-20 padding-bottom-20">Accept Dentacoin for payments.</div>
 
-                    <div class="fs-18 padding-bottom-50 description">We deliver the payment infrastructure for your practice and guide you through the process.</div>
+                    <div class="fs-18 fs-xs-16 padding-bottom-50 padding-bottom-xs-30 description">We deliver the payment infrastructure for your practice and guide you through the process.</div>
 
                     <div class="btn-container padding-bottom-10"><a class="blue-border dark-blue-white-btn" href="/faq">LEARN MORE</a></div>
                 </div>
@@ -238,7 +238,7 @@
 
                     <div class="fs-18 lato-black padding-top-20 padding-bottom-20">Add the Dentacoin banner &amp; badge.</div>
 
-                    <div class="fs-18 padding-bottom-50 description">&hellip; to your website and social profiles. We&rsquo;ll also help promote your practice online for free!</div>
+                    <div class="fs-18 fs-xs-16 padding-bottom-50 padding-bottom-xs-30 description">&hellip; to your website and social profiles. We&rsquo;ll also help promote your practice online for free!</div>
 
                     <div class="btn-container padding-bottom-10"><a class="blue-border dark-blue-white-btn" href="/download-assets">DOWNLOAD ASSETS</a></div>
                 </div>
@@ -246,48 +246,48 @@
         </div>
     </section>
 
-    <section class="google-map-section padding-top-30" data-scroll-here="partners">
+    <section class="google-map-section padding-top-20 padding-top-xs-0" data-scroll-here="partners">
         <div class="container">
             <div class="row">
                 <div class="col-xs-12">
-                    <h2 class="fs-50 fs-xs-25 lato-light dark-blue text-center">Join The Largest Global Dental Community</h2>
+                    <h2 class="fs-50 fs-xs-28 lato-light dark-blue text-center">Join The Largest Global Dental Community</h2>
                 </div>
             </div>
         </div>
-        <iframe src="https://dentacoin.com/google-map-iframe"></iframe>
-    </section>
+        <iframe src="https://dentacoin.com/google-map-iframe"></iframe></section>
 
     <section class="below-options padding-top-80 padding-bottom-120 padding-top-xs-30 padding-bottom-xs-0 beige-bg" data-scroll-here="contacts">
         <div class="container">
             <div class="row text-center fs-0">
                 <div class="col-xs-12 col-sm-3 inline-block-bottom padding-bottom-xs-50">
-                    <figure itemscope="" itemtype="http://schema.org/ImageObject"><a class="display-block" download="" href="http://dentists.test/assets/uploads/dentacoin-fact-sheet.pdf"><img alt="" class="max-width-70 margin-bottom-15 margin-0-auto display-block" itemprop="contentUrl" src="/assets/uploads/assets1.svg" /> </a>
+                    <figure itemscope="" itemtype="http://schema.org/ImageObject"><a class="display-block" download="" href="http://dentists.test/assets/uploads/dentacoin-fact-sheet.pdf"><img alt="" class="max-width-60 max-width-xs-60 margin-bottom-15 margin-0-auto display-block" itemprop="contentUrl" src="/assets/uploads/assets1.svg" /> </a>
 
-                        <figcaption class="lato-semibold fs-20"><a class="display-block" download="" href="http://dentists.test/assets/uploads/dentacoin-fact-sheet.pdf">Download Brochure</a></figcaption>
+                        <figcaption class="lato-semibold fs-18"><a class="display-block" download="" href="http://dentists.test/assets/uploads/dentacoin-fact-sheet.pdf">Download Brochure</a></figcaption>
                         <a class="display-block" download="" href="http://dentists.test/assets/uploads/dentacoin-fact-sheet.pdf"> </a></figure>
                 </div>
 
                 <div class="col-xs-12 col-sm-3 inline-block-bottom padding-bottom-xs-50">
-                    <figure itemscope="" itemtype="http://schema.org/ImageObject"><a class="display-block open-video-popup" href="javascript:void(0);"><img alt="" class="max-width-120 margin-bottom-15 margin-0-auto display-block" itemprop="contentUrl" src="/assets/uploads/assets2.svg" /> </a>
-                        <figcaption class="lato-semibold fs-20">Watch Our Video</figcaption>
+                    <figure itemscope="" itemtype="http://schema.org/ImageObject"><a class="display-block open-video-popup" href="javascript:void(0);"><img alt="" class="max-width-120 max-width-xs-70 margin-bottom-15 margin-0-auto display-block" itemprop="contentUrl" src="/assets/uploads/assets2.svg" /> </a>
+
+                        <figcaption class="lato-semibold fs-18">Watch Our Video</figcaption>
                     </figure>
                 </div>
 
                 <div class="col-xs-12 col-sm-3 inline-block-bottom padding-bottom-xs-50">
-                    <figure itemscope="" itemtype="http://schema.org/ImageObject"><a class="display-block show-external-form-button" href="javascript:void(0)"><img alt="" class="max-width-110 margin-bottom-15 margin-0-auto display-block" itemprop="contentUrl" src="/assets/uploads/assets3.svg" /> </a>
+                    <figure itemscope="" itemtype="http://schema.org/ImageObject"><a class="display-block show-external-form-button" href="javascript:void(0)"><img alt="" class="max-width-110 max-width-xs-80 margin-bottom-15 margin-0-auto display-block" itemprop="contentUrl" src="/assets/uploads/assets3.svg" /> </a>
 
-                        <figcaption class="lato-semibold fs-20"><a class="display-block show-external-form-button" href="javascript:void(0)">Send an inquiry</a></figcaption>
+                        <figcaption class="lato-semibold fs-18"><a class="display-block show-external-form-button" href="javascript:void(0)">Send an inquiry</a></figcaption>
                         <a class="display-block show-external-form-button" href="javascript:void(0)"> </a></figure>
                 </div>
 
                 <div class="col-xs-12 col-sm-3 inline-block-bottom padding-bottom-xs-50">
-                    <figure itemscope="" itemtype="http://schema.org/ImageObject"><a class="display-block" href="/faq"><img alt="" class="max-width-100 margin-bottom-15 margin-0-auto display-block" itemprop="contentUrl" src="/assets/uploads/assets4.svg" /> </a>
+                    <figure itemscope="" itemtype="http://schema.org/ImageObject"><a class="display-block" href="/faq"><img alt="" class="max-width-100 max-width-xs-80 margin-bottom-15 margin-0-auto display-block" itemprop="contentUrl" src="/assets/uploads/assets4.svg" /> </a>
 
-                        <figcaption class="lato-semibold fs-20"><a class="display-block" href="/faq">FAQ</a></figcaption>
+                        <figcaption class="lato-semibold fs-18"><a class="display-block" href="/faq">FAQ</a></figcaption>
                         <a class="display-block" href="/faq"> </a></figure>
                 </div>
             </div>
         </div>
-    </section>--}}
-
+    </section>
+--}}
 @endsection
