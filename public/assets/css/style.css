@@ -4832,6 +4832,8 @@ footer .menu {
           font-size: 14px; }
         footer .menu ul li.separator {
           padding: 3px 0; } }
+footer .bottom-text a {
+  text-decoration: underline; }
 
 @media screen and (max-width: 767px) {
   body.home .modal-backdrop.in {
