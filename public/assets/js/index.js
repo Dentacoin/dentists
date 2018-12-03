@@ -76,6 +76,9 @@ function initCaptchaRefreshEvent()  {
                 type: 'GET',
                 url: '/refresh-captcha',
                 dataType: 'json',
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                },
                 success: function (response) {
                     $('.captcha-container span').html(response.captcha);
                 }
@@ -141,7 +144,7 @@ if($('body').hasClass('home')) {
             for(var i = 0, len = articles_arr.length; i < len; i+=1)    {
                 extra_html+='<li class="link"><a href="https://blog.dentacoin.com/'+articles_arr[i]['post_name']+'" target="_blank">'+articles_arr[i]['post_title']+'</a></li>';
             }
-            extra_html+='</ul><div class="see-all"><a href="https://blog.dentacoin.com/" class="white-blue-rounded-btn" target="_blank">GO TO ALL</a></div></div>';
+            extra_html+='</ul><div class="see-all"><a href="https://blog.dentacoin.com/" class="white-dark-blue-btn" target="_blank">GO TO ALL</a></div></div>';
         }
         var description = this_btn.attr('data-description');
         if(description != '') {
@@ -301,6 +304,7 @@ function fixButtonsFocus() {
 fixButtonsFocus();
 
 //checking if submitted email is valid
+/*
 function newsletterRegisterValidation() {
     $('.newsletter-register form').on('submit', function(event)  {
         var this_form = $(this);
@@ -327,4 +331,4 @@ function newsletterRegisterValidation() {
         }
     });
 }
-newsletterRegisterValidation();
+newsletterRegisterValidation();*/
