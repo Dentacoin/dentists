@@ -27,4 +27,11 @@ Route::group(['prefix' => '/', 'middleware' => 'frontEndMiddleware'], function (
 
     //======================================= AJAX ========================================
 
+
+    //======================================= REDIRECTS ========================================
+
+    Route::get('answers', function() {
+        return Redirect::to('/faq');
+    });
+
 });
