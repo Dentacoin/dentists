@@ -1,4 +1,5 @@
 footer {
+    padding-bottom: 12%;
     .newsletter-register {
         padding-bottom: 30px;
         .email-octopus-success-message {
@@ -140,5 +141,8 @@ footer {
         a {
             text-decoration: underline;
         }
+    }
+    @include breakpoint($xs) {
+        padding-bottom: 200px;
     }
 }

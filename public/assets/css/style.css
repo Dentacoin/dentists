@@ -4607,6 +4607,30 @@ nav.sidenav {
     nav.sidenav {
       width: 100%; } }
 
+.bottom-fixed-banner {
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  z-index: 1000000; }
+  .bottom-fixed-banner .close-btn {
+    top: 35%;
+    right: 15px;
+    background-color: white;
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    line-height: 25px;
+    font-size: 20px;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    border-radius: 50%;
+    -webkit-box-shadow: 0 0px 10px 0 rgba(0, 0, 0, 0.5);
+    -moz-box-shadow: 0 0px 10px 0 rgba(0, 0, 0, 0.5);
+    -ms-box-shadow: 0 0px 10px 0 rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0px 10px 0 rgba(0, 0, 0, 0.5); }
+
 .white-dark-blue-btn {
   font-size: 20px;
   color: white;
@@ -4729,111 +4753,116 @@ header {
     header > .container {
       width: 100%; } }
 
-footer .newsletter-register {
-  padding-bottom: 30px; }
-  footer .newsletter-register .email-octopus-success-message {
-    color: #3c763d;
-    font-size: 18px;
-    text-align: center;
-    font-family: 'Calibri-Bold'; }
-  footer .newsletter-register .email-octopus-error-message {
-    color: red;
-    font-size: 18px;
-    text-align: center;
-    font-family: 'Calibri-Bold'; }
-  footer .newsletter-register form .form-row {
-    padding-top: 10px; }
-    footer .newsletter-register form .form-row input[type='email'] {
-      width: 70%;
-      font-size: 16px;
-      padding: 5px 10px;
-      border-top: 1px solid #aaaaaa;
-      border-bottom: 1px solid #aaaaaa;
-      border-left: 1px solid #aaaaaa;
-      border-right: 0;
-      -webkit-border-radius: 4px 0 0 4px;
-      -moz-border-radius: 4px 0 0 4px;
-      -ms-border-radius: 4px 0 0 4px;
-      border-radius: 4px 0 0 4px; }
-    footer .newsletter-register form .form-row button[type='submit'] {
-      width: 30%;
-      font-size: 16px;
-      background-color: #aaaaaa;
-      border: 1px solid #aaaaaa;
-      -webkit-border-radius: 0 4px 4px 0;
-      -moz-border-radius: 0 4px 4px 0;
-      -ms-border-radius: 0 4px 4px 0;
-      border-radius: 0 4px 4px 0; }
-    footer .newsletter-register form .form-row .checkbox-wrapper {
-      width: 20px; }
-    footer .newsletter-register form .form-row label {
-      width: calc(100% - 20px);
-      font-size: 14px;
-      cursor: pointer; }
-      footer .newsletter-register form .form-row label a {
-        text-decoration: underline; }
-    @media screen and (max-width: 767px) {
+footer {
+  padding-bottom: 12%; }
+  footer .newsletter-register {
+    padding-bottom: 30px; }
+    footer .newsletter-register .email-octopus-success-message {
+      color: #3c763d;
+      font-size: 18px;
+      text-align: center;
+      font-family: 'Calibri-Bold'; }
+    footer .newsletter-register .email-octopus-error-message {
+      color: red;
+      font-size: 18px;
+      text-align: center;
+      font-family: 'Calibri-Bold'; }
+    footer .newsletter-register form .form-row {
+      padding-top: 10px; }
       footer .newsletter-register form .form-row input[type='email'] {
-        width: 65%;
+        width: 70%;
         font-size: 16px;
-        font-family: 'Calibri-Bold'; }
+        padding: 5px 10px;
+        border-top: 1px solid #aaaaaa;
+        border-bottom: 1px solid #aaaaaa;
+        border-left: 1px solid #aaaaaa;
+        border-right: 0;
+        -webkit-border-radius: 4px 0 0 4px;
+        -moz-border-radius: 4px 0 0 4px;
+        -ms-border-radius: 4px 0 0 4px;
+        border-radius: 4px 0 0 4px; }
       footer .newsletter-register form .form-row button[type='submit'] {
-        width: 35%;
+        width: 30%;
         font-size: 16px;
-        font-family: 'Calibri-Bold'; } }
-  footer .newsletter-register form.not-valid input[type='email'], footer .newsletter-register form.not-valid button[type='submit'] {
-    border-color: red;
-    border-width: 2px; }
-  footer .newsletter-register form.not-valid .alert {
-    margin-top: 5px;
-    margin-bottom: 10px; }
-  @media screen and (max-width: 991px) {
-    footer .newsletter-register {
-      padding-top: 10px; } }
-  @media screen and (max-width: 767px) {
-    footer .newsletter-register {
-      padding-bottom: 10px; } }
-footer .socials {
-  text-align: center;
-  padding-top: 30px;
-  padding-bottom: 30px; }
-  footer .socials ul li {
-    padding: 0 10px; }
-    footer .socials ul li img {
-      width: 25px; }
-  @media screen and (max-width: 991px) {
+        background-color: #aaaaaa;
+        border: 1px solid #aaaaaa;
+        -webkit-border-radius: 0 4px 4px 0;
+        -moz-border-radius: 0 4px 4px 0;
+        -ms-border-radius: 0 4px 4px 0;
+        border-radius: 0 4px 4px 0; }
+      footer .newsletter-register form .form-row .checkbox-wrapper {
+        width: 20px; }
+      footer .newsletter-register form .form-row label {
+        width: calc(100% - 20px);
+        font-size: 14px;
+        cursor: pointer; }
+        footer .newsletter-register form .form-row label a {
+          text-decoration: underline; }
+      @media screen and (max-width: 767px) {
+        footer .newsletter-register form .form-row input[type='email'] {
+          width: 65%;
+          font-size: 16px;
+          font-family: 'Calibri-Bold'; }
+        footer .newsletter-register form .form-row button[type='submit'] {
+          width: 35%;
+          font-size: 16px;
+          font-family: 'Calibri-Bold'; } }
+    footer .newsletter-register form.not-valid input[type='email'], footer .newsletter-register form.not-valid button[type='submit'] {
+      border-color: red;
+      border-width: 2px; }
+    footer .newsletter-register form.not-valid .alert {
+      margin-top: 5px;
+      margin-bottom: 10px; }
+    @media screen and (max-width: 991px) {
+      footer .newsletter-register {
+        padding-top: 10px; } }
+    @media screen and (max-width: 767px) {
+      footer .newsletter-register {
+        padding-bottom: 10px; } }
+  footer .socials {
+    text-align: center;
+    padding-top: 30px;
+    padding-bottom: 30px; }
     footer .socials ul li {
-      padding: 0 10px 10px; } }
+      padding: 0 10px; }
+      footer .socials ul li img {
+        width: 25px; }
+    @media screen and (max-width: 991px) {
+      footer .socials ul li {
+        padding: 0 10px 10px; } }
+    @media screen and (max-width: 767px) {
+      footer .socials {
+        padding-bottom: 20px;
+        padding-top: 20px; }
+        footer .socials ul {
+          font-size: 0; }
+          footer .socials ul li {
+            width: 20%; } }
+  footer .menu {
+    text-align: center;
+    padding-bottom: 30px; }
+    footer .menu ul li {
+      padding: 0 20px; }
+      footer .menu ul li a {
+        color: #3e3e3e;
+        font-size: 20px;
+        font-weight: bold; }
+        footer .menu ul li a:hover {
+          text-decoration: underline; }
+    @media screen and (max-width: 767px) {
+      footer .menu {
+        padding-bottom: 20px; }
+        footer .menu ul li {
+          padding: 3px 10px; }
+          footer .menu ul li a {
+            font-size: 14px; }
+          footer .menu ul li.separator {
+            padding: 3px 0; } }
+  footer .bottom-text a {
+    text-decoration: underline; }
   @media screen and (max-width: 767px) {
-    footer .socials {
-      padding-bottom: 20px;
-      padding-top: 20px; }
-      footer .socials ul {
-        font-size: 0; }
-        footer .socials ul li {
-          width: 20%; } }
-footer .menu {
-  text-align: center;
-  padding-bottom: 30px; }
-  footer .menu ul li {
-    padding: 0 20px; }
-    footer .menu ul li a {
-      color: #3e3e3e;
-      font-size: 20px;
-      font-weight: bold; }
-      footer .menu ul li a:hover {
-        text-decoration: underline; }
-  @media screen and (max-width: 767px) {
-    footer .menu {
-      padding-bottom: 20px; }
-      footer .menu ul li {
-        padding: 3px 10px; }
-        footer .menu ul li a {
-          font-size: 14px; }
-        footer .menu ul li.separator {
-          padding: 3px 0; } }
-footer .bottom-text a {
-  text-decoration: underline; }
+    footer {
+      padding-bottom: 200px; } }
 
 @media screen and (max-width: 767px) {
   body.home .modal-backdrop.in {
