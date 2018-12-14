@@ -199,15 +199,6 @@
             </div>
         @endif
     </div>
-    <section class="bottom-fixed-banner">
-        <button type="button" class="close-btn">×</button>
-        <a href="//ids.dentacoin.com/" target="_blank">
-            <picture class="two-dentists">
-                <source media="(max-width: 768px)" srcset="/assets/uploads/ids-banner-mobile.png" />
-                <img alt="Ids banner" itemprop="contentUrl" src="/assets/uploads/ids-banner.png"/>
-            </picture>
-        </a>
-    </section>
     <div class="custom-popup external-form" id="custom-popup">
         <div class="popup-body">
             <button type="button" class="close-btn" data-dismiss="modal" aria-hidden="true">×</button>
