@@ -4526,32 +4526,6 @@ main.main-container {
         -ms-box-shadow: none;
         box-shadow: none; } }
 
-.privacy-policy-cookie {
-  padding-top: 20px;
-  padding-bottom: 20px;
-  background-color: rgba(10, 10, 10, 0.7);
-  color: white;
-  position: fixed;
-  width: 100%;
-  bottom: 0;
-  left: 0;
-  z-index: 999999;
-  font-size: 0; }
-  .privacy-policy-cookie .text {
-    font-size: 16px;
-    width: calc(100% - 100px); }
-    .privacy-policy-cookie .text .link {
-      font-weight: bold;
-      color: white;
-      text-decoration: underline; }
-  .privacy-policy-cookie .button {
-    width: 100px; }
-    .privacy-policy-cookie .button a {
-      display: block;
-      text-align: center;
-      font-size: 16px;
-      padding: 10px 0; }
-
 nav.sidenav {
   position: fixed;
   z-index: 105;
@@ -4607,13 +4581,13 @@ nav.sidenav {
     nav.sidenav {
       width: 100%; } }
 
-.bottom-fixed-banner {
+.bottom-fixed-container {
   position: fixed;
   width: 100%;
   bottom: 0;
   left: 0;
   z-index: 1000000; }
-  .bottom-fixed-banner .close-btn {
+  .bottom-fixed-container .banner .close-btn {
     top: 35%;
     right: 15px;
     background-color: white;
@@ -4630,6 +4604,27 @@ nav.sidenav {
     -moz-box-shadow: 0 0px 10px 0 rgba(0, 0, 0, 0.5);
     -ms-box-shadow: 0 0px 10px 0 rgba(0, 0, 0, 0.5);
     box-shadow: 0 0px 10px 0 rgba(0, 0, 0, 0.5); }
+  .bottom-fixed-container .privacy-policy-cookie {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-color: rgba(10, 10, 10, 0.7);
+    color: white;
+    width: 100%;
+    font-size: 0; }
+    .bottom-fixed-container .privacy-policy-cookie .text {
+      font-size: 16px;
+      width: calc(100% - 100px); }
+      .bottom-fixed-container .privacy-policy-cookie .text .link {
+        font-weight: bold;
+        color: white;
+        text-decoration: underline; }
+    .bottom-fixed-container .privacy-policy-cookie .button {
+      width: 100px; }
+      .bottom-fixed-container .privacy-policy-cookie .button a {
+        display: block;
+        text-align: center;
+        font-size: 16px;
+        padding: 10px 0; }
 
 .white-dark-blue-btn {
   font-size: 20px;

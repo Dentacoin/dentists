@@ -668,37 +668,6 @@ main.main-container {
     }
 }
 
-.privacy-policy-cookie {
-    padding-top: 20px;
-    padding-bottom: 20px;
-    background-color: rgba(10, 10, 10, .7);
-    color: white;
-    position: fixed;
-    width: 100%;
-    bottom: 0;
-    left: 0;
-    z-index: 999999;
-    font-size: 0;
-    .text {
-        font-size: 16px;
-        width: calc(100% - 100px);
-        .link {
-            font-weight: bold;
-            color: white;
-            text-decoration: underline;
-        }
-    }
-    .button {
-        width: 100px;
-        a {
-            display: block;
-            text-align: center;
-            font-size: 16px;
-            padding: 10px 0;
-        }
-    }
-}
-
 nav.sidenav {
     position: fixed;
     z-index: 105;
@@ -752,24 +721,53 @@ nav.sidenav {
     }
 }
 
-.bottom-fixed-banner {
+
+.bottom-fixed-container {
     position: fixed;
     width: 100%;
     bottom: 0;
     left: 0;
     z-index: 1000000;
-    .close-btn {
-        top: 35%;
-        right: 15px;
-        background-color: white;
-        position: absolute;
-        width: 25px;
-        height: 25px;
-        line-height: 25px;
-        font-size: 20px;
-        @include rounded(50%);
-        @include box-shadow(0 0px 10px 0 rgba(0, 0, 0, 0.5));
-        @include breakpoint($xs) {
+    .banner {
+        .close-btn {
+            top: 35%;
+            right: 15px;
+            background-color: white;
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            line-height: 25px;
+            font-size: 20px;
+            @include rounded(50%);
+            @include box-shadow(0 0px 10px 0 rgba(0, 0, 0, 0.5));
+            @include breakpoint($xs) {
+            }
         }
+    }
+    .privacy-policy-cookie {
+         padding-top: 20px;
+         padding-bottom: 20px;
+         background-color: rgba(10, 10, 10, .7);
+         color: white;
+         width: 100%;
+         font-size: 0;
+         .text {
+             font-size: 16px;
+             width: calc(100% - 100px);
+             .link {
+                 font-weight: bold;
+                 color: white;
+                 text-decoration: underline;
+             }
+         }
+         .button {
+             width: 100px;
+             a {
+                 display: block;
+                 text-align: center;
+                 font-size: 16px;
+                 padding: 10px 0;
+             }
+         }
     }
 }
