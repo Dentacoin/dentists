@@ -203,6 +203,7 @@
         <div class="popup-body">
             <button type="button" class="close-btn" data-dismiss="modal" aria-hidden="true">×</button>
             <div class="wrapper">
+                <div class="text-center fs-26 padding-bottom-30 lato-black">Send Your Inquiry</div>
                 <script>
                     hbspt.forms.create({
                         portalId: "4097841",
