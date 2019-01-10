@@ -138,6 +138,7 @@ if($('body').hasClass('home')) {
     $('.single-application').click(function()   {
         var this_btn = $(this).find('.wrapper');
         var extra_html = '';
+        var media_html = '';
         if(this_btn.attr('data-articles') != undefined)    {
             extra_html+='<div class="extra-html"><div class="extra-title">Latest Blog articles:</div><ul>';
             var articles_arr = $.parseJSON(this_btn.attr('data-articles'));
@@ -150,8 +151,16 @@ if($('body').hasClass('home')) {
         if(description != '') {
             description = $.parseJSON(description);
         }
-        var html = '<div class="container-fluid"><div class="row"><figure class="col-sm-6 gif"><img src="'+this_btn.attr('data-image')+'?'+new Date().getTime()+'" alt="'+this_btn.attr('data-image-alt')+'"/></figure><div class="col-sm-6 col-xs-12 content"><figure class="logo"><img src="'+this_btn.attr('data-popup-logo')+'" alt="'+this_btn.attr('data-popup-logo-alt')+'"/></figure><div class="title">'+this_btn.find('figcaption').html()+'</div><div class="description">'+description+'</div>'+extra_html+'</div></div></div>';
+
+        if(['mp4', 'avi'].indexOf(this_btn.attr('data-image-type')) > -1) {
+            media_html+='<div itemprop="video" itemscope="" itemtype="http://schema.org/VideoObject" class="col-sm-6 video"><video autoplay loop muted controls="false"><source src="'+this_btn.attr('data-image')+'" type="video/'+this_btn.attr('data-image-type')+'"></video><meta itemprop="name" content="'+this_btn.attr('data-title')+'"><meta itemprop="uploadDate" content="'+this_btn.attr('data-upload-date')+'"></div>';
+        }else {
+            media_html+='<figure class="col-sm-6 gif"><img src="'+this_btn.attr('data-image')+'?'+new Date().getTime()+'" alt="'+this_btn.attr('data-image-alt')+'"/></figure>';
+        }
+
+        var html = '<div class="container-fluid"><div class="row">'+media_html+'<div class="col-sm-6 col-xs-12 content"><figure class="logo"><img src="'+this_btn.attr('data-popup-logo')+'" alt="'+this_btn.attr('data-popup-logo-alt')+'"/></figure><div class="title">'+this_btn.find('figcaption').html()+'</div><div class="description">'+description+'</div>'+extra_html+'</div></div></div>';
         basic.showDialog(html, 'application-popup', this_btn.attr('data-slug'));
+        $('.application-popup video').removeAttr('controls');
     });
 }else if($('body').hasClass('faq')) {
     if($('.list .question').length > 0) {

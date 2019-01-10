@@ -14,6 +14,7 @@ class HomeController extends Controller
         foreach($applications as $application) {
             $application->logo_url = DB::connection('mysql2')->table('media')->where('id', $application->logo_id)->select('media.name')->get()->first()->name;
             $application->media_url = DB::connection('mysql2')->table('media')->where('id', $application->media_id)->select('media.name')->get()->first()->name;
+            $application->media_created_at = DB::connection('mysql2')->table('media')->where('id', $application->media_id)->select('media.created_at')->get()->first()->created_at;
             $application->popup_logo_url = DB::connection('mysql2')->table('media')->where('id', $application->popup_logo_id)->select('media.name')->get()->first()->name;
         }
         return view('pages/homepage', ['testimonials' => $testimonials, 'applications' => $applications, 'latest_blog_articles' => $latest_blog_articles]);

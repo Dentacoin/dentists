@@ -4409,6 +4409,8 @@ main.main-container {
       -moz-box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.2);
       -ms-box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.2);
       box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.2); }
+    .bootbox.application-popup .modal-dialog .container-fluid .video video {
+      width: 100%; }
 @media screen and (max-width: 991px) {
   .bootbox.application-popup .modal-dialog {
     width: 90%;
@@ -4445,7 +4447,7 @@ main.main-container {
           margin: 0 auto; }
         .bootbox.application-popup .modal-dialog .container-fluid .content .description {
           text-align: left; }
-      .bootbox.application-popup .modal-dialog .container-fluid .gif {
+      .bootbox.application-popup .modal-dialog .container-fluid .gif, .bootbox.application-popup .modal-dialog .container-fluid .video {
         display: none; } }
 
 @media screen and (min-width: 1399px) {
@@ -4454,7 +4456,7 @@ main.main-container {
     max-width: 1700px; } }
 .custom-popup {
   visibility: hidden;
-  z-index: 200;
+  z-index: 1045;
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.4);
@@ -4586,7 +4588,7 @@ nav.sidenav {
   width: 100%;
   bottom: 0;
   left: 0;
-  z-index: 1000000; }
+  z-index: 1035; }
   .bottom-fixed-container .banner .close-btn {
     top: 35%;
     right: 15px;

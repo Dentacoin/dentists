@@ -75,6 +75,11 @@ return [
             'database'  => env('DB_DATABASE_THIRD'),
             'username'  => env('DB_USERNAME_THIRD'),
             'password'  => env('DB_PASSWORD_THIRD'),
+            'charset' => 'utf8mb4',
+            'collation' => 'utf8mb4_unicode_ci',
+            'prefix' => '',
+            'strict' => false,
+            'engine' => 'InnoDB',
         ],
 
         'pgsql' => [
