@@ -4846,9 +4846,11 @@ footer {
     padding-bottom: 30px; }
     footer .menu ul li {
       padding: 0 20px; }
+      footer .menu ul li.separator {
+        padding: 0 5px; }
       footer .menu ul li a {
         color: #3e3e3e;
-        font-size: 20px;
+        font-size: 18px;
         font-weight: bold; }
         footer .menu ul li a:hover {
           text-decoration: underline; }
