@@ -40,6 +40,12 @@
   src: url("/assets/fonts/calibril.eot?#iefix") format("embedded-opentype"), url("/assets/fonts/calibril.woff2") format("woff2"), url("/assets/fonts/calibril.woff") format("woff"), url("/assets/fonts/calibril.ttf") format("truetype");
   font-weight: normal;
   font-style: normal; }
+@font-face {
+  font-family: "Calibri-Regular";
+  src: url("/assets/fonts/Calibri.eot");
+  src: url("/assets/fonts/Calibri.eot?#iefix") format("embedded-opentype"), url("/assets/fonts/Calibri.woff2") format("woff2"), url("/assets/fonts/Calibri.woff") format("woff"), url("/assets/fonts/Calibri.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal; }
 .lato-semibold {
   font-family: "Lato-Semibold"; }
 
@@ -5016,11 +5022,11 @@ footer {
       .testimonials-slider-section .single-testimonial .img-title-job .title-job .job {
         color: #777777;
         font-size: 14px;
-        font-family: Calibri; }
+        font-family: "Calibri-Regular"; }
   .testimonials-slider-section .single-testimonial .description {
     padding-top: 5px;
     font-size: 16px;
-    font-family: Calibri;
+    font-family: "Calibri-Regular";
     color: #3e3e3e; }
 
 .below-testimonials-section figure {
