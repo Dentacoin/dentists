@@ -177,15 +177,6 @@
         </div>
     </footer>
     <div class="bottom-fixed-container">
-        <section class="banner">
-            <button type="button" class="close-btn">×</button>
-            <a href="//ids.dentacoin.com/" target="_blank">
-                <picture class="two-dentists">
-                    <source media="(max-width: 768px)" srcset="/assets/uploads/ids-banner-mobile.png" />
-                    <img alt="Ids banner" itemprop="contentUrl" src="/assets/uploads/ids-banner.png"/>
-                </picture>
-            </a>
-        </section>
         @if(!empty($privacy_policy_cookie))
             <div class="privacy-policy-cookie">
                 <div class="container">
