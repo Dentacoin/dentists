@@ -4474,12 +4474,11 @@ main.main-container {
     margin-bottom: 0; }
     .custom-popup.video .popup-body .wrapper {
       width: 100%; }
-      .custom-popup.video .popup-body .wrapper iframe {
-        border: 0;
+      .custom-popup.video .popup-body .wrapper video {
         width: 100%;
         height: 500px; }
         @media screen and (max-width: 767px) {
-          .custom-popup.video .popup-body .wrapper iframe {
+          .custom-popup.video .popup-body .wrapper video {
             height: 300px; } }
   .custom-popup .popup-body {
     max-width: 700px;
