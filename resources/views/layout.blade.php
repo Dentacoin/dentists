@@ -97,7 +97,7 @@
                 <h2 class="fs-50 lato-light dark-blue text-center col-xs-12 padding-bottom-50">Subscribe</h2>
             </div>
             <div class="row newsletter-register">
-                <div class="col-xs-12 text-center padding-top-50">
+                <div class="col-xs-12 text-center">
                     <div id="mc_embed_signup">
                         <form action="https://dentacoin.us16.list-manage.com/subscribe/post?u=61ace7d2b009198ca373cb213&amp;id=cd60f60a48" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
                             <div id="mc_embed_signup_scroll">
