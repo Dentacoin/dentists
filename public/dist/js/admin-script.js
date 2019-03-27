@@ -3,7 +3,7 @@ var basic = {
         alert: null
     },
     init: function(opt) {
-        basic.addCsrfTokenToAllAjax();
+        //basic.addCsrfTokenToAllAjax();
         //basic.stopMaliciousInspect();
     },
     cookies: {
@@ -369,6 +369,9 @@ function initDataTable()    {
                     'order_object' : order_object
                 },
                 dataType: 'json',
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                },
                 success: function (response) {
                     if(response.success)    {
                         basic.showAlert(response.success, '', true);
@@ -446,6 +449,9 @@ function openMedia(id, close_btn, type, editor)    {
         url: SITE_URL + '/media/open',
         data: data,
         dataType: 'json',
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        },
         success: function (response) {
             console.log(response.success);
             if(response.success) {
@@ -545,6 +551,9 @@ if($('.refresh-captcha').length > 0)    {
             type: 'GET',
             url: '/refresh-captcha',
             dataType: 'json',
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            },
             success: function (response) {
                 $('.captcha-container span').html(response.captcha);
             }
@@ -580,6 +589,9 @@ if($('.add-edit-menu-element select[name="type"]').length > 0) {
                 'type' : type
             },
             dataType: 'json',
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            },
             success: function (response) {
                 if(response.success) {
                     $('.add-edit-menu-element .type-result').html(response.success);
