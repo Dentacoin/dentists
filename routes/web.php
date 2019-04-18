@@ -20,6 +20,7 @@ Route::group(['prefix' => '/', 'middleware' => 'frontEndMiddleware'], function (
     Route::get('/', 'HomeController@getView')->name('home');
 
     Route::get('/test123', function() {
+        var_dump(getenv('APP_KEY'));
         var_dump(session('logged_user'));
         die('asd');
     })->name('test123');
