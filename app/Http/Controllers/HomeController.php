@@ -19,5 +19,14 @@ class HomeController extends Controller
         }
         return view('pages/homepage', ['testimonials' => $testimonials, 'applications' => $applications, 'latest_blog_articles' => $latest_blog_articles]);
     }
+
+    protected function test() {
+        if(!empty(session('logged_user'))) {
+            return view('session');
+        } else {
+            return view('no-session');
+        }
+
+    }
 }
 
