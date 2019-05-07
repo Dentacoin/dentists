@@ -472,6 +472,7 @@ class APIRequestsController extends Controller {
 
         //$resp = json_decode(curl_exec($curl));
         $resp = curl_exec($curl);
+        var_dump($token);
         var_dump($resp);
         die();
 
