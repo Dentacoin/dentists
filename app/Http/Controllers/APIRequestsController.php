@@ -457,14 +457,18 @@ class APIRequestsController extends Controller {
         curl_setopt_array($curl, array(
             CURLOPT_RETURNTRANSFER => 1,
             CURLOPT_POST => 1,
-            CURLOPT_URL => 'https://api.dentacoin.com/api/validateCivicToken',
+            CURLOPT_URL => 'https://api.dentacoin.com/api/kyc/',
             CURLOPT_SSL_VERIFYPEER => 0,
             CURLOPT_POSTFIELDS => array(
-                'token' => $token
+                'jwtToken' => $token
             )
         ));
 
-        $resp = json_decode(curl_exec($curl));
+        //$resp = json_decode(curl_exec($curl));
+        $resp = curl_exec($curl);
+        var_dump($resp);
+        die();
+
         curl_close($curl);
         if(!empty($resp))   {
             return $resp;
