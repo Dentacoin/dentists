@@ -162,8 +162,7 @@
                     @if(!empty(Route::current()) && in_array(Route::current()->getName(), array('my-profile', 'edit-account', 'manage-privacy', 'my-contracts')))
                         <div class="col-xs-9 inline-block text-right logged-user-right-nav @if(Route::current()->getName() != 'home' && (new \App\Http\Controllers\UserController())->checkSession()) with-hub @endif">
                             @include('partials.logged-user-header-hidden-box-partial')
-
-                            <a href="javascript:void(0)" class="logged-user-hamburger inline-block padding-left-10"><i class="fa fa-bars fs-32 dark-color" aria-hidden="true"></i></a>
+                            <a href="javascript:void(0)" class="logged-user-hamburger show-on-mobile inline-block padding-left-10"><i class="fa fa-bars fs-32 dark-color" aria-hidden="true"></i></a>
                         </div>
                     @else
                         @include('partials.logged-user-desktop-header-menu', ['profile_pages' => false])
