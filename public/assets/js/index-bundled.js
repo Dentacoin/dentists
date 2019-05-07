@@ -65266,7 +65266,12 @@ async function loggedOrNotLogic() {
                                                 window.location.reload();
                                             }, 2000);
                                         } else if(inner_response.error) {
-                                            basic.showAlert(inner_response.error, '', true);
+                                            $('.response-layer').hide();
+                                            var error_html = '';
+                                            for (var key in inner_response.error) {
+                                                error_html += inner_response.error[key] + '<br>';
+                                            }
+                                            basic.showAlert(error_html, '', true);
                                         }
                                     }
                                 });
