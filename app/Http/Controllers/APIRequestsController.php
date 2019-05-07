@@ -452,6 +452,11 @@ class APIRequestsController extends Controller {
     }
 
     public function validateCivicToken($token) {
+        $header = array();
+        $header[] = 'Accept: */*';
+        $header[] = 'Authorization: Bearer ' . session('logged_user')['token'];
+        $header[] = 'Cache-Control: no-cache';
+
         $curl = curl_init();
 
         curl_setopt_array($curl, array(
@@ -461,7 +466,8 @@ class APIRequestsController extends Controller {
             CURLOPT_SSL_VERIFYPEER => 0,
             CURLOPT_POSTFIELDS => array(
                 'jwtToken' => $token
-            )
+            ),
+            CURLOPT_HTTPHEADER => $header
         ));
 
         //$resp = json_decode(curl_exec($curl));
