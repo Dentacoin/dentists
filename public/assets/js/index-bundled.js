@@ -64267,7 +64267,7 @@ if($('body').hasClass('home') || $('body').hasClass('logged-home')) {
         $(document).unbind('mousemove', imageFollowingCursorPosition);
     });
 
-    function imageFollowingCursorPosition(event) { 
+    function imageFollowingCursorPosition(event) {
         $('.below-options .single-option.active .image-shown-on-hover').addClass('active').offset({top: event.pageY + 5, left: event.pageX + 5});
     }
 
@@ -65242,7 +65242,7 @@ async function loggedOrNotLogic() {
                 if(event.response_data) {
                     $.ajax({
                         type: 'POST',
-                        url: 'https://dentacoin.net/civic',
+                        url: 'https://civic.dentacoin.net/civic',
                         dataType: 'json',
                         data: {
                             jwtToken: event.response_data
