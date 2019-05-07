@@ -16,15 +16,19 @@ header {
         padding-top: 10px;
         padding-bottom: 10px;
     }
+    .hamburger {
+        font-size: 34px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        color: black;
+        margin-left: 20px;
+        @include breakpoint($xs) {
+            font-size: 26px;
+            margin-left: 10px;
+        }
+    }
     .btns-container {
         text-align: right;
-        .hamburger {
-            font-size: 34px;
-            padding-top: 10px;
-            padding-bottom: 10px;
-            color: black;
-            margin-left: 20px;
-        }
         &.center-important {
             @include breakpoint($xs) {
                 text-align: center;
@@ -34,9 +38,202 @@ header {
             }
         }
     }
+    .show-on-mobile {
+        display: none;
+        @include breakpoint($sm-down) {
+            display: inline-block;
+        }
+    }
+    .hide-on-mobile {
+        @include breakpoint($sm-down) {
+            display: none;
+        }
+    }
+    .logged-user-right-nav {
+        > .hidden-box-parent {
+            color: black;
+            font-size: 0;
+            display: inline-block;
+            padding: 15px 0;
+            position: relative;
+            cursor: pointer;
+            > span.user-name {
+                vertical-align: middle;
+                padding-top: 25px;
+                padding-bottom: 25px;
+                @include breakpoint($xs) {
+                    font-size: 14px;
+                }
+            }
+            figure.header-avatar {
+                width: 50px;
+                overflow: hidden;
+                @include rounded(50%);
+            }
+        }
+        .up-arrow {
+            color: white;
+            position: absolute;
+            top: calc(100% - 15px);
+            font-size: 16px;
+            z-index: 5000000000;
+            right: 10px;
+            display: none;
+            &.show-this {
+                display: block;
+            }
+        }
+        .hidden-box {
+            display: none;
+            visibility: hidden;
+            position: absolute;
+            min-width: 270px;
+            max-width: 450px;
+            top: 100%;
+            right: -30px;
+            background-color: white;
+            overflow: hidden;
+            z-index: 50;
+            @include box-shadow(0px 0px 7px 1px rgba(0, 0, 0, 0.5));
+            @include rounded(15px);
+            .hidden-box-hub {
+                background-image: url('/assets/images/dentacoin-ecosystem-background.jpg');
+                background-position: center center;
+                background-repeat: no-repeat;
+                background-size: cover;
+                position: relative;
+                padding: 30px 50px 15px;
+                text-align: left;
+                .close-btn {
+                    display: none;
+                    text-align: right;
+                    padding-bottom: 15px;
+                    a {
+                        font-size: 20px;
+                        color: white;
+                        span {
+                            background: white;
+                            color: black;
+                            width: 25px;
+                            height: 25px;
+                            display: inline-block;
+                            text-align: center;
+                            line-height: 25px;
+                            @include rounded(50%);
+                        }
+                    }
+                }
+                @include breakpoint($xs) {
+                    .close-btn {
+                        display: block;
+                    }
+                }
+            }
+            .hidden-box-footer {
+                padding-top: 10px;
+                padding-bottom: 10px;
+                background: white;
+                .white-dark-blue-btn {
+                    padding: 7px 15px;
+                }
+                .logout {
+                    font-size: 16px;
+                    color: black;
+                    i {
+                        font-size: 24px;
+                        vertical-align: middle;
+                        margin-right: 5px;
+                    }
+                }
+            }
+            &.show-this {
+                display: block;
+                visibility: visible;
+            }
+        }
+        &.with-hub {
+            .hidden-box {
+                width: 450px;
+            }
+            .up-arrow {
+                color: #669ccc;
+            }
+        }
+        @include breakpoint($xs) {
+            .hidden-box {
+                width: 270px;
+            }
+            &.with-hub {
+                position: static;
+                > .hidden-box-parent {
+                    position: static;
+                    .up-arrow {
+                        display: none;
+                    }
+                    .hidden-box {
+                        min-width: 0;
+                        max-width: none;
+                        width: 100%;
+                        top: 0;
+                        left: 0;
+                        height: 100vh;
+                        background-color: rgba(0, 0, 0, 0.6);
+                        overflow: auto;
+                        .hidden-box-hub {
+                            padding: 10px 15px 15px;
+                        }
+                    }
+                }
+            }
+        }
+    }
     @include breakpoint($xs) {
         >.container {
             width: 100%;
         }
+    }
+}
+
+body.home {
+    overflow-x: hidden;
+    &.logged-in {
+        header {
+            top: 0;
+            z-index: 50;
+            @include horizontal-align(absolute);
+            background: transparent;
+            box-shadow: none;
+            .logged-user-right-nav {
+                > .hidden-box-parent {
+                    span {
+                        color: white;
+                    }
+                }
+                .hamburger {
+                    color: white;
+                }
+            }
+            @include breakpoint($xs)    {
+                width: 100%;
+            }
+        }
+    }
+}
+
+body.foundation {
+    overflow-x: hidden;
+    header {
+        top: 0;
+        z-index: 50;
+        @include horizontal-align(absolute);
+        @include breakpoint($xs)    {
+            width: 100%;
+        }
+    }
+}
+
+body.forgotten-password, body.password-recover {
+    header {
+        padding-bottom: 15px;
     }
 }

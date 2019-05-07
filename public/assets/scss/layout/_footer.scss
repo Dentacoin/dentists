@@ -1,9 +1,8 @@
 footer {
-    padding-bottom: 12%;
     .newsletter-register {
         padding-bottom: 30px;
         #mc_embed_signup_scroll {
-            max-width: 300px;
+            max-width: 400px;
             margin: 0 auto;
             font-size: 0;
             input[type='email'] {
@@ -12,7 +11,7 @@ footer {
                 vertical-align: middle;
                 height: 40px;
                 font-size: 18px;
-                border: 1px solid #aaaaaa;
+                border: 1px solid $dark_blue;
                 padding: 0 5px;
                 @include rounded(4px 0 0 4px);
             }
@@ -23,11 +22,11 @@ footer {
                 input[type='submit'] {
                     height: 40px;
                     font-size: 18px;
-                    background-color: #aaaaaa;
+                    background-color: $dark_blue;
                     display: block;
                     width: 100%;
                     border: 0;
-                    color: black;
+                    color: white;
                     @include rounded(0 4px 4px 0);
                 }
             }
@@ -35,7 +34,7 @@ footer {
         .checkbox-row {
             padding-top: 10px;
             text-align: left;
-            max-width: 300px;
+            max-width: 400px;
             margin: 0 auto;
             input[type='checkbox'] {
                 vertical-align: middle;
@@ -193,8 +192,5 @@ footer {
         a {
             text-decoration: underline;
         }
-    }
-    @include breakpoint($xs) {
-        padding-bottom: 200px;
     }
 }

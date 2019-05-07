@@ -264,6 +264,12 @@ var basic = {
     validateEmail: function(email)   {
         return /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email);
     },
+    validatePhone: function(phone) {
+        return /^[\d\.\-]+$/.test(phone);
+    },
+    validateUrl: function(url)   {
+        return /(http|https):\/\/(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-\/]))?/.test(url);
+    },
     isInViewport: function(el) {
         var elementTop = $(el).offset().top;
         var elementBottom = elementTop + $(el).outerHeight();
@@ -279,6 +285,9 @@ var basic = {
             isMobile = true;
         }
         return isMobile;
+    },
+    objHasKey: function(object, key) {
+        return object ? hasOwnProperty.call(object, key) : false;
     },
     addCsrfTokenToAllAjax: function ()    {
         $.ajaxSetup({
