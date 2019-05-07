@@ -49,7 +49,6 @@
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
-
         gtag('config', 'UA-97167262-3');
     </script>
 </head>
@@ -78,7 +77,7 @@
                 <a href="javascript:void(0)" class="close-logged-mobile-profile-menu"><i class="fa fa-times" aria-hidden="true"></i></a>
                 <ul itemscope="" itemtype="http://schema.org/SiteNavigationElement">
                     <li>
-                        <a href="{{ route('home') }}" itemprop="url">
+                        <a @if((new \App\Http\Controllers\UserController())->checkSession()) href="{{ route('logged-home') }}" @else  href="{{ route('home') }}" @endif itemprop="url">
                             <figure itemscope="" itemtype="http://schema.org/ImageObject" class="inline-block">
                                 <img alt="Home icon" src="/assets/uploads/home.svg"/>
                             </figure>
