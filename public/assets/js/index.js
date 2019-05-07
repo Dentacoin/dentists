@@ -1149,3 +1149,8 @@ function bindGoogleAlikeButtonsEvents() {
     });
 }
 bindGoogleAlikeButtonsEvents();
+
+//check if object has property
+function has(object, key) {
+    return object ? hasOwnProperty.call(object, key) : false;
+}
