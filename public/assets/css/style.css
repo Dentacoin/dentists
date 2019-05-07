@@ -5133,6 +5133,9 @@ nav.sidenav {
 .with-text-underline {
   text-decoration: underline; }
 
+.pac-container {
+  z-index: 50000; }
+
 .white-dark-blue-btn, input[type='submit'].white-dark-blue-btn {
   font-size: 20px;
   color: white;
