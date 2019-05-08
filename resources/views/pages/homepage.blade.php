@@ -203,9 +203,9 @@
                 </div>
             </div>
             <div class="info-section col-xs-12 col-md-6">
-                @if(!\App\Http\Controllers\UserController::instance()->checkSession())
+                {{--@if(!\App\Http\Controllers\UserController::instance()->checkSession())
                     <a href="javascript:void(0)" class="white-dark-blue-btn show-login-signin text-center max-width-100">SIGN IN</a>
-                @endif
+                @endif--}}
                 <a href="javascript:void(0)" class="close-application">×</a>
                 <div class="html-content"></div>
             </div>

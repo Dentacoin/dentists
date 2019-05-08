@@ -39,7 +39,7 @@ mix.styles([
     'public/assets/libs/truffle-contract/truffle-contract-compiled.js',
 ], 'public/dist/js/front-libs-script.js');*/
 
-mix.babel([
+mix.scripts([
     'public/assets/js/basic.js',
     'public/assets/js/address.js'
 ], 'public/dist/js/front-script.js');

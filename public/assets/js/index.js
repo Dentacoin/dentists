@@ -1108,9 +1108,9 @@ async function loggedOrNotLogic() {
         }
     } else {
         //IF NOT LOGGED LOGIC
-        if($('body').hasClass('home') || $('body').hasClass('logged-home')) {
+        /*if($('body').hasClass('home') || $('body').hasClass('logged-home')) {
             $('.info-section .show-login-signin').offset({left: $('header .show-login-signin').offset().left});
-        }
+        }*/
     }
 }
 loggedOrNotLogic();
