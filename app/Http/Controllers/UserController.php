@@ -568,14 +568,25 @@ class UserController extends Controller {
     //dentist can add profile description while waiting for approval from Dentacoin admin
     protected function enrichProfile(Request $request) {
         $this->validate($request, [
+            'id' => 'required',
             'description' => 'required'
         ], [
+            'id.required' => 'ID is required.',
             'description.required' => 'Description is required.'
         ]);
 
+        var_dump(getenv('API_ENCRYPTION_METHOD'));
+        var_dump(getenv('API_ENCRYPTION_KEY'));
+
         $data = $request->input();
+        $post_api_data = array(
+            'id' => $this->encrypt($data['id'], getenv('API_ENCRYPTION_METHOD'), getenv('API_ENCRYPTION_KEY')),
+            'short_description' => $this->encrypt($data['description'], getenv('API_ENCRYPTION_METHOD'), getenv('API_ENCRYPTION_KEY'))
+        );
+        $update_method_response = (new APIRequestsController())->updateAnonymousUserData($post_api_data);
 
         var_dump($data);
+        var_dump($update_method_response);
         die();
     }
 
