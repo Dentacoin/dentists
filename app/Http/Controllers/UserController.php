@@ -344,6 +344,7 @@ class UserController extends Controller {
         if($dcn_balance_api_method_response->success) {
             //checking if the withdrawing amount is more than the balance
             if((int)$data['amount'] > $dcn_balance_api_method_response->data) {
+                die('1');
                 return redirect()->route('my-profile')->with(['error' => $failed_withdraw_error_msg]);
             } else {
                 $current_user_data = (new APIRequestsController())->getUserData(session('logged_user')['id']);
@@ -351,12 +352,14 @@ class UserController extends Controller {
                     //updating the user address(CoreDB) only if he did type different address than the already saved in the CoreDB
                     $api_response = (new APIRequestsController())->updateUserData(array('dcn_address' => $data['address']));
                     if(!$api_response) {
+                        die('2');
                         return redirect()->route('my-profile')->with(['error' => $failed_withdraw_error_msg]);
                     } else {
                         $withdraw_response = (new APIRequestsController())->withdraw($data['amount']);
                         if($withdraw_response && $withdraw_response->success && $withdraw_response->data->transaction->success) {
                             return redirect()->route('my-profile')->with(['success' => "Your transaction was confirmed. Check here  <a href='https://etherscan.io/tx/".$withdraw_response->data->transaction->message."' class='etherscan-link' target='_blank'>Etherscan</a>."]);
                         } else {
+                            die('3');
                             return redirect()->route('my-profile')->with(['error' => $failed_withdraw_error_msg]);
                         }
                     }
