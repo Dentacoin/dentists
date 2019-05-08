@@ -27,7 +27,7 @@ mix.styles([
     'public/assets/css/style.css',
 ], 'public/dist/css/front-style.css');
 
-mix.scripts([
+/*mix.babel([
     'node_modules/jquery/dist/jquery.min.js',
     'public/assets/libs/emailoctopus/emailoctopus.js',
     'node_modules/bootstrap/dist/js/bootstrap.min.js',
@@ -37,7 +37,7 @@ mix.scripts([
     'node_modules/datatables.net/js/jquery.dataTables.min.js',
     'public/assets/libs/combobox/combobox.js',
     'public/assets/libs/truffle-contract/truffle-contract-compiled.js',
-], 'public/dist/js/front-libs-script.js');
+], 'public/dist/js/front-libs-script.js');*/
 
 mix.babel([
     'public/assets/js/basic.js',
