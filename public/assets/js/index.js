@@ -864,8 +864,13 @@ function apiEventsListeners() {
     });
 
     $(document).on('errorResponseCoreDBApi', function (event) {
-        console.log(event, 'event');
-        basic.showAlert('Something went wrong with social authentication. Please try again later or contact Dentacoin admin.')
+        var error_popup_html = '';
+        if(event.response_data.errors) {
+            for(var key in event.response_data.errors) {
+                error_popup_html += event.response_data.errors[key]+'<br>';
+            }
+        }
+        basic.showAlert(error_popup_html, '', true);
     });
 }
 apiEventsListeners();
