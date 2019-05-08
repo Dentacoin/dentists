@@ -368,11 +368,13 @@ class UserController extends Controller {
                     if($withdraw_response && $withdraw_response->success && $withdraw_response->data->transaction->success) {
                         return redirect()->route('my-profile')->with(['success' => "Your transaction was confirmed. Check here  <a href='https://etherscan.io/tx/".$withdraw_response->data->transaction->message."' class='etherscan-link' target='_blank'>Etherscan</a>."]);
                     } else {
+                        die('4');
                         return redirect()->route('my-profile')->with(['error' => $failed_withdraw_error_msg]);
                     }
                 }
             }
         } else {
+            die('5');
             return redirect()->route('my-profile')->with(['error' => $failed_withdraw_error_msg]);
         }
     }
