@@ -484,6 +484,10 @@ function bindLoginSigninPopupShow() {
             $('.response-layer').show();
         });
 
+        $(document).on('receivedFacebookToken', async function (event) {
+            $('.response-layer').show();
+        });
+
         $(document).on('facebookCustomBtnClicked', function (event) {
             $('.login-signin-popup .patient .form-register .step-errors-holder').html('');
         });
@@ -870,6 +874,8 @@ function apiEventsListeners() {
                 error_popup_html += event.response_data.errors[key]+'<br>';
             }
         }
+
+        $('.response-layer').hide();
         basic.showAlert(error_popup_html, '', true);
     });
 }
