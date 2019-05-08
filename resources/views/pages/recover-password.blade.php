@@ -12,7 +12,7 @@
                         <div class="fs-20 fs-xs-18 line-height-xs-22 dark-color padding-bottom-25 padding-top-15">Please enter your new password.</div>
                         <div class="padding-bottom-45 padding-bottom-xs-20"><input type="password" name="password" maxlength="100" class="custom-input max-width-400" placeholder="Password" required/></div>
                         <div>
-                            <input type="submit" value="RESET PASSWORD" class="white-blue-rounded-btn"/>
+                            <input type="submit" value="RESET PASSWORD" class="white-dark-blue-btn"/>
                             <input type="hidden" name="_token" value="{{csrf_token()}}">
                             <input type="hidden" name="token" value="{{$slug}}">
                         </div>
