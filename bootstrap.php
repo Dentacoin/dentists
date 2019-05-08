@@ -11,4 +11,4 @@ define('UPLOADS_FRONT_END', DS . 'assets' . DS . 'uploads' . DS);
 define('MAX_UPL_SIZE', 2097152);
 
 
-define('EMAIL_SENDER', 'admin@dentacoin.com');
+define('EMAIL_SENDER', 'ids@dentacoin.com');
