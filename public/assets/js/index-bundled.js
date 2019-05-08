@@ -65042,7 +65042,8 @@ function apiEventsListeners() {
     });
 
     $(document).on('errorResponseCoreDBApi', function (event) {
-        basic.showAlert('Something went wrong with Civic. Please try again later or contact Dentacoin admin.')
+        console.log(event, 'event');
+        basic.showAlert('Something went wrong with social authentication. Please try again later or contact Dentacoin admin.')
     });
 }
 apiEventsListeners();
