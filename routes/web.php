@@ -30,10 +30,7 @@ Route::group(['prefix' => '/', 'middleware' => 'frontEndMiddleware'], function (
     Route::get('/home', 'HomeController@getNotLoggedView')->middleware('HandleUserSession')->name('logged-home');
 
     Route::get('/test', function() {
-        var_dump(session('logged_user')['id']);
-        $var1 = (new \App\Http\Controllers\Controller())->encrypt(session('logged_user')['id'], getenv('API_ENCRYPTION_METHOD'), getenv('API_ENCRYPTION_KEY'));
-        var_dump($var1);
-        var_dump((new \App\Http\Controllers\Controller())->decrypt($var1));
+        var_dump((new \App\Http\Controllers\Controller())->decrypt((new \App\Http\Controllers\Controller())->encrypt(session('logged_user')['id'], getenv('API_ENCRYPTION_METHOD'), getenv('API_ENCRYPTION_KEY'))));
         die();
     })->name('test');
 
