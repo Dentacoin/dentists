@@ -73,6 +73,7 @@ Route::group(['prefix' => '/', 'middleware' => 'frontEndMiddleware'], function (
 
     Route::post('/check-dentist-account', 'UserController@checkDentistAccount')->name('check-dentist-account');
 
+    Route::get('/custom-cookie', 'UserController@setCustomCookie')->name('custom-cookie');
     //======================================= AJAX ========================================
 
     Route::post('/submit-apply-position', 'CareersController@submitApplyPosition')->name('submit-apply-position');

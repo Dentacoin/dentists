@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Input;
 
 class UserController extends Controller {
     public static function instance() {
@@ -596,5 +597,36 @@ class UserController extends Controller {
 
         var_dump($data);
         die();
+    }
+
+    protected function setCustomCookie(Request $request) {
+        if(!empty(Input::get('slug')) && !empty(Input::get('type')) && !empty(Input::get('token'))) {
+            $slug = $this->decrypt(Input::get('slug'));
+            $type = $this->decrypt(Input::get('type'));
+            $token = $this->decrypt(Input::get('token'));
+
+            $user = (new APIRequestsController())->getUserData($slug);
+            if($user) {
+                $approved_statuses = array('approved', 'pending', 'test');
+                if($user->self_deleted != NULL) {
+                    return abort(404);
+                } else if(!in_array($user->status, $approved_statuses)) {
+                    return abort(404);
+                } else {
+                    $session_arr = [
+                        'token' => $token,
+                        'id' => $slug,
+                        'type' => $type
+                    ];
+
+                    session(['logged_user' => $session_arr]);
+                    return redirect()->route('home');
+                }
+            } else {
+                return abort(404);
+            }
+        } else {
+            return abort(404);
+        }
     }
 }
