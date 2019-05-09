@@ -519,7 +519,7 @@
             </div>
         </div>
     @else
-        <img src="//dentacoin.com/custom-cookie?slug={{ (new \App\Http\Controllers\Controller())->encrypt(session('logged_user')['id'], getenv('API_ENCRYPTION_METHOD'), getenv('API_ENCRYPTION_KEY')) }}" class="hide"/>
+        <img src="//dentacoin.com/custom-cookie?slug={{ str_replace(' ', 'dentacoin-space', str_replace('/', 'dentacoin-slash', (new \App\Http\Controllers\Controller())->encrypt(session('logged_user')['id'], getenv('API_ENCRYPTION_METHOD'), getenv('API_ENCRYPTION_KEY')))) }}" class="hide"/>
     @endif
     <div class="bottom-fixed-container">
         @if(!empty($privacy_policy_cookie))
