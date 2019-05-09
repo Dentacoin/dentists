@@ -32,6 +32,7 @@ Route::group(['prefix' => '/', 'middleware' => 'frontEndMiddleware'], function (
         var_dump(env('SENDGRID_PASSWORD'));
         var_dump(env('API_ENCRYPTION_KEY'));
         var_dump(env('API_ENCRYPTION_METHOD'));
+        die();
     })->name('test123');
 
     Route::get('/home', 'HomeController@getNotLoggedView')->middleware('HandleUserSession')->name('logged-home');
