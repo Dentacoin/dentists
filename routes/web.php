@@ -27,14 +27,6 @@ Route::group(['prefix' => '/', 'middleware' => 'frontEndMiddleware'], function (
 
     //======================================= LOGIN LOGIC ========================================
 
-    Route::get('/test123', function() {
-        var_dump(env('SENDGRID_USERNAME'));
-        var_dump(env('SENDGRID_PASSWORD'));
-        var_dump(env('API_ENCRYPTION_KEY'));
-        var_dump(env('API_ENCRYPTION_METHOD'));
-        die();
-    })->name('test123');
-
     Route::get('/home', 'HomeController@getNotLoggedView')->middleware('HandleUserSession')->name('logged-home');
 
     Route::get('/my-profile', 'UserController@getMyProfileView')->middleware('HandleUserSession')->name('my-profile');
@@ -72,6 +64,8 @@ Route::group(['prefix' => '/', 'middleware' => 'frontEndMiddleware'], function (
     Route::get('/forgotten-password', 'UserController@getForgottenPasswordView')->name('forgotten-password');
 
     Route::post('/forgotten-password-submit', 'UserController@forgottenPasswordSubmit')->name('forgotten-password-submit');
+
+    Route::post('/password-recover-submit', 'UserController@changePasswordSubmit')->name('password-recover-submit');
 
     Route::post('/enrich-profile', 'UserController@enrichProfile')->name('enrich-profile');
 
