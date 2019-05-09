@@ -41,7 +41,7 @@
             <input type="submit" class="margin-top-xs-10 white-blue-green-btn min-width-200" value="INVITE"/>
         </div>
     </form>--}}
-    {{--<form method="POST" action="{{ route('enrich-profile') }}" id="enrich-profile">
+    <form method="POST" action="{{ route('enrich-profile') }}" id="enrich-profile">
         <div class="form-row">
             <textarea rows="4" name="description" maxlength="200" placeholder="Add your short description (140 characters):"></textarea>
             <div class="fs-14 calibri-light">This will improve your positions in Google and help more patients find you.</div>
@@ -49,5 +49,5 @@
         <div class="btn-container text-center padding-bottom-30 padding-top-30">
             <input type="submit" class="white-blue-green-btn min-width-200" value="SAVE"/>
         </div>
-    </form>--}}
+    </form>
 </div>

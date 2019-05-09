@@ -576,9 +576,6 @@ class UserController extends Controller {
             'description.required' => 'Description is required.'
         ]);
 
-        var_dump(getenv('API_ENCRYPTION_METHOD'));
-        var_dump(getenv('API_ENCRYPTION_KEY'));
-
         $data = $request->input();
         $post_api_data = array(
             'id' => $this->encrypt($data['id'], getenv('API_ENCRYPTION_METHOD'), getenv('API_ENCRYPTION_KEY')),
