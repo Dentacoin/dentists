@@ -27,6 +27,13 @@ Route::group(['prefix' => '/', 'middleware' => 'frontEndMiddleware'], function (
 
     //======================================= LOGIN LOGIC ========================================
 
+    Route::get('/test123', function() {
+        var_dump(env('SENDGRID_USERNAME'));
+        var_dump(env('SENDGRID_PASSWORD'));
+        var_dump(env('API_ENCRYPTION_KEY'));
+        var_dump(env('API_ENCRYPTION_METHOD'));
+    })->name('test123');
+
     Route::get('/home', 'HomeController@getNotLoggedView')->middleware('HandleUserSession')->name('logged-home');
 
     Route::get('/my-profile', 'UserController@getMyProfileView')->middleware('HandleUserSession')->name('my-profile');
