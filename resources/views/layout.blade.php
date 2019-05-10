@@ -243,7 +243,16 @@
                                 @if($first_el)
                                     <li class="inline-block separator">|</li>
                                 @endif
-                                <li class="inline-block"><a @if($el->new_window) target="_blank" @endif itemprop="url" href="{{$el->url}}"><span itemprop="name">{{$el->name}}</span></a></li>
+                                <li class="inline-block @if($el->url == '//dentacoin.com/assets/uploads/dentacoin-fact-sheet.pdf') has-submenu padding-right-xs-20 @endif">
+                                    <a @if($el->new_window) target="_blank" @endif itemprop="url" href="{{$el->url}}"><span itemprop="name">{{$el->name}}</span></a>
+                                    @if($el->url == '//dentacoin.com/assets/uploads/dentacoin-fact-sheet.pdf')
+                                        <ul itemscope="" itemtype="http://schema.org/SiteNavigationElement" class="submenu">
+                                            <li>
+                                                <a href="//dentacoin.com/assets/uploads/was-ist-dentacoin.pdf" itemprop="url" target="_blank"><span itemprop="name">Fact Sheet DE</span></a>
+                                            </li>
+                                        </ul>
+                                    @endif
+                                </li>
                                 @if(!$first_el)
                                     @php($first_el = true)
                                 @endif
@@ -523,6 +532,7 @@
         @php($type = (new \App\Http\Controllers\Controller())->encrypt(session('logged_user')['type'], getenv('API_ENCRYPTION_METHOD'), getenv('API_ENCRYPTION_KEY')))
         @php($token = (new \App\Http\Controllers\Controller())->encrypt(session('logged_user')['token'], getenv('API_ENCRYPTION_METHOD'), getenv('API_ENCRYPTION_KEY')))
         <img src="//dentacoin.com/custom-cookie?slug={{ urlencode($slug) }}&type={{ urlencode($type) }}&token={{ urlencode($token) }}" class="hide"/>
+        <img src="//assurance.dentacoin.com/custom-cookie?slug={{ urlencode($slug) }}&type={{ urlencode($type) }}&token={{ urlencode($token) }}" class="hide"/>
     @endif
     <div class="bottom-fixed-container">
         @if(!empty($privacy_policy_cookie))
