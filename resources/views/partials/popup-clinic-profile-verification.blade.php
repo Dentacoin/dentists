@@ -41,7 +41,7 @@
             <input type="submit" class="margin-top-xs-10 white-blue-green-btn min-width-200" value="INVITE"/>
         </div>
     </form>--}}
-    {{--<form method="POST" action="{{ route('enrich-profile') }}" id="enrich-profile">
+    <form method="POST" action="{{ route('enrich-profile') }}" id="enrich-profile">
         <div class="form-row">
             <textarea rows="4" name="description" maxlength="200" placeholder="Add your short description (140 characters):"></textarea>
             <div class="fs-14 calibri-light">This will improve your positions in Google and help more patients find you.</div>
@@ -51,5 +51,5 @@
             <input type="hidden" name="_token" value="{{csrf_token()}}">
             <input type="hidden" name="user" value="{{$user}}">
         </div>
-    </form>--}}
+    </form>
 </div>
