@@ -528,9 +528,11 @@ class UserController extends Controller {
 
         //handle the API response
         $api_response = (new APIRequestsController())->dentistRegister($data, $files);
+        var_dump($api_response);
+        die();
         if($api_response['success']) {
             if($data['user-type'] == 'dentist') {
-                $popup_view = view('partials/popup-dentist-profile-verification');
+                $popup_view = view('partials/popup-dentist-profile-verification'/*, ['user' => ]*/);
                 return redirect()->route('home')->with(['success' => true, 'popup-html' => $popup_view->render()]);
             }else if($data['user-type'] == 'clinic') {
                 $popup_view = view('partials/popup-clinic-profile-verification');
