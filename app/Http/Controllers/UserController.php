@@ -581,9 +581,12 @@ class UserController extends Controller {
             'id' => $this->encrypt($data['user'], getenv('API_ENCRYPTION_METHOD'), getenv('API_ENCRYPTION_KEY')),
             'short_description' => $this->encrypt($data['description'], getenv('API_ENCRYPTION_METHOD'), getenv('API_ENCRYPTION_KEY'))
         );
-        $update_method_response = (new APIRequestsController())->updateAnonymousUserData($post_api_data);
-
         var_dump($data);
+        echo "<br><br>";
+        var_dump($post_api_data);
+        $update_method_response = (new APIRequestsController())->updateAnonymousUserData($post_api_data);
+        echo "<br><br>";
+
         var_dump($update_method_response);
         die();
     }
