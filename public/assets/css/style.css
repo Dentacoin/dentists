@@ -5806,7 +5806,8 @@ footer .menu {
   text-align: center;
   padding-bottom: 30px; }
   footer .menu ul li {
-    padding: 0 20px; }
+    padding: 0 20px;
+    position: relative; }
     footer .menu ul li.separator {
       padding: 0 5px; }
     footer .menu ul li a {
