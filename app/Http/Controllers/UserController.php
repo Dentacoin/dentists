@@ -528,14 +528,12 @@ class UserController extends Controller {
 
         //handle the API response
         $api_response = (new APIRequestsController())->dentistRegister($data, $files);
-        var_dump($api_response);
-        die();
         if($api_response['success']) {
             if($data['user-type'] == 'dentist') {
-                $popup_view = view('partials/popup-dentist-profile-verification'/*, ['user' => ]*/);
+                $popup_view = view('partials/popup-dentist-profile-verification', ['user' => $api_response['data']['id']]);
                 return redirect()->route('home')->with(['success' => true, 'popup-html' => $popup_view->render()]);
             }else if($data['user-type'] == 'clinic') {
-                $popup_view = view('partials/popup-clinic-profile-verification');
+                $popup_view = view('partials/popup-clinic-profile-verification', ['user' => $api_response['data']['id']]);
                 return redirect()->route('home')->with(['success' => true, 'popup-html' => $popup_view->render()]);
             }
         } else {
@@ -571,16 +569,16 @@ class UserController extends Controller {
     //dentist can add profile description while waiting for approval from Dentacoin admin
     protected function enrichProfile(Request $request) {
         $this->validate($request, [
-            'id' => 'required',
+            'user' => 'required',
             'description' => 'required'
         ], [
-            'id.required' => 'ID is required.',
+            'user.required' => 'User is required.',
             'description.required' => 'Description is required.'
         ]);
 
         $data = $request->input();
         $post_api_data = array(
-            'id' => $this->encrypt($data['id'], getenv('API_ENCRYPTION_METHOD'), getenv('API_ENCRYPTION_KEY')),
+            'id' => $this->encrypt($data['user'], getenv('API_ENCRYPTION_METHOD'), getenv('API_ENCRYPTION_KEY')),
             'short_description' => $this->encrypt($data['description'], getenv('API_ENCRYPTION_METHOD'), getenv('API_ENCRYPTION_KEY'))
         );
         $update_method_response = (new APIRequestsController())->updateAnonymousUserData($post_api_data);

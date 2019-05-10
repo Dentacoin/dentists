@@ -12,6 +12,7 @@
         <div class="btn-container padding-top-30 text-center">
             <input type="submit" class="white-dark-blue-btn min-width-200" value="SAVE"/>
             <input type="hidden" name="_token" value="{{csrf_token()}}">
+            <input type="hidden" name="user" value="{{$user}}">
         </div>
     </form>
 </div>
