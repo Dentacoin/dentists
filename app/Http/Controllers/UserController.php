@@ -581,14 +581,12 @@ class UserController extends Controller {
             'id' => $this->encrypt($data['user'], getenv('API_ENCRYPTION_METHOD'), getenv('API_ENCRYPTION_KEY')),
             'short_description' => $this->encrypt($data['description'], getenv('API_ENCRYPTION_METHOD'), getenv('API_ENCRYPTION_KEY'))
         );
-        var_dump($data);
-        echo "<br><br>";
-        var_dump($post_api_data);
         $update_method_response = (new APIRequestsController())->updateAnonymousUserData($post_api_data);
-        echo "<br><br>";
-
-        var_dump($update_method_response);
-        die();
+        if($update_method_response->success) {
+            return redirect()->route('home')->with(['success' => 'Your short description was saved successfully.']);
+        } else {
+            return redirect()->route('home')->with(['error' => 'Something went wrong, please try again later.']);
+        }
     }
 
     //dentist can add profile description while waiting for approval from Dentacoin admin
