@@ -331,19 +331,28 @@ body.home {
         .content {
             padding: 0 30px;
             .logo {
-                width: 40%;
+                width: 100%;
+                max-width: 80px;
+                margin: 0 auto;
             }
             .title {
-                font-size: 32px;
+                font-size: 28px;
                 font-family: 'Calibri-Bold';
-                padding-top: 20px;
+                padding-top: 10px;
                 padding-bottom: 10px;
+                text-align: center;
             }
             .description {
                 line-height: 20px;
                 font-size: 16px;
+                max-width: 500px;
+                margin: 0 auto;
+                text-align: center;
+                video {
+                    width: 100%;
+                }
                 p {
-                    padding-bottom: 10px;
+                    padding-bottom: 5px;
                     a {
                         margin-top: 10px;
                         display: inline-block;
@@ -351,33 +360,116 @@ body.home {
                 }
             }
             .extra-html {
+                max-width: 500px;
+                margin: 0 auto;
                 .extra-title {
                     font-family: 'Calibri-Bold';
-                    font-size: 20px;
-                    padding-bottom: 10px;
-                    padding-top: 20px;
+                    font-size: 18px;
+                    padding-bottom: 5px;
+                    padding-top: 10px;
                 }
-                ul {
-                    li {
-                        padding-bottom: 5px;
-                        list-style: disc inside none;
+                .slider-with-tool-data {
+                    .slick-prev {
+                        width: 20px;
+                        height: 20px;
+                        left: -10px;
+                        position: absolute;
+                        top: 50%;
+                        transform: translateY(-50%);
+                        background: url(../images/right-arrow.svg);
+                        background-size: auto 100%;
+                        z-index: 3;
+                        background-position: center;
+                        background-repeat: no-repeat;
+                        display: block;
+                        font-size: 0;
+                        border: 0;
+                        cursor: pointer;
+                        @include box-shadow(none);
+                        &.slick-disabled {
+                            display: none !important;
+                        }
+                    }
+                    .slick-next {
+                        width: 20px;
+                        height: 20px;
+                        right: -10px;
+                        position: absolute;
+                        top: 50%;
+                        transform: translateY(-50%);
+                        background: url(../images/left-arrow.svg);
+                        background-size: auto 100%;
+                        z-index: 3;
+                        background-position: center;
+                        background-repeat: no-repeat;
+                        display: block;
+                        font-size: 0;
+                        border: 0;
+                        cursor: pointer;
+                        @include box-shadow(none);
+                        &.slick-disabled {
+                            display: none !important;
+                        }
+                    }
+                    .slick-track {
+                        display: flex;
                         a {
-                            text-decoration: underline;
+                            display: block;
+                            color: $main_color;
+                            .single-slide {
+                                padding-left: 10px;
+                                padding-right: 10px;
+                                height: auto;
+                                align-items: center;
+                                figure {
+                                    width: 100px;
+                                }
+                                .content {
+                                    padding-left: 10px;
+                                    width: calc(100% - 100px);
+                                    .slide-title {
+                                        font-size: 16px;
+                                    }
+                                    time {
+                                        font-size: 13px;
+                                        color: #999999;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    @include breakpoint($sm-down)   {
+                        margin-bottom: -10px;
+                        .slick-track {
+                            a {
+                                .single-slide {
+                                    .content {
+                                        .title {
+                                            font-size: 14px;
+                                        }
+                                    }
+                                }
+                            }
                         }
                     }
                 }
-                .see-all {
-                    padding-top: 15px;
+            }
+            @include breakpoint($lg-up) {
+                .title {
+                    padding-bottom: 15px;
+                }
+                .description {
+                    video {
+                        margin-bottom: 10px;
+                    }
+                }
+                .description, .extra-html {
+                    max-width: 650px;
                 }
             }
             @include breakpoint($sm-down) {
-                .logo {
-                    width: 40%;
-                    margin: 0 auto;
-                }
-                .title {
-                    text-align: center;
-                }
+                padding-left: 0;
+                padding-right: 0;
             }
         }
         .gif {

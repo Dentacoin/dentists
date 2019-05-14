@@ -64355,32 +64355,33 @@ if($('body').hasClass('home') || $('body').hasClass('logged-home')) {
         var media_html = '';
 
         if(this_btn.attr('data-articles') != undefined)    {
-            extra_html+='<div class="extra-html"><div class="extra-title">Latest Blog articles:</div><ul>';
-            console.log(this_btn.attr('data-articles'), 'this_btn.attr(\'data-articles\')');
+            extra_html+='<div class="extra-html"><div class="extra-title">Latest Blog articles:</div><div class="slider-with-tool-data">';
             var articles_arr = $.parseJSON(this_btn.attr('data-articles'));
-            console.log(articles_arr, 'articles_arr');
             for(var i = 0, len = articles_arr.length; i < len; i+=1)    {
-                extra_html+='<li class="link"><a href="//blog.dentacoin.com/'+articles_arr[i]['post_name']+'" target="_blank">'+articles_arr[i]['post_title']+'</a></li>';
+                extra_html+='<a target="_blank" href="'+articles_arr[i]['link']+'"><div class="single-slide text-left fs-0"><figure class="inline-block-top" itemscope="" itemtype="http://schema.org/ImageObject"><img src="'+articles_arr[i]['thumb']+'" alt="" itemprop="contentUrl"/></figure><div class="content inline-block-top"><div class="slide-title">'+articles_arr[i]['post_title']+'</div><time>'+dateObjToFormattedDate(new Date(parseInt(articles_arr[i]['date']) * 1000))+'</time></div></div></a>';
             }
-            extra_html+='</ul><div class="see-all"><a href="//blog.dentacoin.com/" class="white-dark-blue-btn" target="_blank">GO TO ALL</a></div></div>';
+            extra_html+='</div><div class="text-center padding-top-15"><a href="//blog.dentacoin.com/" class="white-dark-blue-btn" target="_blank">GO TO ALL</a></div></div>';
         }
 
-        if(['mp4', 'avi'].indexOf(this_btn.attr('data-image-type')) > -1) {
+        /*if(['mp4', 'avi'].indexOf(this_btn.attr('data-image-type')) > -1) {
             media_html+='<div itemprop="video" itemscope="" itemtype="http://schema.org/VideoObject" class="col-sm-6 video"><video autoplay loop muted controls="false"><source src="'+this_btn.attr('data-image')+'" type="video/'+this_btn.attr('data-image-type')+'"></video><meta itemprop="name" content="'+this_btn.attr('data-title')+'"><meta itemprop="uploadDate" content="'+this_btn.attr('data-upload-date')+'"></div>';
         }else {
             media_html+='<figure class="col-sm-6 gif"><img src="'+this_btn.attr('data-image')+'?'+new Date().getTime()+'" alt="'+this_btn.attr('data-image-alt')+'"/></figure>';
-        }
+        }*/
 
         var description = '';
-        console.log(this_btn.attr('data-description'), 'this_btn.attr(\'data-description\')');
         if(this_btn.attr('data-description') != '') {
             description = $.parseJSON(this_btn.attr('data-description'));
         }
 
-        var html = '<div class="container-fluid"><div class="row">'+media_html+'<div class="col-sm-6 col-xs-12 content"><figure class="logo"><img src="'+this_btn.attr('data-popup-logo')+'" alt="'+this_btn.attr('data-popup-logo-alt')+'"/></figure><div class="title">'+this_btn.find('figcaption').html()+'</div><div class="description">'+description+'</div>'+extra_html+'</div></div></div>';
-
+        var html = '<div class="container-fluid"><div class="row">'+media_html+'<div class="col-sm-12 content"><figure class="logo"><img src="'+this_btn.attr('data-popup-logo')+'" alt="'+this_btn.attr('data-popup-logo-alt')+'"/></figure><div class="title">'+this_btn.find('figcaption').html()+'</div><div class="description">'+description+'</div>'+extra_html+'</div></div></div>';
 
         $('.applications-section .info-section .html-content').html(html);
+
+        if(extra_html != '') {
+            initToolsPostsSlider();
+        }
+
         $('.applications-section .info-section video').removeAttr('controls');
 
         $('body').addClass('overflow-hidden');
@@ -65348,5 +65349,36 @@ bindGoogleAlikeButtonsEvents();
 //check if object has property
 function has(object, key) {
     return object ? hasOwnProperty.call(object, key) : false;
+}
+
+function initToolsPostsSlider()   {
+    //init slider for most popular posts
+    jQuery('.slider-with-tool-data').slick({
+        slidesToShow: 2,
+        infinite: false,
+        responsive: [
+            {
+                breakpoint: 1200,
+                settings: {
+                    slidesToShow: 1
+                }
+            }
+        ]
+    });
+}
+
+function dateObjToFormattedDate(object) {
+    if(object.getDate() < 10) {
+        var date = '0' + object.getDate();
+    } else {
+        var date = object.getDate();
+    }
+
+    if(object.getMonth() + 1 < 10) {
+        var month = '0' + (object.getMonth() + 1);
+    } else {
+        var month = object.getMonth() + 1;
+    }
+    return date + '/' + month + '/' + object.getFullYear();
 }
 },{"./helper":1096}]},{},[1097]);

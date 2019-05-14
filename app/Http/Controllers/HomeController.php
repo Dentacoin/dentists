@@ -16,7 +16,7 @@ class HomeController extends Controller
     }
 
     protected function getNotLoggedView()   {
-        $latest_blog_articles = DB::connection('mysql3')->select(DB::raw("SELECT `post_title`, `post_name` from dIf_posts WHERE post_status = 'publish' AND post_type = 'post' ORDER BY `post_date` DESC LIMIT 0, 5"));
+        $latest_blog_articles = json_decode(file_get_contents('https://blog.dentacoin.com/dumb-latest-posts/'));
         $testimonials = DB::connection('mysql2')->table('user_expressions')->leftJoin('media', 'user_expressions.media_id', '=', 'media.id')->select('user_expressions.*', 'media.name as media_name', 'media.alt as media_alt')->orderByRaw('user_expressions.order_id ASC')->get()->toArray();
 
         return view('pages/homepage', ['testimonials' => $testimonials, 'applications' => $this->getDentacoinHubApplications(), 'latest_blog_articles' => $latest_blog_articles]);

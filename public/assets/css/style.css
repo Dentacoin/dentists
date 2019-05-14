@@ -6145,38 +6145,116 @@ footer .bottom-text a {
     .applications-section .info-section .content {
       padding: 0 30px; }
       .applications-section .info-section .content .logo {
-        width: 40%; }
+        width: 100%;
+        max-width: 80px;
+        margin: 0 auto; }
       .applications-section .info-section .content .title {
-        font-size: 32px;
+        font-size: 28px;
         font-family: 'Calibri-Bold';
-        padding-top: 20px;
-        padding-bottom: 10px; }
+        padding-top: 10px;
+        padding-bottom: 10px;
+        text-align: center; }
       .applications-section .info-section .content .description {
         line-height: 20px;
-        font-size: 16px; }
+        font-size: 16px;
+        max-width: 500px;
+        margin: 0 auto;
+        text-align: center; }
+        .applications-section .info-section .content .description video {
+          width: 100%; }
         .applications-section .info-section .content .description p {
-          padding-bottom: 10px; }
+          padding-bottom: 5px; }
           .applications-section .info-section .content .description p a {
             margin-top: 10px;
             display: inline-block; }
-      .applications-section .info-section .content .extra-html .extra-title {
-        font-family: 'Calibri-Bold';
-        font-size: 20px;
-        padding-bottom: 10px;
-        padding-top: 20px; }
-      .applications-section .info-section .content .extra-html ul li {
-        padding-bottom: 5px;
-        list-style: disc inside none; }
-        .applications-section .info-section .content .extra-html ul li a {
-          text-decoration: underline; }
-      .applications-section .info-section .content .extra-html .see-all {
-        padding-top: 15px; }
-      @media screen and (max-width: 991px) {
-        .applications-section .info-section .content .logo {
-          width: 40%;
-          margin: 0 auto; }
+      .applications-section .info-section .content .extra-html {
+        max-width: 500px;
+        margin: 0 auto; }
+        .applications-section .info-section .content .extra-html .extra-title {
+          font-family: 'Calibri-Bold';
+          font-size: 18px;
+          padding-bottom: 5px;
+          padding-top: 10px; }
+        .applications-section .info-section .content .extra-html .slider-with-tool-data .slick-prev {
+          width: 20px;
+          height: 20px;
+          left: -10px;
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          background: url(../images/right-arrow.svg);
+          background-size: auto 100%;
+          z-index: 3;
+          background-position: center;
+          background-repeat: no-repeat;
+          display: block;
+          font-size: 0;
+          border: 0;
+          cursor: pointer;
+          -webkit-box-shadow: none;
+          -moz-box-shadow: none;
+          -ms-box-shadow: none;
+          box-shadow: none; }
+          .applications-section .info-section .content .extra-html .slider-with-tool-data .slick-prev.slick-disabled {
+            display: none !important; }
+        .applications-section .info-section .content .extra-html .slider-with-tool-data .slick-next {
+          width: 20px;
+          height: 20px;
+          right: -10px;
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          background: url(../images/left-arrow.svg);
+          background-size: auto 100%;
+          z-index: 3;
+          background-position: center;
+          background-repeat: no-repeat;
+          display: block;
+          font-size: 0;
+          border: 0;
+          cursor: pointer;
+          -webkit-box-shadow: none;
+          -moz-box-shadow: none;
+          -ms-box-shadow: none;
+          box-shadow: none; }
+          .applications-section .info-section .content .extra-html .slider-with-tool-data .slick-next.slick-disabled {
+            display: none !important; }
+        .applications-section .info-section .content .extra-html .slider-with-tool-data .slick-track {
+          display: flex; }
+          .applications-section .info-section .content .extra-html .slider-with-tool-data .slick-track a {
+            display: block;
+            color: #333333; }
+            .applications-section .info-section .content .extra-html .slider-with-tool-data .slick-track a .single-slide {
+              padding-left: 10px;
+              padding-right: 10px;
+              height: auto;
+              align-items: center; }
+              .applications-section .info-section .content .extra-html .slider-with-tool-data .slick-track a .single-slide figure {
+                width: 100px; }
+              .applications-section .info-section .content .extra-html .slider-with-tool-data .slick-track a .single-slide .content {
+                padding-left: 10px;
+                width: calc(100% - 100px); }
+                .applications-section .info-section .content .extra-html .slider-with-tool-data .slick-track a .single-slide .content .slide-title {
+                  font-size: 16px; }
+                .applications-section .info-section .content .extra-html .slider-with-tool-data .slick-track a .single-slide .content time {
+                  font-size: 13px;
+                  color: #999999; }
+        @media screen and (max-width: 991px) {
+          .applications-section .info-section .content .extra-html .slider-with-tool-data {
+            margin-bottom: -10px; }
+            .applications-section .info-section .content .extra-html .slider-with-tool-data .slick-track a .single-slide .content .title {
+              font-size: 14px; } }
+      @media screen and (min-width: 1399px) {
         .applications-section .info-section .content .title {
-          text-align: center; } }
+          padding-bottom: 15px; }
+        .applications-section .info-section .content .description video {
+          margin-bottom: 10px; }
+        .applications-section .info-section .content .description, .applications-section .info-section .content .extra-html {
+          max-width: 650px; } }
+      @media screen and (max-width: 991px) {
+        .applications-section .info-section .content {
+          padding-left: 0;
+          padding-right: 0; } }
     .applications-section .info-section .gif img {
       -webkit-box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.2);
       -moz-box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.2);
