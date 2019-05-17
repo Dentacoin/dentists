@@ -48,7 +48,7 @@
                 <li>
                     <a href="//dentavox.dentacoin.com" target="_blank" itemprop="url">
                         <figure itemscope="" itemtype="http://schema.org/ImageObject" class="inline-block">
-                            <img alt="Dentavox logo" src="/assets/uploads/dentavox--surveys.svg"/>
+                            <img alt="Dentavox logo" src="//dentacoin.com/assets/uploads/dentavox--surveys.svg"/>
                         </figure>
                         <span itemprop="name">DentaVox Surveys</span>
                     </a>
@@ -56,7 +56,7 @@
                 <li>
                     <a href="//reviews.dentacoin.com" target="_blank" itemprop="url">
                         <figure itemscope="" itemtype="http://schema.org/ImageObject" class="inline-block">
-                            <img alt="Trusted review logo" src="/assets/uploads/trusted-reviews-icon.svg"/>
+                            <img alt="Trusted review logo" src="//dentacoin.com/assets/uploads/trusted-reviews-icon.svg"/>
                         </figure>
                         <span itemprop="name">Trusted Reviews</span>
                     </a>
@@ -64,7 +64,7 @@
                 <li>
                     <a href="//assurance.dentacoin.com" target="_blank" itemprop="url">
                         <figure itemscope="" itemtype="http://schema.org/ImageObject" class="inline-block">
-                            <img alt="Assurance logo" src="/assets/uploads/assurance.svg"/>
+                            <img alt="Assurance logo" src="//dentacoin.com/assets/uploads/assurance.svg"/>
                         </figure>
                         <span itemprop="name">Dentacoin Assurance</span>
                     </a>

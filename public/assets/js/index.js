@@ -917,7 +917,6 @@ async function loggedOrNotLogic() {
 
         //IF NOT LOGGED LOGIC
         $('.logged-user-right-nav > .hidden-box-parent').hover(function () {
-            console.log('skara bira');
             $('.logged-user-right-nav .hidden-box').addClass('show-this');
             if(add_overflow_hidden_on_hidden_box_show) {
                 if(!$('.logged-user-right-nav').hasClass('with-hub')) {

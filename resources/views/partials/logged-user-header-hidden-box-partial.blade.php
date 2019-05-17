@@ -11,7 +11,7 @@
     <span class="up-arrow">▲</span>
     <div class="hidden-box">
         @if(!empty(Route::current()))
-            @if(Route::current()->getName() != 'home' && (new \App\Http\Controllers\UserController())->checkSession())
+            @if(Route::current()->getName() != 'home')
                 <div class="hidden-box-hub container-fluid">
                     <div class="row close-btn">
                         <div class="col-xs-12"><a href="javascript:void(0)">Close <span>X</span></a></div>
@@ -37,7 +37,7 @@
                     <a href="{{ route('user-logout') }}" class="logout"><i class="fa fa-power-off" aria-hidden="true"></i> Log out</a>
                 </div>
                 <div class="col-xs-6 inline-block">
-                    <a href="{{ route('my-profile') }}" class="fs-16 white-dark-blue-btn">My profile</a>
+                    <a href="{{ route('my-profile') }}" class="fs-16 white-dark-blue-btn">My account</a>
                 </div>
             </div>
         </div>
