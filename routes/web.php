@@ -27,6 +27,11 @@ Route::group(['prefix' => '/', 'middleware' => 'frontEndMiddleware'], function (
 
     //======================================= LOGIN LOGIC ========================================
 
+    Route::get('/test123', function() {
+        var_dump((new \App\Http\Controllers\Controller())->getClientIp());
+        die('asd');
+    })->name('test123');
+
     Route::get('/home', 'HomeController@getNotLoggedView')->middleware('HandleUserSession')->name('logged-home');
 
     Route::get('/my-profile', 'UserController@getMyProfileView')->middleware('HandleUserSession')->name('my-profile');
