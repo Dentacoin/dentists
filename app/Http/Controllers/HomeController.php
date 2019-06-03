@@ -23,10 +23,10 @@ class HomeController extends Controller
             CURLOPT_SSL_VERIFYPEER => 0
         ));
 
-        $resp = json_decode(curl_exec($curl));
+        $resp = curl_exec($curl);
         curl_close($curl);
 
-        $latest_blog_articles = json_decode($resp);
+        $latest_blog_articles = $resp;
 
         var_dump($latest_blog_articles);
         die('asd');
