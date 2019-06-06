@@ -30,6 +30,7 @@ class HomeController extends Controller
 
     public function getDentacoinHubApplications() {
         $applications = DB::connection('mysql2')->table('applications')->select('applications.*')->orderByRaw('applications.order_id ASC')->get()->toArray();
+        var_dump($applications);
         foreach($applications as $application) {
             var_dump($application->media_id);
             $application->logo_url = DB::connection('mysql2')->table('media')->where('id', $application->logo_id)->select('media.name')->get()->first()->name;
