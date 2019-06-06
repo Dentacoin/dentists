@@ -234,6 +234,7 @@ if($('body').hasClass('home') || $('body').hasClass('logged-home')) {
     $('body').addClass('overflow-hidden');
     if($(window).width() > 992) {
         $('.applications-section .single-application').eq(0).click();
+        singleApplicationClick($('.applications-section .single-application').eq(0));
     }
     $('body').removeClass('overflow-hidden');
 }else if($('body').hasClass('faq')) {
