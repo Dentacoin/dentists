@@ -31,6 +31,7 @@ function initDataTable()    {
                 }else if($(this).attr('data-close-btn') == 'true')   {
                     close_button = true;
                 }
+                console.log(pagination_id, 'pagination_id');
                 useMediaEvent(pagination_id, close_button);
             });
         }else {
