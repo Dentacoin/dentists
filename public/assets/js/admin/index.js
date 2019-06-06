@@ -31,7 +31,6 @@ function initDataTable()    {
                 }else if($(this).attr('data-close-btn') == 'true')   {
                     close_button = true;
                 }
-                console.log(pagination_id, 'pagination_id');
                 useMediaEvent(pagination_id, close_button);
             });
         }else {
@@ -141,9 +140,7 @@ function openMedia(id, close_btn, type, editor)    {
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
         },
         success: function (response) {
-            console.log(response.success);
             if(response.success) {
-                console.log(response.success, 1);
                 basic.showDialog(response.success, 'media-popup');
                 initDataTable();
                 $('table.table.table-without-reorder.media-table').attr('data-id-in-action', id).attr('data-close-btn', close_btn);
@@ -342,7 +339,7 @@ function initUploadMediaLogic() {
                             if($('.media-table').length) {
                                 $('.media-table tbody').prepend(response.html_with_images);
 
-                                if($('table.table.table-without-reorder.media-table').attr('data-id-in-action') != undefined) {
+                                if($('table.table.table-without-reorder.media-table').attr('data-id-in-action') != undefined && $('table.table.table-without-reorder.media-table').attr('data-close-btn') != undefined) {
                                     useMediaEvent($('table.table.table-without-reorder.media-table').attr('data-id-in-action'), $('table.table.table-without-reorder.media-table').attr('data-close-btn'), null);
                                 }
                             }
