@@ -1,7 +1,8 @@
 <div class="hidden-box-parent">
-    <span class="fs-14 padding-right-10 user-name">{{(new \App\Http\Controllers\APIRequestsController())->getUserData(session('logged_user')['id'])->name}}</span>
+    @php($user_data = (new \App\Http\Controllers\APIRequestsController())->getUserData(session('logged_user')['id']))
+    <span class="fs-14 padding-right-10 user-name">{{$user_data->name}}</span>
     <figure itemscope="" itemtype="http://schema.org/ImageObject" class="inline-block header-avatar">
-        @php($avatar_url = (new \App\Http\Controllers\APIRequestsController())->getUserData(session('logged_user')['id'])->avatar_url)
+        @php($avatar_url = $user_data->avatar_url)
         @if(!empty($avatar_url))
             <img alt="" itemprop="contentUrl" src="{{$avatar_url}}"/>
         @else
