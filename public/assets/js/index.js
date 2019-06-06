@@ -217,7 +217,7 @@ if($('body').hasClass('home') || $('body').hasClass('logged-home')) {
 
             init_apps_interval_slide = setTimeout(function() {
                 $('.applications-section .single-application').eq(start_clicking_from_num).click();
-            }, 10000);
+            }, 15000);
         } else {
             $('.applications-section .apps-list').hide();
             $('.applications-section .info-section').fadeIn(500);
@@ -379,16 +379,12 @@ $('nav.sidenav .close-btn, nav.sidenav ul li a').click(function()    {
 
 //on button click next time when you hover the button the color is bugged until you click some other element (until you move out the focus from this button)
 function fixButtonsFocus() {
-    if($('.white-dark-blue-btn').length > 0) {
-        $('.white-dark-blue-btn').click(function() {
-            $(this).blur();
-        });
-    }
-    if($('.dark-blue-white-btn').length > 0) {
-        $('.dark-blue-white-btn').click(function() {
-            $(this).blur();
-        });
-    }
+    $(document).on('click', '.white-dark-blue-btn', function() {
+        $(this).blur();
+    });
+    $(document).on('click', '.dark-blue-white-btn', function() {
+        $(this).blur();
+    });
 }
 fixButtonsFocus();
 
