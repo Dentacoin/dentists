@@ -1228,16 +1228,16 @@ body.additionals .box.api-endpoints a {
   .response-layer.show-this {
     display: block !important; }
 
-.media-container form {
+.upload-media-container form {
   padding-bottom: 30px; }
-  .media-container form .single-row .subtitle {
+  .upload-media-container form .single-row .subtitle {
     padding-bottom: 10px; }
-  .media-container form .single-row input[type='file'] {
+  .upload-media-container form .single-row input[type='file'] {
     margin: 0 auto; }
-  .media-container form .btn-container {
+  .upload-media-container form .btn-container {
     padding-top: 15px;
     padding-bottom: 15px; }
-.media-container .sorting_1 {
+.upload-media-container .sorting_1 {
   cursor: auto; }
 
 .media-table .btn {
