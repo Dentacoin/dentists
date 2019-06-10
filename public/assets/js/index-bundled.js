@@ -64189,13 +64189,13 @@ $(window).on('load', function() {
 });
 
 $(window).on("load", function()   {
-    if($('body').hasClass('home')) {
+    if(!$('body').hasClass('logged-in')  && $('body').hasClass('home')) {
         optionsDescriptionsEqualHeight();
     }
 });
 
 $(window).on('resize', function(){
-    if($('body').hasClass('home') || $('body').hasClass('logged-home')) {
+    if((!$('body').hasClass('logged-in')  && $('body').hasClass('home')) || $('body').hasClass('logged-home')) {
         optionsDescriptionsEqualHeight();
     }
 });
@@ -64256,7 +64256,7 @@ function initCaptchaRefreshEvent()  {
 initCaptchaRefreshEvent();
 
 // ================== PAGES ==================
-if($('body').hasClass('home') || $('body').hasClass('logged-home')) {
+if(!$('body').hasClass('logged-in')  && $('body').hasClass('home') || $('body').hasClass('logged-home')) {
 
     $('.below-options .single-option').hover(function () {
         $(this).addClass('active');
