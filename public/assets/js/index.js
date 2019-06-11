@@ -1257,6 +1257,42 @@ function bindTrackerClickDownloadBrochure() {
 }
 bindTrackerClickDownloadBrochure();
 
+function bindTrackerClickDownloadFactsheet() {
+    $(document).on('click', '.download-fact-sheet-event-tracker', function() {
+        fireGoogleAnalyticsEvent('Assets', 'Download', 'Factsheet');
+    });
+}
+bindTrackerClickDownloadFactsheet();
+
+function bindTrackerClickDownloadBrochureForPatients() {
+    $(document).on('click', '.download-patients-brochure-event-tracker', function() {
+        fireGoogleAnalyticsEvent('Assets', 'Download', 'Patient Brochure');
+    });
+}
+bindTrackerClickDownloadBrochureForPatients();
+
+function bindTrackerClickDownloadLogo() {
+    $(document).on('click', '.download-logo-event-tracker', function() {
+        fireGoogleAnalyticsEvent('Assets', 'Download', 'Logo');
+    });
+}
+bindTrackerClickDownloadLogo();
+
+function bindTrackerTRPRegister() {
+    $(document).on('click', '.register-on-trp-event-tracker', function() {
+        fireGoogleAnalyticsEvent('Tools', 'Register', 'TRP Register');
+    });
+}
+bindTrackerTRPRegister();
+
+function bindTrackerClickFooterPlatforms() {
+    $(document).on('click', 'footer .init-event-tracker', function() {
+        var this_btn = $(this);
+        fireGoogleAnalyticsEvent('Tools', 'Click', this_btn.find('span').html().trim());
+    });
+}
+bindTrackerClickFooterPlatforms();
+
 function fireGoogleAnalyticsEvent(category, action, label, value) {
     var event_obj = {
         'event_action' : action,
