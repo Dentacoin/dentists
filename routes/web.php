@@ -88,8 +88,12 @@ Route::group(['prefix' => '/', 'middleware' => 'frontEndMiddleware'], function (
         return Redirect::to('/faq');
     });
 
-    Route::get('/documents/F3T_report.pdf', function() {
-        return Redirect::to('/assets/uploads/dentacoin-case-study-f3t-london.pdf');
+    Route::get('documents/F3T_report.pdf', function() {
+        die('test2');
+    });
+
+    Route::get('F3T_report.pdf', function() {
+        die('test2');
     });
 });
 
