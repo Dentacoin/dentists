@@ -9,7 +9,7 @@
     RewriteCond %{REQUEST_FILENAME} !-d
     RewriteRule ^(.*)/$ /$1 [L,R=301]
 
-    RewriteRule ^test\\.txt  /test12345677 [R=301,L]
+    RewriteRule ^assets/test\\.txt  /test12345677 [R=301,L]
 
     # Handle Front Controller...
     RewriteCond %{REQUEST_FILENAME} !-d
