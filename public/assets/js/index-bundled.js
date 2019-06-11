@@ -64460,27 +64460,51 @@ if($('.show-external-form-button').length > 0) {
         $('body').removeClass('overflow-hidden');
     });
 }
+var homepage_video_time_watched = 0;
+var homepage_video_timer;
 
 if($('.open-video-popup').length > 0) {
+
     $('.open-video-popup').click(function() {
         $('.custom-popup.video .wrapper').html('<div itemprop="video" itemscope="" itemtype="http://schema.org/VideoObject"><video controls><source src="//dentacoin.com/assets/videos/dentacoin-explainer-video.mp4" type="video/mp4">Your browser does not support HTML5 video.</video><meta itemprop="name" content="Dentacoin Introduction Video"><meta itemprop="description" content="Explainer video: Dentacoin, the Blockchain Solution for the Global Dentistry"><meta itemprop="uploadDate" content="2019-03-19T08:00:00+08:00"><link itemprop="contentURL" href="//dentacoin.com/assets/videos/dentacoin-explainer-video.mp4"></div>');
         $('.custom-popup.video').addClass('visible');
         $('body').addClass('overflow-hidden');
+
+        $('.custom-popup.video .wrapper').find('video').on('play', function() {
+            homepage_video_timer = setInterval(function() {
+                homepage_video_time_watched+=1;
+            }, 1000);
+        });
+
+        $('.custom-popup.video .wrapper').find('video').get(0).play();
     });
 
     $('.custom-popup.video .close-btn').unbind().click(function()    {
         $('.custom-popup.video .wrapper').html('');
         $('.custom-popup.video').removeClass('visible');
         $('body').removeClass('overflow-hidden');
+
+        clearInterval(homepage_video_timer);
+        fireGoogleAnalyticsEvent('Video', 'Play' , 'Dentacoin Explainer', fmtMSS(homepage_video_time_watched))
+
+        homepage_video_time_watched = 0;
     });
 }
+
 $('body').click(function(event) {
     if($(event.target).is('#custom-popup')) {
         $('.custom-popup').removeClass('visible');
         $('body').removeClass('overflow-hidden');
+        $('.custom-popup.video .wrapper').html('');
+
+        clearInterval(homepage_video_timer);
+        fireGoogleAnalyticsEvent('Video', 'Play' , 'Dentacoin Explainer', fmtMSS(homepage_video_time_watched))
+
+        homepage_video_time_watched = 0;
     }
 });
 
+function fmtMSS(s){return(s-(s%=60))/60+(9<s?':':':0')+s}
 
 /*
 
@@ -64590,6 +64614,9 @@ function hidePopupOnBackdropClick() {
         classname = classname.replace(/ /g, '.');
 
         if(classname && !$('.' + classname).parents('.modal-dialog').length) {
+            if($('.bootbox.login-signin-popup').length) {
+                $('.hidden-login-form').html(hidden_popup_content);
+            }
             if($('.bootbox.login-signin-popup').length) {
                 $('.hidden-login-form').html(hidden_popup_content);
             }
@@ -65434,6 +65461,56 @@ function bindTrackerClickDownloadBrochure() {
     });
 }
 bindTrackerClickDownloadBrochure();
+
+function bindTrackerClickDownloadBrochure() {
+    $(document).on('click', '.download-de-brochure-event-tracker', function() {
+        fireGoogleAnalyticsEvent('Assets', 'Download', 'DE Brochure');
+    });
+}
+bindTrackerClickDownloadBrochure();
+
+function bindTrackerClickDownloadFactsheet() {
+    $(document).on('click', '.download-fact-sheet-event-tracker', function() {
+        fireGoogleAnalyticsEvent('Assets', 'Download', 'Factsheet');
+    });
+}
+bindTrackerClickDownloadFactsheet();
+
+function bindTrackerClickDownloadDEFactsheet() {
+    $(document).on('click', '.download-de-fact-sheet-event-tracker', function() {
+        fireGoogleAnalyticsEvent('Assets', 'Download', 'DE Factsheet');
+    });
+}
+bindTrackerClickDownloadDEFactsheet();
+
+function bindTrackerClickDownloadBrochureForPatients() {
+    $(document).on('click', '.download-patients-brochure-event-tracker', function() {
+        fireGoogleAnalyticsEvent('Assets', 'Download', 'Patient Brochure');
+    });
+}
+bindTrackerClickDownloadBrochureForPatients();
+
+function bindTrackerClickDownloadLogo() {
+    $(document).on('click', '.download-logo-event-tracker', function() {
+        fireGoogleAnalyticsEvent('Assets', 'Download', 'Logo');
+    });
+}
+bindTrackerClickDownloadLogo();
+
+function bindTrackerTRPRegister() {
+    $(document).on('click', '.register-on-trp-event-tracker', function() {
+        fireGoogleAnalyticsEvent('Tools', 'Register', 'TRP Register');
+    });
+}
+bindTrackerTRPRegister();
+
+function bindTrackerClickFooterPlatforms() {
+    $(document).on('click', 'footer .init-event-tracker', function() {
+        var this_btn = $(this);
+        fireGoogleAnalyticsEvent('Tools', 'Click', this_btn.find('span').html().trim());
+    });
+}
+bindTrackerClickFooterPlatforms();
 
 function fireGoogleAnalyticsEvent(category, action, label, value) {
     var event_obj = {
