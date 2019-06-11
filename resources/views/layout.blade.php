@@ -238,12 +238,12 @@
                 <div class="row menu">
                     <nav class="col-xs-12">
                         <ul itemscope="" itemtype="http://schema.org/SiteNavigationElement">
-                            @php($first_el = false)
+                            @php($show_separator = false)
                             @foreach($footer_menu as $el)
-                                @if($first_el)
+                                @if($show_separator)
                                     <li class="inline-block separator">|</li>
                                 @endif
-                                <li class="inline-block @if($el->url == '//dentacoin.com/assets/uploads/dentacoin-fact-sheet.pdf') has-submenu padding-right-xs-20 @endif">
+                                <li class="inline-block @if(!empty($el->class_attribute)) {{$el->class_attribute}} @endif @if($el->url == '//dentacoin.com/assets/uploads/dentacoin-fact-sheet.pdf') has-submenu padding-right-xs-20 @endif">
                                     <a @if($el->new_window) target="_blank" @endif itemprop="url" href="{{$el->url}}"><span itemprop="name">{{$el->name}}</span></a>
                                     @if($el->url == '//dentacoin.com/assets/uploads/dentacoin-fact-sheet.pdf')
                                         <ul itemscope="" itemtype="http://schema.org/SiteNavigationElement" class="submenu">
@@ -253,8 +253,8 @@
                                         </ul>
                                     @endif
                                 </li>
-                                @if(!$first_el)
-                                    @php($first_el = true)
+                                @if(!$show_separator)
+                                    @php($show_separator = true)
                                 @endif
                             @endforeach
                         </ul>
@@ -276,7 +276,7 @@
         <div class="hidden-login-form hide">
             <div class="fs-0 popup-header-action">
                 <a href="javascript:void(0)" class="inline-block" data-type="patient">I'm a Patient</a>
-                <a href="javascript:void(0)" class="inline-block" data-type="dentist">I'm a Dentist</a>
+                <a href="javascript:void(0)" class="inline-block init-dentists-click-event" data-type="dentist">I'm a Dentist</a>
             </div>
             <div class="fs-0 popup-body">
                 <div class="patient inline-block custom-hide">

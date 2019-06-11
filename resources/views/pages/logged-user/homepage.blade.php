@@ -7,7 +7,7 @@
                     <div class="container-fluid">
                         <div class="row fs-0">
                             @foreach($applications as $application)
-                                <a @if(!empty($application->link)) href="{{$application->link}}" target="_blank" @else href="javascript:alert('Coming soon!');" @endif class="col-md-3 col-xs-4 inline-block-top single-application">
+                                <a @if(!empty($application->link)) href="{{$application->link}}" target="_blank" @else href="javascript:alert('Coming soon!');" @endif class="col-md-3 col-xs-4 inline-block-top single-application" data-platform="{{$application->title}}">
                                     <figure class="wrapper" itemtype="http://schema.org/ImageObject">
                                         @if($application->logo_url)
                                             <img src="//dentacoin.com/assets/uploads/{{$application->logo_url}}" itemprop="contentUrl" alt=""/>

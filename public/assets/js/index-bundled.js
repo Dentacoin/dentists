@@ -64567,34 +64567,22 @@ function fixButtonsFocus() {
 fixButtonsFocus();
 
 //checking if submitted email is valid
-/*
 function newsletterRegisterValidation() {
     $('.newsletter-register form').on('submit', function(event)  {
         var this_form = $(this);
-        var errors = [];
+        var error = false;
         if(!basic.validateEmail(this_form.find('input[type="email"]').val().trim()))    {
-            this_form.addClass('not-valid').append('<div class="alert alert-danger">'+this_form.find('input[type="email"]').closest('.form-row').attr('data-valid-email-message')+'</div>');
-            errors.push(this_form.find('input[type="email"]').closest('.form-row').attr('data-valid-email-message'));
-        }
-        if(!this_form.find('#agree-with-privacy-policy').is(':checked'))  {
-            errors.push(this_form.find('#agree-with-privacy-policy').closest('.form-row').attr('data-valid-message'));
+            error = true;
+        }else if(!this_form.find('#newsletter-privacy-policy').is(':checked'))  {
+            error = true;
         }
 
-        if(errors.length > 0)   {
-            event.preventDefault();
-            this_form.addClass('not-valid').find('.alert').remove();
-            for(var i = 0, len = errors.length; i < len; i+=1)  {
-                this_form.append('<div class="alert alert-danger">'+errors[i]+'</div>');
-            }
-        }else {
-            this_form.removeClass('not-valid').find('.alert').remove();
-            //this_form.find('input[type="email"]').val('');
-            //this_form.find('#agree-with-privacy-policy').prop('checked', false);
-            this_form.append('<div class="alert alert-success">'+this_form.attr('data-success-message')+'</div>');
+        if(!error) {
+            fireGoogleAnalyticsEvent('Subscription', 'Sign-up', 'Newsletter');
         }
     });
 }
-newsletterRegisterValidation();*/
+newsletterRegisterValidation();
 
 function hidePopupOnBackdropClick() {
     $(document).on('click', '.bootbox', function(){
@@ -64715,6 +64703,7 @@ function bindLoginSigninPopupShow() {
             });
 
             if(submit_form && check_account_response.success) {
+                fireGoogleAnalyticsEvent('DentistLogin', 'Click', 'Dentist Login');
                 this_form_native.submit();
             } else if(check_account_response.error) {
                 customErrorHandle(this_form.find('input[name="password"]').closest('.field-parent'), check_account_response.message);
@@ -64790,6 +64779,8 @@ function bindLoginSigninPopupShow() {
                     }
 
                     if(!errors) {
+                        fireGoogleAnalyticsEvent('DentistRegistration', 'ClickNext', 'DentistRegistrationStep1');
+
                         $('.login-signin-popup .dentist .form-register .step').removeClass('visible');
                         $('.login-signin-popup .dentist .form-register .step.second').addClass('visible');
                         $('.login-signin-popup .prev-step').show();
@@ -64834,6 +64825,8 @@ function bindLoginSigninPopupShow() {
                     }
 
                     if(!errors) {
+                        fireGoogleAnalyticsEvent('DentistRegistration', 'ClickNext', 'DentistRegistrationStep2');
+
                         $('.login-signin-popup .dentist .form-register .step').removeClass('visible');
                         $('.login-signin-popup .dentist .form-register .step.third').addClass('visible');
 
@@ -64870,6 +64863,8 @@ function bindLoginSigninPopupShow() {
                     }
 
                     if(!errors) {
+                        fireGoogleAnalyticsEvent('DentistRegistration', 'ClickNext', 'DentistRegistrationStep3');
+
                         $('.login-signin-popup .dentist .form-register .step').removeClass('visible');
                         $('.login-signin-popup .dentist .form-register .step.fourth').addClass('visible');
 
@@ -64905,6 +64900,8 @@ function bindLoginSigninPopupShow() {
                     }
 
                     if(!errors) {
+                        fireGoogleAnalyticsEvent('DentistRegistration', 'ClickNext', 'DentistRegistrationComplete');
+
                         //submit the form
                         $('.response-layer').show();
                         $('.login-signin-popup form#dentist-register').submit();
@@ -65038,6 +65035,22 @@ function apiEventsListeners() {
                 //}
             }
 
+            if(event.response_data.new_account) {
+                //REGISTER
+                if(event.platform_type == 'facebook') {
+                    fireGoogleAnalyticsEvent('PatientRegistration', 'ClickFB', 'Patient Registration FB');
+                } else if(event.platform_type == 'civic') {
+                    fireGoogleAnalyticsEvent('PatientRegistration', 'ClickNext', 'Patient Registration Civic');
+                }
+            } else {
+                //LOGIN
+                if(event.platform_type == 'facebook') {
+                    fireGoogleAnalyticsEvent('PatientLogin', 'Click', 'Login FB');
+                } else if(event.platform_type == 'civic') {
+                    fireGoogleAnalyticsEvent('PatientLogin', 'Click', 'Login Civic');
+                }
+            }
+
             customJavascriptForm('/patient-login', custom_form_obj, 'post');
         }
     });
@@ -65088,6 +65101,12 @@ async function loggedOrNotLogic() {
             add_overflow_hidden_on_hidden_box_show = true;
         }
         $('body').removeClass('overflow-hidden');
+
+        $(document).on('click', '.logged-user-right-nav .application, .dentacoin-ecosystem-section .single-application', function() {
+            var this_btn = $(this);
+
+            fireGoogleAnalyticsEvent('Tools', 'Click', this_btn.attr('data-platform'))
+        });
 
         //IF NOT LOGGED LOGIC
         $('.logged-user-right-nav > .hidden-box-parent').hover(function () {
@@ -65376,4 +65395,59 @@ function dateObjToFormattedDate(object) {
     }
     return date + '/' + month + '/' + object.getFullYear();
 }
+
+function onEnrichProfileFormSubmit() {
+    $(document).on('submit', '.enrich-profile-container #enrich-profile', function(event) {
+        var errors = false;
+        var this_form = $(this);
+        this_form.find('.error-handle').remove();
+        if(this_form.find('[name="description"]').val().trim() == '') {
+            errors = true;
+            customErrorHandle(this_form.find('[name="description"]').parent(), 'Please enter short description.');
+        }
+
+        if(!errors) {
+            if($('.enrich-profile-container').attr('data-type') == 'dentist') {
+                fireGoogleAnalyticsEvent('DentistRegistration', 'ClickSave', 'DentistDescr');
+            } else if($('.enrich-profile-container').attr('data-type') == 'clinic') {
+                fireGoogleAnalyticsEvent('DentistRegistration', 'ClickSave', 'ClinicDescr');
+            }
+        } else {
+            event.preventDefault();
+        }
+    });
+}
+onEnrichProfileFormSubmit();
+
+// =================================== GOOGLE ANALYTICS TRACKING LOGIC ======================================
+
+function bindTrackerClickDentistsBtnEvent() {
+    $(document).on('click', '.init-dentists-click-event', function() {
+        fireGoogleAnalyticsEvent('Tools', 'Click', 'Dentists');
+    });
+}
+bindTrackerClickDentistsBtnEvent();
+
+function bindTrackerClickDownloadBrochure() {
+    $(document).on('click', '.download-brochure-event-tracker', function() {
+        fireGoogleAnalyticsEvent('Assets', 'Download', 'Brochure');
+    });
+}
+bindTrackerClickDownloadBrochure();
+
+function fireGoogleAnalyticsEvent(category, action, label, value) {
+    var event_obj = {
+        'event_action' : action,
+        'event_category': category,
+        'event_label': label
+    };
+
+    if(value != undefined) {
+        event_obj.value = value;
+    }
+
+    gtag('event', label, event_obj);
+}
+
+// =================================== /GOOGLE ANALYTICS TRACKING LOGIC ======================================
 },{"./helper":1096}]},{},[1097]);

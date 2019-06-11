@@ -18,7 +18,7 @@
                     </div>
                     <div class="row">
                         @foreach((new \App\Http\Controllers\HomeController())->getDentacoinHubApplications() as $application)
-                            <a @if(!empty($application->link)) href="{{$application->link}}" target="_blank" @else href="javascript:alert('Coming soon!');" @endif class="col-md-3 col-xs-4 inline-block-top">
+                            <a @if(!empty($application->link)) href="{{$application->link}}" target="_blank" @else href="javascript:alert('Coming soon!');" @endif class="col-md-3 col-xs-4 inline-block-top application" data-platform="{{$application->title}}">
                                 <figure class="text-center" itemtype="http://schema.org/ImageObject">
                                     @if($application->logo_url)
                                         <img src="//dentacoin.com/assets/uploads/{{$application->logo_url}}" itemprop="contentUrl" alt=""/>
