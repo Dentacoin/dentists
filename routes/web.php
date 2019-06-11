@@ -89,11 +89,11 @@ Route::group(['prefix' => '/', 'middleware' => 'frontEndMiddleware'], function (
     });
 
     Route::get('documents/F3T_report.pdf', function() {
-        die('test2');
+        return Redirect::to('//dentacoin.com/assets/uploads/dentacoin-fact-sheet.pdf');
     });
 
     Route::get('F3T_report.pdf', function() {
-        die('test2');
+        return Redirect::to('//dentacoin.com/assets/uploads/dentacoin-fact-sheet.pdf');
     });
 });
 
