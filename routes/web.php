@@ -74,9 +74,8 @@ Route::group(['prefix' => '/', 'middleware' => 'frontEndMiddleware'], function (
     Route::post('/check-dentist-account', 'UserController@checkDentistAccount')->name('check-dentist-account');
 
     Route::get('/custom-cookie', 'UserController@manageCustomCookie')->name('custom-cookie');
-    //======================================= AJAX ========================================
 
-    Route::post('/submit-apply-position', 'CareersController@submitApplyPosition')->name('submit-apply-position');
+    //======================================= AJAX ========================================
 
     Route::post('/check-email', 'UserController@checkEmail')->name('check-email');
 
@@ -86,14 +85,6 @@ Route::group(['prefix' => '/', 'middleware' => 'frontEndMiddleware'], function (
 
     Route::get('answers', function() {
         return Redirect::to('/faq');
-    });
-
-    Route::get('documents/F3T_report.pdf', function() {
-        return Redirect::to('//dentacoin.com/assets/uploads/dentacoin-fact-sheet.pdf');
-    });
-
-    Route::get('F3T_report.pdf', function() {
-        return Redirect::to('//dentacoin.com/assets/uploads/dentacoin-fact-sheet.pdf');
     });
 });
 
