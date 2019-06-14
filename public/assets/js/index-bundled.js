@@ -64889,6 +64889,12 @@ function bindLoginSigninPopupShow() {
                         }
                     }
 
+                    var validate_phone = await validatePhone($('.login-signin-popup .dentist .form-register .step.third input[name="phone"]').val().trim(), $('.login-signin-popup .dentist .form-register .step.third select[name="country-code"]').val());
+                    if(has(validate_phone, 'success') && !validate_phone.success) {
+                        customErrorHandle($('.login-signin-popup .dentist .form-register .step.third input[name="phone"]').closest('.field-parent'), 'Please use valid phone.');
+                        errors = true;
+                    }
+
                     if(!errors) {
                         fireGoogleAnalyticsEvent('DentistRegistration', 'ClickNext', 'DentistRegistrationStep3');
 
@@ -65035,6 +65041,18 @@ async function checkCaptcha(captcha) {
         },
         headers: {
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
+    });
+}
+
+async function validatePhone(phone, country_code) {
+    return await $.ajax({
+        type: 'POST',
+        url: 'https://api.dentacoin.com/api/phone/',
+        dataType: 'json',
+        data: {
+            phone: phone,
+            country_code: country_code
         }
     });
 }
