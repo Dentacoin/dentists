@@ -64179,6 +64179,7 @@ module.exports = {getWeb3};
 var {getWeb3} = require('./helper');
 
 basic.init();
+var get_params = getGETParameters();
 
 $(document).ready(function() {
 
@@ -64464,7 +64465,6 @@ var homepage_video_time_watched = 0;
 var homepage_video_timer;
 
 if($('.open-video-popup').length > 0) {
-
     $('.open-video-popup').click(function() {
         $('.custom-popup.video .wrapper').html('<div itemprop="video" itemscope="" itemtype="http://schema.org/VideoObject"><video controls><source src="//dentacoin.com/assets/videos/dentacoin-explainer-video.mp4" type="video/mp4">Your browser does not support HTML5 video.</video><meta itemprop="name" content="Dentacoin Introduction Video"><meta itemprop="description" content="Explainer video: Dentacoin, the Blockchain Solution for the Global Dentistry"><meta itemprop="uploadDate" content="2019-03-19T08:00:00+08:00"><link itemprop="contentURL" href="//dentacoin.com/assets/videos/dentacoin-explainer-video.mp4"></div>');
         $('.custom-popup.video').addClass('visible');
@@ -64552,6 +64552,21 @@ function scrollToSection(){
             return false;
         }
     })
+}
+
+function getGETParameters() {
+    var prmstr = window.location.search.substr(1);
+    return prmstr != null && prmstr != "" ? transformToAssocArray(prmstr) : {};
+}
+
+function transformToAssocArray( prmstr ) {
+    var params = {};
+    var prmarr = prmstr.split("&");
+    for ( var i = 0; i < prmarr.length; i++) {
+        var tmparr = prmarr[i].split("=");
+        params[tmparr[0]] = tmparr[1];
+    }
+    return params;
 }
 
 //mobile menu events
@@ -64950,6 +64965,11 @@ function openLoginSigninPopup() {
     });
     return false;
     // ====================== /DENTIST LOGIN/SIGNUP LOGIC ======================
+}
+
+//if get parameter is passed show loginform
+if(has(get_params, 'show-login') && !$('body').hasClass('logged-in')) {
+    openLoginSigninPopup();
 }
 
 //INIT LOGIC FOR ALL STEPS

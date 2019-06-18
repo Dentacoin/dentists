@@ -601,14 +601,6 @@
         <script src="//dentacoin.com/assets/libs/facebook-login/facebook.js?v=1.0.34"></script>
 
         @php($slow_login_form = \Illuminate\Support\Facades\Input::get('show-login'))
-        @if(isset($slow_login_form))
-            <script>
-                $(document).ready(function() {
-                    console.log('document ready');
-                    openLoginSigninPopup();
-                });
-            </script>
-        @endif
     @endif
 
     {{--Multiple errors from laravel validation--}}
