@@ -4306,9 +4306,8 @@ input[type='file'].hide-input {
 .display-block {
   display: block; }
 
-.margin-0-auto {
+@Inbr .margin-0-auto {
   margin: 0 auto; }
-
 .flex {
   display: flex;
   display: -webkit-box;

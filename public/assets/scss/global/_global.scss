@@ -309,6 +309,12 @@ input[type='file'].hide-input {
     display: block;
 }
 
+@include breakpoint($xs) {
+    .display-block-xs {
+        display: block;  
+    }
+}
+
 .margin-0-auto {
     margin: 0 auto;
 }
