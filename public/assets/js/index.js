@@ -4,7 +4,10 @@ basic.init();
 var get_params = getGETParameters();
 
 $(document).ready(function() {
-
+    //if get parameter is passed show loginform
+    if(has(get_params, 'show-login') && !$('body').hasClass('logged-in')) {
+        openLoginSigninPopup();
+    }
 });
 
 $(window).on('load', function() {
@@ -787,11 +790,6 @@ function openLoginSigninPopup() {
     });
     return false;
     // ====================== /DENTIST LOGIN/SIGNUP LOGIC ======================
-}
-
-//if get parameter is passed show loginform
-if(has(get_params, 'show-login') && !$('body').hasClass('logged-in')) {
-    openLoginSigninPopup();
 }
 
 //INIT LOGIC FOR ALL STEPS
