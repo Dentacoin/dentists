@@ -600,8 +600,9 @@
         <script src="//dentacoin.com/assets/libs/civic-login/civic.js?v=1.0.34"></script>
         <script src="//dentacoin.com/assets/libs/facebook-login/facebook.js?v=1.0.34"></script>
 
-        @if(isset(\Illuminate\Support\Facades\Input::get('show-login')))
-
+        @php($slow_login_form = \Illuminate\Support\Facades\Input::get('show-login'))
+        @if(isset($slow_login_form))
+            openLoginSigninPopup();
         @endif
     @endif
 
