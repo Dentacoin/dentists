@@ -4306,8 +4306,12 @@ input[type='file'].hide-input {
 .display-block {
   display: block; }
 
-@Inbr .margin-0-auto {
+@media screen and (max-width: 767px) {
+  .display-block-xs {
+    display: block; } }
+.margin-0-auto {
   margin: 0 auto; }
+
 .flex {
   display: flex;
   display: -webkit-box;

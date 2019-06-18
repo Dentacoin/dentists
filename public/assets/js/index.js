@@ -1318,18 +1318,21 @@ function bindTrackerClickDentistsBtnEvent() {
 bindTrackerClickDentistsBtnEvent();
 
 function bindTrackerClickDownloadBrochure() {
-    $(document).on('click', '.download-brochure-event-tracker', function() {
+    $(document).on('click', '.download-brochure-event-tracker', function(event) {
+        event.preventDefault();
         fireGoogleAnalyticsEvent('Assets', 'Download', 'Brochure');
+
+        window.open($(this).attr('href'));
     });
 }
 bindTrackerClickDownloadBrochure();
 
-function bindTrackerClickDownloadBrochure() {
+function bindTrackerClickDownloadDEBrochure() {
     $(document).on('click', '.download-de-brochure-event-tracker', function() {
         fireGoogleAnalyticsEvent('Assets', 'Download', 'DE Brochure');
     });
 }
-bindTrackerClickDownloadBrochure();
+bindTrackerClickDownloadDEBrochure();
 
 function bindTrackerClickDownloadFactsheet() {
     $(document).on('click', '.download-fact-sheet-event-tracker', function() {
