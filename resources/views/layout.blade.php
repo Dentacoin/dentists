@@ -602,7 +602,9 @@
 
         @php($slow_login_form = \Illuminate\Support\Facades\Input::get('show-login'))
         @if(isset($slow_login_form))
-            openLoginSigninPopup();
+            <script>
+                openLoginSigninPopup();
+            </script>
         @endif
     @endif
 
