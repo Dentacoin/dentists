@@ -65506,29 +65506,41 @@ function bindTrackerClickDownloadBrochure() {
 bindTrackerClickDownloadBrochure();
 
 function bindTrackerClickDownloadDEBrochure() {
-    $(document).on('click', '.download-de-brochure-event-tracker', function() {
+    $(document).on('click', '.download-de-brochure-event-tracker', function(event) {
+        event.preventDefault();
         fireGoogleAnalyticsEvent('Assets', 'Download', 'DE Brochure');
+
+        window.open($(this).attr('href'));
     });
 }
 bindTrackerClickDownloadDEBrochure();
 
 function bindTrackerClickDownloadFactsheet() {
-    $(document).on('click', '.download-fact-sheet-event-tracker', function() {
+    $(document).on('click', '.download-fact-sheet-event-tracker', function(event) {
+        event.preventDefault();
         fireGoogleAnalyticsEvent('Assets', 'Download', 'Factsheet');
+
+        window.open($(this).attr('href'));
     });
 }
 bindTrackerClickDownloadFactsheet();
 
 function bindTrackerClickDownloadDEFactsheet() {
     $(document).on('click', '.download-de-fact-sheet-event-tracker', function() {
+        event.preventDefault();
         fireGoogleAnalyticsEvent('Assets', 'Download', 'DE Factsheet');
+
+        window.open($(this).attr('href'));
     });
 }
 bindTrackerClickDownloadDEFactsheet();
 
 function bindTrackerClickDownloadBrochureForPatients() {
     $(document).on('click', '.download-patients-brochure-event-tracker', function() {
+        event.preventDefault();
         fireGoogleAnalyticsEvent('Assets', 'Download', 'Patient Brochure');
+
+        window.open($(this).attr('href'));
     });
 }
 bindTrackerClickDownloadBrochureForPatients();

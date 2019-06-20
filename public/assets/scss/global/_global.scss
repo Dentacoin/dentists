@@ -315,6 +315,12 @@ input[type='file'].hide-input {
     }
 }
 
+@include breakpoint($sm-only) {
+    .display-block-sm {
+        display: block;
+    }
+}
+
 .margin-0-auto {
     margin: 0 auto;
 }
