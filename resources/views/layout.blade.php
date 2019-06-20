@@ -518,7 +518,8 @@
                                 <div class="inline-block text-right">
                                     <input type="button" value="Next" class="white-dark-blue-btn small fs-20 next-step" data-current-step="first"/>
                                     <input type="hidden" name="_token" value="{{csrf_token()}}">
-                                    @if(isset(\Illuminate\Support\Facades\Input::get('inviter')))
+                                    @php($inviter = \Illuminate\Support\Facades\Input::get('inviter'))
+                                    @if(isset($inviter))
                                         <input type="hidden" name="inviter" value="{{\Illuminate\Support\Facades\Input::get('inviter')}}">
                                     @endif
                                 </div>
