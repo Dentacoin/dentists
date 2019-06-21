@@ -48,6 +48,10 @@ class APIRequestsController extends Controller {
             $post_fields_arr['name_alternative'] = trim($data['alternative-name']);
         }
 
+        if(!empty($data['inviter'])) {
+            $post_fields_arr['invited_by'] = trim($data['inviter']);
+        }
+
         switch($data['user-type']) {
             case 'dentist':
                 $post_fields_arr['type'] = 'dentist';
@@ -66,8 +70,11 @@ class APIRequestsController extends Controller {
             CURLOPT_POSTFIELDS => $post_fields_arr
         ));
 
-        $resp = json_decode(curl_exec($curl), true);
+        $resp = curl_exec($curl);
+        //$resp = json_decode(curl_exec($curl), true);
         curl_close($curl);
+        var_dump($resp);
+        die('asd');
 
         if(!empty($resp))   {
             return $resp;
