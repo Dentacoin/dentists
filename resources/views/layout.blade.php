@@ -244,11 +244,11 @@
                                     <li class="inline-block separator">|</li>
                                 @endif
                                 <li class="inline-block @if(!empty($el->class_attribute)) {{$el->class_attribute}} @endif @if($el->url == '//dentacoin.com/assets/uploads/dentacoin-fact-sheet.pdf') has-submenu padding-right-xs-20 @endif">
-                                    <a @if($el->new_window) target="_blank" @endif itemprop="url" href="{{$el->url}}" class="download-de-fact-sheet-event-tracker"><span itemprop="name">{{$el->name}}</span></a>
+                                    <a @if($el->new_window) target="_blank" @endif itemprop="url" href="{{$el->url}}"><span itemprop="name">{{$el->name}}</span></a>
                                     @if($el->url == '//dentacoin.com/assets/uploads/dentacoin-fact-sheet.pdf')
                                         <ul itemscope="" itemtype="http://schema.org/SiteNavigationElement" class="submenu">
                                             <li>
-                                                <a href="//dentacoin.com/assets/uploads/was-ist-dentacoin.pdf" itemprop="url" target="_blank"><span itemprop="name">Fact Sheet DE</span></a>
+                                                <a href="//dentacoin.com/assets/uploads/was-ist-dentacoin.pdf" itemprop="url" target="_blank"  class="download-de-fact-sheet-event-tracker"><span itemprop="name">Fact Sheet DE</span></a>
                                             </li>
                                         </ul>
                                     @endif

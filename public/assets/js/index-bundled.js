@@ -64476,7 +64476,7 @@ if($('.open-video-popup').length > 0) {
         $('.custom-popup.video .wrapper').find('video').on('play', function() {
             homepage_video_timer = setInterval(function() {
                 homepage_video_time_watched+=1;
-            }, 1000);
+            }, 1);
         });
 
         $('.custom-popup.video .wrapper').find('video').get(0).play();
@@ -64488,7 +64488,8 @@ if($('.open-video-popup').length > 0) {
         $('body').removeClass('overflow-hidden');
 
         clearInterval(homepage_video_timer);
-        fireGoogleAnalyticsEvent('Video', 'Play' , 'Dentacoin Explainer', fmtMSS(homepage_video_time_watched))
+        console.log(homepage_video_time_watched, 'homepage_video_time_watched');
+        fireGoogleAnalyticsEvent('Video', 'Play' , 'Dentacoin Explainer', homepage_video_time_watched);
 
         homepage_video_time_watched = 0;
     });
@@ -64501,13 +64502,11 @@ $('body').click(function(event) {
         $('.custom-popup.video .wrapper').html('');
 
         clearInterval(homepage_video_timer);
-        fireGoogleAnalyticsEvent('Video', 'Play' , 'Dentacoin Explainer', fmtMSS(homepage_video_time_watched))
+        fireGoogleAnalyticsEvent('Video', 'Play' , 'Dentacoin Explainer', homepage_video_time_watched);
 
         homepage_video_time_watched = 0;
     }
 });
-
-function fmtMSS(s){return(s-(s%=60))/60+(9<s?':':':0')+s}
 
 /*
 
@@ -65169,12 +65168,6 @@ async function loggedOrNotLogic() {
         }
         $('body').removeClass('overflow-hidden');
 
-        $(document).on('click', '.logged-user-right-nav .application, .dentacoin-ecosystem-section .single-application', function() {
-            var this_btn = $(this);
-
-            fireGoogleAnalyticsEvent('Tools', 'Click', this_btn.attr('data-platform'))
-        });
-
         //IF NOT LOGGED LOGIC
         $('.logged-user-right-nav > .hidden-box-parent').hover(function () {
             $('.logged-user-right-nav .hidden-box').addClass('show-this');
@@ -65488,12 +65481,12 @@ onEnrichProfileFormSubmit();
 
 // =================================== GOOGLE ANALYTICS TRACKING LOGIC ======================================
 
-function bindTrackerClickDentistsBtnEvent() {
+/*function bindTrackerClickDentistsBtnEvent() {
     $(document).on('click', '.init-dentists-click-event', function() {
         fireGoogleAnalyticsEvent('Tools', 'Click', 'Dentists');
     });
 }
-bindTrackerClickDentistsBtnEvent();
+bindTrackerClickDentistsBtnEvent();*/
 
 function bindTrackerClickDownloadBrochure() {
     $(document).on('click', '.download-brochure-event-tracker', function(event) {
@@ -65566,6 +65559,14 @@ function bindTrackerClickFooterPlatforms() {
     });
 }
 bindTrackerClickFooterPlatforms();
+
+
+
+$(document).on('click', '.logged-user-right-nav .application, .dentacoin-ecosystem-section .single-application, .applications-section .single-application', function() {
+    var this_btn = $(this);
+
+    fireGoogleAnalyticsEvent('Tools', 'Click', this_btn.attr('data-platform'))
+});
 
 function fireGoogleAnalyticsEvent(category, action, label, value) {
     var event_obj = {
