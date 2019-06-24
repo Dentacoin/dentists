@@ -29,19 +29,6 @@ Route::group(['prefix' => '/', 'middleware' => 'frontEndMiddleware'], function (
 
     Route::get('/home', 'HomeController@getNotLoggedView')->middleware('HandleUserSession')->name('logged-home');
 
-    Route::get('/create-dummy-session', function() {
-        $session_arr = [
-            'token' => '123test',
-            'id' => '24518',
-            'type' => 'patient'
-        ];
-        session(['logged_user' => $session_arr]);
-
-        $params = ['applications' => (new \App\Http\Controllers\HomeController())->getDentacoinHubApplications()];
-        return view('pages/logged-user/homepage', $params);
-
-    })->middleware('HandleUserSession')->name('logged-home');
-
     Route::get('/my-profile', 'UserController@getMyProfileView')->middleware('HandleUserSession')->name('my-profile');
 
     Route::get('/edit-account', 'UserController@getEditAccountView')->middleware('HandleUserSession')->name('edit-account');

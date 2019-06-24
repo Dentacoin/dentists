@@ -64476,7 +64476,12 @@ if($('.open-video-popup').length > 0) {
         $('.custom-popup.video .wrapper').find('video').on('play', function() {
             homepage_video_timer = setInterval(function() {
                 homepage_video_time_watched+=1;
-            }, 1);
+            }, 1000);
+        });
+
+        $('.custom-popup.video .wrapper').find('video').on('pause', function() {
+            clearInterval(homepage_video_timer);
+            fireGoogleAnalyticsEvent('Video', 'Play', 'Dentacoin Explainer', homepage_video_time_watched);
         });
 
         $('.custom-popup.video .wrapper').find('video').get(0).play();
@@ -64488,8 +64493,7 @@ if($('.open-video-popup').length > 0) {
         $('body').removeClass('overflow-hidden');
 
         clearInterval(homepage_video_timer);
-        console.log(homepage_video_time_watched, 'homepage_video_time_watched');
-        fireGoogleAnalyticsEvent('Video', 'Play' , 'Dentacoin Explainer', homepage_video_time_watched);
+        fireGoogleAnalyticsEvent('Video', 'Play', 'Dentacoin Explainer', homepage_video_time_watched);
 
         homepage_video_time_watched = 0;
     });
@@ -65559,8 +65563,6 @@ function bindTrackerClickFooterPlatforms() {
     });
 }
 bindTrackerClickFooterPlatforms();
-
-
 
 $(document).on('click', '.logged-user-right-nav .application, .dentacoin-ecosystem-section .single-application, .applications-section .single-application', function() {
     var this_btn = $(this);
