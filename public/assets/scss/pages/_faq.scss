@@ -1,5 +1,5 @@
 .faq-container {
-    .container {
+    .container.shorted {
         @include breakpoint($lgl) {
             width: 65% !important;
         }

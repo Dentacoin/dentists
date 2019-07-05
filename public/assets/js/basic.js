@@ -1,7 +1,4 @@
 var basic = {
-    options: {
-        alert: null
-    },
     init: function(opt) {
         //basic.addCsrfTokenToAllAjax();
         //basic.stopMaliciousInspect();
@@ -161,105 +158,6 @@ var basic = {
     },
     closeDialog: function (){
         bootbox.hideAll();
-    },
-    request: {
-        initialize: false,
-        result: null,
-        submit: function (url, data, options, callback, curtain) {
-            options = $.extend({
-                type: 'POST',
-                dataType: 'json',
-                async: true
-            }, options);
-            if (basic.request.initialize && options.async == false) {
-                console.log(['Please wait for parent request']);
-            }
-            else {
-                basic.request.initialize = true;
-                return $.ajax({
-                    url: url,
-                    data: data,
-                    type: options.type,
-                    dataType: options.dataType,
-                    async: options.async,
-                    beforeSend: function() {
-                        if (curtain !== null) {
-                            basic.addCurtain();
-                        }
-                    },
-                    success: function (response) {
-                        basic.request.result = response;
-                        if (curtain !== null) {
-                            basic.removeCurtain();
-                        }
-                        basic.request.initialize = false;
-                        if (typeof callback === 'function') {
-                            callback(response);
-                        }
-                    },
-                    error: function(){
-                        basic.request.initialize = false;
-                    }
-                });
-            }
-        },
-        validate: function(form, callback, data){
-            //if data is passed skip clearing all placeholders and removing messages. it's done inside the calling function
-            if(data == undefined) {
-                basic.clearPlaceholders();
-                $(".input-error-message").remove();
-                data = form.serialize();
-            }
-            return basic.request.submit(SITE_URL+"validate/", data, {async: false}, function(res){
-                if (typeof callback === 'function') {
-                    callback();
-                }
-            },  null);
-        },
-        markValidationErrors: function(validation_result, form){
-            basic.setPlaceholders();
-            if (typeof validation_result.all_errors == "undefined") {
-                if (typeof validation_result.message != "undefined") {
-                    basic.showAlert(validation_result.message);
-                    return true;
-                }
-            } else {
-                var all_errors = JSON.parse(validation_result.all_errors);
-                for (var param_name in all_errors) {
-                    //if there is error, but no name for it, pop it in alert
-                    if(Object.keys(all_errors).length == 1 && $('[name="'+param_name+'"]').length == 0) {
-                        basic.showAlert(all_errors[param_name]);
-                        return false;
-                    }
-
-                    if(form == undefined){
-                        var input = $('[name="'+param_name+'"]');
-                    }else{
-                        var input = form.find('[name="'+param_name+'"]');
-                    }
-                    basic.request.removeValidationErrors(input);
-                    if (input.closest('.input-error-message-holder')) {
-                        input.closest('.input-error-message-holder').append('<div class="input-error-message">'+all_errors[param_name]+'</div>');
-                    } else {
-                        input.after('<div class="input-error-message">'+all_errors[param_name]+'</div>');
-                    }
-                    //basic.setInputsPlaceholder(input);
-                }
-            }
-        },
-        removeValidationErrors: function(input){
-            input.closest('.input-error-message-holder').find(".input-error-message").remove();
-            input.parent().remove(".input-error-message");
-        }
-    },
-    alert: function(message) {
-        basic.options.alert(message);
-    },
-    addCurtain: function(){
-        $("body").prepend('<div class="curtain"></div>');
-    },
-    removeCurtain: function(){
-        $("body .curtain").remove();
     },
     validateEmail: function(email)   {
         return /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email);

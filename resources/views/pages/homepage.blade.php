@@ -158,7 +158,7 @@
                                     @if(empty($testimonial->media_name))
                                         <img src="/assets/images/avatar-icon.svg" alt="" itemprop="contentUrl"/>
                                     @else
-                                        <img src="http://dentacoin.com/assets/uploads/{{$testimonial->media_name}}" alt="{{$testimonial->media_alt}}" itemprop="contentUrl"/>
+                                        <img src="//dentacoin.com/assets/uploads/{{$testimonial->media_name}}" alt="{{$testimonial->media_alt}}" itemprop="contentUrl"/>
                                     @endif
                                 </figure>
                                 <div class="title-job inline-block-top">
@@ -190,7 +190,7 @@
                                             @php($date = new DateTime($application->media_created_at))
                                         @endif
                                         <button class="col-xs-4 inline-block-top single-application" data-platform="{{$application->title}}">
-                                            <figure class="wrapper" @if(!empty($application->media_url)) data-image="http://dentacoin.com/assets/uploads/{{$application->media_url}}" data-image-alt="" data-image-type="{{$type}}" data-upload-date="{{$date->format('c')}}" @endif @if($application->popup_logo_url) data-popup-logo="http://dentacoin.com/assets/uploads/{{$application->popup_logo_url}}" data-popup-logo-alt="" @endif data-title="{{$application->title}}" data-description="@if($application->dentists_text){{ json_encode($application->dentists_text) }}@endif" @if($application->slug == 'blog-intro') @if(!empty($latest_blog_articles)) data-articles="{{json_encode($latest_blog_articles)}}" @endif @endif itemscope="" data-title="{{$application->title}}" data-slug="{{$application->slug}}" itemtype="http://schema.org/ImageObject">
+                                            <figure class="wrapper" @if(!empty($application->media_url)) data-image="//dentacoin.com/assets/uploads/{{$application->media_url}}" data-image-alt="" data-image-type="{{$type}}" data-upload-date="{{$date->format('c')}}" @endif @if($application->popup_logo_url) data-popup-logo="//dentacoin.com/assets/uploads/{{$application->popup_logo_url}}" data-popup-logo-alt="" @endif data-title="{{$application->title}}" data-description="@if($application->dentists_text){{ json_encode($application->dentists_text) }}@endif" @if($application->slug == 'blog-intro') @if(!empty($latest_blog_articles)) data-articles="{{json_encode($latest_blog_articles)}}" @endif @endif itemscope="" data-title="{{$application->title}}" data-slug="{{$application->slug}}" itemtype="http://schema.org/ImageObject">
                                                 @if($application->logo_url)
                                                     <img src="//dentacoin.com/assets/uploads/{{$application->logo_url}}" itemprop="contentUrl" alt=""/>
                                                 @endif
@@ -227,9 +227,9 @@
                             @php($type = pathinfo($application->media_url, PATHINFO_EXTENSION))
                             @php($date = new DateTime($application->media_created_at))
                             <button class="col-md-3 col-xs-4 inline-block-top single-application">
-                                <figure class="wrapper" @if($application->media_url) data-image="http://dentacoin.com/assets/uploads/{{$application->media_url}}" data-image-alt="" data-image-type="{{$type}}" data-upload-date="{{$date->format('c')}}" @endif @if($application->popup_logo_url) data-popup-logo="http://dentacoin.com/assets/uploads/{{$application->popup_logo_url}}" data-popup-logo-alt="" @endif data-description="@if($application->dentists_text){{ json_encode($application->dentists_text) }}@endif" @if($application->slug == 'blog-intro') data-articles="{{json_encode($latest_blog_articles)}}" @endif data-title="{{$application->title}}" itemscope="" data-slug="{{$application->slug}}" itemtype="http://schema.org/ImageObject">
+                                <figure class="wrapper" @if($application->media_url) data-image="//dentacoin.com/assets/uploads/{{$application->media_url}}" data-image-alt="" data-image-type="{{$type}}" data-upload-date="{{$date->format('c')}}" @endif @if($application->popup_logo_url) data-popup-logo="//dentacoin.com/assets/uploads/{{$application->popup_logo_url}}" data-popup-logo-alt="" @endif data-description="@if($application->dentists_text){{ json_encode($application->dentists_text) }}@endif" @if($application->slug == 'blog-intro') data-articles="{{json_encode($latest_blog_articles)}}" @endif data-title="{{$application->title}}" itemscope="" data-slug="{{$application->slug}}" itemtype="http://schema.org/ImageObject">
                                     @if($application->logo_url)
-                                        <img src="http://dentacoin.com/assets/uploads/{{$application->logo_url}}" itemprop="contentUrl" alt=""/>
+                                        <img src="//dentacoin.com/assets/uploads/{{$application->logo_url}}" itemprop="contentUrl" alt=""/>
                                     @endif
                                     <figcaption>{{$application->title}}</figcaption>
                                 </figure>

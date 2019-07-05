@@ -1,11 +1,8 @@
-var {getWeb3} = require('./helper');
-
-basic.init();
 var get_params = getGETParameters();
 
 $(document).ready(function() {
     //if get parameter is passed show loginform
-    if(has(get_params, 'show-login') && !$('body').hasClass('logged-in')) {
+    if(basic.objHasKey(get_params, 'show-login') && !$('body').hasClass('logged-in')) {
         openLoginSigninPopup();
     }
 });
@@ -29,26 +26,6 @@ $(window).on('resize', function(){
 $(window).on('scroll', function()  {
     //homepageHowToBecomeDentacoinDentistBackgroundParallax();
 });
-
-var dApp = {
-    infura_node: 'https://rinkeby.infura.io/v3/c3a8017424324e47be615fb4028275bb',
-    web3Provider: null,
-    web3_0_2: null,
-    web3_1_0: null,
-    init: function () {
-        return dApp.initWeb3();
-    },
-    initWeb3: async function () {
-        dApp.web3_1_0 = getWeb3(new Web3.providers.HttpProvider(dApp.infura_node));
-    }
-};
-
-dApp.init();
-
-//checking if passed address is valid
-function innerAddressCheck(address)    {
-    return dApp.web3_1_0.utils.isAddress(address);
-}
 
 //init cookie events only if exists
 function checkIfCookie()    {
@@ -739,7 +716,7 @@ function openLoginSigninPopup() {
                 }
 
                 var validate_phone = await validatePhone($('.login-signin-popup .dentist .form-register .step.third input[name="phone"]').val().trim(), $('.login-signin-popup .dentist .form-register .step.third select[name="country-code"]').val());
-                if(has(validate_phone, 'success') && !validate_phone.success) {
+                if(basic.objHasKey(validate_phone, 'success') && !validate_phone.success) {
                     customErrorHandle($('.login-signin-popup .dentist .form-register .step.third input[name="phone"]').closest('.field-parent'), 'Please use valid phone.');
                     errors = true;
                 }
@@ -920,12 +897,6 @@ function apiEventsListeners() {
             }
 
             //check if CoreDB returned address for this user and if its valid one
-            if(basic.objHasKey(custom_form_obj, 'address') != null && innerAddressCheck(custom_form_obj.address)) {
-                //var current_dentists_for_logging_user = await App.assurance_methods.getWaitingContractsForPatient(custom_form_obj.address);
-                //if(current_dentists_for_logging_user.length > 0) {
-                //custom_form_obj.have_contracts = true;
-                //}
-            }
 
             if(event.response_data.new_account) {
                 //REGISTER
@@ -1026,182 +997,6 @@ async function loggedOrNotLogic() {
                 $('.logged-user-right-nav .up-arrow').removeClass('show-this');
             }
         });
-
-        if($('.logged-user-hamburger').length) {
-            $('.logged-user-hamburger').click(function() {
-                $('.logged-mobile-profile-menu').addClass('active');
-            });
-
-            $('.close-logged-mobile-profile-menu').click(function() {
-                $('.logged-mobile-profile-menu').removeClass('active');
-            });
-        }
-
-        //LOGGED USER LOGIC BY PAGES
-        if ($('body').hasClass('edit-account')) {
-            styleAvatarUploadButton('form#patient-update-profile .avatar .btn-wrapper label');
-
-            $('form#patient-update-profile').on('submit', function (event) {
-                var this_form = $(this);
-                var errors = false;
-                //clear prev errors
-                if (this_form.find('.error-handle').length) {
-                    this_form.find('.error-handle').remove();
-                }
-
-                var form_fields = this_form.find('.custom-input.required');
-                for (var i = 0, len = form_fields.length; i < len; i += 1) {
-                    if (form_fields.eq(i).hasClass('bootstrap-select')) {
-                        continue;
-                    }
-
-                    if (form_fields.eq(i).attr('type') == 'email' && !basic.validateEmail(form_fields.eq(i).val().trim())) {
-                        customErrorHandle(form_fields.eq(i).parent(), 'Please use valid email address.');
-                        errors = true;
-                    }
-
-                    if (form_fields.eq(i).val().trim() == '') {
-                        customErrorHandle(form_fields.eq(i).parent(), 'This field is required.');
-                        errors = true;
-                    }
-                }
-
-                if (this_form.find('[name="dcn_address"]').val().trim().length > 0 && !innerAddressCheck(this_form.find('[name="dcn_address"]').val().trim())) {
-                    customErrorHandle(this_form.find('[name="dcn_address"]').parent(), 'Please enter valid Wallet Address.');
-                    errors = true;
-                }
-
-                if (errors) {
-                    event.preventDefault();
-                }
-            });
-        } else if ($('body').hasClass('manage-privacy')) {
-            $('.download-gdpr-data').click(function () {
-                $.ajax({
-                    type: 'POST',
-                    url: '/download-gdpr-data',
-                    dataType: 'json',
-                    headers: {
-                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                    },
-                    success: function (response) {
-                        if (response.success) {
-                            window.open(response.success, '_blank');
-                        } else if (response.error) {
-                            basic.showAlert(response.error, '', true);
-                        }
-                    }
-                });
-            });
-        } else if($('body').hasClass('my-profile')) {
-            $('.my-profile-page-content .dropdown-hidden-menu button').click(function () {
-                var this_btn = $(this);
-                $('.my-profile-page-content .current-converted-price .amount').html((parseFloat($('.current-dcn-amount').html()) * parseFloat(this_btn.attr('data-multiple-with'))).toFixed(2));
-                $('.my-profile-page-content .current-converted-price .symbol span').html(this_btn.html());
-            });
-
-            initDataTable();
-
-            if ($('form#withdraw').length) {
-                $('form#withdraw').on('submit', function (event) {
-                    var this_form_native = this;
-                    var this_form = $(this);
-                    var form_errors = false;
-                    this_form.find('.error-handle').remove();
-
-                    for (var i = 0, len = this_form.find('.required').length; i < len; i += 1) {
-                        if (this_form.find('.required').eq(i).val().trim() == '') {
-                            customErrorHandle(this_form.find('.required').eq(i).parent(), 'This field is required.');
-                            event.preventDefault();
-                            form_errors = true;
-                        } else if (this_form.find('.required').eq(i).hasClass('address') && !innerAddressCheck(this_form.find('.required').eq(i).val().trim())) {
-                            customErrorHandle(this_form.find('.required').eq(i).parent(), 'Please enter valid wallet address.');
-                            event.preventDefault();
-                            form_errors = true;
-                        }
-                    }
-
-                    event.preventDefault();
-                    if (!form_errors) {
-                        $('.response-layer').show();
-                        this_form_native.submit();
-                        this_form.unbind();
-                    }
-                });
-            }
-
-            if ($('form#add-dcn-address').length) {
-                $('form#add-dcn-address').on('submit', function (event) {
-                    var this_form = $(this);
-                    this_form.find('.error-handle').remove();
-                    if (this_form.find('.address').val().trim() == '') {
-                        customErrorHandle(this_form.find('.address').parent(), 'Please enter your wallet address.');
-                        event.preventDefault();
-                    } else if (!innerAddressCheck(this_form.find('.address').val().trim())) {
-                        customErrorHandle(this_form.find('.address').parent(), 'Please enter valid wallet address.');
-                        event.preventDefault();
-                    }
-                });
-            }
-
-            //loading address logic
-            await $.getScript('//dentacoin.com/assets/libs/civic-login/civic-kyc.js', function() {});
-
-            $(document).on('civicRead', async function (event) {
-                $('.response-layer').show();
-            });
-
-            $(document).on('receivedKYCCivicToken', async function (event) {
-                if(event.response_data) {
-                    $.ajax({
-                        type: 'POST',
-                        url: 'https://civic.dentacoin.net/civic',
-                        dataType: 'json',
-                        data: {
-                            jwtToken: event.response_data
-                        },
-                        success: function (response) {
-                            if(response.data && has(response, 'userId') && response.userId != '') {
-                                $.ajax({
-                                    type: 'POST',
-                                    url: '/validate-civic-kyc',
-                                    dataType: 'json',
-                                    data: {
-                                        token: event.response_data
-                                    },
-                                    headers: {
-                                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                                    },
-                                    success: function (inner_response) {
-                                        if(inner_response.success) {
-                                            basic.showAlert('Civic KYC authentication passed successfully.', '', true);
-                                            setTimeout(function() {
-                                                window.location.reload();
-                                            }, 2000);
-                                        } else if(inner_response.error) {
-                                            $('.response-layer').hide();
-                                            var error_html = '';
-                                            for (var key in inner_response.error) {
-                                                error_html += inner_response.error[key] + '<br>';
-                                            }
-                                            basic.showAlert(error_html, '', true);
-                                        }
-                                    }
-                                });
-                            }
-                        }
-                    });
-                } else {
-                    $('.response-layer').hide();
-                    basic.showAlert('Something went wrong with Civic authentication. Please try again later.', '', true);
-                }
-            });
-        }
-    } else {
-        //IF NOT LOGGED LOGIC
-        /*if($('body').hasClass('home') || $('body').hasClass('logged-home')) {
-            $('.info-section .show-login-signin').offset({left: $('header .show-login-signin').offset().left});
-        }*/
     }
 }
 loggedOrNotLogic();
@@ -1245,11 +1040,6 @@ function bindGoogleAlikeButtonsEvents() {
     });
 }
 bindGoogleAlikeButtonsEvents();
-
-//check if object has property
-function has(object, key) {
-    return object ? hasOwnProperty.call(object, key) : false;
-}
 
 function initToolsPostsSlider()   {
     //init slider for most popular posts

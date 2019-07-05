@@ -4223,6 +4223,9 @@ body {
   .hide-xs {
     display: none !important; } }
 
+.text-center {
+  text-align: center; }
+
 @media screen and (max-width: 767px) {
   .text-center-xs {
     text-align: center !important; } }
@@ -5272,33 +5275,6 @@ nav.sidenav {
     -ms-box-shadow: 0px 2px 10px 0 #679dca;
     box-shadow: 0px 2px 10px 0 #679dca; }
 
-.module.profile-menu li a {
-  display: block;
-  font-size: 16px;
-  padding: 10px;
-  color: #333333;
-  border-left: 3px solid transparent;
-  -webkit-transition: 0.3s;
-  -moz-transition: 0.3s;
-  -o-transition: 0.3s;
-  -ms-transition: 0.3s;
-  transition: 0.3s; }
-  .module.profile-menu li a.active {
-    border-left: 3px solid #002248;
-    background: #f0f9ff;
-    color: #002248; }
-  .module.profile-menu li a:hover {
-    border-left: 3px solid #002248;
-    background: #f0f9ff;
-    color: #002248; }
-  .module.profile-menu li a figure {
-    padding-right: 10px;
-    padding-left: 10px;
-    vertical-align: middle; }
-    .module.profile-menu li a figure img {
-      width: 20px; }
-  .module.profile-menu li a span {
-    vertical-align: middle; }
 .module.avatar input[type="file"] {
   display: none; }
 .module.avatar .btn-wrapper {
@@ -5557,7 +5533,7 @@ header {
     -ms-border-radius: 15px;
     border-radius: 15px; }
     header .logged-user-right-nav .hidden-box .hidden-box-hub {
-      background-image: url("/assets/images/dentacoin-ecosystem-background.jpg");
+      background-image: url("/assets/images/small-dentacoin-ecosystem-background.jpg");
       background-position: center center;
       background-repeat: no-repeat;
       background-size: cover;
@@ -6345,7 +6321,7 @@ footer .bottom-text a {
       margin-top: 0; } }
 
 @media screen and (min-width: 1400px) {
-  .faq-container .container {
+  .faq-container .container.shorted {
     width: 65% !important; } }
 .faq-container .title hr {
   border-color: #002248; }
@@ -6441,79 +6417,6 @@ footer .bottom-text a {
     -ms-box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.4);
     box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.4); }
 
-body.logged-in .my-profile-menu {
-  width: 300px;
-  padding: 15px; }
-  body.logged-in .my-profile-menu .wrapper {
-    border: 1px solid #f3f3f3;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    -webkit-box-shadow: 0px 0px 10px 2px #f3f3f3;
-    -moz-box-shadow: 0px 0px 10px 2px #f3f3f3;
-    -ms-box-shadow: 0px 0px 10px 2px #f3f3f3;
-    box-shadow: 0px 0px 10px 2px #f3f3f3; }
-    body.logged-in .my-profile-menu .wrapper .avatar-and-name {
-      padding-left: 15px;
-      padding-right: 15px; }
-      body.logged-in .my-profile-menu .wrapper .avatar-and-name figure {
-        width: 40px;
-        overflow: hidden;
-        -webkit-border-radius: 50%;
-        -moz-border-radius: 50%;
-        -ms-border-radius: 50%;
-        border-radius: 50%; }
-      body.logged-in .my-profile-menu .wrapper .avatar-and-name .welcome-name {
-        width: calc(100% - 40px);
-        padding-left: 10px; }
-  @media screen and (max-width: 991px) {
-    body.logged-in .my-profile-menu {
-      display: none; } }
-body.logged-in .my-profile-page-content {
-  width: calc(100% - 300px);
-  padding: 15px;
-  font-size: 16px; }
-  body.logged-in .my-profile-page-content .profile-page-title {
-    font-size: 0; }
-    body.logged-in .my-profile-page-content .profile-page-title > figure img {
-      width: 30px; }
-    body.logged-in .my-profile-page-content .profile-page-title h2 {
-      width: calc(100% - 30px);
-      padding-left: 15px; }
-  @media screen and (max-width: 991px) {
-    body.logged-in .my-profile-page-content {
-      width: 100%;
-      padding: 0; } }
-
-.logged-mobile-profile-menu {
-  position: fixed;
-  top: 0;
-  right: -100%;
-  width: 100%;
-  height: 100%;
-  z-index: 100005;
-  background-color: rgba(0, 0, 0, 0.6);
-  -webkit-transition: 0.3s;
-  -moz-transition: 0.3s;
-  -o-transition: 0.3s;
-  -ms-transition: 0.3s;
-  transition: 0.3s; }
-  .logged-mobile-profile-menu nav {
-    width: 70%;
-    height: 100%;
-    background-color: white;
-    float: right;
-    padding-top: 35px; }
-    @media screen and (max-width: 991px) {
-      .logged-mobile-profile-menu nav {
-        overflow-y: auto; } }
-  .logged-mobile-profile-menu .close-logged-mobile-profile-menu {
-    position: absolute;
-    top: 10px;
-    font-size: 20px;
-    right: 20px; }
-  .logged-mobile-profile-menu.active {
-    right: 0; }
-
 .dentacoin-ecosystem-section {
   background-image: url("/assets/images/dentacoin-ecosystem-background.jpg");
   background-position: center center;
@@ -6565,161 +6468,5 @@ body.logged-in .my-profile-page-content {
   @media screen and (max-width: 400px) {
     .dentacoin-ecosystem-section .list a figure figcaption {
       font-size: 16px; } }
-
-.manage-privacy-container .delete-local-storage-border-bottom {
-  border-bottom: 3px solid black; }
-.manage-privacy-container .delete figure, .manage-privacy-container .download figure, .manage-privacy-container .delete-local-storage figure {
-  width: 100px; }
-.manage-privacy-container .delete .text, .manage-privacy-container .download .text, .manage-privacy-container .delete-local-storage .text {
-  width: calc(100% - 100px);
-  padding-left: 20px; }
-.manage-privacy-container .delete.delete, .manage-privacy-container .download.delete, .manage-privacy-container .delete-local-storage.delete {
-  border-bottom: 3px solid black; }
-@media screen and (max-width: 767px) {
-  .manage-privacy-container .delete, .manage-privacy-container .download, .manage-privacy-container .delete-local-storage {
-    text-align: center; }
-    .manage-privacy-container .delete figure, .manage-privacy-container .download figure, .manage-privacy-container .delete-local-storage figure {
-      margin: 0 auto; }
-    .manage-privacy-container .delete .text, .manage-privacy-container .download .text, .manage-privacy-container .delete-local-storage .text {
-      width: 100%;
-      padding-left: 0;
-      padding-top: 20px;
-      text-align: left; }
-    .manage-privacy-container .delete.delete input[type='submit'], .manage-privacy-container .download.delete input[type='submit'], .manage-privacy-container .delete-local-storage.delete input[type='submit'] {
-      font-size: 16px;
-      padding: 10px 0;
-      text-align: center;
-      width: 100%;
-      max-width: 300px; }
-    .manage-privacy-container .delete.download a, .manage-privacy-container .delete.delete-local-storage a, .manage-privacy-container .download.download a, .manage-privacy-container .download.delete-local-storage a, .manage-privacy-container .delete-local-storage.download a, .manage-privacy-container .delete-local-storage.delete-local-storage a {
-      font-size: 16px;
-      padding: 10px 0;
-      text-align: center;
-      width: 100%;
-      max-width: 300px; } }
-
-section.edit-account form#patient-update-profile .form-row > label {
-  width: 180px;
-  text-align: left;
-  padding-right: 15px; }
-section.edit-account form#patient-update-profile .form-row .checkboxes-container {
-  width: calc(100% - 180px); }
-  section.edit-account form#patient-update-profile .form-row .checkboxes-container .pretty {
-    white-space: normal;
-    padding-bottom: 10px;
-    margin-bottom: 0;
-    width: 100%; }
-section.edit-account form#patient-update-profile .form-row .custom-input {
-  width: calc(100% - 180px) !important; }
-section.edit-account form#patient-update-profile .form-row .avatar {
-  width: 150px; }
-@media screen and (max-width: 767px) {
-  section.edit-account form#patient-update-profile .form-row > label {
-    padding-bottom: 5px;
-    padding-top: 5px;
-    padding-right: 0;
-    width: 100%; }
-  section.edit-account form#patient-update-profile .form-row .checkboxes-container, section.edit-account form#patient-update-profile .form-row .custom-input {
-    width: 100% !important; }
-  section.edit-account form#patient-update-profile .form-row select.custom-input.selectpicker {
-    display: none !important; } }
-section.edit-account .custom-input.bootstrap-select {
-  padding: 0; }
-  section.edit-account .custom-input.bootstrap-select > button {
-    border: 0;
-    background-color: white !important;
-    padding: 12px 15px; }
-    section.edit-account .custom-input.bootstrap-select > button .filter-option-inner-inner {
-      font-size: 16px; }
-  section.edit-account .custom-input.bootstrap-select .dropdown-menu {
-    width: 100%; }
-
-.my-profile .my-profile-page-content .current-converted-price .symbol {
-  position: relative;
-  padding-right: 20px;
-  color: #333333; }
-  .my-profile .my-profile-page-content .current-converted-price .symbol span {
-    text-transform: uppercase; }
-  .my-profile .my-profile-page-content .current-converted-price .symbol:after {
-    content: '';
-    right: 0;
-    border-style: solid;
-    border-width: 14px 6px 0 6px;
-    border-color: #616161 transparent transparent transparent;
-    top: 13px;
-    position: absolute; }
-  .my-profile .my-profile-page-content .current-converted-price .symbol .dropdown-hidden-menu {
-    display: none;
-    position: absolute;
-    top: 100%;
-    z-index: 10;
-    right: 0;
-    background-color: white;
-    -webkit-box-shadow: 0px 0px 7px 3px rgba(234, 234, 234, 0.9);
-    -moz-box-shadow: 0px 0px 7px 3px rgba(234, 234, 234, 0.9);
-    -ms-box-shadow: 0px 0px 7px 3px rgba(234, 234, 234, 0.9);
-    box-shadow: 0px 0px 7px 3px rgba(234, 234, 234, 0.9); }
-    .my-profile .my-profile-page-content .current-converted-price .symbol .dropdown-hidden-menu li button {
-      background-color: white;
-      border: 0;
-      padding: 0 10px;
-      font-size: 22px;
-      text-transform: uppercase;
-      -webkit-transition: 0.3s;
-      -moz-transition: 0.3s;
-      -o-transition: 0.3s;
-      -ms-transition: 0.3s;
-      transition: 0.3s; }
-      .my-profile .my-profile-page-content .current-converted-price .symbol .dropdown-hidden-menu li button:hover {
-        color: #002248; }
-  .my-profile .my-profile-page-content .current-converted-price .symbol:hover .dropdown-hidden-menu {
-    display: block; }
-.my-profile .my-profile-page-content button.civic-custom-btn {
-  max-width: 240px;
-  border: 0;
-  -webkit-box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.2);
-  -moz-box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.2);
-  -ms-box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.2);
-  box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.2); }
-.my-profile .my-profile-page-content .missing-dcn-address .custom-input {
-  max-width: 450px; }
-.my-profile .my-profile-page-content .transaction-history-table {
-  width: 100%; }
-.my-profile .table-wrapper .withdraw-table {
-  display: table;
-  width: 100%; }
-  .my-profile .table-wrapper .withdraw-table td, .my-profile .table-wrapper .withdraw-table th {
-    border: 1px solid #dddddd;
-    text-align: left;
-    padding: 8px; }
-@media screen and (max-width: 767px) {
-  .my-profile .table-wrapper {
-    overflow-y: auto; }
-    .my-profile .table-wrapper .withdraw-table {
-      width: 800px; } }
-.my-profile .mobile-slide {
-  display: none;
-  padding-top: 10px; }
-  .my-profile .mobile-slide img {
-    max-width: none; }
-  @media screen and (max-width: 991px) {
-    .my-profile .mobile-slide {
-      display: block; } }
-.my-profile ::-webkit-scrollbar {
-  -webkit-appearance: none; }
-.my-profile ::-webkit-scrollbar:vertical {
-  width: 12px; }
-.my-profile ::-webkit-scrollbar:horizontal {
-  height: 12px; }
-.my-profile ::-webkit-scrollbar-thumb {
-  background-color: rgba(0, 0, 0, 0.5);
-  border-radius: 10px;
-  border: 2px solid white; }
-.my-profile ::-webkit-scrollbar-track {
-  background-color: white;
-  -webkit-border-radius: 10px;
-  -moz-border-radius: 10px;
-  -ms-border-radius: 10px;
-  border-radius: 10px; }
 
 /*# sourceMappingURL=style.css.map */

@@ -205,6 +205,10 @@ body {
     }
 }
 
+.text-center {
+    text-align: center;
+}
+
 .text-center-xs {
     @include breakpoint($xs)    {
         text-align: center !important;
@@ -503,7 +507,6 @@ body.home {
         align-items: center;
         justify-content: center;
     }
-
     &.login-signin-popup {
         .bootbox-close-button {
             display: none;
@@ -1163,7 +1166,6 @@ nav.sidenav {
         width: 100%;
     }
 }
-
 
 .bottom-fixed-container {
     position: fixed;
