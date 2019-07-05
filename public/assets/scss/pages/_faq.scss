@@ -1,4 +1,12 @@
 .faq-container {
+    .options-section {
+        .container {
+            @include breakpoint($lgl) {
+                width: 95%;
+                max-width: 1700px;
+            }
+        }
+    }
     .container.shorted {
         @include breakpoint($lgl) {
             width: 65% !important;

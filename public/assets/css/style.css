@@ -6321,6 +6321,10 @@ footer .bottom-text a {
       margin-top: 0; } }
 
 @media screen and (min-width: 1400px) {
+  .faq-container .options-section .container {
+    width: 95%;
+    max-width: 1700px; } }
+@media screen and (min-width: 1400px) {
   .faq-container .container.shorted {
     width: 65% !important; } }
 .faq-container .title hr {
