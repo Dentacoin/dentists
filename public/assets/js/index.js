@@ -12,13 +12,13 @@ $(window).on('load', function() {
 });
 
 $(window).on("load", function()   {
-    if(!$('body').hasClass('logged-in') && $('body').hasClass('home')) {
+    if(!$('body').hasClass('logged-in') && $('body').hasClass('home') || $('body').hasClass('logged-home') || $('body').hasClass('faq')) {
         optionsDescriptionsEqualHeight();
     }
 });
 
 $(window).on('resize', function(){
-    if((!$('body').hasClass('logged-in') && $('body').hasClass('home')) || $('body').hasClass('logged-home')) {
+    if((!$('body').hasClass('logged-in') && $('body').hasClass('home')) || $('body').hasClass('logged-home') || $('body').hasClass('faq')) {
         optionsDescriptionsEqualHeight();
     }
 });
@@ -227,7 +227,6 @@ if(!$('body').hasClass('logged-in')  && $('body').hasClass('home') || $('body').
 
 //make equal height for all descriptions in options section
 function optionsDescriptionsEqualHeight() {
-    console.log('asd');
     var descriptions_height = 0;
     for(var i = 0, len = $('.options-section .description').length; i < len; i+=1)  {
         if($('.options-section .description').eq(i).outerHeight() > descriptions_height) {
