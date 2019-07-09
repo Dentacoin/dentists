@@ -61,12 +61,10 @@ header {
                 vertical-align: middle;
                 padding-top: 25px;
                 padding-bottom: 25px;
-                @include breakpoint($xs) {
-                    font-size: 14px;
-                }
             }
             figure.header-avatar {
-                width: 50px;
+                width: 40px;
+                margin-left: 10px;
                 overflow: hidden;
                 @include rounded(50%);
             }
@@ -133,6 +131,27 @@ header {
                 padding-top: 10px;
                 padding-bottom: 10px;
                 background: white;
+                .hub-page-menu {
+                    padding-bottom: 15px;
+                    li {
+                        display: block;
+                        a {
+                            font-size: 18px;
+                            text-align: center;
+                            display: block;
+                            padding: 5px 0;
+                            border-bottom: 1px solid $dark_blue;
+                            span {
+                                color: $dark_blue;
+                            }
+                        }
+                        &:last-child {
+                            a {
+                                border-bottom: none;
+                            }
+                        }
+                    }
+                }
                 .white-dark-blue-btn {
                     padding: 7px 10px;
                 }

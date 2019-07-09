@@ -959,42 +959,52 @@ function customJavascriptForm(path, params, method) {
 async function loggedOrNotLogic() {
     if($('body').hasClass('logged-in')) {
         var add_overflow_hidden_on_hidden_box_show = false;
+        var sm_screen_width = false;
         $('body').addClass('overflow-hidden');
         if($(window).width() < 992) {
             add_overflow_hidden_on_hidden_box_show = true;
+            if($(window).width() > 767) {
+                sm_screen_width = true;
+            }
         }
         $('body').removeClass('overflow-hidden');
 
-        //IF NOT LOGGED LOGIC
-        $('.logged-user-right-nav > .hidden-box-parent').hover(function () {
-            $('.logged-user-right-nav .hidden-box').addClass('show-this');
-            if(add_overflow_hidden_on_hidden_box_show) {
-                if(!$('.logged-user-right-nav').hasClass('with-hub')) {
-                    $('.logged-user-right-nav .up-arrow').addClass('show-this');
-                }
-            } else {
-                $('.logged-user-right-nav .up-arrow').addClass('show-this');
-            }
-        }, function () {
-            $('.logged-user-right-nav .hidden-box').removeClass('show-this');
-            if(add_overflow_hidden_on_hidden_box_show) {
-                if(!$('.logged-user-right-nav').hasClass('with-hub')) {
+        if(sm_screen_width) {
+            $(document).on('click', 'body', function(){
+                if(!$('.hidden-box-parent').find(event.target).length) {
+                    $('.logged-user-right-nav .hidden-box').removeClass('show-this');
                     $('.logged-user-right-nav .up-arrow').removeClass('show-this');
                 }
-            } else {
+            });
+        }
+
+        if(add_overflow_hidden_on_hidden_box_show) {
+            $('.logged-user-right-nav .user-name, .logged-user-right-nav .header-avatar').click(function() {
+                $('.logged-user-right-nav .hidden-box').toggleClass('show-this');
+                if(sm_screen_width) {
+                    $('.logged-user-right-nav .up-arrow').toggleClass('show-this');
+                } else {
+                    $('body').toggleClass('overflow-hidden');
+                }
+            });
+        } else {
+            $('.logged-user-right-nav > .hidden-box-parent').hover(function () {
+                $('.logged-user-right-nav .hidden-box').addClass('show-this');
+                $('.logged-user-right-nav .up-arrow').addClass('show-this');
+            }, function () {
+                $('.logged-user-right-nav .hidden-box').removeClass('show-this');
                 $('.logged-user-right-nav .up-arrow').removeClass('show-this');
-            }
-        });
+            });
+        }
 
         $('.logged-user-right-nav .close-btn a').click(function() {
             $('.logged-user-right-nav .hidden-box').removeClass('show-this');
             if(add_overflow_hidden_on_hidden_box_show) {
                 $('body').removeClass('overflow-hidden');
-                if(!$('.logged-user-right-nav').hasClass('with-hub')) {
+
+                if(sm_screen_width) {
                     $('.logged-user-right-nav .up-arrow').removeClass('show-this');
                 }
-            } else {
-                $('.logged-user-right-nav .up-arrow').removeClass('show-this');
             }
         });
     }

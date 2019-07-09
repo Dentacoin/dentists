@@ -32,6 +32,15 @@
             @endif
         @endif
         <div class="container-fluid text-center hidden-box-footer">
+            @if(!empty(Route::current()) && Route::current()->getName() == 'home')
+                <div class="row hub-page-menu">
+                    <ul itemscope="" itemtype="http://schema.org/SiteNavigationElement" class="col-xs-12">
+                        @foreach($header_menu as $menu_el)
+                            <li><a itemprop="url" class="{{$menu_el->class_attribute}}" @if(!empty($menu_el->id_attribute)) id="{{$menu_el->id_attribute}}" @endif @if(!empty(Route::current()) && Route::current()->getName() != 'home' && strpos($menu_el->class_attribute, 'scrolling-to-section') !== false) href="{{route($route)}}#{{$menu_el->id_attribute}}" @else @if($menu_el->new_window) target="_blank" @endif href="{{$menu_el->url}}" @endif><span itemprop="name">{{$menu_el->name}}</span></a></li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
             <div class="row">
                 <div class="col-xs-6 inline-block">
                     <a href="{{ route('user-logout') }}" class="logout"><i class="fa fa-power-off" aria-hidden="true"></i> Log out</a>
