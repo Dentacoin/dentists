@@ -60,7 +60,6 @@ initCaptchaRefreshEvent();
 
 // ================== PAGES ==================
 if(!$('body').hasClass('logged-in')  && $('body').hasClass('home') || $('body').hasClass('logged-home')) {
-
     $('.below-options .single-option').hover(function () {
         $(this).addClass('active');
         $(document).bind('mousemove', imageFollowingCursorPosition);
@@ -117,35 +116,6 @@ if(!$('body').hasClass('logged-in')  && $('body').hasClass('home') || $('body').
         }
         $('.testimonials-slider-section .slick-list').animate({height: height}, 500);
     });
-
-    //logic for open application popup
-    /*$('.single-application').click(function()   {
-        var this_btn = $(this).find('.wrapper');
-        var extra_html = '';
-        var media_html = '';
-        if(this_btn.attr('data-articles') != undefined)    {
-            extra_html+='<div class="extra-html"><div class="extra-title">Latest Blog articles:</div><ul>';
-            var articles_arr = $.parseJSON(this_btn.attr('data-articles'));
-            for(var i = 0, len = articles_arr.length; i < len; i+=1)    {
-                extra_html+='<li class="link"><a href="https://blog.dentacoin.com/'+articles_arr[i]['post_name']+'" target="_blank">'+articles_arr[i]['post_title']+'</a></li>';
-            }
-            extra_html+='</ul><div class="see-all"><a href="https://blog.dentacoin.com/" class="white-dark-blue-btn" target="_blank">GO TO ALL</a></div></div>';
-        }
-        var description = this_btn.attr('data-description');
-        if(description != '') {
-            description = $.parseJSON(description);
-        }
-
-        if(['mp4', 'avi'].indexOf(this_btn.attr('data-image-type')) > -1) {
-            media_html+='<div itemprop="video" itemscope="" itemtype="http://schema.org/VideoObject" class="col-sm-6 video"><video autoplay loop muted controls="false"><source src="'+this_btn.attr('data-image')+'" type="video/'+this_btn.attr('data-image-type')+'"></video><meta itemprop="name" content="'+this_btn.attr('data-title')+'"><meta itemprop="uploadDate" content="'+this_btn.attr('data-upload-date')+'"></div>';
-        }else {
-            media_html+='<figure class="col-sm-6 gif"><img src="'+this_btn.attr('data-image')+'?'+new Date().getTime()+'" alt="'+this_btn.attr('data-image-alt')+'"/></figure>';
-        }
-
-        var html = '<div class="container-fluid"><div class="row">'+media_html+'<div class="col-sm-6 col-xs-12 content"><figure class="logo"><img src="'+this_btn.attr('data-popup-logo')+'" alt="'+this_btn.attr('data-popup-logo-alt')+'"/></figure><div class="title">'+this_btn.find('figcaption').html()+'</div><div class="description">'+description+'</div>'+extra_html+'</div></div></div>';
-        basic.showDialog(html, 'application-popup', this_btn.attr('data-slug'));
-        $('.application-popup video').removeAttr('controls');
-    });*/
 
     var start_clicking_from_num = 1;
     var init_apps_interval_slide;
@@ -217,12 +187,29 @@ if(!$('body').hasClass('logged-in')  && $('body').hasClass('home') || $('body').
         singleApplicationClick($('.applications-section .single-application').eq(0));
     }
     $('body').removeClass('overflow-hidden');
-}else if($('body').hasClass('faq')) {
+} else if($('body').hasClass('faq')) {
     if($('.list .question').length > 0) {
         $('.list .question').click(function()   {
             $(this).closest('li').find('.question-content').toggle(300);
         });
     }
+} else if($('body').hasClass('download-assets')) {
+    $('.assets-slider').slick({
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        arrows: true,
+        autoplay: true,
+        autoplaySpeed: 8000,
+        responsive: [
+            {
+                breakpoint: 992,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1
+                }
+            }
+        ]
+    });
 }
 
 //make equal height for all descriptions in options section

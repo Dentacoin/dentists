@@ -209,6 +209,14 @@ body {
     text-align: center;
 }
 
+.text-left {
+    text-align: left !important;
+}
+
+.text-right {
+    text-align: right !important;
+}
+
 .text-center-xs {
     @include breakpoint($xs)    {
         text-align: center !important;
@@ -219,14 +227,6 @@ body {
     @include breakpoint($xs)    {
         text-align: left !important;
     }
-}
-
-.text-left {
-    text-align: left !important;
-}
-
-.text-right {
-    text-align: right !important;
 }
 
 .text-right-xs {
