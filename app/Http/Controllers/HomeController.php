@@ -11,15 +11,15 @@ class HomeController extends Controller
         if((new UserController())->checkSession()) {
             return $this->getLoggedView();
         } else {
-            return $this->getNotLoggedView();
+            return (new PagesController())->getPageView();
         }
     }
 
-    protected function getNotLoggedView()   {
-        $testimonials = DB::connection('mysql2')->table('user_expressions')->leftJoin('media', 'user_expressions.media_id', '=', 'media.id')->select('user_expressions.*', 'media.name as media_name', 'media.alt as media_alt')->orderByRaw('user_expressions.order_id ASC')->get()->toArray();
+    public function getAllTestimonials() {
+        return DB::connection('mysql2')->table('user_expressions')->leftJoin('media', 'user_expressions.media_id', '=', 'media.id')->select('user_expressions.*', 'media.name as media_name', 'media.alt as media_alt')->orderByRaw('user_expressions.order_id ASC')->get()->toArray();
+    }
 
-        $params = ['testimonials' => $testimonials, 'applications' => $this->getDentacoinHubApplications()];
-
+    public function getBlogLatestPosts() {
         $curl = curl_init();
         curl_setopt_array($curl, array(
             CURLOPT_RETURNTRANSFER => 1,
@@ -31,10 +31,10 @@ class HomeController extends Controller
         curl_close($curl);
 
         if(!empty($resp))   {
-            $params['latest_blog_articles'] = $resp;
+            return $resp;
+        } else {
+            return false;
         }
-
-        return view('pages/homepage', $params);
     }
 
     protected function getLoggedView()   {

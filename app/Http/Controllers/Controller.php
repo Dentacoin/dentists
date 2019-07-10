@@ -30,7 +30,6 @@ class Controller extends BaseController
         if(!empty(Route::getCurrentRoute()) && !Request::isMethod('post'))    {
             View::share('mobile', $this->isMobile());
             View::share('meta_data', $this->getMetaData());
-            View::share('sections', $this->getDbSections());
             View::share('socials', $this->getSocials());
             View::share('privacy_policy_cookie', $this->checkIfPrivacyPolicyCookie());
             View::share('client_ip', $this->getClientIp());
@@ -51,15 +50,6 @@ class Controller extends BaseController
 
     public function getMenu($menu_slug) {
         return MenuElement::where(array('menu_id' => Menu::where(array('slug' => $menu_slug))->get()->first()->id))->get()->sortBy('order_id');
-    }
-
-    protected function getDbSections()    {
-        $meta_data = $this->getMetaData();
-        if(!empty($meta_data)) {
-            return PagesHtmlSection::where(array('page_id' => $this->getMetaData()->id))->get()->all();
-        }else {
-            return null;
-        }
     }
 
     protected function isMobile()   {

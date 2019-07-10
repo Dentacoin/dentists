@@ -19,9 +19,9 @@ Route::group(['prefix' => '/', 'middleware' => 'frontEndMiddleware'], function (
 
     Route::get('/', 'HomeController@getView')->name('home');
 
-    Route::get('/faq', 'FaqController@getView')->name('faq');
+    Route::get('/faq', 'PagesController@getPageView')->name('faq');
 
-    Route::get('/download-assets', 'DownloadAssetsController@getView')->name('download-assets');
+    Route::get('/download-assets', 'PagesController@getPageView')->name('download-assets');
 
     Route::get('sitemap.xml', 'Controller@getSitemap')->name('sitemap');
 
