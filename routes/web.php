@@ -27,7 +27,7 @@ Route::group(['prefix' => '/', 'middleware' => 'frontEndMiddleware'], function (
 
     //======================================= LOGIN LOGIC ========================================
 
-    Route::get('/home', 'HomeController@getNotLoggedView')->middleware('HandleUserSession')->name('logged-home');
+    Route::get('/home', 'PagesController@getPageView')->middleware('HandleUserSession')->name('logged-home');
 
     Route::get('/user-logout', 'UserController@userLogout')->name('user-logout');
 

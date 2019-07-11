@@ -32,6 +32,10 @@ class PagesController extends Controller
     }
 
     public function getPageView() {
-        return view('pages/index-page-with-content', ['page' => Page::where(array('slug' => Route::getCurrentRoute()->getName()))->get()->first()]);
+        $route = Route::getCurrentRoute()->getName();
+        if($route == 'logged-home') {
+            $route = 'home';
+        }
+        return view('pages/index-page-with-content', ['page' => Page::where(array('slug' => $route))->get()->first()]);
     }
 }
