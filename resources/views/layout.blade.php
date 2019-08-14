@@ -347,11 +347,11 @@
                                 <div class="padding-bottom-20 field-parent">
                                     <div class="custom-google-select-style module">
                                         <label>Select country:</label>
-                                        <select name="country-code" id="dentist-country" class="form-field required country-select">
-                                            @php($current_phone_code = '+')
-                                            @if(isset($client_ip) && $client_ip != '127.0.0.1')
-                                                @php($current_user_country_code = mb_strtolower(trim(file_get_contents('http://ipinfo.io/' . $client_ip . '/country'))))
-                                            @endif
+                                        @php($current_phone_code = '+')
+                                        @if(isset($client_ip) && $client_ip != '127.0.0.1')
+                                            @php($current_user_country_code = mb_strtolower(trim(file_get_contents('http://ipinfo.io/' . $client_ip . '/country'))))
+                                        @endif
+                                        <select name="country-code" id="dentist-country" class="form-field required country-select" @if(!empty($current_user_country_code)) data-current-user-country-code="{{$current_user_country_code}}" @endif>
                                             @php($countries = (new \App\Http\Controllers\APIRequestsController())->getAllCountries())
                                             @if(!empty($countries))
                                                 @foreach($countries as $country)
@@ -518,16 +518,16 @@
     </div>
     {{--<script src="/assets/js/basic.js"></script>--}}
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCaVeHq_LOhQndssbmw-aDnlMwUG73yCdk&libraries=places&language=en"></script>
-    <script src="/dist/js/front-libs-script.js?v=1.0.39"></script>
+    <script src="/dist/js/front-libs-script.js?v=1.0.40"></script>
     {{--<script src="/assets/js/address.js"></script>--}}
     @yield("script_block")
-    <script src="/dist/js/front-script.js?v=1.0.39"></script>
+    <script src="/dist/js/front-script.js?v=1.0.40"></script>
     {{--<script src="/assets/js/index.js"></script>--}}
 
     {{--Load social logging scripts only if user is not logged--}}
     @if(!(new \App\Http\Controllers\UserController())->checkSession())
-        <script src="//dentacoin.com/assets/libs/civic-login/civic.js?v=1.0.39"></script>
-        <script src="//dentacoin.com/assets/libs/facebook-login/facebook.js?v=1.0.39"></script>
+        <script src="//dentacoin.com/assets/libs/civic-login/civic.js?v=1.0.40"></script>
+        <script src="//dentacoin.com/assets/libs/facebook-login/facebook.js?v=1.0.40"></script>
 
         @php($slow_login_form = \Illuminate\Support\Facades\Input::get('show-login'))
     @endif
