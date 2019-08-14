@@ -1,6 +1,11 @@
 <div class="hidden-box-parent">
     @php($user_data = (new \App\Http\Controllers\APIRequestsController())->getUserData(session('logged_user')['id']))
-    <span class="fs-14 padding-right-10 user-name">{{$user_data->name}}</span>
+    <div class="inline-block fs-14 padding-right-10 color-white-on-hub">
+        <span class="user-name">{{$user_data->name}}</span>
+        @php($dcn_balance = (new \App\Http\Controllers\APIRequestsController())->getDCNBalance()->data)
+        @php($usd_balance = (new \App\Http\Controllers\Controller())->getCurrentDcnUsdRate() * $dcn_balance)
+        <div>{{$dcn_balance}} DCN | ${{number_format((float)$usd_balance, 2, '.', '')}}</div>
+    </div>
     <figure itemscope="" itemtype="http://schema.org/ImageObject" class="inline-block header-avatar">
         @if(!empty($user_data->thumbnail_url))
             <img alt="" itemprop="contentUrl" src="{{$user_data->thumbnail_url}}"/>
