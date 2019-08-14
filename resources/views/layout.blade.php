@@ -77,13 +77,13 @@
     <header>
         <div class="container">
             <div class="row fs-0">
-                <figure itemscope="" itemtype="http://schema.org/Organization" class="col-xs-3 inline-block">
+                <figure itemscope="" itemtype="http://schema.org/Organization" class="col-xs-3 inline-block padding-left-xs-10">
                     <a itemprop="url" @if((new \App\Http\Controllers\UserController())->checkSession()) href="{{ route('logged-home') }}" @else  href="{{ route('home') }}" @endif @if(!empty(Route::current())) @if(Route::current()->getName() == "home") tabindex="=-1" @endif @endif>
                         <img src="@if((new \App\Http\Controllers\UserController())->checkSession() && Route::current()->getName() == 'home') {{URL::asset('assets/images/round-logo-white.svg') }} @else {{URL::asset('assets/images/logo.svg') }} @endif" itemprop="logo" class="max-width-40" alt="Dentacoin logo"/>
                     </a>
                 </figure>
                 @if(!(new \App\Http\Controllers\UserController())->checkSession())
-                    <div class="col-xs-9 inline-block btns-container">
+                    <div class="col-xs-9 inline-block btns-container padding-right-xs-10">
                         <a href="javascript:void(0)" class="white-dark-blue-btn show-login-signin inline-block" tabindex="-1">SIGN IN</a>
                         <a href="javascript:void(0)" class="hamburger inline-block"><i class="fa fa-bars" aria-hidden="true"></i></a>
                     </div>
