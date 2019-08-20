@@ -689,11 +689,11 @@ body.home {
                                     }
                                     &.fourth {
                                         .avatar {
-                                            padding-right: 20px;
-                                            width: 50%;
+                                            width: 180px;
                                         }
                                         .specializations {
-                                            width: 50%;
+                                            width: calc(100% - 180px);
+                                            padding-left: 20px;
                                             color: black;
                                             h4 {
                                                 padding-bottom: 10px;
@@ -707,6 +707,9 @@ body.home {
                                                 label {
                                                     text-indent: 25px;
                                                 }
+                                            }
+                                            @include breakpoint($xs) {
+                                                padding-left: 10px;
                                             }
                                         }
                                         .combobox-container {
@@ -837,10 +840,10 @@ body.home {
                                 display: none;
                             }
                             .form-register, .form-login {
-                                width: 70%;
+                                width: 80%;
                                 margin: 0 auto;
                                 @include breakpoint($xs) {
-                                    width: 90%;
+                                    width: 95%;
                                 }
                             }
                             &.custom-hide {

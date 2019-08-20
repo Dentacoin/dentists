@@ -22,6 +22,7 @@ mix.styles([
     'node_modules/bootstrap-select/dist/css/bootstrap-select.min.css',
     'node_modules/pretty-checkbox/dist/pretty-checkbox.min.css',
     'public/assets/libs/combobox/combobox.css',
+    'public/assets/libs/croppie/croppie.css',
 ], 'public/dist/css/front-libs-style.css');
 
 mix.styles([
@@ -38,6 +39,7 @@ mix.scripts([
     'node_modules/bootstrap-select/dist/js/bootstrap-select.min.js',
     'node_modules/datatables.net/js/jquery.dataTables.min.js',
     'public/assets/libs/combobox/combobox.js',
+    'public/assets/libs/croppie/croppie.min.js',
     'public/assets/libs/truffle-contract/truffle-contract-compiled.js',
 ], 'public/dist/js/front-libs-script.js');
 
