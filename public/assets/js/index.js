@@ -800,7 +800,7 @@ function styleAvatarUploadButton(label_el)    {
                         basic.showAlert('The image you selected is large. Max size: 2MB.', '', true);
                         $(this).val('');
                     } else {
-                        readURL(this, label_el);
+                        readURL(this);
 
                         var fileName = '';
                         if(this.files && this.files.length > 1)
@@ -832,7 +832,7 @@ function bytesToMegabytes(bytes) {
 }
 
 var croppie_instance;
-function readURL(input, label_el) {
+function readURL(input) {
     if(input.files && input.files[0]) {
         var reader = new FileReader();
         reader.onload = function (e) {
