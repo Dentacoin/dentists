@@ -421,4 +421,22 @@ class APIRequestsController extends Controller {
             }
         }
     }
+
+    public function getCountry($client_ip)  {
+        //API connection
+        $curl = curl_init();
+        curl_setopt_array($curl, array(
+            CURLOPT_RETURNTRANSFER => 1,
+            CURLOPT_URL => 'https://ipinfo.io/' . $client_ip . '/country',
+            CURLOPT_SSL_VERIFYPEER => 0
+        ));
+        $resp = curl_exec($curl);
+        curl_close($curl);
+
+        if(!empty($resp))   {
+            return $resp;
+        }else {
+            return false;
+        }
+    }
 }
