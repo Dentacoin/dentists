@@ -447,6 +447,11 @@ function openLoginSigninPopup() {
     $('.hidden-login-form').html('');
     basic.showDialog(hidden_popup_content, 'login-signin-popup', null, true);
 
+
+    if(basic.objHasKey(get_params, 'show-dentist-signup') && !$('body').hasClass('logged-in')) {
+        $('.popup-body .dentist .call-sign-up').click();
+    }
+
     $('.login-signin-popup .dentist .form-register .address-suggester').removeClass('dont-init');
 
     initAddressSuggesters();
