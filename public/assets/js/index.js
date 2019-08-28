@@ -449,7 +449,8 @@ function openLoginSigninPopup() {
 
 
     if(basic.objHasKey(get_params, 'show-dentist-signup') && !$('body').hasClass('logged-in')) {
-        $('.popup-body .dentist .call-sign-up').click();
+        $('.login-signin-popup .form-login').hide();
+        $('.login-signin-popup .form-register').show();
     }
 
     $('.login-signin-popup .dentist .form-register .address-suggester').removeClass('dont-init');
