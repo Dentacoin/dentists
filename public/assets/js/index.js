@@ -2,7 +2,7 @@ var get_params = getGETParameters();
 
 $(document).ready(function() {
     //if get parameter is passed show loginform
-    if(basic.objHasKey(get_params, 'show-login') && !$('body').hasClass('logged-in')) {
+    if((basic.objHasKey(get_params, 'show-login') || basic.objHasKey(get_params, 'inviter')) && !$('body').hasClass('logged-in')) {
         openLoginSigninPopup();
     }
 });
