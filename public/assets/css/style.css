@@ -4927,13 +4927,14 @@ body.home.logged-in main.main-container {
           .custom-popup.video .popup-body .wrapper video {
             height: 300px; } }
   .custom-popup .popup-body {
-    max-width: 700px;
+    max-width: 900px;
     width: 90%;
     font-size: 0;
     background-color: white;
     padding: 15px;
     margin-top: 70px;
     margin-bottom: 70px;
+    overflow: auto;
     -webkit-box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
     -moz-box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
     -ms-box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
@@ -4959,10 +4960,14 @@ body.home.logged-in main.main-container {
       cursor: pointer;
       margin-top: -15px; }
     .custom-popup .popup-body .wrapper {
-      padding-top: 60px;
-      padding-bottom: 40px;
-      width: 500px;
+      padding-top: 40px;
+      padding-bottom: 30px;
+      width: 830px;
       margin: 0 auto; }
+      .custom-popup .popup-body .wrapper iframe {
+        width: 100%;
+        border: 0;
+        height: 750px; }
   .custom-popup.visible {
     visibility: visible; }
   @media screen and (max-width: 767px) {

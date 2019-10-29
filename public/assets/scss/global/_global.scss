@@ -1076,13 +1076,14 @@ body.home {
         }
     }
     .popup-body {
-        max-width: 700px;
+        max-width: 900px;
         width: 90%;
         font-size: 0;
         background-color: white;
         padding: 15px;
         margin-top: 70px;
         margin-bottom: 70px;
+        overflow: auto;
         @include box-shadow(0 5px 15px rgba(0,0,0,.5));
         @include vertical-horizontal-align(absolute);
         @include rounded(6px);
@@ -1098,10 +1099,15 @@ body.home {
             margin-top: -15px;
         }
         .wrapper {
-            padding-top: 60px;
-            padding-bottom: 40px;
-            width: 500px;
+            padding-top: 40px;
+            padding-bottom: 30px;
+            width: 830px;
             margin: 0 auto;
+            iframe {
+                width: 100%;
+                border: 0;
+                height: 750px;
+            }
         }
     }
     &.visible {

@@ -25,8 +25,8 @@
     <style>
 
     </style>
-    <link rel="stylesheet" type="text/css" href="/dist/css/front-libs-style.css">
-    <link rel="stylesheet" type="text/css" href="/assets/css/style.css">
+    <link rel="stylesheet" type="text/css" href="/dist/css/front-libs-style.css?v=1.0.45">
+    <link rel="stylesheet" type="text/css" href="/assets/css/style.css?v=1.0.45">
     <script>
         var HOME_URL = '{{ route("home") }}';
     </script>
@@ -499,12 +499,7 @@
             <button type="button" class="close-btn" data-dismiss="modal" aria-hidden="true">×</button>
             <div class="wrapper">
                 <div class="text-center fs-26 padding-bottom-30 lato-black">Send Your Inquiry</div>
-                <script>
-                    hbspt.forms.create({
-                        portalId: "4097841",
-                        formId: "0711fe44-e5c7-4536-beda-ac216a2b2b17"
-                    });
-                </script>
+                <iframe src="//dentacoin.ariticapp.com/ma/form/7"><p>Your browser does not support iframes.</p></iframe>
             </div>
         </div>
     </div>
@@ -525,16 +520,16 @@
     </div>
     {{--<script src="/assets/js/basic.js"></script>--}}
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCaVeHq_LOhQndssbmw-aDnlMwUG73yCdk&libraries=places&language=en"></script>
-    <script src="/dist/js/front-libs-script.js?v=1.0.44"></script>
+    <script src="/dist/js/front-libs-script.js?v=1.0.45"></script>
     {{--<script src="/assets/js/address.js"></script>--}}
     @yield("script_block")
-    <script src="/dist/js/front-script.js?v=1.0.44"></script>
+    <script src="/dist/js/front-script.js?v=1.0.45"></script>
     {{--<script src="/assets/js/index.js"></script>--}}
 
     {{--Load social logging scripts only if user is not logged--}}
     @if(!(new \App\Http\Controllers\UserController())->checkSession())
-        <script src="//dentacoin.com/assets/libs/civic-login/civic.js?v=1.0.44"></script>
-        <script src="//dentacoin.com/assets/libs/facebook-login/facebook.js?v=1.0.44"></script>
+        <script src="//dentacoin.com/assets/libs/civic-login/civic.js?v=1.0.45"></script>
+        <script src="//dentacoin.com/assets/libs/facebook-login/facebook.js?v=1.0.45"></script>
 
         @php($slow_login_form = \Illuminate\Support\Facades\Input::get('show-login'))
     @endif
