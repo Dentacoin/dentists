@@ -4968,6 +4968,11 @@ body.home.logged-in main.main-container {
         width: 100%;
         border: 0;
         height: 750px; }
+      @media screen and (max-width: 767px) {
+        .custom-popup .popup-body .wrapper {
+          width: 100%; }
+          .custom-popup .popup-body .wrapper iframe {
+            height: 1000px; } }
   .custom-popup.visible {
     visibility: visible; }
   @media screen and (max-width: 767px) {
