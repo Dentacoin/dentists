@@ -14,7 +14,8 @@ class APIRequestsController extends Controller {
                 'platform' => 'dentists',
                 'type' => 'dentist',
                 'email' => $data['email'],
-                'password' => $data['password']
+                'password' => $data['password'],
+                'client_ip' => $this->getClientIp()
             )
         ));
 
@@ -41,7 +42,8 @@ class APIRequestsController extends Controller {
             'avatar' => curl_file_create($data['image-path'], 'image/png', $data['image-name']),
             'phone' => $data['phone'],
             'website' => $data['website'],
-            'specialisations' => json_encode($data['specializations'])
+            'specialisations' => json_encode($data['specializations']),
+            'client_ip' => $this->getClientIp()
         );
 
         if(!empty($data['alternative-name'])) {
