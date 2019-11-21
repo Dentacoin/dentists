@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 class APIRequestsController extends Controller {
     public function dentistLogin($data, $dontCountLogin = false) {
         $postData = array(
-            'platform' => 'dentacoin',
+            'platform' => 'dentists',
             'type' => 'dentist',
             'email' => $data['email'],
             'password' => $data['password'],
