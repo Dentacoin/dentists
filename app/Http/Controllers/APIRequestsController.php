@@ -435,6 +435,8 @@ class APIRequestsController extends Controller {
     }
 
     public function getCountry($client_ip)  {
+        var_dump(mb_strtolower(trim(@file_get_contents('https://ipinfo.io/' . $client_ip . '/country'))));
+        die('asd');
         try {
             return mb_strtolower(trim(@file_get_contents('https://ipinfo.io/' . $client_ip . '/country')));
         } catch(Exception $e) {
