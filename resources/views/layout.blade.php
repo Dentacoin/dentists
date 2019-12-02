@@ -518,7 +518,6 @@
             </figure>
         </div>
     </div>
-    <script id="facebook-jssdk" src="//connect.facebook.net/bg_BG/sdk.js"></script>
     {{--<script src="/assets/js/basic.js"></script>--}}
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCaVeHq_LOhQndssbmw-aDnlMwUG73yCdk&libraries=places&language=en"></script>
     <script src="/dist/js/front-libs-script.js?v=1.0.47"></script>
