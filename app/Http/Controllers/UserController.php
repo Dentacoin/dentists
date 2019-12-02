@@ -333,7 +333,11 @@ class UserController extends Controller {
 
         $current_logging_patient = (new APIRequestsController())->getUserData($request->input('id'), true);
         if(!$current_logging_patient->success) {
-            if ((property_exists($current_logging_patient, 'data') && $current_logging_patient->data->self_deleted != NULL)) {
+            if ((property_exists($current_logging_patient, 'deleted') && $current_logging_patient->deleted == true) && (property_exists($current_logging_patient, 'self_deleted') && $current_logging_patient->self_deleted == true)) {
+                // self deleted
+                return redirect()->route('home')->with(['error' => 'This account is deleted, you cannot log in with this account anymore.']);
+            } else if ((property_exists($current_logging_patient, 'deleted') && $current_logging_patient->deleted == true)) {
+                // deleted by admin
                 return redirect()->route('home')->with(['error' => 'This account is deleted, you cannot log in with this account anymore.']);
             } else {
                 return redirect()->route('home')->with(['error' => 'Not existing account. Please head back to SIGN UP, agree with our Privacy policy and create your account.']);
