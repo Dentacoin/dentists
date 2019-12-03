@@ -31,7 +31,7 @@ mix.styles([
 
 mix.scripts([
     'node_modules/jquery/dist/jquery.min.js',
-    'public/assets/libs/emailoctopus/emailoctopus.js',
+    /*'public/assets/libs/emailoctopus/emailoctopus.js',*/
     /*'node_modules/bootstrap/dist/js/bootstrap.min.js',*/
     'public/assets/libs/bootstrap/js/bootstrap.min.js',
     'node_modules/bootbox.js/bootbox.min.js',
