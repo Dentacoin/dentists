@@ -39,7 +39,7 @@
         gtag('config', 'UA-97167262-3');
     </script>--}}
 
-    <!-- Facebook Pixel Code -->
+    {{--<!-- Facebook Pixel Code -->
     <script>
         !function(f,b,e,v,n,t,s)
         {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -57,7 +57,7 @@
              src="https://www.facebook.com/tr?id=2366034370318681&ev=PageView
 &noscript=1"/>
     </noscript>
-    <!-- End Facebook Pixel Code -->
+    <!-- End Facebook Pixel Code -->--}}
 </head>
 <body class="@if(!empty(Route::current())) {{Route::current()->getName()}} @else class-404 @endif @if((new \App\Http\Controllers\UserController())->checkSession()) logged-in @endif">
     @if(!empty(Route::current()))
