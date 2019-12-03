@@ -99,7 +99,7 @@
         </div>
     </header>
     <main class="main-container">@yield("content")</main>
-    <footer>
+    <footer class="padding-bottom-100 padding-bottom-sm-50 padding-bottom-xs-50">
         <div class="container padding-top-50">
             <div class="row">
                 <h2 class="fs-50 lato-light dark-blue text-center col-xs-12 padding-bottom-50">Subscribe for Our Newsletter</h2>
