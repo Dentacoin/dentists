@@ -30,7 +30,6 @@
     <script>
         var HOME_URL = '{{ route("home") }}';
     </script>
-    <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/shell.js"></script>
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-97167262-3"></script>
     <script>
