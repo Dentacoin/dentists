@@ -242,12 +242,16 @@ function optionsDescriptionsEqualHeight() {
 if($('.show-external-form-button').length > 0) {
     $('.show-external-form-button').click(function() {
         $('.custom-popup.external-form').addClass('visible');
+
+        $('.custom-popup.external-form .wrapper').html('<div class="text-center fs-26 padding-bottom-30 lato-black">Send Your Inquiry</div><iframe src="//dentacoin.ariticapp.com/ma/form/7"><p>Your browser does not support iframes.</p></iframe>');
         $('body').addClass('overflow-hidden');
     });
 
     $('.custom-popup.external-form .close-btn').unbind().click(function()    {
         $('.custom-popup.external-form').removeClass('visible');
         $('body').removeClass('overflow-hidden');
+
+        $('.custom-popup.external-form .wrapper').html('');
     });
 }
 var homepage_video_time_watched = 0;

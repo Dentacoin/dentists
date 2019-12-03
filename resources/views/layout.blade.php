@@ -30,16 +30,16 @@
     <script>
         var HOME_URL = '{{ route("home") }}';
     </script>
-    {{--<!-- Global site tag (gtag.js) - Google Analytics -->
+    <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-97167262-3"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
         gtag('config', 'UA-97167262-3');
-    </script>--}}
+    </script>
 
-    {{--<!-- Facebook Pixel Code -->
+    <!-- Facebook Pixel Code -->
     <script>
         !function(f,b,e,v,n,t,s)
         {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -57,7 +57,7 @@
              src="https://www.facebook.com/tr?id=2366034370318681&ev=PageView
 &noscript=1"/>
     </noscript>
-    <!-- End Facebook Pixel Code -->--}}
+    <!-- End Facebook Pixel Code -->
 </head>
 <body class="@if(!empty(Route::current())) {{Route::current()->getName()}} @else class-404 @endif @if((new \App\Http\Controllers\UserController())->checkSession()) logged-in @endif">
     @if(!empty(Route::current()))
@@ -502,10 +502,7 @@
     <div class="custom-popup external-form" id="custom-popup">
         <div class="popup-body">
             <button type="button" class="close-btn" data-dismiss="modal" aria-hidden="true">×</button>
-            <div class="wrapper">
-                <div class="text-center fs-26 padding-bottom-30 lato-black">Send Your Inquiry</div>
-                <iframe src="//dentacoin.ariticapp.com/ma/form/7"><p>Your browser does not support iframes.</p></iframe>
-            </div>
+            <div class="wrapper"></div>
         </div>
     </div>
     <div class="custom-popup video" id="custom-popup">
