@@ -481,13 +481,13 @@
         <img src="//account.dentacoin.com/custom-cookie?slug={{ urlencode($slug) }}&type={{ urlencode($type) }}&token={{ urlencode($token) }}" class="hide"/>
     @endif
     <div class="bottom-fixed-container">
+        <a href="https://dentacoin.com/holiday-calendar-2019" target="_blank" class="display-block">
+            <picture itemscope="" itemtype="http://schema.org/ImageObject">
+                <source media="(max-width: 992)" srcset="//dentacoin.com/assets/uploads/mobile-christmas-banner-small.gif"/>
+                <img src="//dentacoin.com/assets/uploads/christmas-banner.gif" alt="Holiday calendar banner" class="width-100" itemprop="contentUrl"/>
+            </picture>
+        </a>
         @if(!empty($privacy_policy_cookie))
-            <a href="https://dentacoin.com/holiday-calendar-2019" target="_blank" class="display-block">
-                <picture itemscope="" itemtype="http://schema.org/ImageObject">
-                    <source media="(max-width: 992)" srcset="//dentacoin.com/assets/uploads/mobile-christmas-banner-small.gif"/>
-                    <img src="//dentacoin.com/assets/uploads/christmas-banner.gif" alt="Holiday calendar banner" class="width-100" itemprop="contentUrl"/>
-                </picture>
-            </a>
             <div class="privacy-policy-cookie">
                 <div class="container">
                     <div class="row">
