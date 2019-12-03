@@ -5476,11 +5476,11 @@ header {
     padding-top: 10px;
     padding-bottom: 10px; }
   header .hamburger {
-    font-size: 34px;
+    font-size: 38px;
     padding-top: 10px;
     padding-bottom: 10px;
     color: black;
-    margin-left: 20px; }
+    margin-left: 40px; }
     @media screen and (max-width: 767px) {
       header .hamburger {
         font-size: 26px;
