@@ -2,8 +2,10 @@ var get_params = getGETParameters();
 
 $(document).ready(function() {
     //if get parameter is passed show loginform
-    if((basic.objHasKey(get_params, 'show-login') || basic.objHasKey(get_params, 'inviter')) && !$('body').hasClass('logged-in')) {
+    if ((basic.objHasKey(get_params, 'show-login') || basic.objHasKey(get_params, 'inviter')) && !$('body').hasClass('logged-in')) {
         openLoginSigninPopup();
+    } else if (basic.objHasKey(get_params, 'show-patient-register')) {
+        openLoginSigninPopup('show-patient-register');
     }
 });
 
@@ -12,13 +14,13 @@ $(window).on('load', function() {
 });
 
 $(window).on("load", function()   {
-    if(!$('body').hasClass('logged-in') && $('body').hasClass('home') || $('body').hasClass('logged-home') || $('body').hasClass('faq')) {
+    if (!$('body').hasClass('logged-in') && $('body').hasClass('home') || $('body').hasClass('logged-home') || $('body').hasClass('faq')) {
         optionsDescriptionsEqualHeight();
     }
 });
 
 $(window).on('resize', function(){
-    if((!$('body').hasClass('logged-in') && $('body').hasClass('home')) || $('body').hasClass('logged-home') || $('body').hasClass('faq')) {
+    if ((!$('body').hasClass('logged-in') && $('body').hasClass('home')) || $('body').hasClass('logged-home') || $('body').hasClass('faq')) {
         optionsDescriptionsEqualHeight();
     }
 });
@@ -29,7 +31,7 @@ $(window).on('scroll', function()  {
 
 //init cookie events only if exists
 function checkIfCookie()    {
-    if($('.privacy-policy-cookie').length > 0)  {
+    if ($('.privacy-policy-cookie').length > 0)  {
         $('.privacy-policy-cookie .accept').click(function()    {
             basic.cookies.set('privacy_policy', 1);
             $('.privacy-policy-cookie').hide();
@@ -40,7 +42,7 @@ checkIfCookie();
 
 function initCaptchaRefreshEvent()  {
 //refreshing captcha on trying to log in admin
-    if($('.refresh-captcha').length > 0)    {
+    if ($('.refresh-captcha').length > 0)    {
         $('.refresh-captcha').click(function()  {
             $.ajax({
                 type: 'GET',
@@ -59,7 +61,7 @@ function initCaptchaRefreshEvent()  {
 initCaptchaRefreshEvent();
 
 // ================== PAGES ==================
-if(!$('body').hasClass('logged-in')  && $('body').hasClass('home') || $('body').hasClass('logged-home')) {
+if (!$('body').hasClass('logged-in')  && $('body').hasClass('home') || $('body').hasClass('logged-home')) {
     $('.below-options .single-option').hover(function () {
         $(this).addClass('active');
         $(document).bind('mousemove', imageFollowingCursorPosition);
@@ -110,7 +112,7 @@ if(!$('body').hasClass('logged-in')  && $('body').hasClass('home') || $('body').
     $('.testimonials-slider-section').on('beforeChange', function(event, slick, currentSlide, nextSlide){
         var height = 0;
         for(var i = 0, len = 4; i < len; i+=1)  {
-            if($('.slick-slide').eq((nextSlide + 4) + i).height() > height) {
+            if ($('.slick-slide').eq((nextSlide + 4) + i).height() > height) {
                 height = $('.slick-slide').eq((nextSlide + 4) + i).height();
             }
         }
@@ -131,7 +133,7 @@ if(!$('body').hasClass('logged-in')  && $('body').hasClass('home') || $('body').
         var extra_html = '';
         var media_html = '';
 
-        if(this_btn.attr('data-articles') != undefined)    {
+        if (this_btn.attr('data-articles') != undefined)    {
             extra_html+='<div class="extra-html"><div class="extra-title">Latest Blog articles:</div><div class="slider-with-tool-data">';
             var articles_arr = $.parseJSON(this_btn.attr('data-articles'));
             for(var i = 0, len = articles_arr.length; i < len; i+=1)    {
@@ -141,7 +143,7 @@ if(!$('body').hasClass('logged-in')  && $('body').hasClass('home') || $('body').
         }
 
         var description = '';
-        if(this_btn.attr('data-description') != '') {
+        if (this_btn.attr('data-description') != '') {
             description = $.parseJSON(this_btn.attr('data-description'));
         }
 
@@ -149,17 +151,17 @@ if(!$('body').hasClass('logged-in')  && $('body').hasClass('home') || $('body').
 
         $('.applications-section .info-section .html-content').html(html);
 
-        if(extra_html != '') {
+        if (extra_html != '') {
             initToolsPostsSlider();
         }
 
         $('.applications-section .info-section video').removeAttr('controls');
 
         $('body').addClass('overflow-hidden');
-        if($(window).width() > 992) {
+        if ($(window).width() > 992) {
             clearInterval(init_apps_interval_slide);
 
-            if(stop_interval_sliding == undefined) {
+            if (stop_interval_sliding == undefined) {
                 start_clicking_from_num = element.index() + 1;
                 if (start_clicking_from_num == 8) {
                     start_clicking_from_num = 0;
@@ -183,17 +185,17 @@ if(!$('body').hasClass('logged-in')  && $('body').hasClass('home') || $('body').
     }
 
     $('body').addClass('overflow-hidden');
-    if($(window).width() > 992) {
+    if ($(window).width() > 992) {
         singleApplicationClick($('.applications-section .single-application').eq(0));
     }
     $('body').removeClass('overflow-hidden');
-} else if($('body').hasClass('faq')) {
-    if($('.list .question').length > 0) {
+} else if ($('body').hasClass('faq')) {
+    if ($('.list .question').length > 0) {
         $('.list .question').click(function()   {
             $(this).closest('li').find('.question-content').toggle(300);
         });
     }
-} else if($('body').hasClass('download-assets')) {
+} else if ($('body').hasClass('download-assets')) {
     $('.assets-slider').slick({
         slidesToShow: 3,
         slidesToScroll: 1,
@@ -216,7 +218,7 @@ if(!$('body').hasClass('logged-in')  && $('body').hasClass('home') || $('body').
 function optionsDescriptionsEqualHeight() {
     var descriptions_height = 0;
     for(var i = 0, len = $('.options-section .description').length; i < len; i+=1)  {
-        if($('.options-section .description').eq(i).outerHeight() > descriptions_height) {
+        if ($('.options-section .description').eq(i).outerHeight() > descriptions_height) {
             descriptions_height = $('.options-section .description').eq(i).outerHeight();
         }
     }
@@ -225,13 +227,13 @@ function optionsDescriptionsEqualHeight() {
 
 //homepage parallax background
 /*function homepageHowToBecomeDentacoinDentistBackgroundParallax() {
-    if($('body').hasClass('home') && $('section.how-to-become-dentacoin-dentist-section').isInViewport() && !basic.isMobile()) {
+    if ($('body').hasClass('home') && $('section.how-to-become-dentacoin-dentist-section').isInViewport() && !basic.isMobile()) {
         var current = $(window).scrollTop();
         var start = $('section.how-to-become-dentacoin-dentist-section').offset().top - $('section.how-to-become-dentacoin-dentist-section').outerHeight();
         var max = $('section.how-to-become-dentacoin-dentist-section').offset().top;
 
         var percentage = (((current - start) / (max - start)) * 100) / 2 + 30;
-        if(percentage > 0 && percentage < 100) {
+        if (percentage > 0 && percentage < 100) {
             $('section.how-to-become-dentacoin-dentist-section').css({'background-position' : 'center ' + (100 - percentage) + '%'});
         }
         //$('.stella-artois-and-wimbledon .custom-widget').eq(i).css({'top' : (10 + 50 * (percentage / 100)) + '%'});
@@ -239,7 +241,7 @@ function optionsDescriptionsEqualHeight() {
 }*/
 
 //external generated form
-if($('.show-external-form-button').length > 0) {
+if ($('.show-external-form-button').length > 0) {
     $('.show-external-form-button').click(function() {
         $('.custom-popup.external-form').addClass('visible');
 
@@ -257,7 +259,7 @@ if($('.show-external-form-button').length > 0) {
 var homepage_video_time_watched = 0;
 var homepage_video_timer;
 
-if($('.open-video-popup').length > 0) {
+if ($('.open-video-popup').length > 0) {
     $('.open-video-popup').click(function() {
         $('.custom-popup.video .wrapper').html('<div itemprop="video" itemscope="" itemtype="http://schema.org/VideoObject"><video controls><source src="//dentacoin.com/assets/videos/dentacoin-explainer-video.mp4" type="video/mp4">Your browser does not support HTML5 video.</video><meta itemprop="name" content="Dentacoin Introduction Video"><meta itemprop="description" content="Explainer video: Dentacoin, the Blockchain Solution for the Global Dentistry"><meta itemprop="uploadDate" content="2019-03-19T08:00:00+08:00"><meta itemprop="thumbnailUrl" content="https://dentacoin.com/assets/uploads/video-poster.png"><link itemprop="contentURL" href="//dentacoin.com/assets/videos/dentacoin-explainer-video.mp4"></div>');
         $('.custom-popup.video').addClass('visible');
@@ -290,7 +292,7 @@ if($('.open-video-popup').length > 0) {
 }
 
 $('body').click(function(event) {
-    if($(event.target).is('#custom-popup')) {
+    if ($(event.target).is('#custom-popup')) {
         $('.custom-popup').removeClass('visible');
         $('body').removeClass('overflow-hidden');
         $('.custom-popup.video .wrapper').html('');
@@ -306,9 +308,9 @@ $('body').click(function(event) {
 
 //change images src on different resolutions (only the ones with data attributes for this)
 function setLargeImages() {
-    if($('img[data-large-screen-src]').length > 0) {
+    if ($('img[data-large-screen-src]').length > 0) {
         $('body').addClass('overflow-hidden');
-        if($(window).width() > 1400) {
+        if ($(window).width() > 1400) {
             for(var i = 0, len = $('img[data-large-screen-src]').length; i < len; i+=1) {
                 $('img[data-large-screen-src]').eq(i).attr('src', $('img[data-large-screen-src]').attr('data-large-screen-src'));
             }
@@ -323,8 +325,8 @@ function setLargeImages() {
 
 //scroll to sections events
 function initScrollingToEvents() {
-    if($('body').hasClass('logged-home') || (!$('body').hasClass('logged-in')  && $('body').hasClass('home'))) {
-        if($('.scrolling-to-section').length > 0) {
+    if ($('body').hasClass('logged-home') || (!$('body').hasClass('logged-in')  && $('body').hasClass('home'))) {
+        if ($('.scrolling-to-section').length > 0) {
             $('.scrolling-to-section').click(function() {
                 $(this).blur();
                 window.history.pushState($(this).find('span').html(), '', '/#'+$(this).attr('id'));
@@ -332,7 +334,7 @@ function initScrollingToEvents() {
                 return false;
             });
         }
-    } else if($('body').hasClass('logged-in')) {
+    } else if ($('body').hasClass('logged-in')) {
         $('.scrolling-to-section').click(function() {
             window.location = '/home#' + $(this).attr('id');
         });
@@ -343,7 +345,7 @@ initScrollingToEvents();
 //on page load if we have #parameter in the URL scroll down to section
 function scrollToSection(){
     $('[data-scroll-here]').each(function() {
-        if(window.location.href.indexOf('#' + $(this).attr('data-scroll-here')) != -1){
+        if (window.location.href.indexOf('#' + $(this).attr('data-scroll-here')) != -1){
             $("html, body").animate({scrollTop: $(this).offset().top - $('header').outerHeight()}, 300);
             return false;
         }
@@ -368,7 +370,7 @@ function transformToAssocArray( prmstr ) {
 //mobile menu events
 /*
 function initMobileMenuActions()    {
-    if(basic.isMobile)    {
+    if (basic.isMobile)    {
         $('header .mobile-ham').click(function()   {
             $('.mobile-nav').addClass('active');
         });
@@ -406,13 +408,13 @@ function newsletterRegisterValidation() {
     $('.newsletter-register form').on('submit', function(event)  {
         var this_form = $(this);
         var error = false;
-        if(!basic.validateEmail(this_form.find('input[type="email"]').val().trim()))    {
+        if (!basic.validateEmail(this_form.find('input[type="email"]').val().trim()))    {
             error = true;
-        }else if(!this_form.find('#newsletter-privacy-policy').is(':checked'))  {
+        }else if (!this_form.find('#newsletter-privacy-policy').is(':checked'))  {
             error = true;
         }
 
-        if(!error) {
+        if (!error) {
             fireGoogleAnalyticsEvent('Subscription', 'Sign-up', 'Newsletter');
         }
     });
@@ -424,11 +426,11 @@ function hidePopupOnBackdropClick() {
         var classname = event.target.className;
         classname = classname.replace(/ /g, '.');
 
-        if(classname && !$('.' + classname).parents('.modal-dialog').length) {
-            if($('.bootbox.login-signin-popup').length) {
+        if (classname && !$('.' + classname).parents('.modal-dialog').length) {
+            if ($('.bootbox.login-signin-popup').length) {
                 $('.hidden-login-form').html(hidden_popup_content);
             }
-            if($('.bootbox.login-signin-popup').length) {
+            if ($('.bootbox.login-signin-popup').length) {
                 $('.hidden-login-form').html(hidden_popup_content);
             }
             bootbox.hideAll();
@@ -446,13 +448,19 @@ function bindLoginSigninPopupShow() {
 }
 bindLoginSigninPopupShow();
 
-function openLoginSigninPopup() {
+function openLoginSigninPopup(type) {
     basic.closeDialog();
     $('.hidden-login-form').html('');
     basic.showDialog(hidden_popup_content, 'login-signin-popup', null, true);
 
+    if (type != undefined) {
+        if (type == 'show-patient-register') {
+            $('.login-signin-popup .popup-body .patient .form-login').hide();
+            $('.login-signin-popup .popup-body .patient .form-register').show();
+        }
+    }
 
-    if(basic.objHasKey(get_params, 'show-dentist-signup') && !$('body').hasClass('logged-in')) {
+    if (basic.objHasKey(get_params, 'show-dentist-signup') && !$('body').hasClass('logged-in')) {
         $('.login-signin-popup .form-login').hide();
         $('.login-signin-popup .form-register').show();
     }
@@ -480,7 +488,7 @@ function openLoginSigninPopup() {
 
     //login
     $('.login-signin-popup .patient .form-register #privacy-policy-registration-patient').on('change', function() {
-        if($(this).is(':checked')) {
+        if ($(this).is(':checked')) {
             $('.login-signin-popup .patient .form-register .facebook-custom-btn').removeAttr('custom-stopper');
             $('.login-signin-popup .patient .form-register .civic-custom-btn').removeAttr('custom-stopper');
         } else {
@@ -517,22 +525,22 @@ function openLoginSigninPopup() {
         var this_form = $(this_form_native);
         event.preventDefault();
         //clear prev errors
-        if($('.login-signin-popup form#dentist-login .error-handle').length) {
+        if ($('.login-signin-popup form#dentist-login .error-handle').length) {
             $('.login-signin-popup form#dentist-login .error-handle').remove();
         }
 
         var form_fields = this_form.find('.form-field');
         var submit_form = true;
         for(var i = 0, len = form_fields.length; i < len; i+=1) {
-            if(form_fields.eq(i).attr('type') == 'email' && !basic.validateEmail(form_fields.eq(i).val().trim())) {
+            if (form_fields.eq(i).attr('type') == 'email' && !basic.validateEmail(form_fields.eq(i).val().trim())) {
                 customErrorHandle(form_fields.eq(i).closest('.field-parent'), 'Please use valid email address.');
                 submit_form = false;
-            } else if(form_fields.eq(i).attr('type') == 'password' && form_fields.eq(i).val().length < 6) {
+            } else if (form_fields.eq(i).attr('type') == 'password' && form_fields.eq(i).val().length < 6) {
                 customErrorHandle(form_fields.eq(i).closest('.field-parent'), 'Passwords must be min length 6.');
                 submit_form = false;
             }
 
-            if(form_fields.eq(i).val().trim() == '') {
+            if (form_fields.eq(i).val().trim() == '') {
                 customErrorHandle(form_fields.eq(i).closest('.field-parent'), 'This field is required.');
                 submit_form = false;
             }
@@ -552,10 +560,10 @@ function openLoginSigninPopup() {
             }
         });
 
-        if(submit_form && check_account_response.success) {
+        if (submit_form && check_account_response.success) {
             fireGoogleAnalyticsEvent('DentistLogin', 'Click', 'Dentist Login');
             this_form_native.submit();
-        } else if(check_account_response.error) {
+        } else if (check_account_response.error) {
             customErrorHandle(this_form.find('input[name="password"]').closest('.field-parent'), check_account_response.message);
         }
     });
@@ -565,7 +573,7 @@ function openLoginSigninPopup() {
         var current_step = $('.login-signin-popup .dentist .form-register .step.visible');
         var current_prev_step = current_step.prev();
         current_step.removeClass('visible');
-        if(current_prev_step.hasClass('first')) {
+        if (current_prev_step.hasClass('first')) {
             $(this).hide();
         }
         current_prev_step.addClass('visible');
@@ -600,35 +608,35 @@ function openLoginSigninPopup() {
                 var errors = false;
                 $('.login-signin-popup .dentist .form-register .step.first').parent().find('.error-handle').remove();
                 for(var i = 0, len = first_step_inputs.length; i < len; i+=1) {
-                    if(first_step_inputs.eq(i).attr('type') == 'email' && !basic.validateEmail(first_step_inputs.eq(i).val().trim())) {
+                    if (first_step_inputs.eq(i).attr('type') == 'email' && !basic.validateEmail(first_step_inputs.eq(i).val().trim())) {
                         customErrorHandle(first_step_inputs.eq(i).closest('.field-parent'), 'Please use valid email address.');
                         errors = true;
-                    } else if(first_step_inputs.eq(i).attr('type') == 'email' && basic.validateEmail(first_step_inputs.eq(i).val().trim())) {
+                    } else if (first_step_inputs.eq(i).attr('type') == 'email' && basic.validateEmail(first_step_inputs.eq(i).val().trim())) {
                         //coredb check if email is free
                         var check_email_if_free_response = await checkIfFreeEmail(first_step_inputs.eq(i).val().trim());
-                        if(check_email_if_free_response.error) {
+                        if (check_email_if_free_response.error) {
                             customErrorHandle(first_step_inputs.eq(i).closest('.field-parent'), 'The email has already been taken.');
                             errors = true;
                         }
                     }
 
-                    if(first_step_inputs.eq(i).attr('type') == 'password' && first_step_inputs.eq(i).val().length < 6) {
+                    if (first_step_inputs.eq(i).attr('type') == 'password' && first_step_inputs.eq(i).val().length < 6) {
                         customErrorHandle(first_step_inputs.eq(i).closest('.field-parent'), 'Passwords must be min length 6.');
                         errors = true;
                     }
 
-                    if(first_step_inputs.eq(i).val().trim() == '') {
+                    if (first_step_inputs.eq(i).val().trim() == '') {
                         customErrorHandle(first_step_inputs.eq(i).closest('.field-parent'), 'This field is required.');
                         errors = true;
                     }
                 }
 
-                if($('.login-signin-popup .dentist .form-register .step.first .form-field.password').val().trim() != $('.login-signin-popup .step.first .form-field.repeat-password').val().trim()) {
+                if ($('.login-signin-popup .dentist .form-register .step.first .form-field.password').val().trim() != $('.login-signin-popup .step.first .form-field.repeat-password').val().trim()) {
                     customErrorHandle($('.login-signin-popup .step.first .form-field.repeat-password').closest('.field-parent'), 'Both passwords don\'t match.');
                     errors = true;
                 }
 
-                if(!errors) {
+                if (!errors) {
                     fireGoogleAnalyticsEvent('DentistRegistration', 'ClickNext', 'DentistRegistrationStep1');
 
                     $('.login-signin-popup .dentist .form-register .step').removeClass('visible');
@@ -646,15 +654,15 @@ function openLoginSigninPopup() {
 
                 //check form-field fields
                 for(var i = 0, len = second_step_inputs.length; i < len; i+=1) {
-                    if(second_step_inputs.eq(i).is('select')) {
+                    if (second_step_inputs.eq(i).is('select')) {
                         //IF SELECT TAG
-                        if(second_step_inputs.eq(i).val().trim() == '') {
+                        if (second_step_inputs.eq(i).val().trim() == '') {
                             customErrorHandle(second_step_inputs.eq(i).closest('.field-parent'), 'This field is required.');
                             errors = true;
                         }
-                    } else if(second_step_inputs.eq(i).is('input')) {
+                    } else if (second_step_inputs.eq(i).is('input')) {
                         //IF INPUT TAG
-                        if(second_step_inputs.eq(i).val().trim() == '') {
+                        if (second_step_inputs.eq(i).val().trim() == '') {
                             customErrorHandle(second_step_inputs.eq(i).closest('.field-parent'), 'This field is required.');
                             errors = true;
                         }
@@ -662,19 +670,19 @@ function openLoginSigninPopup() {
                 }
 
                 //check if latin name accepts only LATIN characters
-                if(!/^[a-z A-Z]+$/.test($('.login-signin-popup .dentist .form-register .step.second input[name="latin-name"]').val().trim())) {
+                if (!/^[a-z A-Z]+$/.test($('.login-signin-popup .dentist .form-register .step.second input[name="latin-name"]').val().trim())) {
 
                     customErrorHandle($('.login-signin-popup .dentist .form-register .step.second input[name="latin-name"]').closest('.field-parent'), 'This field should contain only latin characters.');
                     errors = true;
                 }
 
                 //check if privacy policy checkbox is checked
-                if(!$('.login-signin-popup .dentist .form-register .step.second #privacy-policy-registration').is(':checked')) {
+                if (!$('.login-signin-popup .dentist .form-register .step.second #privacy-policy-registration').is(':checked')) {
                     customErrorHandle($('.login-signin-popup .dentist .form-register .step.second .privacy-policy-row'), 'Please agree with our <a href="//dentacoin.com/privacy-policy" target="_blank">Privacy policy</a>.');
                     errors = true;
                 }
 
-                if(!errors) {
+                if (!errors) {
                     fireGoogleAnalyticsEvent('DentistRegistration', 'ClickNext', 'DentistRegistrationStep2');
 
                     $('.login-signin-popup .dentist .form-register .step').removeClass('visible');
@@ -690,22 +698,22 @@ function openLoginSigninPopup() {
                 $('.login-signin-popup .dentist .form-register .step.third').find('.error-handle').remove();
 
                 for(var i = 0, len = third_step_inputs.length; i < len; i+=1) {
-                    if(third_step_inputs.eq(i).is('select')) {
+                    if (third_step_inputs.eq(i).is('select')) {
                         //IF SELECT TAG
-                        if(third_step_inputs.eq(i).val().trim() == '') {
+                        if (third_step_inputs.eq(i).val().trim() == '') {
                             customErrorHandle(third_step_inputs.eq(i).closest('.field-parent'), 'This field is required.');
                             errors = true;
                         }
-                    } else if(third_step_inputs.eq(i).is('input')) {
+                    } else if (third_step_inputs.eq(i).is('input')) {
                         //IF INPUT TAG
-                        if(third_step_inputs.eq(i).val().trim() == '') {
+                        if (third_step_inputs.eq(i).val().trim() == '') {
                             customErrorHandle(third_step_inputs.eq(i).closest('.field-parent'), 'This field is required.');
                             errors = true;
                         }
-                        if(third_step_inputs.eq(i).attr('type') == 'url' && !basic.validateUrl(third_step_inputs.eq(i).val().trim())) {
+                        if (third_step_inputs.eq(i).attr('type') == 'url' && !basic.validateUrl(third_step_inputs.eq(i).val().trim())) {
                             customErrorHandle(third_step_inputs.eq(i).closest('.field-parent'), 'Please enter your website URL starting with http:// or https://.');
                             errors = true;
-                        }else if(third_step_inputs.eq(i).attr('type') == 'number' && !basic.validatePhone(third_step_inputs.eq(i).val().trim())) {
+                        }else if (third_step_inputs.eq(i).attr('type') == 'number' && !basic.validatePhone(third_step_inputs.eq(i).val().trim())) {
                             customErrorHandle(third_step_inputs.eq(i).closest('.field-parent'), 'Please use valid numbers.');
                             errors = true;
                         }
@@ -713,13 +721,13 @@ function openLoginSigninPopup() {
                 }
 
                 var validate_phone = await validatePhone($('.login-signin-popup .dentist .form-register .step.third input[name="phone"]').val().trim(), $('.login-signin-popup .dentist .form-register .step.third select[name="country-code"]').val());
-                if(basic.objHasKey(validate_phone, 'success') && !validate_phone.success) {
+                if (basic.objHasKey(validate_phone, 'success') && !validate_phone.success) {
                     customErrorHandle($('.login-signin-popup .dentist .form-register .step.third input[name="phone"]').closest('.field-parent'), 'Please use valid phone.');
                     errors = true;
                 }
 
-                if(!errors) {
-                    if($('#dentist-country').attr('data-current-user-country-code') != undefined && $('#dentist-country').val() != $('#dentist-country').attr('data-current-user-country-code')) {
+                if (!errors) {
+                    if ($('#dentist-country').attr('data-current-user-country-code') != undefined && $('#dentist-country').val() != $('#dentist-country').attr('data-current-user-country-code')) {
                         var different_country_warning_obj = {};
                         different_country_warning_obj.callback = function (result) {
                             if (result) {
@@ -748,30 +756,30 @@ function openLoginSigninPopup() {
                 $('.login-signin-popup .dentist .form-register .step.fourth').find('.error-handle').remove();
                 var errors = false;
                 //checking if empty avatar
-                if($('.dentist .form-register .step.fourth #custom-upload-avatar').val().trim() == '') {
+                if ($('.dentist .form-register .step.fourth #custom-upload-avatar').val().trim() == '') {
                     customErrorHandle($('.step.fourth .step-errors-holder'), 'Please select avatar.');
                     errors = true;
                 }
 
                 //checking if no specialization checkbox selected
-                if($('.login-signin-popup .dentist .form-register .step.fourth [name="specializations[]"]:checked').val() == undefined) {
+                if ($('.login-signin-popup .dentist .form-register .step.fourth [name="specializations[]"]:checked').val() == undefined) {
                     customErrorHandle($('.login-signin-popup .step.fourth .step-errors-holder'), 'Please select specialization/s.');
                     errors = true;
                 }
 
                 //check captcha
-                if(!$('.login-signin-popup .dentist .form-register .step.fourth .captcha-parent').length || !$('.login-signin-popup .dentist .form-register .step.fourth #register-captcha').length) {
+                if (!$('.login-signin-popup .dentist .form-register .step.fourth .captcha-parent').length || !$('.login-signin-popup .dentist .form-register .step.fourth #register-captcha').length) {
                     errors = true;
                     window.location.reload();
                 } else {
                     var check_captcha_response = await checkCaptcha($('.login-signin-popup .dentist .form-register .step.fourth #register-captcha').val().trim());
-                    if(check_captcha_response.error) {
+                    if (check_captcha_response.error) {
                         customErrorHandle($('.login-signin-popup .step.fourth .step-errors-holder'), 'Please enter correct captcha.');
                         errors = true;
                     }
                 }
 
-                if(!errors) {
+                if (!errors) {
                     fireGoogleAnalyticsEvent('DentistRegistration', 'ClickNext', 'DentistRegistrationComplete');
 
                     //submit the form
@@ -791,10 +799,10 @@ function customErrorHandle(el, string) {
 }
 
 function styleAvatarUploadButton(label_el)    {
-    if(jQuery(".upload-file.avatar").length) {
+    if (jQuery(".upload-file.avatar").length) {
         jQuery(".upload-file.avatar").each(function(key, form){
             var this_file_btn_parent = jQuery(this);
-            if(this_file_btn_parent.attr('data-current-user-avatar')) {
+            if (this_file_btn_parent.attr('data-current-user-avatar')) {
                 this_file_btn_parent.find('.btn-wrapper').append('<label for="custom-upload-avatar" role="button" style="background-image:url('+this_file_btn_parent.attr('data-current-user-avatar')+');"><div class="inner"><i class="fa fa-plus fs-0" aria-hidden="true"></i><div class="inner-label fs-0">Add profile photo</div></div></label>');
             } else {
                 this_file_btn_parent.find('.btn-wrapper').append('<label for="custom-upload-avatar" role="button"><div class="inner"><i class="fa fa-plus" aria-hidden="true"></i><div class="inner-label">Add profile photo</div></div></label>');
@@ -806,20 +814,20 @@ function styleAvatarUploadButton(label_el)    {
                     labelVal = label.innerHTML;
 
                 input.addEventListener('change', function(e) {
-                    if(2 < bytesToMegabytes(this.files[0].size)) {
+                    if (2 < bytesToMegabytes(this.files[0].size)) {
                         basic.showAlert('The image you selected is large. Max size: 2MB.', '', true);
                         $(this).val('');
                     } else {
                         readURL(this);
 
                         var fileName = '';
-                        if(this.files && this.files.length > 1)
+                        if (this.files && this.files.length > 1)
                             fileName = ( this.getAttribute('data-multiple-caption') || '' ).replace('{count}', this.files.length);
                         else
                             fileName = e.target.value.split('\\').pop();
 
-                        /*if(fileName) {
-                            if(load_filename_to_other_el)    {
+                        /*if (fileName) {
+                            if (load_filename_to_other_el)    {
                                 $(this).closest('.form-row').find('.file-name').html('<i class="fa fa-file-text-o" aria-hidden="true"></i>' + fileName);
                             }else {
                                 label.querySelector('span').innerHTML = fileName;
@@ -843,11 +851,11 @@ function bytesToMegabytes(bytes) {
 
 var croppie_instance;
 function readURL(input) {
-    if(input.files && input.files[0]) {
+    if (input.files && input.files[0]) {
         var reader = new FileReader();
         reader.onload = function (e) {
             $('#cropper-container').addClass('width-and-height');
-            if(croppie_instance != undefined) {
+            if (croppie_instance != undefined) {
                 croppie_instance.croppie('destroy');
                 $('#cropper-container').html('');
             }
@@ -931,32 +939,32 @@ async function validatePhone(phone, country_code) {
 function apiEventsListeners() {
     //login
     $(document).on('successResponseCoreDBApi', async function (event) {
-        if(event.response_data.token) {
+        if (event.response_data.token) {
             var custom_form_obj = {
                 token: event.response_data.token,
                 id: event.response_data.data.id,
                 _token: $('meta[name="csrf-token"]').attr('content')
             };
 
-            if($('input[type="hidden"][name="route"]').length && $('input[type="hidden"][name="slug"]').length) {
+            if ($('input[type="hidden"][name="route"]').length && $('input[type="hidden"][name="slug"]').length) {
                 custom_form_obj.route = $('input[type="hidden"][name="route"]').val();
                 custom_form_obj.slug = $('input[type="hidden"][name="slug"]').val();
             }
 
             //check if CoreDB returned address for this user and if its valid one
 
-            if(event.response_data.new_account) {
+            if (event.response_data.new_account) {
                 //REGISTER
-                if(event.platform_type == 'facebook') {
+                if (event.platform_type == 'facebook') {
                     fireGoogleAnalyticsEvent('PatientRegistration', 'ClickFB', 'Patient Registration FB');
-                } else if(event.platform_type == 'civic') {
+                } else if (event.platform_type == 'civic') {
                     fireGoogleAnalyticsEvent('PatientRegistration', 'ClickNext', 'Patient Registration Civic');
                 }
             } else {
                 //LOGIN
-                if(event.platform_type == 'facebook') {
+                if (event.platform_type == 'facebook') {
                     fireGoogleAnalyticsEvent('PatientLogin', 'Click', 'Login FB');
-                } else if(event.platform_type == 'civic') {
+                } else if (event.platform_type == 'civic') {
                     fireGoogleAnalyticsEvent('PatientLogin', 'Click', 'Login Civic');
                 }
             }
@@ -967,7 +975,7 @@ function apiEventsListeners() {
 
     $(document).on('errorResponseCoreDBApi', function (event) {
         var error_popup_html = '';
-        if(event.response_data.errors) {
+        if (event.response_data.errors) {
             for(var key in event.response_data.errors) {
                 error_popup_html += event.response_data.errors[key]+'<br>';
             }
@@ -989,7 +997,7 @@ function customJavascriptForm(path, params, method) {
     form.setAttribute("action", path);
 
     for(var key in params) {
-        if(params.hasOwnProperty(key)) {
+        if (params.hasOwnProperty(key)) {
             var hiddenField = document.createElement("input");
             hiddenField.setAttribute("type", "hidden");
             hiddenField.setAttribute("name", key);
@@ -1004,31 +1012,31 @@ function customJavascriptForm(path, params, method) {
 }
 
 async function loggedOrNotLogic() {
-    if($('body').hasClass('logged-in')) {
+    if ($('body').hasClass('logged-in')) {
         var add_overflow_hidden_on_hidden_box_show = false;
         var sm_screen_width = false;
         $('body').addClass('overflow-hidden');
-        if($(window).width() < 992) {
+        if ($(window).width() < 992) {
             add_overflow_hidden_on_hidden_box_show = true;
-            if($(window).width() > 767) {
+            if ($(window).width() > 767) {
                 sm_screen_width = true;
             }
         }
         $('body').removeClass('overflow-hidden');
 
-        if(sm_screen_width) {
+        if (sm_screen_width) {
             $(document).on('click', 'body', function(){
-                if(!$('.hidden-box-parent').find(event.target).length) {
+                if (!$('.hidden-box-parent').find(event.target).length) {
                     $('.logged-user-right-nav .hidden-box').removeClass('show-this');
                     $('.logged-user-right-nav .up-arrow').removeClass('show-this');
                 }
             });
         }
 
-        if(add_overflow_hidden_on_hidden_box_show) {
+        if (add_overflow_hidden_on_hidden_box_show) {
             $('.logged-user-right-nav .user-name, .logged-user-right-nav .header-avatar').click(function() {
                 $('.logged-user-right-nav .hidden-box').toggleClass('show-this');
-                if(sm_screen_width) {
+                if (sm_screen_width) {
                     $('.logged-user-right-nav .up-arrow').toggleClass('show-this');
                 } else {
                     $('body').toggleClass('overflow-hidden');
@@ -1046,10 +1054,10 @@ async function loggedOrNotLogic() {
 
         $('.logged-user-right-nav .close-btn a').click(function() {
             $('.logged-user-right-nav .hidden-box').removeClass('show-this');
-            if(add_overflow_hidden_on_hidden_box_show) {
+            if (add_overflow_hidden_on_hidden_box_show) {
                 $('body').removeClass('overflow-hidden');
 
-                if(sm_screen_width) {
+                if (sm_screen_width) {
                     $('.logged-user-right-nav .up-arrow').removeClass('show-this');
                 }
             }
@@ -1059,7 +1067,7 @@ async function loggedOrNotLogic() {
 loggedOrNotLogic();
 
 function initDataTable()    {
-    if($('table.table.table-without-reorder').length > 0) {
+    if ($('table.table.table-without-reorder').length > 0) {
         $('table.table.table-without-reorder').DataTable({
             ordering: true,
             order: [],
@@ -1076,7 +1084,7 @@ function bindGoogleAlikeButtonsEvents() {
     //google alike style for label/placeholders
     $('body').on('click', '.custom-google-label-style label', function() {
         $(this).addClass('active-label');
-        if($('.custom-google-label-style').attr('data-input-blue-green-border') == 'true') {
+        if ($('.custom-google-label-style').attr('data-input-blue-green-border') == 'true') {
             $(this).parent().find('input').addClass('blue-green-border');
         }
     });
@@ -1085,12 +1093,12 @@ function bindGoogleAlikeButtonsEvents() {
         var value = $(this).val().trim();
         if (value.length) {
             $(this).closest('.custom-google-label-style').find('label').addClass('active-label');
-            if($(this).closest('.custom-google-label-style').attr('data-input-blue-green-border') == 'true') {
+            if ($(this).closest('.custom-google-label-style').attr('data-input-blue-green-border') == 'true') {
                 $(this).addClass('blue-green-border');
             }
         } else {
             $(this).closest('.custom-google-label-style').find('label').removeClass('active-label');
-            if($(this).closest('.custom-google-label-style').attr('data-input-blue-green-border') == 'true') {
+            if ($(this).closest('.custom-google-label-style').attr('data-input-blue-green-border') == 'true') {
                 $(this).removeClass('blue-green-border');
             }
         }
@@ -1115,13 +1123,13 @@ function initToolsPostsSlider()   {
 }
 
 function dateObjToFormattedDate(object) {
-    if(object.getDate() < 10) {
+    if (object.getDate() < 10) {
         var date = '0' + object.getDate();
     } else {
         var date = object.getDate();
     }
 
-    if(object.getMonth() + 1 < 10) {
+    if (object.getMonth() + 1 < 10) {
         var month = '0' + (object.getMonth() + 1);
     } else {
         var month = object.getMonth() + 1;
@@ -1134,15 +1142,15 @@ function onEnrichProfileFormSubmit() {
         var errors = false;
         var this_form = $(this);
         this_form.find('.error-handle').remove();
-        if(this_form.find('[name="description"]').val().trim() == '') {
+        if (this_form.find('[name="description"]').val().trim() == '') {
             errors = true;
             customErrorHandle(this_form.find('[name="description"]').parent(), 'Please enter short description.');
         }
 
-        if(!errors) {
-            if($('.enrich-profile-container').attr('data-type') == 'dentist') {
+        if (!errors) {
+            if ($('.enrich-profile-container').attr('data-type') == 'dentist') {
                 fireGoogleAnalyticsEvent('DentistRegistration', 'ClickSave', 'DentistDescr');
-            } else if($('.enrich-profile-container').attr('data-type') == 'clinic') {
+            } else if ($('.enrich-profile-container').attr('data-type') == 'clinic') {
                 fireGoogleAnalyticsEvent('DentistRegistration', 'ClickSave', 'ClinicDescr');
             }
         } else {
@@ -1246,7 +1254,7 @@ function fireGoogleAnalyticsEvent(category, action, label, value) {
         'event_label': label
     };
 
-    if(value != undefined) {
+    if (value != undefined) {
         event_obj.value = value;
     }
 

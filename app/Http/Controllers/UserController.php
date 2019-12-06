@@ -167,7 +167,7 @@ class UserController extends Controller {
         if($api_response['success']) {
             $approved_statuses = array('approved', 'pending', 'test');
             if($api_response['data']['self_deleted'] != NULL) {
-                return response()->json(['error' => true, 'message' => 'This account is deleted, you cannot log in with this account anymore.']);
+                return response()->json(['error' => true, 'message' => 'This account has been deleted by its owner and cannot be restored.']);
             } else if(!in_array($api_response['data']['status'], $approved_statuses)) {
                 return response()->json(['error' => true, 'message' => 'This account is not approved by Dentacoin team yet, please try again later.']);
             } else {
@@ -335,17 +335,21 @@ class UserController extends Controller {
         if(!$current_logging_patient->success) {
             if ((property_exists($current_logging_patient, 'deleted') && $current_logging_patient->deleted == true) && (property_exists($current_logging_patient, 'self_deleted') && $current_logging_patient->self_deleted == true)) {
                 // self deleted
-                return redirect()->route('home')->with(['error' => 'This account is deleted, you cannot log in with this account anymore.']);
+                return redirect()->route('home')->with(['error' => 'This account has been deleted by its owner and cannot be restored.']);
             } else if ((property_exists($current_logging_patient, 'deleted') && $current_logging_patient->deleted == true)) {
                 // deleted by admin
-                return redirect()->route('home')->with(['error' => 'This account is deleted, you cannot log in with this account anymore.']);
+                return redirect()->route('home')->with(['error' => 'ACCESS BLOCKED: We have detected suspicious activity from your profile. If you have had one genuine profile only, please contact us at <a href="mailto:admin@dentacoin.com">admin@dentacoin.com</a>. Otherwise, blocking is irreversible.']);
             } else {
-                return redirect()->route('home')->with(['error' => 'Not existing account. Please head back to SIGN UP, agree with our Privacy policy and create your account.']);
+                return redirect()->route('home')->with(['error' => 'Account not found. <a href="//dentists.dentacoin.com?show-patient-register">Sign up here</a>.']);
             }
         } else {
             session(['logged_user' => $session_arr]);
 
-            return redirect()->route('home');
+            if(!empty($request->input('route'))) {
+                return redirect()->route($request->input('route'));
+            } else {
+                return redirect()->route('home');
+            }
         }
     }
 
