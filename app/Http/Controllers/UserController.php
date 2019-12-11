@@ -322,7 +322,7 @@ class UserController extends Controller {
             'id' => 'required'
         ], [
             'token.required' => 'Token is required.',
-            'id.required' => 'Email is required.'
+            'id.required' => 'ID is required.'
         ]);
 
         $session_arr = [
@@ -333,7 +333,7 @@ class UserController extends Controller {
 
         $current_logging_patient = (new APIRequestsController())->getUserData($request->input('id'), true);
         if(!$current_logging_patient->success) {
-            if ((property_exists($current_logging_patient, 'deleted') && $current_logging_patient->deleted == true) && (property_exists($current_logging_patient, 'self_deleted') && $current_logging_patient->self_deleted == true)) {
+            if (property_exists($current_logging_patient, 'self_deleted') && $current_logging_patient->self_deleted == true) {
                 // self deleted
                 return redirect()->route('home')->with(['error' => 'This account has been deleted by its owner and cannot be restored.']);
             } else if ((property_exists($current_logging_patient, 'deleted') && $current_logging_patient->deleted == true)) {

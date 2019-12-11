@@ -25,8 +25,8 @@
     <style>
 
     </style>
-    <link rel="stylesheet" type="text/css" href="/dist/css/front-libs-style.css?v=1.0.53">
-    <link rel="stylesheet" type="text/css" href="/assets/css/style.css?v=1.0.53">
+    <link rel="stylesheet" type="text/css" href="/dist/css/front-libs-style.css?v=1.0.54">
+    <link rel="stylesheet" type="text/css" href="/assets/css/style.css?v=1.0.54">
     <script>
         var HOME_URL = '{{ route("home") }}';
     </script>
@@ -211,7 +211,7 @@
                     <div class="form-login">
                         <h2>LOG IN</h2>
                         <div class="padding-bottom-10">
-                            <a href="javascript:void(0)" class="facebook-custom-btn social-login-btn calibri-regular fs-20" data-url="//api.dentacoin.com/api/login" data-platform="dentists" @if(isset($inviter)) data-inviter="{{$inviter}}" @endif data-type="patient">with Facebook</a>
+                            <a href="javascript:void(0)" class="facebook-custom-btn social-login-btn calibri-regular fs-20" data-url="//api.dentacoin.com/api/login" data-platform="dentists" @if(isset($inviter)) data-inviter="{{$inviter}}" @endif data-type="patient"><i class="fa fa-facebook-official inline-block fs-30 margin-right-20" aria-hidden="true"></i><span class="inline-block">Continue with Facebook</span></a>
                         </div>
                         <div>
                             <a href="javascript:void(0)"  class="civic-custom-btn social-login-btn calibri-regular fs-20" data-url="//api.dentacoin.com/api/login" data-platform="dentists" @if(isset($inviter)) data-inviter="{{$inviter}}" @endif data-type="patient">with Civic</a>
@@ -223,7 +223,7 @@
                     <div class="form-register">
                         <h2>SIGN UP</h2>
                         <div class="padding-bottom-10">
-                            <a href="javascript:void(0)" class="facebook-custom-btn social-login-btn calibri-regular fs-20" data-url="//api.dentacoin.com/api/register" data-platform="dentists" @if(isset($inviter)) data-inviter="{{$inviter}}" @endif data-type="patient" custom-stopper="true">with Facebook</a>
+                            <a href="javascript:void(0)" class="facebook-custom-btn social-login-btn calibri-regular fs-20" data-url="//api.dentacoin.com/api/register" data-platform="dentists" @if(isset($inviter)) data-inviter="{{$inviter}}" @endif data-type="patient" custom-stopper="true"><i class="fa fa-facebook-official inline-block fs-30 margin-right-20" aria-hidden="true"></i><span class="inline-block">Continue with Facebook</span></a>
                         </div>
                         <div>
                             <a href="javascript:void(0)"  class="civic-custom-btn social-login-btn calibri-regular fs-20" data-url="//api.dentacoin.com/api/register" data-platform="dentists" @if(isset($inviter)) data-inviter="{{$inviter}}" @endif data-type="patient" custom-stopper="true">with Civic</a>
@@ -522,16 +522,16 @@
     </div>
     {{--<script src="/assets/js/basic.js"></script>--}}
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCaVeHq_LOhQndssbmw-aDnlMwUG73yCdk&libraries=places&language=en"></script>
-    <script src="/dist/js/front-libs-script.js?v=1.0.53"></script>
+    <script src="/dist/js/front-libs-script.js?v=1.0.54"></script>
     {{--<script src="/assets/js/address.js"></script>--}}
     @yield("script_block")
-    <script src="/dist/js/front-script.js?v=1.0.53"></script>
+    <script src="/dist/js/front-script.js?v=1.0.54"></script>
     {{--<script src="/assets/js/index.js"></script>--}}
 
     {{--Load social logging scripts only if user is not logged--}}
     @if(!(new \App\Http\Controllers\UserController())->checkSession())
-        <script src="//dentacoin.com/assets/libs/civic-login/civic.js?v=1.0.53"></script>
-        <script src="//dentacoin.com/assets/libs/facebook-login/facebook.js?v=1.0.53"></script>
+        <script src="//dentacoin.com/assets/libs/civic-login/civic.js?v=1.0.54"></script>
+        <script src="//dentacoin.com/assets/libs/facebook-login/facebook.js?v=1.0.54"></script>
 
         @php($slow_login_form = \Illuminate\Support\Facades\Input::get('show-login'))
     @endif

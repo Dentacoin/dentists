@@ -5227,8 +5227,9 @@ nav.sidenav {
     background-image: url(/assets/images/civic.svg);
     border: 1px solid #3bb03f; }
   .social-login-btn.facebook-custom-btn {
-    background-image: url(/assets/images/facebook.svg);
-    border: 1px solid #3b5999; }
+    background-color: #4267B2;
+    color: white;
+    padding: 10px 15px; }
 
 .error-handle, .alert.alert-warning {
   color: #a94442;
