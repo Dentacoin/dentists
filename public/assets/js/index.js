@@ -457,7 +457,9 @@ function openLoginSigninPopup(type) {
         if (type == 'show-patient-register') {
             $('.login-signin-popup .popup-body .patient .form-login').hide();
             $('.login-signin-popup .popup-body .patient .form-register').show();
-            $('.login-signin-popup .popup-header-action a[data-type="patient"]').click();
+
+            $('.login-signin-popup .popup-body > .inline-block').addClass('custom-hide');
+            $('.login-signin-popup .popup-body .patient').removeClass('custom-hide');
         }
     }
 
@@ -470,7 +472,6 @@ function openLoginSigninPopup(type) {
 
     initAddressSuggesters();
 
-    $('.login-signin-popup .popup-header-action a[data-type="patient"]').click();
     $('.login-signin-popup .popup-header-action a').click(function() {
         $('.login-signin-popup .popup-body > .inline-block').addClass('custom-hide');
         $('.login-signin-popup .popup-body .'+$(this).attr('data-type')).removeClass('custom-hide');
