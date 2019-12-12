@@ -982,7 +982,7 @@ function apiEventsListeners() {
         }
 
         $('.response-layer').hide();
-        basic.showAlert(error_popup_html, '', true);
+        basic.showAlert(error_popup_html, 'style-anchors', true);
     });
 }
 apiEventsListeners();

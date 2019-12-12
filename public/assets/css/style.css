@@ -4479,6 +4479,9 @@ body.home.logged-in main.main-container {
     display: flex !important;
     align-items: center;
     justify-content: center; } }
+.bootbox.style-anchors .modal-dialog .modal-content .modal-body a {
+  font-weight: bold;
+  text-decoration: underline; }
 .bootbox.login-signin-popup .bootbox-close-button {
   display: none; }
 .bootbox.login-signin-popup .modal-dialog {
