@@ -480,12 +480,12 @@
         <img src="//account.dentacoin.com/custom-cookie?slug={{ urlencode($slug) }}&type={{ urlencode($type) }}&token={{ urlencode($token) }}" class="hide"/>
     @endif
     <div class="bottom-fixed-container">
-        <a href="https://dentacoin.com/holiday-calendar-2019" target="_blank" class="display-block banner">
+        {{--<a href="https://dentacoin.com/holiday-calendar-2019" target="_blank" class="display-block banner">
             <picture itemscope="" itemtype="http://schema.org/ImageObject">
                 <source media="(max-width: 992px)" srcset="//dentacoin.com/assets/uploads/mobile-christmas-banner-small.gif"/>
                 <img src="//dentacoin.com/assets/uploads/christmas-banner.gif" alt="Holiday calendar banner" class="width-100" itemprop="contentUrl"/>
             </picture>
-        </a>
+        </a>--}}
         @if(!empty($privacy_policy_cookie))
             <div class="privacy-policy-cookie">
                 <div class="container">
