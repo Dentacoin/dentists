@@ -78,7 +78,7 @@ class UserController extends Controller {
         if (property_exists($recover_method_response, 'success') && $recover_method_response->success) {
             return redirect()->route('home')->with(['success' => 'Your password has been changed successfully.']);
         } else {
-            return redirect()->route('home')->with(['error' => 'Your password change failed, please try again later.']);
+            return redirect()->route('home')->with(['error' => 'Your password change failed, please try again later or request for new password recover.']);
         }
     }
 
