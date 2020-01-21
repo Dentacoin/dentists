@@ -1313,8 +1313,6 @@ function fireGoogleAnalyticsEvent(category, action, label, value) {
 // init bootstrap tooltips
 function initTooltips() {
     if($('[data-toggle="tooltip"]')) {
-        $('[data-toggle="tooltip"]').each(function() {
-            $(this).tooltip();
-        });
+        $('[data-toggle="tooltip"]').tooltip();
     }
 }
