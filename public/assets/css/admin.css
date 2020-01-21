@@ -139,6 +139,33 @@
     color: white; }
   .white-dark-blue-btn.small, input[type='submit'].white-dark-blue-btn.small {
     padding: 6px 15px; }
+  .white-dark-blue-btn.white-border, input[type='submit'].white-dark-blue-btn.white-border {
+    border: 2px solid white; }
+
+.white-light-blue-btn, input[type='submit'].white-light-blue-btn-btn {
+  font-size: 20px;
+  color: white;
+  background-color: #679dca;
+  padding: 10px 20px;
+  font-family: 'Calibri-Bold';
+  border: 2px solid #679dca;
+  display: inline-block;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  border-radius: 4px;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -o-transition: 0.3s;
+  -ms-transition: 0.3s;
+  transition: 0.3s; }
+  .white-light-blue-btn:hover, input[type='submit'].white-light-blue-btn-btn:hover {
+    color: #679dca;
+    background-color: white; }
+  .white-light-blue-btn:focus, input[type='submit'].white-light-blue-btn-btn:focus {
+    color: white; }
+  .white-light-blue-btn.white-border, input[type='submit'].white-light-blue-btn-btn.white-border {
+    border: 2px solid white; }
 
 .dark-blue-white-btn {
   font-size: 20px;

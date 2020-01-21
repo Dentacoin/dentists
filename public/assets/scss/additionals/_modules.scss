@@ -18,6 +18,31 @@
     &.small {
         padding: 6px 15px;
     }
+    &.white-border {
+        border: 2px solid white;
+    }
+}
+
+.white-light-blue-btn, input[type='submit'].white-light-blue-btn-btn {
+    font-size: 20px;
+    color: white;
+    background-color: $light_blue;
+    padding: 10px 20px;
+    font-family: 'Calibri-Bold';
+    border: 2px solid $light_blue;
+    display: inline-block;
+    @include rounded(4px);
+    @include simple_transition(.3s);
+    &:hover {
+        color: $light_blue;
+        background-color: white;
+    }
+    &:focus {
+        color: white;
+    }
+    &.white-border {
+        border: 2px solid white;
+    }
 }
 
 .dark-blue-white-btn {

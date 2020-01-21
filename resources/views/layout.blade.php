@@ -25,8 +25,8 @@
     <style>
 
     </style>
-    <link rel="stylesheet" type="text/css" href="/dist/css/front-libs-style.css?v=1.0.55">
-    <link rel="stylesheet" type="text/css" href="/assets/css/style.css?v=1.0.55">
+    <link rel="stylesheet" type="text/css" href="/dist/css/front-libs-style.css?v=1.0.56">
+    <link rel="stylesheet" type="text/css" href="/assets/css/style.css?v=1.0.56">
     <script>
         var HOME_URL = '{{ route("home") }}';
     </script>
@@ -36,7 +36,12 @@
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
-        gtag('config', 'UA-97167262-3');
+
+        @if(empty($_COOKIE['marketing_cookies']))
+            gtag('config', 'UA-97167262-3', {'anonymize_ip': true});
+        @else
+            gtag('config', 'UA-97167262-3');
+        @endif
     </script>
 
     <!-- Facebook Pixel Code -->
@@ -49,6 +54,11 @@
             t.src=v;s=b.getElementsByTagName(e)[0];
             s.parentNode.insertBefore(t,s)}(window,document,'script',
             'https://connect.facebook.net/en_US/fbevents.js');
+        @if(empty($_COOKIE['marketing_cookies']))
+            fbq('consent', 'revoke');
+        @else
+            fbq('consent', 'grant');
+        @endif
         fbq('init', '2366034370318681');
         fbq('track', 'PageView');
     </script>
@@ -486,13 +496,13 @@
                 <img src="//dentacoin.com/assets/uploads/christmas-banner.gif" alt="Holiday calendar banner" class="width-100" itemprop="contentUrl"/>
             </picture>
         </a>--}}
-        @if(!empty($privacy_policy_cookie))
+        @if(empty($_COOKIE['performance_cookies']) && empty($_COOKIE['functionality_cookies']) && empty($_COOKIE['marketing_cookies']) && empty($_COOKIE['strictly_necessary_policy']))
             <div class="privacy-policy-cookie">
                 <div class="container">
                     <div class="row">
                         <div class="col-xs-12">
-                            <div class="text inline-block">This site uses cookies. Read more about the use of personal data in our <a href="//dentacoin.com/privacy-policy" class="link" target="_blank">Privacy Policy</a>.</div>
-                            <div class="button inline-block"><a href="javascript:void(0);" class="white-dark-blue-btn accept">Accept</a></div>
+                            <div class="text inline-block">This site uses cookies. Find out more on how we use cookies in our <a href="https://dentacoin.com/privacy-policy" class="link" target="_blank">Privacy Policy</a>. | <a href="javascript:void(0);" class="link adjust-cookies">Adjust cookies</a></div>
+                            <div class="button inline-block"><a href="javascript:void(0);" class="white-dark-blue-btn white-border accept-all">Accept all cookies</a></div>
                         </div>
                     </div>
                 </div>
@@ -522,16 +532,16 @@
     </div>
     {{--<script src="/assets/js/basic.js"></script>--}}
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCaVeHq_LOhQndssbmw-aDnlMwUG73yCdk&libraries=places&language=en"></script>
-    <script src="/dist/js/front-libs-script.js?v=1.0.55"></script>
+    <script src="/dist/js/front-libs-script.js?v=1.0.56"></script>
     {{--<script src="/assets/js/address.js"></script>--}}
     @yield("script_block")
-    <script src="/dist/js/front-script.js?v=1.0.55"></script>
+    <script src="/dist/js/front-script.js?v=1.0.56"></script>
     {{--<script src="/assets/js/index.js"></script>--}}
 
     {{--Load social logging scripts only if user is not logged--}}
     @if(!(new \App\Http\Controllers\UserController())->checkSession())
-        <script src="//dentacoin.com/assets/libs/civic-login/civic.js?v=1.0.55"></script>
-        <script src="//dentacoin.com/assets/libs/facebook-login/facebook.js?v=1.0.55"></script>
+        <script src="//dentacoin.com/assets/libs/civic-login/civic.js?v=1.0.56"></script>
+        <script src="//dentacoin.com/assets/libs/facebook-login/facebook.js?v=1.0.56"></script>
 
         @php($slow_login_form = \Illuminate\Support\Facades\Input::get('show-login'))
     @endif

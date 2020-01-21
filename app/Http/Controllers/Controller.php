@@ -27,11 +27,10 @@ class Controller extends BaseController
     const currencies = ['USD', 'EUR', 'GBP', 'RUB', 'INR', 'CNY', 'JPY'];
 
     public function __construct() {
-        if(!empty(Route::getCurrentRoute()) && !Request::isMethod('post'))    {
+        if(!empty(Route::getCurrentRoute()) && !Request::isMethod('post')) {
             View::share('mobile', $this->isMobile());
             View::share('meta_data', $this->getMetaData());
             View::share('socials', $this->getSocials());
-            View::share('privacy_policy_cookie', $this->checkIfPrivacyPolicyCookie());
             View::share('client_ip', $this->getClientIp());
         }
     }
@@ -81,15 +80,6 @@ class Controller extends BaseController
 
     protected function getSocials() {
         return DB::connection('mysql2')->table('socials')->leftJoin('media', 'socials.media_id', '=', 'media.id')->select('socials.*', 'media.name as media_name', 'media.alt as media_alt')->orderByRaw('socials.order_id ASC')->get();
-    }
-
-    protected function checkIfPrivacyPolicyCookie()    {
-        $bool = empty($_COOKIE['privacy_policy']);
-        if($bool) {
-            return true;
-        }else {
-            return false;
-        }
     }
 
     protected function getSitemap() {
