@@ -563,12 +563,13 @@ function openLoginSigninPopup(type) {
     // ====================== DENTIST LOGIN/SIGNUP LOGIC ======================
     //DENTIST LOGIN
     $('.login-signin-popup form#dentist-login').on('submit', async function(event) {
+        var this_form_native = this;
+        var this_form = $(this_form_native);
+        event.preventDefault();
+
         if (basic.cookies.get('strictly_necessary_policy') != '1') {
             basic.showAlert('Please accept the strictly necessary cookies in order to continue with logging in.', '', true);
         } else {
-            var this_form_native = this;
-            var this_form = $(this_form_native);
-            event.preventDefault();
             //clear prev errors
             if ($('.login-signin-popup form#dentist-login .error-handle').length) {
                 $('.login-signin-popup form#dentist-login .error-handle').remove();
