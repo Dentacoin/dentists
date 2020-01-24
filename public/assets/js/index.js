@@ -159,7 +159,7 @@ if (!$('body').hasClass('logged-in')  && $('body').hasClass('home') || $('body')
     });
 
     var start_clicking_from_num = 1;
-    var init_apps_interval_slide;
+    /*var init_apps_interval_slide;*/
     //logic for open application popup
     $('.single-application').click(function()   {
         singleApplicationClick($(this), true);
@@ -198,7 +198,7 @@ if (!$('body').hasClass('logged-in')  && $('body').hasClass('home') || $('body')
 
         $('body').addClass('overflow-hidden');
         if ($(window).width() > 992) {
-            clearInterval(init_apps_interval_slide);
+            /*clearInterval(init_apps_interval_slide);
 
             if (stop_interval_sliding == undefined) {
                 start_clicking_from_num = element.index() + 1;
@@ -209,7 +209,7 @@ if (!$('body').hasClass('logged-in')  && $('body').hasClass('home') || $('body')
                 init_apps_interval_slide = setTimeout(function () {
                     singleApplicationClick($('.applications-section .single-application').eq(start_clicking_from_num));
                 }, 10000);
-            }
+            }*/
         } else {
             $('.applications-section .apps-list').hide();
             $('.applications-section .info-section').fadeIn(500);

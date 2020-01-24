@@ -6233,6 +6233,7 @@ footer .bottom-text a {
             font-size: 18px;
             padding-top: 10px; }
         .applications-section .apps-list .list button.show-shadow figure img {
+          max-width: 90%;
           -webkit-box-shadow: -6px 8px 8px 0px rgba(0, 0, 0, 0.5);
           -moz-box-shadow: -6px 8px 8px 0px rgba(0, 0, 0, 0.5);
           -ms-box-shadow: -6px 8px 8px 0px rgba(0, 0, 0, 0.5);

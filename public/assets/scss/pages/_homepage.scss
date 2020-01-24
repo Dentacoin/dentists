@@ -272,6 +272,7 @@ body.home {
                 &.show-shadow {
                     figure {
                         img {
+                            max-width: 90%;
                             @include box-shadow(-6px 8px 8px 0px rgba(0, 0, 0, 0.5));
                         }
                     }
