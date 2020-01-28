@@ -44,7 +44,7 @@ mix.scripts([
 ], 'public/dist/js/front-libs-script.js');
 
 mix.scripts([
-    'public/assets/js/basic.js',
+    'https://dentacoin.com/assets/js/basic.js',
     'public/assets/js/address.js',
     'public/assets/js/index.js'
 ], 'public/dist/js/front-script.js');
@@ -65,7 +65,7 @@ mix.scripts([
 ], 'public/dist/js/admin-libs-script.js');
 
 mix.scripts([
-    'public/assets/js/basic.js',
+    'https://dentacoin.com/assets/js/basic.js',
     'public/assets/js/admin/index.js'
 ], 'public/dist/js/admin-script.js');
 
