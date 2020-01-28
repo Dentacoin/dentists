@@ -45,7 +45,7 @@ mix.scripts([
 
 mix.scripts([
     /*mix.open('https://dentacoin.com/assets/js/basic.js'),*/
-    'public/assets/js/basic.js',
+    /*'public/assets/js/basic.js',*/
     'public/assets/js/address.js',
     'public/assets/js/index.js'
 ], 'public/dist/js/front-script.js');
