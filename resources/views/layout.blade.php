@@ -199,7 +199,7 @@
                 </div>
             @endif
             <div class="row padding-bottom-50 text-center fs-13 bottom-text">
-                <div class="col-xs-12 padding-bottom-10">© 2019 Dentacoin Foundation. All rights reserved.</div>
+                <div class="col-xs-12 padding-bottom-10">© {{date('Y')}} Dentacoin Foundation. All rights reserved.</div>
                 <div class="col-xs-12">
                     <a href="//dentacoin.com/assets/uploads/dentacoin-foundation.pdf" class="inline-block" target="_blank">Verify Dentacoin Foundation</a>
                     <li class="inline-block separator padding-left-5 padding-right-5">|</li>

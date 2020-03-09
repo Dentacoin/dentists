@@ -5712,6 +5712,9 @@ header {
       padding-top: 10px;
       padding-bottom: 10px;
       background: white; }
+      @media screen and (max-width: 767px) {
+        header .logged-user-right-nav .hidden-box .hidden-box-footer {
+          margin-bottom: 100px; } }
       header .logged-user-right-nav .hidden-box .hidden-box-footer .hub-page-menu {
         padding-bottom: 15px; }
         header .logged-user-right-nav .hidden-box .hidden-box-footer .hub-page-menu li {

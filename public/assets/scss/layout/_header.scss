@@ -130,6 +130,9 @@ header {
                 padding-top: 10px;
                 padding-bottom: 10px;
                 background: white;
+                @include breakpoint($xs) {
+                    margin-bottom: 100px;
+                }
                 .hub-page-menu {
                     padding-bottom: 15px;
                     li {
