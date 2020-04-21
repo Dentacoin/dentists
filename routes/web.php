@@ -41,7 +41,7 @@ Route::group(['prefix' => '/', 'middleware' => 'frontEndMiddleware'], function (
 
     Route::post('/authenticate-user', 'UserController@authenticateUser')->name('authenticate-user');
 
-    Route::get('/forgotten-password', 'UserController@getForgottenPasswordView')->name('forgotten-password');
+    /*Route::get('/forgotten-password', 'UserController@getForgottenPasswordView')->name('forgotten-password');
 
     Route::get('/password-recover', 'UserController@getRecoverPassword')->name('password-recover');
 
@@ -49,7 +49,7 @@ Route::group(['prefix' => '/', 'middleware' => 'frontEndMiddleware'], function (
 
     Route::post('/password-recover-submit', 'UserController@changePasswordSubmit')->name('password-recover-submit');
 
-    Route::post('/enrich-profile', 'UserController@enrichProfile')->name('enrich-profile');
+    Route::post('/enrich-profile', 'UserController@enrichProfile')->name('enrich-profile');*/
 
     Route::post('/invite-your-clinic', 'UserController@inviteYourClinic')->name('invite-your-clinic');
 

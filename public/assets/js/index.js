@@ -491,7 +491,7 @@ if (!$('body').hasClass('logged-in')) {
     dcnGateway.init({
         'platform' : 'dentists',
         /*'environment' : 'staging',*/
-        'forgotten_password_link' : 'https://dentists.dentacoin.com/forgotten-password'
+        'forgotten_password_link' : 'https://account.dentacoin.com/forgotten-password'
     });
 }
 

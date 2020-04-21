@@ -186,7 +186,7 @@ class UserController extends Controller {
         }
     }
 
-    protected function dentistLogin(Request $request) {
+    /*protected function dentistLogin(Request $request) {
         $customMessages = [
             'email.required' => 'Email address is required.',
             'password.required' => 'Password is required.',
@@ -382,7 +382,7 @@ class UserController extends Controller {
         } else {
             return redirect()->route('home')->with(['error' => 'Something went wrong, please try again later.']);
         }
-    }
+    }*/
 
     protected function inviteYourClinic(Request $request) {
         $data = $request->input();
