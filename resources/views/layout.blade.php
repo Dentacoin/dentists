@@ -25,15 +25,15 @@
     <style>
 
     </style>
-    <link rel="stylesheet" type="text/css" href="/dist/css/front-libs-style.css?v=1.0.66">
-    <link rel="stylesheet" type="text/css" href="/assets/css/style.css?v=1.0.66">
-    <link rel="stylesheet" type="text/css" href="https://dentacoin.com/assets/libs/dentacoin-login-gateway/css/dentacoin-login-gateway-style.css?v=1.0.66"/>
+    <link rel="stylesheet" type="text/css" href="/dist/css/front-libs-style.css?v=1.0.67">
+    <link rel="stylesheet" type="text/css" href="/assets/css/style.css?v=1.0.67">
+    <link rel="stylesheet" type="text/css" href="https://dentacoin.com/assets/libs/dentacoin-login-gateway/css/dentacoin-login-gateway-style.css?v=1.0.67"/>
     <script>
         var HOME_URL = '{{ route("home") }}';
     </script>
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-97167262-3"></script>
-    <script>
+    <script id="google-analytics-script">
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
@@ -46,7 +46,7 @@
     </script>
 
     <!-- Facebook Pixel Code -->
-    <script>
+    <script id="facebook-pixel-script">
         !function(f,b,e,v,n,t,s)
         {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
             n.callMethod.apply(n,arguments):n.queue.push(arguments)};
@@ -269,13 +269,13 @@
             </figure>
         </div>
     </div>
-    <script src="https://dentacoin.com/assets/js/basic.js?v=1.0.66"></script>
+    <script src="https://dentacoin.com/assets/js/basic.js?v=1.0.67"></script>
     {{--<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCaVeHq_LOhQndssbmw-aDnlMwUG73yCdk&libraries=places&language=en"></script>--}}
-    <script src="/dist/js/front-libs-script.js?v=1.0.66"></script>
-    <script src="https://dentacoin.com/assets/libs/dentacoin-login-gateway/js/init.js?v=1.0.66"></script>
+    <script src="/dist/js/front-libs-script.js?v=1.0.67"></script>
+    <script src="https://dentacoin.com/assets/libs/dentacoin-login-gateway/js/init.js?v=1.0.67"></script>
     {{--<script src="/assets/js/address.js"></script>--}}
     @yield("script_block")
-    <script src="/dist/js/front-script.js?v=1.0.66"></script>
+    <script src="/dist/js/front-script.js?v=1.0.67"></script>
     {{--<script src="/assets/js/index.js"></script>--}}
 
     {{--Multiple errors from laravel validation--}}
