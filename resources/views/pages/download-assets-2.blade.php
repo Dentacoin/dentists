@@ -18,7 +18,7 @@
                 </div>
                 <div class="padding-top-30 padding-bottom-30 padding-left-20 padding-right-20 nav-holder">
                     <div class="nav-list padding-bottom-30">
-                        <h2 class="fs-24 lato-bold padding-left-10 margin-bottom-10 active-on-desktop">BROCHURES</h2>
+                        <h2 class="fs-24 lato-bold padding-left-10 padding-left-xs-0 margin-bottom-10 active-on-desktop">BROCHURES</h2>
                         <ul>
                             <li class="active-on-desktop">
                                 <button data-scroll-to="scroll-to-dentist-en-brochure" data-dentist="scroll-to-dentist-en-brochure" data-patient="scroll-to-patient-en-brochure" class="changeable-attr-on-user-type-change" data-type="en-brochure"><span class="inline-block-top">English</span></button>
@@ -29,7 +29,7 @@
                         </ul>
                     </div>
                     <div class="nav-list padding-bottom-30">
-                        <h2 class="fs-24 lato-bold padding-left-10 margin-bottom-10">GUIDES</h2>
+                        <h2 class="fs-24 lato-bold padding-left-10 padding-left-xs-0 margin-bottom-10">GUIDES</h2>
                         <ul>
                             <li class="if-dentist">
                                 <button data-scroll-to="scroll-to-how-to-become-dentist"><span class="inline-block-top changeable-html-on-user-type-change" data-dentist="How to Become a Partner" data-patient="How to earn DCN rewards">How to Become a Partner</span></button>
@@ -49,7 +49,7 @@
                         </ul>
                     </div>
                     <div class="nav-list if-dentist">
-                        <h2 class="fs-24 lato-bold padding-left-10 margin-bottom-10">FOR PARTNERS</h2>
+                        <h2 class="fs-24 lato-bold padding-left-10 padding-left-xs-0 margin-bottom-10">FOR PARTNERS</h2>
                         <ul>
                             <li>
                                 <button data-scroll-to="scroll-to-badges"><span class="inline-block-top">Partner Badge</span></button>

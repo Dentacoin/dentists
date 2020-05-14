@@ -6527,6 +6527,9 @@ footer .bottom-text a {
   .page-download-assets .navigation-sidebar .nav-list ul {
     padding-left: 20px;
     line-height: 34px; }
+    @media screen and (max-width: 767px) {
+      .page-download-assets .navigation-sidebar .nav-list ul {
+        padding-left: 0; } }
     .page-download-assets .navigation-sidebar .nav-list ul li {
       font-size: 0; }
       .page-download-assets .navigation-sidebar .nav-list ul li button {
