@@ -38,4 +38,8 @@ class PagesController extends Controller
         }
         return view('pages/index-page-with-content', ['page' => Page::where(array('slug' => $route))->get()->first()]);
     }
+
+    public function getDummyPageView() {
+        return view('pages/download-assets-2');
+    }
 }

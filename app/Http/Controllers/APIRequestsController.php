@@ -292,6 +292,22 @@ class APIRequestsController extends Controller {
         }
     }
 
+    public function getDentacoinPlatformsData()  {
+        //API connection
+        $curl = curl_init();
+        curl_setopt_array($curl, array(
+            CURLOPT_RETURNTRANSFER => 1,
+            CURLOPT_URL => 'https://dentacoin.com/info/platforms',
+            CURLOPT_SSL_VERIFYPEER => 0
+        ));
+        curl_setopt($curl, CURLOPT_HTTPHEADER, array('Content-Type: application/json'));
+        $resp = json_decode(curl_exec($curl));
+        curl_close($curl);
+        if(!empty($resp))   {
+            return $resp;
+        }
+    }
+
     public function getDCNBalance() {
         $header = array();
         $header[] = 'Accept: */*';

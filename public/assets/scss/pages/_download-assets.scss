@@ -1,3 +1,264 @@
+.page-download-assets {
+    .navigation-sidebar {
+        color: #aaaaaa;
+        .page-nav {
+            a {
+                width: 50%;
+                padding: 12px 5px;
+                color: white;
+                background-color: #aaaaaa;
+                border: 1px solid white;
+                &.active {
+                    background-color: $dark_blue;
+                }
+            }
+        }
+        .nav-holder {
+            @include breakpoint($sm-down) {
+                display: none;
+            }
+        }
+        .mobile-nav-opener {
+            display: none;
+            padding: 25px 15px;
+            @include breakpoint($sm-down) {
+                display: block;
+            }
+        }
+        .nav-list {
+            h2 {
+                &.active {
+                    border-left: 1.5px solid $dark_blue;
+                    color: $dark_blue;
+                }
+            }
+            ul {
+                padding-left: 20px;
+                line-height: 34px;
+                li {
+                    font-size: 0;
+                    button {
+                        font-size: 18px;
+                        text-align: left;
+                        span {
+                            width: calc(100% - 30px);
+                        }
+                        &:before {
+                            content: '';
+                            width: 25px;
+                            height: 25px;
+                            border: 1.5px solid #aaaaaa;
+                            display: inline-block;
+                            vertical-align: middle;
+                            margin-right: 5px;
+                            @include rounded(50%);
+                        }
+                        &:focus {
+                            outline: none;
+                        }
+                    }
+                    &.active {
+                        button {
+                            color: $dark_blue;
+                            span {
+                                font-family: 'Lato-Bold';
+                            }
+                            &:before {
+                                content: '\2219';
+                                text-align: center;
+                                line-height: 7px;
+                                font-size: 80px;
+                                color: $dark_blue;
+                                border-color: $dark_blue;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .page-content {
+        border-left: 1.5px solid #aaaaaa;
+        .scroll-to-section {
+            .heading-line {
+                color: white;
+                background-color: $dark_blue;
+                padding: 15px 30px;
+                h3 {
+                    font-weight: normal;
+                }
+                &.with-button {
+                    font-size: 0;
+                    h3 {
+                        width: calc(100% - 260px);
+                        display: inline-block;
+                        vertical-align: middle;
+                    }
+                    .download-all {
+                        width: 260px;
+                        text-align: right;
+                        display: inline-block;
+                        vertical-align: middle;
+                    }
+                    @include breakpoint($xs) {
+                        text-align: center;
+                        h3 {
+                            width: 100%;
+                        }
+                        .download-all {
+                            width: 100%;
+                            padding-top: 15px;
+                            text-align: center;
+                        }
+                    }
+                }
+            }
+            .section-content {
+                padding: 30px 40px 60px;
+                @include breakpoint($xs) {
+                    padding: 30px 15px 50px;
+                }
+                .next-to-icon {
+                    width: calc(100% - 100px);
+                    @include breakpoint($xs) {
+                        width: 100%;
+                    }
+                }
+                .brochures-row, .banners-row, .covers-row {
+                    figure {
+                        position: relative;
+                        .overlay-on-hover {
+                            opacity: 0;
+                            position: absolute;
+                            width: 100%;
+                            height: 100%;
+                            top: 0;
+                            left: 0;
+                            background-color: rgba(0, 0, 0, 0.6);
+                            @include simple_transition(.3s);
+                            span {
+                                padding: 10px 15px;
+                                background-color: white;
+                                text-align: center;
+                                max-width: 90%;
+                                @include rounded(4px);
+                                @include vertical-horizontal-align(absolute);
+                                @include breakpoint($xs) {
+                                    white-space: normal;
+                                    width: 100%;
+                                }
+                            }
+                        }
+                        &:hover {
+                            .overlay-on-hover {
+                                opacity: 1;
+                            }
+                        }
+                        &.hover {
+                            .overlay-on-hover {
+                                opacity: 1;
+                            }
+                        }
+                    }
+                    &.brochures-row {
+                        @include breakpoint($xs) {
+                            figure {
+                                margin-bottom: 15px;
+                            }
+                        }
+                    }
+                }
+                .videos-row {
+                    display: flex;
+                    figure {
+                        img {
+                            @include rounded(8px);
+                            @include box-shadow(0 1px 10px 0.5px rgba(0,0,0,.2));
+                        }
+                    }
+                    iframe {
+                        border: 0;
+                        width: 100%;
+                        height: calc(100% - 70px);
+                        @include rounded(8px);
+                        @include box-shadow(0 1px 10px 0.5px rgba(0,0,0,.2));
+                    }
+                    .btn-container {
+                        height: 70px;
+                        a {
+                            min-width: 235px;
+                            margin: 0 auto;
+                        }
+                    }
+                    @include breakpoint($xs) {
+                        display: block;
+                    }
+                }
+            }
+            &.guides-section {
+                .section-content {
+                    border-bottom: 1px solid #aaaaaa;
+                    &:nth-child(odd) {
+                        background: #fafafa;
+                    }
+                }
+            }
+            &.for-partners {
+                .section-content {
+                    padding: 0;
+                    hr {
+                        border-color: #002248;
+                    }
+                    .title-and-description {
+                        width: calc(100% - 100px);
+                        @include breakpoint($xs) {
+                            width: 100%;
+                        }
+                    }
+                    .assets-slider {
+                        .slick-slide {
+                            padding-left: 10px;
+                            padding-right: 10px;
+                            @include breakpoint($xs) {
+                                img {
+                                    width: 85%;
+                                    margin: 0 auto;
+                                }
+                            }
+                        }
+                        .slick-prev {
+                            background-image: url(/assets/uploads/arrow-left.svg);
+                            @include breakpoint($md-down) {
+                                left: -20px;
+                            }
+                            @include breakpoint($xs) {
+                                left: 0;
+                            }
+                        }
+                        .slick-next {
+                            background-image: url(/assets/uploads/arrow-right.svg);
+                            @include breakpoint($md-down) {
+                                right: -20px;
+                            }
+                            @include breakpoint($xs) {
+                                right: 0;
+                            }
+                        }
+                    }
+                    .section-social-promo-banners {
+                        ul {
+                            padding-left: 40px;
+                            li {
+                                list-style: decimal-leading-zero outside none;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
 .download-assets {
     hr {
         border-color: #002248;

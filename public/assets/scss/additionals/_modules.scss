@@ -248,4 +248,24 @@
             @include rounded(4px);
         }
     }
+
+    &.copy-link {
+        display: flex;
+        position: relative;
+        .next-to-copy-btn {
+            width: calc(100% - 110px);
+            .input-field {
+                @include rounded(8px 0 0 8px);
+            }
+        }
+        .copy-btn {
+            width: 110px;
+            height: 50px;
+            line-height: 50px;
+            color: white;
+            background-color: $dark_blue;
+            text-align: center;
+            @include rounded(0 8px 8px 0);
+        }
+    }
 }

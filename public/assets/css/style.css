@@ -4479,6 +4479,9 @@ body.home.logged-in main.main-container {
     display: flex !important;
     align-items: center;
     justify-content: center; } }
+.bootbox.share-video-popup .modal-dialog {
+  width: 95%;
+  max-width: 450px; }
 .bootbox.style-anchors .modal-dialog .modal-content .modal-body a {
   font-weight: bold;
   text-decoration: underline; }
@@ -5533,6 +5536,27 @@ nav.sidenav {
     -moz-border-radius: 4px;
     -ms-border-radius: 4px;
     border-radius: 4px; }
+.module.copy-link {
+  display: flex;
+  position: relative; }
+  .module.copy-link .next-to-copy-btn {
+    width: calc(100% - 110px); }
+    .module.copy-link .next-to-copy-btn .input-field {
+      -webkit-border-radius: 8px 0 0 8px;
+      -moz-border-radius: 8px 0 0 8px;
+      -ms-border-radius: 8px 0 0 8px;
+      border-radius: 8px 0 0 8px; }
+  .module.copy-link .copy-btn {
+    width: 110px;
+    height: 50px;
+    line-height: 50px;
+    color: white;
+    background-color: #002248;
+    text-align: center;
+    -webkit-border-radius: 0 8px 8px 0;
+    -moz-border-radius: 0 8px 8px 0;
+    -ms-border-radius: 0 8px 8px 0;
+    border-radius: 0 8px 8px 0; }
 
 header {
   padding-top: 10px;
@@ -6477,6 +6501,214 @@ footer .bottom-text a {
     .faq-container .list .section-row ul li .question {
       padding: 15px 30px 15px 10px;
       background-position: center right 10px; } }
+
+.page-download-assets .navigation-sidebar {
+  color: #aaaaaa; }
+  .page-download-assets .navigation-sidebar .page-nav a {
+    width: 50%;
+    padding: 12px 5px;
+    color: white;
+    background-color: #aaaaaa;
+    border: 1px solid white; }
+    .page-download-assets .navigation-sidebar .page-nav a.active {
+      background-color: #002248; }
+  @media screen and (max-width: 991px) {
+    .page-download-assets .navigation-sidebar .nav-holder {
+      display: none; } }
+  .page-download-assets .navigation-sidebar .mobile-nav-opener {
+    display: none;
+    padding: 25px 15px; }
+    @media screen and (max-width: 991px) {
+      .page-download-assets .navigation-sidebar .mobile-nav-opener {
+        display: block; } }
+  .page-download-assets .navigation-sidebar .nav-list h2.active {
+    border-left: 1.5px solid #002248;
+    color: #002248; }
+  .page-download-assets .navigation-sidebar .nav-list ul {
+    padding-left: 20px;
+    line-height: 34px; }
+    .page-download-assets .navigation-sidebar .nav-list ul li {
+      font-size: 0; }
+      .page-download-assets .navigation-sidebar .nav-list ul li button {
+        font-size: 18px;
+        text-align: left; }
+        .page-download-assets .navigation-sidebar .nav-list ul li button span {
+          width: calc(100% - 30px); }
+        .page-download-assets .navigation-sidebar .nav-list ul li button:before {
+          content: '';
+          width: 25px;
+          height: 25px;
+          border: 1.5px solid #aaaaaa;
+          display: inline-block;
+          vertical-align: middle;
+          margin-right: 5px;
+          -webkit-border-radius: 50%;
+          -moz-border-radius: 50%;
+          -ms-border-radius: 50%;
+          border-radius: 50%; }
+        .page-download-assets .navigation-sidebar .nav-list ul li button:focus {
+          outline: none; }
+      .page-download-assets .navigation-sidebar .nav-list ul li.active button {
+        color: #002248; }
+        .page-download-assets .navigation-sidebar .nav-list ul li.active button span {
+          font-family: 'Lato-Bold'; }
+        .page-download-assets .navigation-sidebar .nav-list ul li.active button:before {
+          content: '\2219';
+          text-align: center;
+          line-height: 7px;
+          font-size: 80px;
+          color: #002248;
+          border-color: #002248; }
+.page-download-assets .page-content {
+  border-left: 1.5px solid #aaaaaa; }
+  .page-download-assets .page-content .scroll-to-section .heading-line {
+    color: white;
+    background-color: #002248;
+    padding: 15px 30px; }
+    .page-download-assets .page-content .scroll-to-section .heading-line h3 {
+      font-weight: normal; }
+    .page-download-assets .page-content .scroll-to-section .heading-line.with-button {
+      font-size: 0; }
+      .page-download-assets .page-content .scroll-to-section .heading-line.with-button h3 {
+        width: calc(100% - 260px);
+        display: inline-block;
+        vertical-align: middle; }
+      .page-download-assets .page-content .scroll-to-section .heading-line.with-button .download-all {
+        width: 260px;
+        text-align: right;
+        display: inline-block;
+        vertical-align: middle; }
+      @media screen and (max-width: 767px) {
+        .page-download-assets .page-content .scroll-to-section .heading-line.with-button {
+          text-align: center; }
+          .page-download-assets .page-content .scroll-to-section .heading-line.with-button h3 {
+            width: 100%; }
+          .page-download-assets .page-content .scroll-to-section .heading-line.with-button .download-all {
+            width: 100%;
+            padding-top: 15px;
+            text-align: center; } }
+  .page-download-assets .page-content .scroll-to-section .section-content {
+    padding: 30px 40px 60px; }
+    @media screen and (max-width: 767px) {
+      .page-download-assets .page-content .scroll-to-section .section-content {
+        padding: 30px 15px 50px; } }
+    .page-download-assets .page-content .scroll-to-section .section-content .next-to-icon {
+      width: calc(100% - 100px); }
+      @media screen and (max-width: 767px) {
+        .page-download-assets .page-content .scroll-to-section .section-content .next-to-icon {
+          width: 100%; } }
+    .page-download-assets .page-content .scroll-to-section .section-content .brochures-row figure, .page-download-assets .page-content .scroll-to-section .section-content .banners-row figure, .page-download-assets .page-content .scroll-to-section .section-content .covers-row figure {
+      position: relative; }
+      .page-download-assets .page-content .scroll-to-section .section-content .brochures-row figure .overlay-on-hover, .page-download-assets .page-content .scroll-to-section .section-content .banners-row figure .overlay-on-hover, .page-download-assets .page-content .scroll-to-section .section-content .covers-row figure .overlay-on-hover {
+        opacity: 0;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background-color: rgba(0, 0, 0, 0.6);
+        -webkit-transition: 0.3s;
+        -moz-transition: 0.3s;
+        -o-transition: 0.3s;
+        -ms-transition: 0.3s;
+        transition: 0.3s; }
+        .page-download-assets .page-content .scroll-to-section .section-content .brochures-row figure .overlay-on-hover span, .page-download-assets .page-content .scroll-to-section .section-content .banners-row figure .overlay-on-hover span, .page-download-assets .page-content .scroll-to-section .section-content .covers-row figure .overlay-on-hover span {
+          padding: 10px 15px;
+          background-color: white;
+          text-align: center;
+          max-width: 90%;
+          -webkit-border-radius: 4px;
+          -moz-border-radius: 4px;
+          -ms-border-radius: 4px;
+          border-radius: 4px;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          -webkit-transform: translate(-50%, -50%);
+          -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%); }
+          @media screen and (max-width: 767px) {
+            .page-download-assets .page-content .scroll-to-section .section-content .brochures-row figure .overlay-on-hover span, .page-download-assets .page-content .scroll-to-section .section-content .banners-row figure .overlay-on-hover span, .page-download-assets .page-content .scroll-to-section .section-content .covers-row figure .overlay-on-hover span {
+              white-space: normal;
+              width: 100%; } }
+      .page-download-assets .page-content .scroll-to-section .section-content .brochures-row figure:hover .overlay-on-hover, .page-download-assets .page-content .scroll-to-section .section-content .banners-row figure:hover .overlay-on-hover, .page-download-assets .page-content .scroll-to-section .section-content .covers-row figure:hover .overlay-on-hover {
+        opacity: 1; }
+      .page-download-assets .page-content .scroll-to-section .section-content .brochures-row figure.hover .overlay-on-hover, .page-download-assets .page-content .scroll-to-section .section-content .banners-row figure.hover .overlay-on-hover, .page-download-assets .page-content .scroll-to-section .section-content .covers-row figure.hover .overlay-on-hover {
+        opacity: 1; }
+    @media screen and (max-width: 767px) {
+      .page-download-assets .page-content .scroll-to-section .section-content .brochures-row.brochures-row figure, .page-download-assets .page-content .scroll-to-section .section-content .banners-row.brochures-row figure, .page-download-assets .page-content .scroll-to-section .section-content .covers-row.brochures-row figure {
+        margin-bottom: 15px; } }
+    .page-download-assets .page-content .scroll-to-section .section-content .videos-row {
+      display: flex; }
+      .page-download-assets .page-content .scroll-to-section .section-content .videos-row figure img {
+        -webkit-border-radius: 8px;
+        -moz-border-radius: 8px;
+        -ms-border-radius: 8px;
+        border-radius: 8px;
+        -webkit-box-shadow: 0 1px 10px 0.5px rgba(0, 0, 0, 0.2);
+        -moz-box-shadow: 0 1px 10px 0.5px rgba(0, 0, 0, 0.2);
+        -ms-box-shadow: 0 1px 10px 0.5px rgba(0, 0, 0, 0.2);
+        box-shadow: 0 1px 10px 0.5px rgba(0, 0, 0, 0.2); }
+      .page-download-assets .page-content .scroll-to-section .section-content .videos-row iframe {
+        border: 0;
+        width: 100%;
+        height: calc(100% - 70px);
+        -webkit-border-radius: 8px;
+        -moz-border-radius: 8px;
+        -ms-border-radius: 8px;
+        border-radius: 8px;
+        -webkit-box-shadow: 0 1px 10px 0.5px rgba(0, 0, 0, 0.2);
+        -moz-box-shadow: 0 1px 10px 0.5px rgba(0, 0, 0, 0.2);
+        -ms-box-shadow: 0 1px 10px 0.5px rgba(0, 0, 0, 0.2);
+        box-shadow: 0 1px 10px 0.5px rgba(0, 0, 0, 0.2); }
+      .page-download-assets .page-content .scroll-to-section .section-content .videos-row .btn-container {
+        height: 70px; }
+        .page-download-assets .page-content .scroll-to-section .section-content .videos-row .btn-container a {
+          min-width: 235px;
+          margin: 0 auto; }
+      @media screen and (max-width: 767px) {
+        .page-download-assets .page-content .scroll-to-section .section-content .videos-row {
+          display: block; } }
+  .page-download-assets .page-content .scroll-to-section.guides-section .section-content {
+    border-bottom: 1px solid #aaaaaa; }
+    .page-download-assets .page-content .scroll-to-section.guides-section .section-content:nth-child(odd) {
+      background: #fafafa; }
+  .page-download-assets .page-content .scroll-to-section.for-partners .section-content {
+    padding: 0; }
+    .page-download-assets .page-content .scroll-to-section.for-partners .section-content hr {
+      border-color: #002248; }
+    .page-download-assets .page-content .scroll-to-section.for-partners .section-content .title-and-description {
+      width: calc(100% - 100px); }
+      @media screen and (max-width: 767px) {
+        .page-download-assets .page-content .scroll-to-section.for-partners .section-content .title-and-description {
+          width: 100%; } }
+    .page-download-assets .page-content .scroll-to-section.for-partners .section-content .assets-slider .slick-slide {
+      padding-left: 10px;
+      padding-right: 10px; }
+      @media screen and (max-width: 767px) {
+        .page-download-assets .page-content .scroll-to-section.for-partners .section-content .assets-slider .slick-slide img {
+          width: 85%;
+          margin: 0 auto; } }
+    .page-download-assets .page-content .scroll-to-section.for-partners .section-content .assets-slider .slick-prev {
+      background-image: url(/assets/uploads/arrow-left.svg); }
+      @media screen and (max-width: 1199px) {
+        .page-download-assets .page-content .scroll-to-section.for-partners .section-content .assets-slider .slick-prev {
+          left: -20px; } }
+      @media screen and (max-width: 767px) {
+        .page-download-assets .page-content .scroll-to-section.for-partners .section-content .assets-slider .slick-prev {
+          left: 0; } }
+    .page-download-assets .page-content .scroll-to-section.for-partners .section-content .assets-slider .slick-next {
+      background-image: url(/assets/uploads/arrow-right.svg); }
+      @media screen and (max-width: 1199px) {
+        .page-download-assets .page-content .scroll-to-section.for-partners .section-content .assets-slider .slick-next {
+          right: -20px; } }
+      @media screen and (max-width: 767px) {
+        .page-download-assets .page-content .scroll-to-section.for-partners .section-content .assets-slider .slick-next {
+          right: 0; } }
+    .page-download-assets .page-content .scroll-to-section.for-partners .section-content .section-social-promo-banners ul {
+      padding-left: 40px; }
+      .page-download-assets .page-content .scroll-to-section.for-partners .section-content .section-social-promo-banners ul li {
+        list-style: decimal-leading-zero outside none; }
 
 .download-assets hr {
   border-color: #002248; }

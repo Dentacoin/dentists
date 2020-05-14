@@ -510,6 +510,12 @@ body.home {
         align-items: center;
         justify-content: center;
     }
+    &.share-video-popup {
+        .modal-dialog {
+            width: 95%;
+            max-width: 450px;
+        }
+    }
     &.style-anchors {
         .modal-dialog {
             .modal-content {

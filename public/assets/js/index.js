@@ -254,6 +254,122 @@ if (!$('body').hasClass('logged-in')  && $('body').hasClass('home') || $('body')
             }
         ]
     });
+} else if ($('body').hasClass('download-assets-2')) {
+    $('body').addClass('overflow-hidden');
+    if ($(window).width() > 992) {
+        $('.active-on-desktop').addClass('active');
+        $('.hover-on-desktop').addClass('hover');
+    }
+    $('body').removeClass('overflow-hidden');
+
+    $('.navigation-sidebar .page-nav a').click(function() {
+        $('.navigation-sidebar .page-nav a').removeClass('active');
+        $(this).addClass('active');
+
+        if ($(this).attr('data-type') == 'dentists') {
+            $('.if-dentist').removeClass('hide');
+            $('.if-patient').addClass('hide');
+
+            for (var i = 0, len = $('.changeable-html-on-user-type-change').length; i < len; i+=1) {
+                $('.changeable-html-on-user-type-change').eq(i).html($('.changeable-html-on-user-type-change').eq(i).attr('data-dentist'));
+            }
+
+            for (var i = 0, len = $('.changeable-src-on-user-type-change').length; i < len; i+=1) {
+                $('.changeable-src-on-user-type-change').eq(i).attr('src', $('.changeable-src-on-user-type-change').eq(i).attr('data-dentist'));
+            }
+
+            for (var i = 0, len = $('.changeable-href-on-user-type-change').length; i < len; i+=1) {
+                $('.changeable-href-on-user-type-change').eq(i).attr('href', $('.changeable-href-on-user-type-change').eq(i).attr('data-dentist'));
+            }
+
+            for (var i = 0, len = $('.changeable-attr-on-user-type-change').length; i < len; i+=1) {
+                $('.changeable-attr-on-user-type-change').eq(i).attr('data-scroll-to', $('.changeable-attr-on-user-type-change').eq(i).attr('data-dentist'));
+            }
+        } else if ($(this).attr('data-type') == 'patients') {
+            $('.if-patient').removeClass('hide');
+            $('.if-dentist').addClass('hide');
+
+            for (var i = 0, len = $('.changeable-html-on-user-type-change').length; i < len; i+=1) {
+                $('.changeable-html-on-user-type-change').eq(i).html($('.changeable-html-on-user-type-change').eq(i).attr('data-patient'));
+            }
+
+            for (var i = 0, len = $('.changeable-src-on-user-type-change').length; i < len; i+=1) {
+                $('.changeable-src-on-user-type-change').eq(i).attr('src', $('.changeable-src-on-user-type-change').eq(i).attr('data-patient'));
+            }
+
+            for (var i = 0, len = $('.changeable-href-on-user-type-change').length; i < len; i+=1) {
+                $('.changeable-href-on-user-type-change').eq(i).attr('href', $('.changeable-href-on-user-type-change').eq(i).attr('data-patient'));
+            }
+
+            for (var i = 0, len = $('.changeable-attr-on-user-type-change').length; i < len; i+=1) {
+                $('.changeable-attr-on-user-type-change').eq(i).attr('data-scroll-to', $('.changeable-attr-on-user-type-change').eq(i).attr('data-patient'));
+            }
+        }
+    });
+
+    $('.mobile-nav-opener a').click(function() {
+        $('.nav-holder').fadeToggle(500);
+    });
+
+    $('.navigation-sidebar .nav-list button').click(function() {
+        var this_btn = $(this);
+
+        $('.navigation-sidebar .nav-list h2').removeClass('active');
+        $('.navigation-sidebar .nav-list li').removeClass('active');
+        this_btn.closest('li').addClass('active');
+        this_btn.closest('.nav-list').find('h2').addClass('active');
+
+        $('html, body').animate({
+            scrollTop: $('#'+this_btn.attr('data-scroll-to')).offset().top - $('header').outerHeight()
+        }, 300);
+
+        $('.clear-hover').removeClass('hover');
+        if (this_btn.attr('data-type') != undefined) {
+            $('.'+this_btn.attr('data-type')).addClass('hover');
+        }
+    });
+
+    $('.share-video').click(function() {
+        var videoLinkRaw = $(this).closest('.section-content').find('iframe').attr('src');
+        var videoLink = encodeURIComponent(videoLinkRaw);
+
+        basic.showDialog('<div class="fs-18 lato-bold dark-blue">Share</div><div class="padding-top-15 padding-bottom-15 copy-link module"><div class="next-to-copy-btn"><input autocomplete="off" readonly type="text" class="custom-input input-field" id="link-to-be-copied" value="'+videoLinkRaw+'"/></div><a href="javascript:void(0)" class="lato-bold fs-20 copy-btn" data-toggle="tooltip" title="" data-clipboard-target="#link-to-be-copied" data-original-title="Copied."><figure itemscope="" itemtype="http://schema.org/ImageObject" class="inline-block fs-0"><img alt="Copy icon" src="/assets/images/copy-icon.svg" class="width-100 max-width-20"/></figure> COPY</a></div><div class="fs-0"><span class="inline-block fs-16 dark-blue">Or send it via:</span> <figure itemscope="" itemtype="http://schema.org/ImageObject" class="inline-block margin-left-10 margin-bottom-10 margin-right-5"> <a href="https://www.facebook.com/sharer/sharer.php?u='+videoLink+'" target="_blank"> <img alt="Facebook icon" src="/assets/images/facebook-share.svg" class="width-100 max-width-40"/> </a> </figure><figure itemscope="" itemtype="http://schema.org/ImageObject" class="inline-block margin-bottom-10 margin-right-5"> <a class="twitter-share-button" target="_blank" href="https://twitter.com/intent/tweet?text='+videoLink+'"> <img alt="Twitter icon" src="/assets/images/twitter-share.svg" class="width-100 max-width-40"/> </a></figure> <figure itemscope="" itemtype="http://schema.org/ImageObject" class="inline-block margin-bottom-10 margin-right-5"> <a href="https://www.linkedin.com/shareArticle?mini=true&url='+videoLink+'" target="_blank"><img alt="Linkedin icon" src="/assets/images/linkedin-share.svg" class="width-100 max-width-40"/></a> </figure></div>', 'share-video-popup', null);
+
+        if($('.copy-btn').length) {
+            var clipboard = new ClipboardJS('.copy-btn');
+            var clipboard_timer;
+            clipboard.on('success', function(e) {
+                $('.copy-btn').tooltip('show');
+
+                clearInterval(clipboard_timer);
+
+                clipboard_timer = setTimeout(function()   {
+                    $('.copy-btn').tooltip('hide');
+                }, 1500);
+            });
+
+            $('.copy-btn').tooltip({
+                trigger: 'click'
+            });
+        }
+    });
+
+    $('.assets-slider').slick({
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        arrows: true,
+        autoplay: true,
+        autoplaySpeed: 8000,
+        responsive: [
+            {
+                breakpoint: 992,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1
+                }
+            }
+        ]
+    });
 }
 
 //make equal height for all descriptions in options section

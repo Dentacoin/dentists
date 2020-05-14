@@ -39,6 +39,7 @@ mix.scripts([
     'node_modules/bootstrap-select/dist/js/bootstrap-select.min.js',
     'node_modules/datatables.net/js/jquery.dataTables.min.js',
     'public/assets/libs/combobox/combobox.js',
+    'node_modules/clipboard/dist/clipboard.min.js',
     'public/assets/libs/croppie/croppie.min.js',
     'public/assets/libs/truffle-contract/truffle-contract-compiled.js',
 ], 'public/dist/js/front-libs-script.js');
