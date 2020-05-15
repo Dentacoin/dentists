@@ -21,7 +21,7 @@ Route::group(['prefix' => '/', 'middleware' => 'frontEndMiddleware'], function (
 
     Route::get('/faq', 'PagesController@getPageView')->name('faq');
 
-    Route::get('/download-assets', 'PagesController@getPageView')->name('download-assets');
+    Route::get('/download-guides-assets', 'PagesController@getPageView')->name('download-guides-assets');
 
     Route::get('sitemap.xml', 'Controller@getSitemap')->name('sitemap');
 
@@ -51,5 +51,9 @@ Route::group(['prefix' => '/', 'middleware' => 'frontEndMiddleware'], function (
 
     Route::get('answers', function() {
         return Redirect::to('/faq');
+    });
+
+    Route::get('download-assets', function() {
+        return Redirect::to('/download-guides-assets');
     });
 });
