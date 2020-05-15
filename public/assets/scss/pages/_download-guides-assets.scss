@@ -1,4 +1,22 @@
 .page-download-assets {
+    .sticky-caret {
+        position: fixed;
+        bottom: 15px;
+        right: 15px;
+        width: 45px;
+        height: 45px;
+        font-size: 0;
+        color: $dark_blue;
+        text-align: center;
+        background-color: white;
+        z-index: 1000;
+        border: 1.5px solid $dark_blue;
+        @include rounded(50%);
+        @include box-shadow(0 1px 10px 0.5px rgba(0,0,0,.5));
+        i {
+            font-size: 36px;
+        }
+    }
     .navigation-sidebar {
         color: #aaaaaa;
         .page-nav {
@@ -43,6 +61,8 @@
                     button {
                         font-size: 18px;
                         text-align: left;
+                        display: block;
+                        width: 100%;
                         span {
                             width: calc(100% - 30px);
                         }
@@ -81,12 +101,12 @@
         }
     }
     .page-content {
-        border-left: 1.5px solid #aaaaaa;
+        border-left: 1.5px solid #ececec;
         .scroll-to-section {
             .heading-line {
                 color: white;
                 background-color: $dark_blue;
-                padding: 15px 30px;
+                padding: 22px 65px 22px 30px;
                 h3 {
                     font-weight: normal;
                 }
@@ -115,9 +135,12 @@
                         }
                     }
                 }
+                @include breakpoint($xs) {
+                    padding: 15px 30px 15px 30px;
+                }
             }
             .section-content {
-                padding: 30px 40px 60px;
+                padding: 50px 50px 90px;
                 @include breakpoint($xs) {
                     padding: 30px 15px 50px;
                 }
@@ -164,9 +187,21 @@
                         }
                     }
                     &.brochures-row {
-                        @include breakpoint($xs) {
+                        @include breakpoint($sm-down) {
                             figure {
                                 margin-bottom: 15px;
+                                padding-bottom: 70px;
+                                position: relative;
+                                .overlay-on-hover {
+                                    opacity: 1;
+                                    background-color: transparent;
+                                    span {
+                                        border: 1.5px solid #002248;
+                                        bottom: 0;
+                                        top: auto;
+                                        @include horizontal-align(absolute);
+                                    }
+                                }
                             }
                         }
                     }
@@ -200,7 +235,7 @@
             }
             &.guides-section {
                 .section-content {
-                    border-bottom: 1px solid #aaaaaa;
+                    border-bottom: 1px solid #dddddd;
                     &:nth-child(odd) {
                         background: #fafafa;
                     }

@@ -6502,6 +6502,28 @@ footer .bottom-text a {
       padding: 15px 30px 15px 10px;
       background-position: center right 10px; } }
 
+.page-download-assets .sticky-caret {
+  position: fixed;
+  bottom: 15px;
+  right: 15px;
+  width: 45px;
+  height: 45px;
+  font-size: 0;
+  color: #002248;
+  text-align: center;
+  background-color: white;
+  z-index: 1000;
+  border: 1.5px solid #002248;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  border-radius: 50%;
+  -webkit-box-shadow: 0 1px 10px 0.5px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 0 1px 10px 0.5px rgba(0, 0, 0, 0.5);
+  -ms-box-shadow: 0 1px 10px 0.5px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 1px 10px 0.5px rgba(0, 0, 0, 0.5); }
+  .page-download-assets .sticky-caret i {
+    font-size: 36px; }
 .page-download-assets .navigation-sidebar {
   color: #aaaaaa; }
   .page-download-assets .navigation-sidebar .page-nav a {
@@ -6534,7 +6556,9 @@ footer .bottom-text a {
       font-size: 0; }
       .page-download-assets .navigation-sidebar .nav-list ul li button {
         font-size: 18px;
-        text-align: left; }
+        text-align: left;
+        display: block;
+        width: 100%; }
         .page-download-assets .navigation-sidebar .nav-list ul li button span {
           width: calc(100% - 30px); }
         .page-download-assets .navigation-sidebar .nav-list ul li button:before {
@@ -6563,11 +6587,11 @@ footer .bottom-text a {
           color: #002248;
           border-color: #002248; }
 .page-download-assets .page-content {
-  border-left: 1.5px solid #aaaaaa; }
+  border-left: 1.5px solid #ececec; }
   .page-download-assets .page-content .scroll-to-section .heading-line {
     color: white;
     background-color: #002248;
-    padding: 15px 30px; }
+    padding: 22px 65px 22px 30px; }
     .page-download-assets .page-content .scroll-to-section .heading-line h3 {
       font-weight: normal; }
     .page-download-assets .page-content .scroll-to-section .heading-line.with-button {
@@ -6590,8 +6614,11 @@ footer .bottom-text a {
             width: 100%;
             padding-top: 15px;
             text-align: center; } }
+    @media screen and (max-width: 767px) {
+      .page-download-assets .page-content .scroll-to-section .heading-line {
+        padding: 15px 30px 15px 30px; } }
   .page-download-assets .page-content .scroll-to-section .section-content {
-    padding: 30px 40px 60px; }
+    padding: 50px 50px 90px; }
     @media screen and (max-width: 767px) {
       .page-download-assets .page-content .scroll-to-section .section-content {
         padding: 30px 15px 50px; } }
@@ -6638,9 +6665,23 @@ footer .bottom-text a {
         opacity: 1; }
       .page-download-assets .page-content .scroll-to-section .section-content .brochures-row figure.hover .overlay-on-hover, .page-download-assets .page-content .scroll-to-section .section-content .banners-row figure.hover .overlay-on-hover, .page-download-assets .page-content .scroll-to-section .section-content .covers-row figure.hover .overlay-on-hover {
         opacity: 1; }
-    @media screen and (max-width: 767px) {
+    @media screen and (max-width: 991px) {
       .page-download-assets .page-content .scroll-to-section .section-content .brochures-row.brochures-row figure, .page-download-assets .page-content .scroll-to-section .section-content .banners-row.brochures-row figure, .page-download-assets .page-content .scroll-to-section .section-content .covers-row.brochures-row figure {
-        margin-bottom: 15px; } }
+        margin-bottom: 15px;
+        padding-bottom: 70px;
+        position: relative; }
+        .page-download-assets .page-content .scroll-to-section .section-content .brochures-row.brochures-row figure .overlay-on-hover, .page-download-assets .page-content .scroll-to-section .section-content .banners-row.brochures-row figure .overlay-on-hover, .page-download-assets .page-content .scroll-to-section .section-content .covers-row.brochures-row figure .overlay-on-hover {
+          opacity: 1;
+          background-color: transparent; }
+          .page-download-assets .page-content .scroll-to-section .section-content .brochures-row.brochures-row figure .overlay-on-hover span, .page-download-assets .page-content .scroll-to-section .section-content .banners-row.brochures-row figure .overlay-on-hover span, .page-download-assets .page-content .scroll-to-section .section-content .covers-row.brochures-row figure .overlay-on-hover span {
+            border: 1.5px solid #002248;
+            bottom: 0;
+            top: auto;
+            position: absolute;
+            left: 50%;
+            -webkit-transform: translateX(-50%);
+            -ms-transform: translateX(-50%);
+            transform: translateX(-50%); } }
     .page-download-assets .page-content .scroll-to-section .section-content .videos-row {
       display: flex; }
       .page-download-assets .page-content .scroll-to-section .section-content .videos-row figure img {
@@ -6673,7 +6714,7 @@ footer .bottom-text a {
         .page-download-assets .page-content .scroll-to-section .section-content .videos-row {
           display: block; } }
   .page-download-assets .page-content .scroll-to-section.guides-section .section-content {
-    border-bottom: 1px solid #aaaaaa; }
+    border-bottom: 1px solid #dddddd; }
     .page-download-assets .page-content .scroll-to-section.guides-section .section-content:nth-child(odd) {
       background: #fafafa; }
   .page-download-assets .page-content .scroll-to-section.for-partners .section-content {

@@ -22,7 +22,7 @@ $(window).on('resize', function(){
 });
 
 $(window).on('scroll', function()  {
-    //homepageHowToBecomeDentacoinDentistBackgroundParallax();
+    onDesktopScrollMakeStickySidebarDownloadAssetsPage();
 });
 
 //init cookie events only if exists
@@ -36,7 +36,7 @@ function checkIfCookie()    {
 
             window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'UA-97167262-3');
 
-            !function(f,b,e,v,n,t,s) {if(f.fbq)return;n=f.fbq=function(){n.callMethod? n.callMethod.apply(n,arguments):n.queue.push(arguments)}; if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0'; n.queue=[];t=b.createElement(e);t.async=!0; t.src=v;s=b.getElementsByTagName(e)[0]; s.parentNode.insertBefore(t,s)}(window,document,'script', 'https://connect.facebook.net/en_US/fbevents.js'); fbq('consent', 'grant'); fbq('init', '2366034370318681'); fbq('track', 'PageView');
+            !function(f,b,e,v,n,t,s) {if (f.fbq)return;n=f.fbq=function(){n.callMethod? n.callMethod.apply(n,arguments):n.queue.push(arguments)}; if (!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0'; n.queue=[];t=b.createElement(e);t.async=!0; t.src=v;s=b.getElementsByTagName(e)[0]; s.parentNode.insertBefore(t,s)}(window,document,'script', 'https://connect.facebook.net/en_US/fbevents.js'); fbq('consent', 'grant'); fbq('init', '2366034370318681'); fbq('track', 'PageView');
 
             $('.privacy-policy-cookie').remove();
         });
@@ -55,17 +55,17 @@ function checkIfCookie()    {
             $('.custom-cookie-save').click(function() {
                 basic.cookies.set('strictly_necessary_policy', 1);
 
-                if($('#functionality-cookies').is(':checked')) {
+                if ($('#functionality-cookies').is(':checked')) {
                     basic.cookies.set('functionality_cookies', 1);
                 }
 
-                if($('#marketing-cookies').is(':checked')) {
+                if ($('#marketing-cookies').is(':checked')) {
                     basic.cookies.set('marketing_cookies', 1);
 
-                    !function(f,b,e,v,n,t,s) {if(f.fbq)return;n=f.fbq=function(){n.callMethod? n.callMethod.apply(n,arguments):n.queue.push(arguments)}; if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0'; n.queue=[];t=b.createElement(e);t.async=!0; t.src=v;s=b.getElementsByTagName(e)[0]; s.parentNode.insertBefore(t,s)}(window,document,'script', 'https://connect.facebook.net/en_US/fbevents.js'); fbq('consent', 'grant'); fbq('init', '2366034370318681'); fbq('track', 'PageView');
+                    !function(f,b,e,v,n,t,s) {if (f.fbq)return;n=f.fbq=function(){n.callMethod? n.callMethod.apply(n,arguments):n.queue.push(arguments)}; if (!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0'; n.queue=[];t=b.createElement(e);t.async=!0; t.src=v;s=b.getElementsByTagName(e)[0]; s.parentNode.insertBefore(t,s)}(window,document,'script', 'https://connect.facebook.net/en_US/fbevents.js'); fbq('consent', 'grant'); fbq('init', '2366034370318681'); fbq('track', 'PageView');
                 }
 
-                if($('#performance-cookies').is(':checked')) {
+                if ($('#performance-cookies').is(':checked')) {
                     basic.cookies.set('performance_cookies', 1);
 
                     window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'UA-97167262-3');
@@ -254,13 +254,13 @@ if (!$('body').hasClass('logged-in')  && $('body').hasClass('home') || $('body')
             }
         ]
     });
-} else if ($('body').hasClass('download-assets-2')) {
-    $('body').addClass('overflow-hidden');
-    if ($(window).width() > 992) {
+} else if ($('body').hasClass('download-guides-assets')) {
+    /*$('body').addClass('overflow-hidden');
+    if ($(window).width() > 992) {*/
         $('.active-on-desktop').addClass('active');
         $('.hover-on-desktop').addClass('hover');
-    }
-    $('body').removeClass('overflow-hidden');
+    /*}
+    $('body').removeClass('overflow-hidden');*/
 
     $('.navigation-sidebar .page-nav a').click(function() {
         $('.navigation-sidebar .page-nav a').removeClass('active');
@@ -333,9 +333,9 @@ if (!$('body').hasClass('logged-in')  && $('body').hasClass('home') || $('body')
         var videoLinkRaw = $(this).closest('.section-content').find('iframe').attr('src');
         var videoLink = encodeURIComponent(videoLinkRaw);
 
-        basic.showDialog('<div class="fs-18 lato-bold dark-blue">Share</div><div class="padding-top-15 padding-bottom-15 copy-link module"><div class="next-to-copy-btn"><input autocomplete="off" readonly type="text" class="custom-input input-field" id="link-to-be-copied" value="'+videoLinkRaw+'"/></div><a href="javascript:void(0)" class="lato-bold fs-20 copy-btn" data-toggle="tooltip" title="" data-clipboard-target="#link-to-be-copied" data-original-title="Copied."><figure itemscope="" itemtype="http://schema.org/ImageObject" class="inline-block fs-0"><img alt="Copy icon" src="/assets/images/copy-icon.svg" class="width-100 max-width-20"/></figure> COPY</a></div><div class="fs-0"><span class="inline-block fs-16 dark-blue">Or send it via:</span> <figure itemscope="" itemtype="http://schema.org/ImageObject" class="inline-block margin-left-10 margin-bottom-10 margin-right-5"> <a href="https://www.facebook.com/sharer/sharer.php?u='+videoLink+'" target="_blank"> <img alt="Facebook icon" src="/assets/images/facebook-share.svg" class="width-100 max-width-40"/> </a> </figure><figure itemscope="" itemtype="http://schema.org/ImageObject" class="inline-block margin-bottom-10 margin-right-5"> <a class="twitter-share-button" target="_blank" href="https://twitter.com/intent/tweet?text='+videoLink+'"> <img alt="Twitter icon" src="/assets/images/twitter-share.svg" class="width-100 max-width-40"/> </a></figure> <figure itemscope="" itemtype="http://schema.org/ImageObject" class="inline-block margin-bottom-10 margin-right-5"> <a href="https://www.linkedin.com/shareArticle?mini=true&url='+videoLink+'" target="_blank"><img alt="Linkedin icon" src="/assets/images/linkedin-share.svg" class="width-100 max-width-40"/></a> </figure></div>', 'share-video-popup', null);
+        basic.showDialog('<div class="fs-18 lato-bold dark-blue">Share</div><div class="padding-top-15 padding-bottom-15 copy-link module"><div class="next-to-copy-btn"><input autocomplete="off" readonly type="text" class="custom-input input-field" id="link-to-be-copied" value="'+videoLinkRaw+'"/></div><a href="javascript:void(0)" class="lato-bold fs-20 copy-btn" data-toggle="tooltip" title="" data-clipboard-target="#link-to-be-copied" data-original-title="Copied."><figure itemscope="" itemtype="http://schema.org/ImageObject" class="inline-block fs-0"><img alt="Copy icon" src="/assets/images/copy-icon.svg" class="width-100 max-width-20"/></figure> COPY</a></div><div class="fs-0"><span class="inline-block fs-16 dark-blue">Or share it via:</span> <figure itemscope="" itemtype="http://schema.org/ImageObject" class="inline-block margin-left-10 margin-bottom-10 margin-right-5"> <a href="https://www.facebook.com/sharer/sharer.php?u='+videoLink+'" target="_blank"> <img alt="Facebook icon" src="/assets/images/facebook-share.svg" class="width-100 max-width-40"/> </a> </figure><figure itemscope="" itemtype="http://schema.org/ImageObject" class="inline-block margin-bottom-10 margin-right-5"> <a class="twitter-share-button" target="_blank" href="https://twitter.com/intent/tweet?text='+videoLink+'"> <img alt="Twitter icon" src="/assets/images/twitter-share.svg" class="width-100 max-width-40"/> </a></figure> <figure itemscope="" itemtype="http://schema.org/ImageObject" class="inline-block margin-bottom-10 margin-right-5"> <a href="https://www.linkedin.com/shareArticle?mini=true&url='+videoLink+'" target="_blank"><img alt="Linkedin icon" src="/assets/images/linkedin-share.svg" class="width-100 max-width-40"/></a> </figure></div>', 'share-video-popup', null);
 
-        if($('.copy-btn').length) {
+        if ($('.copy-btn').length) {
             var clipboard = new ClipboardJS('.copy-btn');
             var clipboard_timer;
             clipboard.on('success', function(e) {
@@ -488,7 +488,7 @@ function initScrollingToEvents() {
             $('.scrolling-to-section').click(function() {
                 $(this).blur();
                 window.history.pushState($(this).find('span').html(), '', '/#'+$(this).attr('id'));
-                $("html, body").animate({scrollTop: $('[data-scroll-here="'+$(this).attr('id')+'"]').offset().top - $('header').outerHeight()}, 300);
+                $('html, body').animate({scrollTop: $('[data-scroll-here="'+$(this).attr('id')+'"]').offset().top - $('header').outerHeight()}, 300);
                 return false;
             });
         }
@@ -504,7 +504,7 @@ initScrollingToEvents();
 function scrollToSection(){
     $('[data-scroll-here]').each(function() {
         if (window.location.href.indexOf('#' + $(this).attr('data-scroll-here')) != -1){
-            $("html, body").animate({scrollTop: $(this).offset().top - $('header').outerHeight()}, 300);
+            $('html, body').animate({scrollTop: $(this).offset().top - $('header').outerHeight()}, 300);
             return false;
         }
     })
@@ -670,6 +670,36 @@ async function loggedOrNotLogic() {
 }
 loggedOrNotLogic();
 
+var appendedMobileStickyScrollUp = false;
+function onDesktopScrollMakeStickySidebarDownloadAssetsPage() {
+    $('body').addClass('overflow-hidden');
+    if ($(window).width() > 992) {
+        if ($(window).scrollTop() > $('.page-content').offset().top) {
+            $('.navigation-sidebar').css({'position' : 'fixed', 'left' : '0', 'top' : $('header').outerHeight() + 'px'});
+            $('.navigation-sidebar').height($(window).height() - $('header').outerHeight()).css({'overflow' : 'auto'});
+            $('.page-content').addClass('col-md-offset-3');
+        } else {
+            $('.navigation-sidebar').css({'position' : 'static', 'left' : 'auto', 'top' : 'auto'});
+            $('.navigation-sidebar').css({'overflow' : 'visible', 'height' : 'auto'});
+            $('.page-content').removeClass('col-md-offset-3');
+        }
+    } else {
+        if ($(window).scrollTop() > 300 && !appendedMobileStickyScrollUp) {
+            appendedMobileStickyScrollUp = true;
+            $('.page-download-assets').append('<button class="sticky-caret"><i class="fa fa-caret-up" aria-hidden="true"></i></button>');
+        
+            $('.sticky-caret').click(function() {
+                $('html, body').animate({scrollTop: 0}, 300);
+                return false;
+            })
+        } else if ($(window).scrollTop() < 300 && appendedMobileStickyScrollUp) {
+            appendedMobileStickyScrollUp = false;
+            $('.sticky-caret').remove();
+        }
+    }
+    $('body').removeClass('overflow-hidden');
+}
+
 function bindGoogleAlikeButtonsEvents() {
     //google alike style for label/placeholders
     $('body').on('click', '.custom-google-label-style label', function() {
@@ -832,7 +862,7 @@ function fireGoogleAnalyticsEvent(category, action, label, value) {
 
 // init bootstrap tooltips
 function initTooltips() {
-    if($('[data-toggle="tooltip"]')) {
+    if ($('[data-toggle="tooltip"]')) {
         $('[data-toggle="tooltip"]').tooltip();
     }
 }

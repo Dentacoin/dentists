@@ -40,6 +40,6 @@ class PagesController extends Controller
     }
 
     public function getDummyPageView() {
-        return view('pages/download-assets-2');
+        return view('pages/back-up-html/download-guides-assets');
     }
 }

@@ -25,9 +25,9 @@
     <style>
 
     </style>
-    <link rel="stylesheet" type="text/css" href="/dist/css/front-libs-style.css?v=1.0.69">
-    <link rel="stylesheet" type="text/css" href="/assets/css/style.css?v=1.0.69">
-    <link rel="stylesheet" type="text/css" href="https://dentacoin.com/assets/libs/dentacoin-login-gateway/css/dentacoin-login-gateway-style.css?v=1.0.69"/>
+    <link rel="stylesheet" type="text/css" href="/dist/css/front-libs-style.css?v=1.0.70">
+    <link rel="stylesheet" type="text/css" href="/assets/css/style.css?v=1.0.70">
+    <link rel="stylesheet" type="text/css" href="https://dentacoin.com/assets/libs/dentacoin-login-gateway/css/dentacoin-login-gateway-style.css?v=1.0.70"/>
     <script>
         var HOME_URL = '{{ route("home") }}';
     </script>
@@ -112,7 +112,7 @@
     <footer class="padding-bottom-100 padding-bottom-sm-50 padding-bottom-xs-50">
         <div class="container padding-top-50">
             <div class="row">
-                <h2 class="fs-50 lato-light dark-blue text-center col-xs-12 padding-bottom-50">Subscribe for Our Newsletter</h2>
+                <h2 class="fs-50 fs-xs-30 lato-light dark-blue text-center col-xs-12 padding-bottom-50 padding-bottom-xs-15">Subscribe for Our Newsletter</h2>
             </div>
             <div class="row newsletter-register">
                 <div class="col-xs-12 text-center">
@@ -269,13 +269,13 @@
             </figure>
         </div>
     </div>
-    <script src="https://dentacoin.com/assets/js/basic.js?v=1.0.69"></script>
+    <script src="https://dentacoin.com/assets/js/basic.js?v=1.0.70"></script>
     {{--<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCaVeHq_LOhQndssbmw-aDnlMwUG73yCdk&libraries=places&language=en"></script>--}}
-    <script src="/dist/js/front-libs-script.js?v=1.0.69"></script>
-    <script src="https://dentacoin.com/assets/libs/dentacoin-login-gateway/js/init.js?v=1.0.69"></script>
+    <script src="/dist/js/front-libs-script.js?v=1.0.70"></script>
+    <script src="https://dentacoin.com/assets/libs/dentacoin-login-gateway/js/init.js?v=1.0.70"></script>
     {{--<script src="/assets/js/address.js"></script>--}}
     @yield("script_block")
-    <script src="/dist/js/front-script.js?v=1.0.69"></script>
+    <script src="/dist/js/front-script.js?v=1.0.70"></script>
     {{--<script src="/assets/js/index.js"></script>--}}
 
     {{--Multiple errors from laravel validation--}}
