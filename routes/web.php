@@ -23,8 +23,6 @@ Route::group(['prefix' => '/', 'middleware' => 'frontEndMiddleware'], function (
 
     Route::get('/download-assets', 'PagesController@getPageView')->name('download-assets');
 
-    Route::get('/download-guides-assets', 'PagesController@getDummyPageView')->name('download-guides-assets');
-
     Route::get('sitemap.xml', 'Controller@getSitemap')->name('sitemap');
 
     //======================================= LOGIN LOGIC ========================================
