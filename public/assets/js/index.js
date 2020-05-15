@@ -672,32 +672,41 @@ loggedOrNotLogic();
 
 var appendedMobileStickyScrollUp = false;
 function onDesktopScrollMakeStickySidebarDownloadAssetsPage() {
-    $('body').addClass('overflow-hidden');
-    if ($(window).width() > 992) {
-        if ($(window).scrollTop() > $('.page-content').offset().top) {
-            $('.navigation-sidebar').css({'position' : 'fixed', 'left' : '0', 'top' : $('header').outerHeight() + 'px'});
-            $('.navigation-sidebar').height($(window).height() - $('header').outerHeight()).css({'overflow' : 'auto'});
-            $('.page-content').addClass('col-md-offset-3');
+    if ($('body').hasClass('download-guides-assets')) {
+        $('body').addClass('overflow-hidden');
+        if ($(window).width() > 992) {
+            if ($(window).scrollTop() > $('.page-content').offset().top) {
+                if ($(window).scrollTop() + $(window).height() > $('footer').offset().top) {
+                    $('.navigation-sidebar').css({'position' : 'absolute', 'left' : '0', 'top' : 'auto', 'bottom' : '0'});
+                    $('.add-display-flex-and-position-relative').css({'display' : 'flex', 'position' : 'relative'});
+                    $('.navigation-sidebar').css({'overflow' : 'visible', 'height' : 'auto'});
+                } else {
+                    $('.navigation-sidebar').css({'position' : 'fixed', 'left' : '0', 'top' : $('header').outerHeight() + 'px', 'bottom' : 'auto'});
+                    $('.add-display-flex-and-position-relative').css({'display' : 'block'});
+                    $('.navigation-sidebar').height($(window).height() - $('header').outerHeight()).css({'overflow' : 'auto'});
+                    $('.page-content').addClass('col-md-offset-3');
+                }
+            } else {
+                $('.navigation-sidebar').css({'position' : 'static', 'left' : 'auto', 'top' : 'auto'});
+                $('.navigation-sidebar').css({'overflow' : 'visible', 'height' : 'auto'});
+                $('.page-content').removeClass('col-md-offset-3');
+            }
         } else {
-            $('.navigation-sidebar').css({'position' : 'static', 'left' : 'auto', 'top' : 'auto'});
-            $('.navigation-sidebar').css({'overflow' : 'visible', 'height' : 'auto'});
-            $('.page-content').removeClass('col-md-offset-3');
+            if ($(window).scrollTop() > 300 && !appendedMobileStickyScrollUp) {
+                appendedMobileStickyScrollUp = true;
+                $('.page-download-assets').append('<button class="sticky-caret"><i class="fa fa-caret-up" aria-hidden="true"></i></button>');
+
+                $('.sticky-caret').click(function() {
+                    $('html, body').animate({scrollTop: 0}, 300);
+                    return false;
+                })
+            } else if ($(window).scrollTop() < 300 && appendedMobileStickyScrollUp) {
+                appendedMobileStickyScrollUp = false;
+                $('.sticky-caret').remove();
+            }
         }
-    } else {
-        if ($(window).scrollTop() > 300 && !appendedMobileStickyScrollUp) {
-            appendedMobileStickyScrollUp = true;
-            $('.page-download-assets').append('<button class="sticky-caret"><i class="fa fa-caret-up" aria-hidden="true"></i></button>');
-        
-            $('.sticky-caret').click(function() {
-                $('html, body').animate({scrollTop: 0}, 300);
-                return false;
-            })
-        } else if ($(window).scrollTop() < 300 && appendedMobileStickyScrollUp) {
-            appendedMobileStickyScrollUp = false;
-            $('.sticky-caret').remove();
-        }
+        $('body').removeClass('overflow-hidden');
     }
-    $('body').removeClass('overflow-hidden');
 }
 
 function bindGoogleAlikeButtonsEvents() {

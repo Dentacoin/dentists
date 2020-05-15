@@ -6,7 +6,7 @@
                 <h1 class="padding-left-15 padding-right-15 lato-black fs-xs-28 fs-50 padding-top-20 padding-bottom-30 dark-blue">DENTACOIN GUIDES AND ASSETS</h1>
             </div>
         </div>
-        <section class="row">
+        <section class="row add-display-flex-and-position-relative">
             <div class="col-xs-12 col-md-3 navigation-sidebar padding-left-0 padding-right-0">
                 <div class="page-nav text-center fs-0">
                     <a href="javascript:void(0);" data-type="dentists" class="inline-block active calibri-bold fs-20">DENTISTS</a>
