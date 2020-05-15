@@ -6,7 +6,7 @@
                 <h1 class="padding-left-15 padding-right-15 lato-black fs-xs-28 fs-50 padding-top-20 padding-bottom-30 dark-blue">DENTACOIN GUIDES AND ASSETS</h1>
             </div>
         </div>
-        <section class="row">
+        <section class="row add-display-flex-and-position-relative">
             <div class="col-xs-12 col-md-3 navigation-sidebar padding-left-0 padding-right-0">
                 <div class="page-nav text-center fs-0">
                     <a href="javascript:void(0);" data-type="dentists" class="inline-block active calibri-bold fs-20">DENTISTS</a>
@@ -190,7 +190,7 @@
                             <div class="row videos-row padding-top-30">
                                 <a href="https://dentists.dentacoin.com/assets/uploads/dentavox-tutorial-dentists.pdf" data-dentist="https://dentists.dentacoin.com/assets/uploads/dentavox-tutorial-dentists.pdf" data-patient="https://dentists.dentacoin.com/assets/uploads/dentavox-paid-surveys-tutorial-patients.pdf" target="_blank" class="changeable-href-on-user-type-change col-xs-12 col-sm-6 padding-bottom-xs-15">
                                     <figure itemscope="" itemtype="http://schema.org/ImageObject">
-                                        <img alt="Brochure patients EN" itemprop="contentUrl" class="changeable-src-on-user-type-change" src="https://dentists.dentacoin.com/assets/uploads/dentavox-free-dental-research-preview.png" data-dentist="https://dentists.dentacoin.com/assets/uploads/dentavox-paid-online-surveys-preview.png" data-patient="https://dentists.dentacoin.com/assets/uploads/dentavox-patients.png">
+                                        <img alt="Brochure patients EN" itemprop="contentUrl" class="changeable-src-on-user-type-change" src="https://dentists.dentacoin.com/assets/uploads/dentavox-free-dental-research-preview.png" data-dentist="https://dentists.dentacoin.com/assets/uploads/dentavox-free-dental-research-preview.png" data-patient="https://dentists.dentacoin.com/assets/uploads/dentavox-paid-online-surveys-preview.png">
                                     </figure>
                                     <div class="padding-top-20 text-center btn-container">
                                         <span class="dark-blue-white-btn blue-border fs-16"> DOWNLOAD PDF GUIDE</span>
