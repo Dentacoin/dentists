@@ -6684,7 +6684,7 @@ footer .bottom-text a {
             transform: translateX(-50%); } }
     .page-download-assets .page-content .scroll-to-section .section-content .videos-row {
       display: flex; }
-      .page-download-assets .page-content .scroll-to-section .section-content .videos-row figure img {
+      .page-download-assets .page-content .scroll-to-section .section-content .videos-row img {
         -webkit-border-radius: 8px;
         -moz-border-radius: 8px;
         -ms-border-radius: 8px;
