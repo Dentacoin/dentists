@@ -6705,6 +6705,9 @@ footer .bottom-text a {
         -moz-box-shadow: 0 1px 10px 0.5px rgba(0, 0, 0, 0.2);
         -ms-box-shadow: 0 1px 10px 0.5px rgba(0, 0, 0, 0.2);
         box-shadow: 0 1px 10px 0.5px rgba(0, 0, 0, 0.2); }
+        @media screen and (max-width: 767px) {
+          .page-download-assets .page-content .scroll-to-section .section-content .videos-row iframe {
+            height: 200px; } }
       .page-download-assets .page-content .scroll-to-section .section-content .videos-row .btn-container {
         height: 70px; }
         .page-download-assets .page-content .scroll-to-section .section-content .videos-row .btn-container a {

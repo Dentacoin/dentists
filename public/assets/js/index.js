@@ -286,26 +286,30 @@ if (!$('body').hasClass('logged-in')  && $('body').hasClass('home') || $('body')
                 $('.changeable-attr-on-user-type-change').eq(i).attr('data-scroll-to', $('.changeable-attr-on-user-type-change').eq(i).attr('data-dentist'));
             }
         } else if ($(this).attr('data-type') == 'patients') {
-            $('.if-patient').removeClass('hide');
-            $('.if-dentist').addClass('hide');
-
-            for (var i = 0, len = $('.changeable-html-on-user-type-change').length; i < len; i+=1) {
-                $('.changeable-html-on-user-type-change').eq(i).html($('.changeable-html-on-user-type-change').eq(i).attr('data-patient'));
-            }
-
-            for (var i = 0, len = $('.changeable-src-on-user-type-change').length; i < len; i+=1) {
-                $('.changeable-src-on-user-type-change').eq(i).attr('src', $('.changeable-src-on-user-type-change').eq(i).attr('data-patient'));
-            }
-
-            for (var i = 0, len = $('.changeable-href-on-user-type-change').length; i < len; i+=1) {
-                $('.changeable-href-on-user-type-change').eq(i).attr('href', $('.changeable-href-on-user-type-change').eq(i).attr('data-patient'));
-            }
-
-            for (var i = 0, len = $('.changeable-attr-on-user-type-change').length; i < len; i+=1) {
-                $('.changeable-attr-on-user-type-change').eq(i).attr('data-scroll-to', $('.changeable-attr-on-user-type-change').eq(i).attr('data-patient'));
-            }
+            ifPatient();
         }
     });
+
+    function ifPatient() {
+        $('.if-patient').removeClass('hide');
+        $('.if-dentist').addClass('hide');
+
+        for (var i = 0, len = $('.changeable-html-on-user-type-change').length; i < len; i+=1) {
+            $('.changeable-html-on-user-type-change').eq(i).html($('.changeable-html-on-user-type-change').eq(i).attr('data-patient'));
+        }
+
+        for (var i = 0, len = $('.changeable-src-on-user-type-change').length; i < len; i+=1) {
+            $('.changeable-src-on-user-type-change').eq(i).attr('src', $('.changeable-src-on-user-type-change').eq(i).attr('data-patient'));
+        }
+
+        for (var i = 0, len = $('.changeable-href-on-user-type-change').length; i < len; i+=1) {
+            $('.changeable-href-on-user-type-change').eq(i).attr('href', $('.changeable-href-on-user-type-change').eq(i).attr('data-patient'));
+        }
+
+        for (var i = 0, len = $('.changeable-attr-on-user-type-change').length; i < len; i+=1) {
+            $('.changeable-attr-on-user-type-change').eq(i).attr('data-scroll-to', $('.changeable-attr-on-user-type-change').eq(i).attr('data-patient'));
+        }
+    }
 
     $('.mobile-nav-opener a').click(function() {
         $('.nav-holder').fadeToggle(500);
@@ -370,6 +374,16 @@ if (!$('body').hasClass('logged-in')  && $('body').hasClass('home') || $('body')
             }
         ]
     });
+
+    if (basic.property_exists(get_params, 'type')) {
+        if (get_params.type == 'patient') {
+            $('.navigation-sidebar .page-nav a').removeClass('active');
+            $('.navigation-sidebar .page-nav a[data-type="patients"]').addClass('active');
+            ifPatient();
+        } else if (get_params.type == 'dentist-promo-banners') {
+            $('button[data-scroll-to="scroll-to-promo-banners"]').click();
+        }
+    }
 }
 
 //make equal height for all descriptions in options section

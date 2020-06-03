@@ -129,13 +129,13 @@
                         </div>
                         <div class="container-fluid">
                             <div class="row videos-row padding-top-30">
-                                <figure itemscope="" itemtype="http://schema.org/ImageObject">
-                                    <a href="https://dentists.dentacoin.com/assets/uploads/dentacoin-partner-dentist-guide.pdf" data-dentist="https://dentists.dentacoin.com/assets/uploads/dentacoin-partner-dentist-guide.pdf" data-patient="https://dentists.dentacoin.com/assets/uploads/earn-dentacoin-rewards-patient-guide.pdf" target="_blank" class="changeable-href-on-user-type-change col-xs-12 col-sm-6 padding-bottom-xs-15">
-                                            <img alt="Brochure patients EN" itemprop="contentUrl"
+                                <figure itemscope="" itemtype="http://schema.org/ImageObject" class="col-xs-12 col-sm-6 padding-bottom-xs-15">
+                                    <a href="https://dentists.dentacoin.com/assets/uploads/dentacoin-partner-dentist-guide.pdf" data-dentist="https://dentists.dentacoin.com/assets/uploads/dentacoin-partner-dentist-guide.pdf" data-patient="https://dentists.dentacoin.com/assets/uploads/earn-dentacoin-rewards-patient-guide.pdf" target="_blank" class="changeable-href-on-user-type-change">
+                                            <img alt="Become dcn partner or earn dcn" itemprop="contentUrl"
                                                  src="https://dentists.dentacoin.com/assets/uploads/become-dentacoin-partner-preview.png" class="changeable-src-on-user-type-change" data-dentist="https://dentists.dentacoin.com/assets/uploads/become-dentacoin-partner-preview.png" data-patient="https://dentists.dentacoin.com/assets/uploads/earn-dentacoin-crypto-rewards-preview.png">
-                                        <div class="padding-top-20 text-center btn-container">
+                                        <span class="padding-top-20 text-center btn-container display-block">
                                             <span class="dark-blue-white-btn blue-border fs-16"> DOWNLOAD PDF GUIDE</span>
-                                        </div>
+                                        </span>
                                     </a>
                                 </figure>
                                 <div class="col-xs-12 col-sm-6">
@@ -150,7 +150,7 @@
                     <div class="section-content" id="scroll-to-trusted-reviews">
                         <div class="fs-0 text-center-xs padding-bottom-20">
                             <figure itemscope="" itemtype="http://schema.org/ImageObject" class="inline-block max-width-100 width-100">
-                                <img alt="Tablet icon" class="width-100" itemprop="contentUrl" src="https://dentacoin.com/assets/uploads/trusted-reviews-app-icon.png">
+                                <img alt="Dentacoin Trusted Reviews logo" class="width-100" itemprop="contentUrl" src="https://dentacoin.com/assets/uploads/trusted-reviews-app-icon.png">
                             </figure>
                             <div class="inline-block next-to-icon padding-left-20 padding-left-xs-0">
                                 <h4 class="fs-28 fs-xs-20 padding-top-xs-15 padding-top-xs-15 lato-bold" data-dentist="Dentist’s brochures" data-patient="Patient’s brochures">Dentacoin Trusted Reviews</h4>
@@ -159,14 +159,14 @@
                         </div>
                         <div class="container-fluid">
                             <div class="row videos-row padding-top-30">
-                                <a href="https://dentists.dentacoin.com/assets/uploads/dentacoin-trusted-reviews-tutorial-dentists.pdf" data-dentist="https://dentists.dentacoin.com/assets/uploads/dentacoin-trusted-reviews-tutorial-dentists.pdf" data-patient="https://dentists.dentacoin.com/assets/uploads/dentacoin-trusted-reviews-tutorial-patients.pdf" target="_blank" class="changeable-href-on-user-type-change col-xs-12 col-sm-6 padding-bottom-xs-15">
-                                    <figure itemscope="" itemtype="http://schema.org/ImageObject">
-                                        <img alt="Brochure patients EN" itemprop="contentUrl" class="changeable-src-on-user-type-change" src="https://dentists.dentacoin.com/assets/uploads/dentacoin-trusted-reviews-dentists-preview.png" data-dentist="https://dentists.dentacoin.com/assets/uploads/dentacoin-trusted-reviews-dentists-preview.png" data-patient="https://dentists.dentacoin.com/assets/uploads/dentacoin-trusted-reviews-patients-preview.png">
-                                    </figure>
-                                    <div class="padding-top-20 text-center btn-container">
-                                        <span class="dark-blue-white-btn blue-border fs-16"> DOWNLOAD PDF GUIDE</span>
-                                    </div>
-                                </a>
+                                <figure itemscope="" itemtype="http://schema.org/ImageObject" class="col-xs-12 col-sm-6 padding-bottom-xs-15">
+                                    <a href="https://dentists.dentacoin.com/assets/uploads/dentacoin-trusted-reviews-tutorial-dentists.pdf" data-dentist="https://dentists.dentacoin.com/assets/uploads/dentacoin-trusted-reviews-tutorial-dentists.pdf" data-patient="https://dentists.dentacoin.com/assets/uploads/dentacoin-trusted-reviews-tutorial-patients.pdf" target="_blank" class="changeable-href-on-user-type-change">
+                                        <img alt="Dentacoin Trusted Reviews guide" itemprop="contentUrl" class="changeable-src-on-user-type-change" src="https://dentists.dentacoin.com/assets/uploads/dentacoin-trusted-reviews-dentists-preview.png" data-dentist="https://dentists.dentacoin.com/assets/uploads/dentacoin-trusted-reviews-dentists-preview.png" data-patient="https://dentists.dentacoin.com/assets/uploads/dentacoin-trusted-reviews-patients-preview.png">
+                                        <span class="padding-top-20 text-center btn-container display-block">
+                                            <span class="dark-blue-white-btn blue-border fs-16"> DOWNLOAD PDF GUIDE</span>
+                                        </span>
+                                    </a>
+                                </figure>
                                 <div class="col-xs-12 col-sm-6">
                                     <iframe src="https://www.youtube.com/embed/osKBgdDKO0s" class="changeable-src-on-user-type-change" data-dentist="https://www.youtube.com/embed/osKBgdDKO0s" data-patient="https://www.youtube.com/embed/00aQuj2bz3A"></iframe>
                                     <div class="padding-top-20 text-center btn-container">
@@ -179,7 +179,7 @@
                     <div class="section-content" id="scroll-to-dentavox">
                         <div class="fs-0 text-center-xs padding-bottom-20">
                             <figure itemscope="" itemtype="http://schema.org/ImageObject" class="inline-block max-width-100 width-100">
-                                <img alt="Tablet icon" class="width-100" itemprop="contentUrl" src="https://dentacoin.com/assets/uploads/pop-up-dentavox-app-icon.svg">
+                                <img alt="DentaVox logo" class="width-100" itemprop="contentUrl" src="https://dentacoin.com/assets/uploads/pop-up-dentavox-app-icon.svg">
                             </figure>
                             <div class="inline-block next-to-icon padding-left-20 padding-left-xs-0">
                                 <h4 class="fs-28 fs-xs-20 padding-top-xs-15 padding-top-xs-15 lato-bold">DentaVox</h4>
@@ -188,14 +188,14 @@
                         </div>
                         <div class="container-fluid">
                             <div class="row videos-row padding-top-30">
-                                <a href="https://dentists.dentacoin.com/assets/uploads/dentavox-tutorial-dentists.pdf" data-dentist="https://dentists.dentacoin.com/assets/uploads/dentavox-tutorial-dentists.pdf" data-patient="https://dentists.dentacoin.com/assets/uploads/dentavox-paid-surveys-tutorial-patients.pdf" target="_blank" class="changeable-href-on-user-type-change col-xs-12 col-sm-6 padding-bottom-xs-15">
-                                    <figure itemscope="" itemtype="http://schema.org/ImageObject">
-                                        <img alt="Brochure patients EN" itemprop="contentUrl" class="changeable-src-on-user-type-change" src="https://dentists.dentacoin.com/assets/uploads/dentavox-free-dental-research-preview.png" data-dentist="https://dentists.dentacoin.com/assets/uploads/dentavox-free-dental-research-preview.png" data-patient="https://dentists.dentacoin.com/assets/uploads/dentavox-paid-online-surveys-preview.png">
-                                    </figure>
-                                    <div class="padding-top-20 text-center btn-container">
-                                        <span class="dark-blue-white-btn blue-border fs-16"> DOWNLOAD PDF GUIDE</span>
-                                    </div>
-                                </a>
+                                <figure itemscope="" itemtype="http://schema.org/ImageObject" class="col-xs-12 col-sm-6 padding-bottom-xs-15">
+                                    <a href="https://dentists.dentacoin.com/assets/uploads/dentavox-tutorial-dentists.pdf" data-dentist="https://dentists.dentacoin.com/assets/uploads/dentavox-tutorial-dentists.pdf" data-patient="https://dentists.dentacoin.com/assets/uploads/dentavox-paid-surveys-tutorial-patients.pdf" target="_blank" class="changeable-href-on-user-type-change">
+                                        <img alt="DentaVox guide" itemprop="contentUrl" class="changeable-src-on-user-type-change" src="https://dentists.dentacoin.com/assets/uploads/dentavox-free-dental-research-preview.png" data-dentist="https://dentists.dentacoin.com/assets/uploads/dentavox-free-dental-research-preview.png" data-patient="https://dentists.dentacoin.com/assets/uploads/dentavox-paid-online-surveys-preview.png">
+                                        <span class="padding-top-20 text-center btn-container display-block">
+                                            <span class="dark-blue-white-btn blue-border fs-16"> DOWNLOAD PDF GUIDE</span>
+                                        </span>
+                                    </a>
+                                </figure>
                                 <div class="col-xs-12 col-sm-6">
                                     <iframe src="https://www.youtube.com/embed/gJKNNw4WxHo" class="changeable-src-on-user-type-change" data-dentist="https://www.youtube.com/embed/gJKNNw4WxHo" data-patient="https://www.youtube.com/embed/J2LyV-QtjDk"></iframe>
                                     <div class="padding-top-20 text-center btn-container">
@@ -208,7 +208,7 @@
                     <div class="section-content" id="scroll-to-dentacoin-wallet">
                         <div class="fs-0 text-center-xs padding-bottom-20">
                             <figure itemscope="" itemtype="http://schema.org/ImageObject" class="inline-block max-width-100 width-100">
-                                <img alt="Tablet icon" class="width-100" itemprop="contentUrl" src="https://dentacoin.com/assets/uploads/wallet-background.svg">
+                                <img alt="Dentacoin Wallet logo" class="width-100" itemprop="contentUrl" src="https://dentacoin.com/assets/uploads/wallet-background.svg">
                             </figure>
                             <div class="inline-block next-to-icon padding-left-20 padding-left-xs-0">
                                 <h4 class="fs-28 fs-xs-20 padding-top-xs-15 padding-top-xs-15 lato-bold">Dentacoin Wallet</h4>
@@ -217,14 +217,14 @@
                         </div>
                         <div class="container-fluid">
                             <div class="row videos-row padding-top-30">
-                                <a href="https://dentists.dentacoin.com/assets/uploads/dentacoin-wallet-tutorial-dentists.pdf" data-dentist="https://dentists.dentacoin.com/assets/uploads/dentacoin-wallet-tutorial-dentists.pdf" data-patient="https://dentists.dentacoin.com/assets/uploads/dentacoin-wallet-tutorial-patients.pdf" target="_blank" class="changeable-href-on-user-type-change col-xs-12 col-sm-6 padding-bottom-xs-15">
-                                    <figure itemscope="" itemtype="http://schema.org/ImageObject">
-                                        <img alt="Brochure patients EN" itemprop="contentUrl" src="https://dentists.dentacoin.com/assets/uploads/accept-dentacoin-payments-wallet-preview.png" class="changeable-src-on-user-type-change" data-dentist="https://dentists.dentacoin.com/assets/uploads/accept-dentacoin-payments-wallet-preview.png" data-patient="https://dentists.dentacoin.com/assets/uploads/dentacoin-wallet-instructions-preview.png">
-                                    </figure>
-                                    <div class="padding-top-20 text-center btn-container">
-                                        <span class="dark-blue-white-btn blue-border fs-16"> DOWNLOAD PDF GUIDE</span>
-                                    </div>
-                                </a>
+                                <figure itemscope="" itemtype="http://schema.org/ImageObject" class="col-xs-12 col-sm-6 padding-bottom-xs-15">
+                                    <a href="https://dentists.dentacoin.com/assets/uploads/dentacoin-wallet-tutorial-dentists.pdf" data-dentist="https://dentists.dentacoin.com/assets/uploads/dentacoin-wallet-tutorial-dentists.pdf" data-patient="https://dentists.dentacoin.com/assets/uploads/dentacoin-wallet-tutorial-patients.pdf" target="_blank" class="changeable-href-on-user-type-change">
+                                        <img alt="Dentacoin Wallet guide" itemprop="contentUrl" src="https://dentists.dentacoin.com/assets/uploads/accept-dentacoin-payments-wallet-preview.png" class="changeable-src-on-user-type-change" data-dentist="https://dentists.dentacoin.com/assets/uploads/accept-dentacoin-payments-wallet-preview.png" data-patient="https://dentists.dentacoin.com/assets/uploads/dentacoin-wallet-instructions-preview.png">
+                                        <span class="padding-top-20 text-center btn-container display-block">
+                                            <span class="dark-blue-white-btn blue-border fs-16"> DOWNLOAD PDF GUIDE</span>
+                                        </span>
+                                    </a>
+                                </figure>
                                 <div class="col-xs-12 col-sm-6">
                                     <iframe src="https://www.youtube.com/embed/stGTpVOaQiM" class="changeable-src-on-user-type-change" data-dentist="https://www.youtube.com/embed/stGTpVOaQiM" data-patient="https://www.youtube.com/embed/dBYm5qUIjP8"></iframe>
                                     <div class="padding-top-20 text-center btn-container">
@@ -237,7 +237,7 @@
                     <div class="section-content" id="scroll-to-dentacare-app">
                         <div class="fs-0 text-center-xs padding-bottom-20">
                             <figure itemscope="" itemtype="http://schema.org/ImageObject" class="inline-block max-width-100 width-100">
-                                <img alt="Tablet icon" class="width-100" itemprop="contentUrl" src="https://dentacoin.com/assets/uploads/pop-up-dentacare-app-icon.svg">
+                                <img alt="Dentacare app logo" class="width-100" itemprop="contentUrl" src="https://dentacoin.com/assets/uploads/pop-up-dentacare-app-icon.svg">
                             </figure>
                             <div class="inline-block next-to-icon padding-left-20 padding-left-xs-0">
                                 <h4 class="fs-28 fs-xs-20 padding-top-xs-15 padding-top-xs-15 lato-bold">Dentacare app</h4>
@@ -246,14 +246,14 @@
                         </div>
                         <div class="container-fluid">
                             <div class="row videos-row padding-top-30">
-                                <a href="https://dentists.dentacoin.com/assets/uploads/dentacoin-dentacare-tutorial-dentists.pdf" data-dentist="https://dentists.dentacoin.com/assets/uploads/dentacoin-dentacare-tutorial-dentists.pdf" data-patient="https://dentists.dentacoin.com/assets/uploads/dentacoin-dentacare-tutorial-patients.pdf" target="_blank" class="changeable-href-on-user-type-change col-xs-12 col-sm-6 padding-bottom-xs-15">
-                                    <figure class="" itemscope="" itemtype="http://schema.org/ImageObject">
-                                        <img alt="Brochure patients EN" itemprop="contentUrl" src="https://dentists.dentacoin.com/assets/uploads/dentacare-oral-health-app-dentists-preview.png" class="changeable-src-on-user-type-change" data-dentist="https://dentists.dentacoin.com/assets/uploads/dentacare-oral-health-app-dentists-preview.png" data-patient="https://dentists.dentacoin.com/assets/uploads/dentacare-oral-health-app-patients-preview.png">
-                                    </figure>
-                                    <div class="padding-top-20 text-center btn-container">
-                                        <span class="dark-blue-white-btn blue-border fs-16"> DOWNLOAD PDF GUIDE</span>
-                                    </div>
-                                </a>
+                                <figure itemscope="" itemtype="http://schema.org/ImageObject" class="col-xs-12 col-sm-6 padding-bottom-xs-15">
+                                    <a href="https://dentists.dentacoin.com/assets/uploads/dentacoin-dentacare-tutorial-dentists.pdf" data-dentist="https://dentists.dentacoin.com/assets/uploads/dentacoin-dentacare-tutorial-dentists.pdf" data-patient="https://dentists.dentacoin.com/assets/uploads/dentacoin-dentacare-tutorial-patients.pdf" target="_blank" class="changeable-href-on-user-type-change">
+                                        <img alt="Dentacare app guide" itemprop="contentUrl" src="https://dentists.dentacoin.com/assets/uploads/dentacare-oral-health-app-dentists-preview.png" class="changeable-src-on-user-type-change" data-dentist="https://dentists.dentacoin.com/assets/uploads/dentacare-oral-health-app-dentists-preview.png" data-patient="https://dentists.dentacoin.com/assets/uploads/dentacare-oral-health-app-patients-preview.png">
+                                        <span class="padding-top-20 text-center btn-container display-block">
+                                            <span class="dark-blue-white-btn blue-border fs-16"> DOWNLOAD PDF GUIDE</span>
+                                        </span>
+                                    </a>
+                                </figure>
                                 <div class="col-xs-12 col-sm-6">
                                     <iframe src="https://www.youtube.com/embed/L0gsFuEqUzk" class="changeable-src-on-user-type-change" data-dentist="https://www.youtube.com/embed/L0gsFuEqUzk" data-patient="https://www.youtube.com/embed/G3hxcSxAi8I"></iframe>
                                     <div class="padding-top-20 text-center btn-container">
