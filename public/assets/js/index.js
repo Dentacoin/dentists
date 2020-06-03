@@ -375,15 +375,17 @@ if (!$('body').hasClass('logged-in')  && $('body').hasClass('home') || $('body')
         ]
     });
 
-    if (basic.property_exists(get_params, 'type')) {
-        if (get_params.type == 'patient') {
-            $('.navigation-sidebar .page-nav a').removeClass('active');
-            $('.navigation-sidebar .page-nav a[data-type="patients"]').addClass('active');
-            ifPatient();
-        } else if (get_params.type == 'dentist-promo-banners') {
-            $('button[data-scroll-to="scroll-to-badges"]').click();
+    $(window).on('load', function() {
+        if (basic.property_exists(get_params, 'type')) {
+            if (get_params.type == 'patient') {
+                $('.navigation-sidebar .page-nav a').removeClass('active');
+                $('.navigation-sidebar .page-nav a[data-type="patients"]').addClass('active');
+                ifPatient();
+            } else if (get_params.type == 'dentist-promo-banners') {
+                $('button[data-scroll-to="scroll-to-badges"]').click();
+            }
         }
-    }
+    });
 }
 
 //make equal height for all descriptions in options section
