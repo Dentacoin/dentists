@@ -381,7 +381,7 @@ if (!$('body').hasClass('logged-in')  && $('body').hasClass('home') || $('body')
             $('.navigation-sidebar .page-nav a[data-type="patients"]').addClass('active');
             ifPatient();
         } else if (get_params.type == 'dentist-promo-banners') {
-            $('button[data-scroll-to="scroll-to-promo-banners"]').click();
+            $('button[data-scroll-to="scroll-to-badges"]').click();
         }
     }
 }
