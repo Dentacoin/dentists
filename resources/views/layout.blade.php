@@ -25,9 +25,14 @@
     <style>
 
     </style>
-    <link rel="stylesheet" type="text/css" href="/dist/css/front-libs-style.css?v=1.0.71">
-    <link rel="stylesheet" type="text/css" href="/assets/css/style.css?v=1.0.71">
-    <link rel="stylesheet" type="text/css" href="https://dentacoin.com/assets/libs/dentacoin-login-gateway/css/dentacoin-login-gateway-style.css?v=1.0.71"/>
+    <link rel="stylesheet" type="text/css" href="/dist/css/front-libs-style.css?v=1.0.72">
+    <link rel="stylesheet" type="text/css" href="/assets/css/style.css?v=1.0.72">
+
+    @if((new \App\Http\Controllers\UserController())->checkSession())
+        <link rel="stylesheet" type="text/css" href="https://dentacoin.com/assets/libs/dentacoin-mini-hub/css/style.css?v=1.0.72">
+    @else
+        <link rel="stylesheet" type="text/css" href="https://dentacoin.com/assets/libs/dentacoin-login-gateway/css/dentacoin-login-gateway-style.css?v=1.0.72"/>
+    @endif
     <script>
         var HOME_URL = '{{ route("home") }}';
     </script>
@@ -70,7 +75,7 @@
     </noscript>
     <!-- End Facebook Pixel Code -->
 </head>
-<body class="@if(!empty(Route::current())) {{Route::current()->getName()}} @else class-404 @endif @if((new \App\Http\Controllers\UserController())->checkSession()) logged-in @endif">
+<body class="@if(!empty(Route::current())) {{Route::current()->getName()}} @else class-404 @endif @if((new \App\Http\Controllers\UserController())->checkSession()) logged-in @if((new \App\Http\Controllers\UserController())->checkPatientSession()) logged-patient @elseif((new \App\Http\Controllers\UserController())->checkDentistSession()) logged-dentist @endif @endif">
     @if(!empty(Route::current()))
         @php($header_menu = \App\Http\Controllers\Controller::instance()->getMenu('header'))
         @if(\App\Http\Controllers\UserController::instance()->checkSession())
@@ -223,7 +228,6 @@
         @php($token = (new \App\Http\Controllers\Controller())->encrypt(session('logged_user')['token'], getenv('API_ENCRYPTION_METHOD'), getenv('API_ENCRYPTION_KEY')))
         <img src="//dentacoin.com/custom-cookie?slug={{ urlencode($slug) }}&type={{ urlencode($type) }}&token={{ urlencode($token) }}" class="hide"/>
         <img src="//assurance.dentacoin.com/custom-cookie?slug={{ urlencode($slug) }}&type={{ urlencode($type) }}&token={{ urlencode($token) }}" class="hide"/>
-        <img src="//dentists.dentacoin.com/custom-cookie?slug={{ urlencode($slug) }}&type={{ urlencode($type) }}&token={{ urlencode($token) }}" class="hide"/>
         <img src="//reviews.dentacoin.com/custom-cookie?slug={{ urlencode($slug) }}&type={{ urlencode($type) }}&token={{ urlencode($token) }}" class="hide"/>
         <img src="//dentavox.dentacoin.com/custom-cookie?slug={{ urlencode($slug) }}&type={{ urlencode($type) }}&token={{ urlencode($token) }}" class="hide"/>
         <img src="//account.dentacoin.com/custom-cookie?slug={{ urlencode($slug) }}&type={{ urlencode($type) }}&token={{ urlencode($token) }}" class="hide"/>
@@ -269,13 +273,17 @@
             </figure>
         </div>
     </div>
-    <script src="https://dentacoin.com/assets/js/basic.js?v=1.0.71"></script>
+    <script src="https://dentacoin.com/assets/js/basic.js?v=1.0.72"></script>
     {{--<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCaVeHq_LOhQndssbmw-aDnlMwUG73yCdk&libraries=places&language=en"></script>--}}
-    <script src="/dist/js/front-libs-script.js?v=1.0.71"></script>
-    <script src="https://dentacoin.com/assets/libs/dentacoin-login-gateway/js/init.js?v=1.0.71"></script>
+    <script src="/dist/js/front-libs-script.js?v=1.0.72"></script>
+    @if((new \App\Http\Controllers\UserController())->checkSession())
+        <script src="https://dentacoin.com/assets/libs/dentacoin-mini-hub/js/init.js?v=1.0.72"></script>
+    @else
+        <script src="https://dentacoin.com/assets/libs/dentacoin-login-gateway/js/init.js?v=1.0.72"></script>
+    @endif
     {{--<script src="/assets/js/address.js"></script>--}}
     @yield("script_block")
-    <script src="/dist/js/front-script.js?v=1.0.71"></script>
+    <script src="/dist/js/front-script.js?v=1.0.72"></script>
     {{--<script src="/assets/js/index.js"></script>--}}
 
     {{--Multiple errors from laravel validation--}}

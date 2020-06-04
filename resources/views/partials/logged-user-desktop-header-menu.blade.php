@@ -19,7 +19,7 @@
                 <img alt="" itemprop="contentUrl" src="/assets/images/avatar-icon.svg"/>
             @endif
         </figure>
-        <span class="up-arrow">▲</span>
+        {{--<span class="up-arrow">▲</span>
         <div class="hidden-box">
             @if(!empty(Route::current()))
                 @if(Route::current()->getName() != 'home')
@@ -57,12 +57,12 @@
                         <a href="{{ route('user-logout') }}" class="logout"><i class="fa fa-power-off" aria-hidden="true"></i> Log out</a>
                     </div>
                     <div class="col-xs-6 inline-block">
-                        {{--<a href="{{ route('my-profile') }}" class="fs-16 white-dark-blue-btn">My account</a>--}}
+                        --}}{{--<a href="{{ route('my-profile') }}" class="fs-16 white-dark-blue-btn">My account</a>--}}{{--
                         <a href="//account.dentacoin.com?platform=dentists" class="fs-16 white-dark-blue-btn">My Account</a>
                     </div>
                 </div>
             </div>
-        </div>
+        </div>--}}
     </div>
     <a href="javascript:void(0)" class="hamburger inline-block"><i class="fa fa-bars" aria-hidden="true"></i></a>
 </div>
