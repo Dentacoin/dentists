@@ -12,7 +12,7 @@
                 <div>{{$dcn_balance}} DCN</div>
             @endif
         </div>
-        <figure itemscope="" itemtype="http://schema.org/ImageObject" class="inline-block header-avatar">
+        <figure itemscope="" itemtype="http://schema.org/ImageObject" class="inline-block header-avatar" id="header-avatar">
             @if(!empty($user_data->thumbnail_url))
                 <img alt="" itemprop="contentUrl" src="{{$user_data->thumbnail_url}}"/>
             @else
