@@ -684,19 +684,18 @@ async function loggedOrNotLogic() {
         });*/
 
         var miniHubParams = {
-            'type_hub': 'mini-hub-dentists',
             'element_id_to_bind' : 'header-avatar',
-            'platform' : 'dentacoin',
-            'log_out_link' : 'https://dentacoin.com/user-logout'
+            'platform' : 'dentists',
+            'log_out_link' : 'https://dentists.dentacoin.com/user-logout'
         };
 
         if ($('body').hasClass('logged-patient')) {
-            miniHubParams.type_user = 'patient';
+            miniHubParams.type_hub = 'mini-hub-patients';
             if ($('body').hasClass('home')) {
                 miniHubParams.without_apps = true;
             }
         } else if ($('body').hasClass('logged-dentist')) {
-            miniHubParams.type_user = 'dentist';
+            miniHubParams.type_hub = 'mini-hub-dentists';
             if ($('body').hasClass('home')) {
                 miniHubParams.without_apps = true;
             }
