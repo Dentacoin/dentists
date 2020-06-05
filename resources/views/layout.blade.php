@@ -25,13 +25,13 @@
     <style>
 
     </style>
-    <link rel="stylesheet" type="text/css" href="/dist/css/front-libs-style.css?v=1.0.72">
-    <link rel="stylesheet" type="text/css" href="/assets/css/style.css?v=1.0.72">
+    <link rel="stylesheet" type="text/css" href="/dist/css/front-libs-style.css?v=1.0.73">
+    <link rel="stylesheet" type="text/css" href="/assets/css/style.css?v=1.0.73">
 
     @if((new \App\Http\Controllers\UserController())->checkSession())
-        <link rel="stylesheet" type="text/css" href="https://dentacoin.com/assets/libs/dentacoin-mini-hub/css/style.css?v=1.0.72">
+        <link rel="stylesheet" type="text/css" href="https://dentacoin.com/assets/libs/dentacoin-mini-hub/css/style.css?v=1.0.73">
     @else
-        <link rel="stylesheet" type="text/css" href="https://dentacoin.com/assets/libs/dentacoin-login-gateway/css/dentacoin-login-gateway-style.css?v=1.0.72"/>
+        <link rel="stylesheet" type="text/css" href="https://dentacoin.com/assets/libs/dentacoin-login-gateway/css/dentacoin-login-gateway-style.css?v=1.0.73"/>
     @endif
     <script>
         var HOME_URL = '{{ route("home") }}';
@@ -214,23 +214,26 @@
             </div>
         </div>
     </footer>
-    @if(!\App\Http\Controllers\UserController::instance()->checkSession())
-        @if(!empty(session('logout_token')))
-            <img src="//dentacoin.com/custom-cookie?logout-token={{ urlencode(session('logout_token')) }}" class="hide"/>
-            {{--<img src="//assurance.dentacoin.com/custom-cookie?logout-token={{ urlencode(session('logout_token')) }}" class="hide"/>
-            <img src="//reviews.dentacoin.com/custom-cookie?logout-token={{ urlencode(session('logout_token')) }}" class="hide"/>
-            <img src="//dentavox.dentacoin.com/custom-cookie?logout-token={{ urlencode(session('logout_token')) }}" class="hide"/>
-            <img src="//account.dentacoin.com/custom-cookie?logout-token={{ urlencode(session('logout_token')) }}" class="hide"/>--}}
-        @endif
-    @else
+    @php($crossLogin = \Illuminate\Support\Facades\Input::get('cross-login'))
+    @if(\App\Http\Controllers\UserController::instance()->checkSession() && !empty($crossLogin))
         @php($slug = (new \App\Http\Controllers\Controller())->encrypt(session('logged_user')['id'], getenv('API_ENCRYPTION_METHOD'), getenv('API_ENCRYPTION_KEY')))
         @php($type = (new \App\Http\Controllers\Controller())->encrypt(session('logged_user')['type'], getenv('API_ENCRYPTION_METHOD'), getenv('API_ENCRYPTION_KEY')))
         @php($token = (new \App\Http\Controllers\Controller())->encrypt(session('logged_user')['token'], getenv('API_ENCRYPTION_METHOD'), getenv('API_ENCRYPTION_KEY')))
         <img src="//dentacoin.com/custom-cookie?slug={{ urlencode($slug) }}&type={{ urlencode($type) }}&token={{ urlencode($token) }}" class="hide"/>
-        {{--<img src="//assurance.dentacoin.com/custom-cookie?slug={{ urlencode($slug) }}&type={{ urlencode($type) }}&token={{ urlencode($token) }}" class="hide"/>
+        <img src="//assurance.dentacoin.com/custom-cookie?slug={{ urlencode($slug) }}&type={{ urlencode($type) }}&token={{ urlencode($token) }}" class="hide"/>
         <img src="//reviews.dentacoin.com/custom-cookie?slug={{ urlencode($slug) }}&type={{ urlencode($type) }}&token={{ urlencode($token) }}" class="hide"/>
         <img src="//dentavox.dentacoin.com/custom-cookie?slug={{ urlencode($slug) }}&type={{ urlencode($type) }}&token={{ urlencode($token) }}" class="hide"/>
-        <img src="//account.dentacoin.com/custom-cookie?slug={{ urlencode($slug) }}&type={{ urlencode($type) }}&token={{ urlencode($token) }}" class="hide"/>--}}
+        <img src="//account.dentacoin.com/custom-cookie?slug={{ urlencode($slug) }}&type={{ urlencode($type) }}&token={{ urlencode($token) }}" class="hide"/>
+        <img src="//hub.dentacoin.com/custom-cookie?slug={{ urlencode($slug) }}&type={{ urlencode($type) }}&token={{ urlencode($token) }}" class="hide"/>
+    @else
+        @if(!empty(session('logout_token')))
+            <img src="//dentacoin.com/custom-cookie?logout-token={{ urlencode(session('logout_token')) }}" class="hide"/>
+            <img src="//assurance.dentacoin.com/custom-cookie?logout-token={{ urlencode(session('logout_token')) }}" class="hide"/>
+            <img src="//reviews.dentacoin.com/custom-cookie?logout-token={{ urlencode(session('logout_token')) }}" class="hide"/>
+            <img src="//dentavox.dentacoin.com/custom-cookie?logout-token={{ urlencode(session('logout_token')) }}" class="hide"/>
+            <img src="//account.dentacoin.com/custom-cookie?logout-token={{ urlencode(session('logout_token')) }}" class="hide"/>
+            <img src="//hub.dentacoin.com/custom-cookie?logout-token={{ urlencode(session('logout_token')) }}" class="hide"/>
+        @endif
     @endif
     <div class="bottom-fixed-container">
         {{--<a href="https://dentacoin.com/holiday-calendar-2019" target="_blank" class="display-block banner">
@@ -273,17 +276,17 @@
             </figure>
         </div>
     </div>
-    <script src="https://dentacoin.com/assets/js/basic.js?v=1.0.72"></script>
+    <script src="https://dentacoin.com/assets/js/basic.js?v=1.0.73"></script>
     {{--<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCaVeHq_LOhQndssbmw-aDnlMwUG73yCdk&libraries=places&language=en"></script>--}}
-    <script src="/dist/js/front-libs-script.js?v=1.0.72"></script>
+    <script src="/dist/js/front-libs-script.js?v=1.0.73"></script>
     @if((new \App\Http\Controllers\UserController())->checkSession())
-        <script src="https://dentacoin.com/assets/libs/dentacoin-mini-hub/js/init.js?v=1.0.72"></script>
+        <script src="https://dentacoin.com/assets/libs/dentacoin-mini-hub/js/init.js?v=1.0.73"></script>
     @else
-        <script src="https://dentacoin.com/assets/libs/dentacoin-login-gateway/js/init.js?v=1.0.72"></script>
+        <script src="https://dentacoin.com/assets/libs/dentacoin-login-gateway/js/init.js?v=1.0.73"></script>
     @endif
     {{--<script src="/assets/js/address.js"></script>--}}
     @yield("script_block")
-    <script src="/dist/js/front-script.js?v=1.0.72"></script>
+    <script src="/dist/js/front-script.js?v=1.0.73"></script>
     {{--<script src="/assets/js/index.js"></script>--}}
 
     {{--Multiple errors from laravel validation--}}
