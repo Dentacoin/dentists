@@ -28,9 +28,13 @@
     <link rel="stylesheet" type="text/css" href="/dist/css/front-libs-style.css?v=1.0.73">
     <link rel="stylesheet" type="text/css" href="/assets/css/style.css?v=1.0.73">
 
+    @if((!(new \App\Http\Controllers\UserController())->checkSession() && !empty(Route::current()) && (Route::current()->getName() == 'home')) || ((new \App\Http\Controllers\UserController())->checkSession() && !empty(Route::current()) && (Route::current()->getName() == 'logged-home')))
+        <link rel="stylesheet" type="text/css" href="//dentacoin.com/assets/libs/dentacoin-mini-hub/css/styles-big-hub.css?v=1.0.73">
+    @endif
+
     @if((new \App\Http\Controllers\UserController())->checkSession())
         <link rel="stylesheet" type="text/css" href="https://dentacoin.com/assets/libs/dentacoin-mini-hub/css/style.css?v=1.0.73">
-    @else
+    @elseif (!(new \App\Http\Controllers\UserController())->checkSession())
         <link rel="stylesheet" type="text/css" href="https://dentacoin.com/assets/libs/dentacoin-login-gateway/css/dentacoin-login-gateway-style.css?v=1.0.73"/>
     @endif
     <script>
@@ -278,7 +282,7 @@
     <script src="https://dentacoin.com/assets/js/basic.js?v=1.0.73"></script>
     {{--<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCaVeHq_LOhQndssbmw-aDnlMwUG73yCdk&libraries=places&language=en"></script>--}}
     <script src="/dist/js/front-libs-script.js?v=1.0.73"></script>
-    @if((new \App\Http\Controllers\UserController())->checkSession())
+    @if((new \App\Http\Controllers\UserController())->checkSession() || (!(new \App\Http\Controllers\UserController())->checkSession() && !empty(Route::current()) && (Route::current()->getName() == 'home')))
         <script src="https://dentacoin.com/assets/libs/dentacoin-mini-hub/js/init.js?v=1.0.73"></script>
     @else
         <script src="https://dentacoin.com/assets/libs/dentacoin-login-gateway/js/init.js?v=1.0.73"></script>

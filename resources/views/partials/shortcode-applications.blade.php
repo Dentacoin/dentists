@@ -1,7 +1,8 @@
-@php($applications = (new \App\Http\Controllers\HomeController())->getDentacoinHubApplications())
+<section class="applications-section" data-scroll-here="tools"><div id="append-big-hub-dentists"></div></section>
+{{--@php($applications = (new \App\Http\Controllers\HomeController())->getDentacoinHubApplications())
 @if(!empty($applications))
     @php($latest_blog_articles = (new \App\Http\Controllers\HomeController())->getBlogLatestPosts())
-    <section class="container-fluid applications-section" data-scroll-here="tools">
+    <section class="applications-section" data-scroll-here="tools">
         <div class="row">
             <div class="apps-list fullpage-section two col-xs-12 col-md-6">
                 <div class="list">
@@ -36,4 +37,4 @@
             </div>
         </div>
     </section>
-@endif
+@endif--}}
