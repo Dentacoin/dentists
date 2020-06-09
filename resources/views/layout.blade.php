@@ -284,7 +284,8 @@
     <script src="/dist/js/front-libs-script.js?v=1.0.73"></script>
     @if((new \App\Http\Controllers\UserController())->checkSession() || (!(new \App\Http\Controllers\UserController())->checkSession() && !empty(Route::current()) && (Route::current()->getName() == 'home')))
         <script src="https://dentacoin.com/assets/libs/dentacoin-mini-hub/js/init.js?v=1.0.73"></script>
-    @else
+    @endif
+    @if (!(new \App\Http\Controllers\UserController())->checkSession())
         <script src="https://dentacoin.com/assets/libs/dentacoin-login-gateway/js/init.js?v=1.0.73"></script>
     @endif
     {{--<script src="/assets/js/address.js"></script>--}}
