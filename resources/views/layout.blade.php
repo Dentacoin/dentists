@@ -98,7 +98,7 @@
             </div>
         </nav>
     @endif
-    <header>
+    <header class="sticky-header">
         <div class="container">
             <div class="row fs-0">
                 <figure itemscope="" itemtype="http://schema.org/Organization" class="col-xs-3 inline-block padding-left-xs-10">
