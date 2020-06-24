@@ -37,8 +37,6 @@ Route::group(['prefix' => '/', 'middleware' => 'frontEndMiddleware'], function (
 
     Route::post('/invite-your-clinic', 'UserController@inviteYourClinic')->name('invite-your-clinic');
 
-    Route::post('/check-dentist-account', 'UserController@checkDentistAccount')->name('check-dentist-account');
-
     Route::get('/custom-cookie', 'UserController@manageCustomCookie')->name('custom-cookie');
 
     //======================================= AJAX ========================================

@@ -80,33 +80,6 @@ class UserController extends Controller {
         return $countries[$id - 1]->name;
     }
 
-    protected function checkDentistAccount(Request $request) {
-        $customMessages = [
-            'email.required' => 'Email address is required.',
-            'password.required' => 'Password is required.',
-        ];
-        $this->validate($request, [
-            'email' => 'required|max:100',
-            'password' => 'required|max:50'
-        ], $customMessages);
-
-        $data = $request->input();
-
-        $api_response = (new APIRequestsController())->dentistLogin($data, true);
-        if($api_response['success']) {
-            $approved_statuses = array('approved', 'pending', 'test');
-            if($api_response['data']['self_deleted'] != NULL) {
-                return response()->json(['error' => true, 'message' => 'This account has been deleted by its owner and cannot be restored.']);
-            } else if(!in_array($api_response['data']['status'], $approved_statuses)) {
-                return response()->json(['error' => true, 'message' => 'This account is not approved by Dentacoin team yet, please try again later.']);
-            } else {
-                return response()->json(['success' => true]);
-            }
-        } else {
-            return response()->json(['error' => true, 'message' => 'Wrong username or password.']);
-        }
-    }
-
     protected function inviteYourClinic(Request $request) {
         $data = $request->input();
 
@@ -123,7 +96,7 @@ class UserController extends Controller {
 
             $user = (new APIRequestsController())->getUserData($slug);
             if($user) {
-                $approved_statuses = array('approved', 'pending', 'test');
+                $approved_statuses = array('approved','test','added_by_clinic_claimed','added_by_dentist_claimed');
                 if($user->self_deleted != NULL) {
                     return abort(404);
                 } else if(!in_array($user->status, $approved_statuses)) {
