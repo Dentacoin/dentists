@@ -297,7 +297,7 @@
     </div>
 </div>
 
-@if (!empty((new \App\Http\Controllers\UserController())->checkSession()))
+@if ((new \App\Http\Controllers\UserController())->checkSession())
     @php($userData = (new \App\Http\Controllers\APIRequestsController())->getUserData(session('logged_user')['id']))
     @php($logged_in_greeting = "👋  Hi, ".(new \App\Http\Controllers\Controller())->prepareUserName($userData)."! Welcome to Dentacoin. Ask any question here!")
 @else
