@@ -7,10 +7,13 @@
 
 @import "global/global";
 @import "additionals/modules";
+@import "additionals/shortcodes";
 @import "layout/header";
 @import "layout/footer";
 
 @import "pages/homepage";
+@import "pages/homepage-redesign";
+@import "pages/how-it-works";
 @import "pages/faq";
 @import "pages/download-guides-assets";
 @import "pages/404";

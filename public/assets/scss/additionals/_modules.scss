@@ -23,6 +23,25 @@
     }
 }
 
+.dark-blue-light-blue-btn, input[type='submit'].dark-blue-light-blue-btn {
+    font-size: 20px;
+    color: $dark_blue;
+    background-color: #69c3ea;
+    padding: 10px 20px;
+    font-family: 'Calibri-Bold';
+    display: inline-block;
+    border: 2px solid #69c3ea;
+    @include rounded(4px);  
+    @include simple_transition(.3s);
+    &:hover {
+        color: #69c3ea;
+        background-color: $dark_blue;
+    }
+    &:focus {
+        color: $dark_blue;
+    }
+}
+
 .white-light-blue-btn, input[type='submit'].white-light-blue-btn-btn {
     font-size: 20px;
     color: white;
@@ -248,7 +267,6 @@
             @include rounded(4px);
         }
     }
-
     &.copy-link {
         display: flex;
         position: relative;
@@ -266,6 +284,80 @@
             background-color: $dark_blue;
             text-align: center;
             @include rounded(0 8px 8px 0);
+        }
+    }
+    &.header-banner {
+        height: 70px;
+        position: relative;
+        background-image: url('/assets/uploads/contact-banner-girl.png'), url('/assets/uploads/contact-banner-bg.png');
+        background-position: left 15% bottom 0, center bottom 0;
+        background-repeat: no-repeat ,no-repeat;
+        background-size: auto 100%, cover;
+        h3 {
+            width: 100%;
+            @include vertical-horizontal-align(absolute);
+        }
+        @include breakpoint($md-only) {
+            background-position: left 5% bottom 0, center bottom 0;
+        }
+        @include breakpoint($sm-only) {
+            background-position: left 5% bottom 0, center bottom 0;
+            h3 {
+                font-size: 18px !important;
+                width: 80%;
+                margin-left: 20%;
+                text-align: center;
+                left: 0;
+                -webkit-transform: translate(0, -50%);
+                -ms-transform: translate(0, -50%);
+                transform: translate(0, -50%);
+            }
+        }
+        @include breakpoint($xs) {
+            height: 80px;
+            background-position: left 0 bottom 0, center bottom 0;
+            h3 {
+                font-size: 14px !important;
+                width: 45%;
+                text-align: left;
+                left: 55%;
+                -webkit-transform: translate(0, -50%);
+                -ms-transform: translate(0, -50%);
+                transform: translate(0, -50%);
+                a {
+                    display: block;
+                    width: 120px;
+                    font-size: 14px;
+                    padding: 2px 8px;
+                    text-align: center;
+                    margin-top: 5px;
+                    margin-left: 0 !important;
+                }
+            }
+        }
+    }
+    &.custom-checkbox-style {
+        font-size: 0;
+        input[type="checkbox"] {
+            display: none !important;
+        }
+        .custom-checkbox {
+            width: 20px;
+            height: 20px;
+            border: 1.5px solid $dark_blue;
+            display: inline-block;
+            vertical-align: top;
+            background-color: white;
+            color: white;
+            font-size: 14px;
+            text-align: center;
+            line-height: 20px;
+            &.active {
+                background-color: $dark_blue;
+            }
+        }
+        label {
+            cursor: pointer;
         }
     }
 }

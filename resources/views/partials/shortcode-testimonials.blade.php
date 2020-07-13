@@ -1,6 +1,6 @@
 @php($testimonials = (new \App\Http\Controllers\HomeController())->getAllTestimonials())
 @if(!empty($testimonials))
-    <section class="container padding-bottom-70">
+    <section class="container padding-bottom-70 shortcode testimonials">
         <div class="row">
             <div class="col-xs-12">
                 <div class="testimonials-slider-section">

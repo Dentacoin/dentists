@@ -20,6 +20,14 @@ class HomeController extends Controller
         }
     }
 
+    public function getHomeView() {
+        return view('pages/back-up-html/homepage');
+    }
+
+    public function getHowItWorksView() {
+        return view('pages/back-up-html/how-it-works');
+    }
+
     public function getAllTestimonials() {
         return DB::connection('mysql2')->table('user_expressions')->leftJoin('media', 'user_expressions.media_id', '=', 'media.id')->select('user_expressions.*', 'media.name as media_name', 'media.alt as media_alt')->orderByRaw('user_expressions.order_id ASC')->get()->toArray();
     }

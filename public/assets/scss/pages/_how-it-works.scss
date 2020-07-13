@@ -1,0 +1,81 @@
+.section-how-it-works-above-the-fold {
+    background-image: url('/assets/uploads/above-the-fold-background.png');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    .mobile-dentist {
+        display: none;
+    }
+    @include breakpoint($sm-only) {
+        background-position: 40% center;
+    }
+    @include breakpoint($xs) {
+        background: none;
+        .above-the-fold-content {
+            color: $dark_blue;
+        }
+        .mobile-dentist {
+            display: block;
+        }
+    }
+}
+
+.section-become-dcn-partner {
+    .container-for-line-crossing-circles {
+        position: relative;
+        &:after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            left: 0;
+            top: 73.5px;
+            z-index: -1;
+            height: 3px;
+            background-color: $dark_blue;
+            @include breakpoint($sm-down) {
+                display: none;
+            }
+        }
+    }
+}
+
+.section-why-dcn-is-good {
+    .single-row {
+        figure {
+            width: 55%;
+        }
+        .row-content {
+            width: 45%;
+        }
+        &.display-flex {
+            display: flex;
+            align-items: center;
+            figure {
+                order: 2;
+            }
+            .row-content {
+                order: 1;
+            }
+        }
+        @include breakpoint($sm-only) {
+            figure {
+                width: 45%;
+            }
+            .row-content {
+                width: 55%;
+            }
+        }
+        @include breakpoint($xs) {
+            &.display-flex {
+                display: block;
+            }
+            figure {
+                width: 100%;
+            }
+            .row-content {
+                width: 100%;
+                text-align: center;
+            }
+        }
+    }
+}

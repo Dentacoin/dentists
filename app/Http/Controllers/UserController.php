@@ -80,13 +80,6 @@ class UserController extends Controller {
         return $countries[$id - 1]->name;
     }
 
-    protected function inviteYourClinic(Request $request) {
-        $data = $request->input();
-
-        var_dump($data);
-        die();
-    }
-
     protected function manageCustomCookie(Request $request) {
         if(!empty(Input::get('slug')) && !empty(Input::get('type')) && !empty(Input::get('token'))) {
             //logging
@@ -153,5 +146,15 @@ class UserController extends Controller {
         } else {
             return response()->json(['error' => true]);
         }
+    }
+
+    protected function submitHubspotForm(Request $request) {
+        $this->validate($request, [
+            'route' => 'required'
+        ], [
+            'route.required' => 'Route is required.'
+        ]);
+
+        return redirect()->route($request->input('route'))->with(['success' => true, 'popup-html' => 'Thank you for your interest in Dentacoin. We will be in contact shortly. Meanwhile, feel free to book a call with our Onboarding team:<div class="text-center padding-top-30 padding-bottom-20"><a href="https://meetings.hubspot.com/betina-bogdanova" class="white-dark-blue-btn" target="_blank">BOOK A CALL</a></div>']);
     }
 }

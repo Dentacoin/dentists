@@ -35,6 +35,12 @@
   font-weight: normal;
   font-style: normal; }
 @font-face {
+  font-family: "Lato-Medium";
+  src: url("/assets/fonts/Lato-Medium.eot");
+  src: url("/assets/fonts/Lato-Medium.eot?#iefix") format("embedded-opentype"), url("/assets/fonts/Lato-Medium.woff2") format("woff2"), url("/assets/fonts/Lato-Medium.woff") format("woff"), url("/assets/fonts/Lato-Medium.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal; }
+@font-face {
   font-family: "Calibri Light";
   src: url("/assets/fonts/calibril.eot");
   src: url("/assets/fonts/calibril.eot?#iefix") format("embedded-opentype"), url("/assets/fonts/calibril.woff2") format("woff2"), url("/assets/fonts/calibril.woff") format("woff"), url("/assets/fonts/calibril.ttf") format("truetype");
@@ -60,6 +66,9 @@
 
 .lato-light {
   font-family: "Lato-Light"; }
+
+.lato-medium {
+  font-family: "Lato-Medium"; }
 
 .calibri-bold {
   font-family: "Calibri-Bold"; }
@@ -115,6 +124,9 @@
 .beige-bg {
   background-color: #f7f7f7; }
 
+.color-light-blue {
+  color: #679dca; }
+
 .white-dark-blue-btn, input[type='submit'].white-dark-blue-btn {
   font-size: 20px;
   color: white;
@@ -141,6 +153,29 @@
     padding: 6px 15px; }
   .white-dark-blue-btn.white-border, input[type='submit'].white-dark-blue-btn.white-border {
     border: 2px solid white; }
+
+.dark-blue-light-blue-btn, input[type='submit'].dark-blue-light-blue-btn {
+  font-size: 20px;
+  color: #002248;
+  background-color: #69c3ea;
+  padding: 10px 20px;
+  font-family: 'Calibri-Bold';
+  display: inline-block;
+  border: 2px solid #69c3ea;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  border-radius: 4px;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -o-transition: 0.3s;
+  -ms-transition: 0.3s;
+  transition: 0.3s; }
+  .dark-blue-light-blue-btn:hover, input[type='submit'].dark-blue-light-blue-btn:hover {
+    color: #69c3ea;
+    background-color: #002248; }
+  .dark-blue-light-blue-btn:focus, input[type='submit'].dark-blue-light-blue-btn:focus {
+    color: #002248; }
 
 .white-light-blue-btn, input[type='submit'].white-light-blue-btn-btn {
   font-size: 20px;
@@ -416,6 +451,75 @@
     -moz-border-radius: 0 8px 8px 0;
     -ms-border-radius: 0 8px 8px 0;
     border-radius: 0 8px 8px 0; }
+.module.header-banner {
+  height: 70px;
+  position: relative;
+  background-image: url("/assets/uploads/contact-banner-girl.png"), url("/assets/uploads/contact-banner-bg.png");
+  background-position: left 15% bottom 0, center bottom 0;
+  background-repeat: no-repeat ,no-repeat;
+  background-size: auto 100%, cover; }
+  .module.header-banner h3 {
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%); }
+  @media screen and (min-width: 992px) and (max-width: 1199px) {
+    .module.header-banner {
+      background-position: left 5% bottom 0, center bottom 0; } }
+  @media screen and (min-width: 768px) and (max-width: 991px) {
+    .module.header-banner {
+      background-position: left 5% bottom 0, center bottom 0; }
+      .module.header-banner h3 {
+        font-size: 18px !important;
+        width: 80%;
+        margin-left: 20%;
+        text-align: center;
+        left: 0;
+        -webkit-transform: translate(0, -50%);
+        -ms-transform: translate(0, -50%);
+        transform: translate(0, -50%); } }
+  @media screen and (max-width: 767px) {
+    .module.header-banner {
+      height: 80px;
+      background-position: left 0 bottom 0, center bottom 0; }
+      .module.header-banner h3 {
+        font-size: 14px !important;
+        width: 45%;
+        text-align: left;
+        left: 55%;
+        -webkit-transform: translate(0, -50%);
+        -ms-transform: translate(0, -50%);
+        transform: translate(0, -50%); }
+        .module.header-banner h3 a {
+          display: block;
+          width: 120px;
+          font-size: 14px;
+          padding: 2px 8px;
+          text-align: center;
+          margin-top: 5px;
+          margin-left: 0 !important; } }
+.module.custom-checkbox-style {
+  font-size: 0; }
+  .module.custom-checkbox-style input[type="checkbox"] {
+    display: none !important; }
+  .module.custom-checkbox-style .custom-checkbox {
+    width: 20px;
+    height: 20px;
+    border: 1.5px solid #002248;
+    display: inline-block;
+    vertical-align: top;
+    background-color: white;
+    color: white;
+    font-size: 14px;
+    text-align: center;
+    line-height: 20px; }
+    .module.custom-checkbox-style .custom-checkbox.active {
+      background-color: #002248; }
+  .module.custom-checkbox-style label {
+    cursor: pointer; }
 
 body {
   background-color: #222d32; }

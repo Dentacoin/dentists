@@ -189,4 +189,21 @@ class Controller extends BaseController
             $ipaddress = 'UNKNOWN';
         return $ipaddress;
     }
+
+    public function prepareUserName($userData) {
+        if ($userData->is_dentist) {
+            $api_enums = (new APIRequestsController())->getAllEnums();
+            if (!(empty($api_enums)) && !empty($userData->title)) {
+                foreach ($api_enums->titles as $key => $title) {
+                    if ($userData->title == $key) {
+                        return $title . ' ' . $userData->name;
+                    }
+                }
+            } else {
+                return $userData->name;
+            }
+        } else {
+            return $userData->name;
+        }
+    }
 }

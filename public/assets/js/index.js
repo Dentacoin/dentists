@@ -22,6 +22,8 @@ $(window).on('resize', function(){
 });
 
 $(window).on('scroll', function()  {
+    loadDeferImages();
+
     onDesktopScrollMakeStickySidebarDownloadAssetsPage();
 });
 
@@ -102,8 +104,169 @@ function initCaptchaRefreshEvent()  {
 } 
 initCaptchaRefreshEvent();
 
+function scrollToContactUsNow() {
+    $(document).on('click', '.scroll-to-contact-us-now', function() {
+        for(var i = 0, len = jQuery('img[data-defer-src]').length; i < len; i+=1) {
+            if(jQuery('img[data-defer-src]').eq(i).attr('src') === undefined) {
+                jQuery('img[data-defer-src]').eq(i).attr('src', jQuery('img[data-defer-src]').eq(i).attr('data-defer-src'));
+            }
+        }
+
+        $('html, body').animate({
+            scrollTop: $('.shortcode.contact-us').offset().top - $('header').outerHeight()
+        }, 300);
+    });
+}
+scrollToContactUsNow();
+
+function initSlidingContractFormLogic() {
+    if ($('.sliding-fields-container').length) {
+        $('.sliding-fields-container .step.two [name="interested_in_"]').on('change', function() {
+            if ($(this).val() == 'Other (please specify)') {
+                $('.step.two').append('<div class="padding-bottom-20 field-parent on-right-side inline-block-top select-other-value"><div class="custom-google-label-style module" data-input-colorful-border="true"><label for="additional_information">Other:</label><input class="full-rounded form-field" name="additional_information" maxlength="100" id="additional_information" type="text"/></div></div>');
+
+                $('.step.two label[for="additional_information"]').addClass('active-label');
+                $('.step.two #additional_information').focus();
+            } else {
+                if ($('.step.two .select-other-value').length) {
+                    $('.step.two .select-other-value').remove();
+                }
+            }
+        });
+
+        $('.bullet-navigation [data-step-bullet]').click(function() {
+            var this_btn = $(this);
+            switch($('.sliding-fields-container').attr('data-current-step')) {
+                case 'one':
+                    if (this_btn.attr('data-step-bullet') == 'two' || this_btn.attr('data-step-bullet') == 'two') {
+                        validateFirstStep();
+                    }
+                    break;
+                case 'two':
+                    if (this_btn.attr('data-step-bullet') == 'one') {
+                        $('.sliding-fields-container').attr('data-current-step', 'one').find('.steps-wrapper').removeClass('scroll-to-second-step');
+
+                        $('.bullet-navigation [data-step-bullet]').removeClass('active');
+                        $('.bullet-navigation [data-step-bullet="one"]').addClass('active');
+                    } else if (this_btn.attr('data-step-bullet') == 'three') {
+                        validateSecondStep();
+                    }
+                    break;
+                case 'three':
+                    if (this_btn.attr('data-step-bullet') == 'one') {
+                        $('.sliding-fields-container').attr('data-current-step', 'one').find('.steps-wrapper').removeClass('scroll-to-second-step scroll-to-third-step');
+
+                        $('.bullet-navigation [data-step-bullet]').removeClass('active');
+                        $('.bullet-navigation [data-step-bullet="one"]').addClass('active');
+                    } else if (this_btn.attr('data-step-bullet') == 'two') {
+                        $('.sliding-fields-container').attr('data-current-step', 'two').find('.steps-wrapper').removeClass('scroll-to-third-step');
+
+                        $('.bullet-navigation [data-step-bullet]').removeClass('active');
+                        $('.bullet-navigation [data-step-bullet="two"]').addClass('active');
+                    }
+                    break;
+            }
+        });
+
+        function validateFirstStep() {
+            $('.step.one .error-handle').remove();
+            var errors = false;
+
+            if ($('.step.one [name="firstname"]').val().trim() == '') {
+                customErrorHandle($('.step.one [name="firstname"]').closest('.field-parent'), 'This field is required.');
+                errors = true;
+            }
+
+            if (!basic.validateEmail($('.step.one [name="email"]').val().trim())) {
+                customErrorHandle($('.step.one [name="email"]').closest('.field-parent'), 'Please enter valid email address.');
+                errors = true;
+            }
+
+            if (!$('.step.one [name="hs_legal_basis"]').is(':checked')) {
+                customErrorHandle($('.step.one [name="hs_legal_basis"]').closest('.gdpr-checkbox'), 'Please check the checkbox.');
+                errors = true;
+            }
+
+            if (!errors) {
+                $('.sliding-fields-container').attr('data-current-step', 'two').find('.steps-wrapper').addClass('scroll-to-second-step');
+
+                $('.bullet-navigation [data-step-bullet]').removeClass('active');
+                $('.bullet-navigation [data-step-bullet="two"]').addClass('active');
+            }
+        }
+
+        function validateSecondStep() {
+            $('.step.two .error-handle').remove();
+            var errors = false;
+
+            if ($('.step.two [name="jobtitle"]').val().trim() == '') {
+                customErrorHandle($('.step.two [name="jobtitle"]').closest('.field-parent'), 'This field is required.');
+                errors = true;
+            }
+
+            if ($('.step.two [name="interested_in_"]').val().trim() == '' || $('.step.two [name="interested_in_"]').val().trim() == 'disabled') {
+                customErrorHandle($('.step.two [name="interested_in_"]').closest('.field-parent'), 'This field is required.');
+                errors = true;
+            }
+
+            if ($('.step.two #additional_information').length && $('.step.two #additional_information').val().trim() == '') {
+                customErrorHandle($('.step.two #additional_information').closest('.field-parent'), 'This field is required.');
+                errors = true;
+            }
+
+            if (!errors) {
+                $('.sliding-fields-container').attr('data-current-step', 'three').find('.steps-wrapper').addClass('scroll-to-third-step');
+
+                $('.bullet-navigation [data-step-bullet]').removeClass('active');
+                $('.bullet-navigation [data-step-bullet="three"]').addClass('active');
+            }
+        }
+
+        function validateThirdStep(form) {
+            $('.step.three .error-handle').remove();
+            var errors = false;
+
+            if ($('.step.three [name="website"]').val().trim() == '' || !basic.validateUrl($('.step.three [name="website"]').val().trim())) {
+                customErrorHandle($('.step.three [name="website"]').closest('.field-parent'), 'Please enter website URL starting with http:// or https://.');
+                errors = true;
+            }
+
+            if (!errors) {
+                form.submit();
+            }
+        }
+
+        $('.shortcode.contact-us form').on('submit', function(event) {
+            event.preventDefault();
+
+            var this_form_native = this;
+            switch($('.sliding-fields-container').attr('data-current-step')) {
+                case 'one':
+                    validateFirstStep();
+
+                    break;
+                case 'two':
+                    validateSecondStep();
+
+                    break;
+                case 'three':
+                    validateThirdStep(this_form_native);
+
+                    break;
+            }
+        });
+
+        /*$('.sliding-fields-container .slide-step').click(function() {
+
+        });*/
+    }
+}
+
 // ================== PAGES ==================
-if (!$('body').hasClass('logged-in')  && $('body').hasClass('home') || $('body').hasClass('logged-home')) {
+if (!$('body').hasClass('logged-in')  && ($('body').hasClass('home') || $('body').hasClass('logged-home') || $('body').hasClass('home-redesign'))) {
+
+    initSlidingContractFormLogic();
+
     $('.below-options .single-option').hover(function () {
         $(this).addClass('active');
         $(document).bind('mousemove', imageFollowingCursorPosition);
@@ -160,86 +323,8 @@ if (!$('body').hasClass('logged-in')  && $('body').hasClass('home') || $('body')
         }
         $('.testimonials-slider-section .slick-list').animate({height: height}, 500);
     });
-
-    if ($('#append-big-hub-dentists').length) {
-        var bigHubParams = {
-            'element_id_to_append' : 'append-big-hub-dentists',
-            'type_hub' : 'dentists'
-        };
-
-        dcnHub.initBigHub(bigHubParams);
-    }
-
-    /*var start_clicking_from_num = 1;
-    /!*var init_apps_interval_slide;*!/
-    //logic for open application popup
-    $('.single-application').click(function()   {
-        singleApplicationClick($(this), true);
-    });
-
-    function singleApplicationClick(element, stop_interval_sliding) {
-        $('.single-application').removeClass('show-shadow');
-        element.addClass('show-shadow');
-        var this_btn = element.find('.wrapper');
-        var extra_html = '';
-        var media_html = '';
-
-        if (this_btn.attr('data-articles') != undefined)    {
-            extra_html+='<div class="extra-html"><div class="extra-title">Latest Blog articles:</div><div class="slider-with-tool-data">';
-            var articles_arr = $.parseJSON(this_btn.attr('data-articles'));
-            for(var i = 0, len = articles_arr.length; i < len; i+=1)    {
-                extra_html+='<a target="_blank" href="'+articles_arr[i]['link']+'"><div class="single-slide text-left fs-0"><figure class="inline-block-top" itemscope="" itemtype="http://schema.org/ImageObject"><img src="'+articles_arr[i]['thumb']+'" alt="" itemprop="contentUrl"/></figure><div class="content inline-block-top"><div class="slide-title">'+articles_arr[i]['post_title']+'</div><time>'+dateObjToFormattedDate(new Date(parseInt(articles_arr[i]['date']) * 1000))+'</time></div></div></a>';
-            }
-            extra_html+='</div><div class="text-center padding-top-15"><a href="//blog.dentacoin.com/" class="white-dark-blue-btn" target="_blank">GO TO ALL</a></div></div>';
-        }
-
-        var description = '';
-        if (this_btn.attr('data-description') != '') {
-            description = $.parseJSON(this_btn.attr('data-description'));
-        }
-
-        var html = '<div class="container-fluid"><div class="row">'+media_html+'<div class="col-sm-12 content"><figure class="logo"><img src="'+this_btn.attr('data-popup-logo')+'" alt="'+this_btn.attr('data-popup-logo-alt')+'"/></figure><div class="title">'+this_btn.find('figcaption').html()+'</div><div class="description">'+description+'</div>'+extra_html+'</div></div></div>';
-
-        $('.applications-section .info-section .html-content').html(html);
-
-        if (extra_html != '') {
-            initToolsPostsSlider();
-        }
-
-        $('.applications-section .info-section video').removeAttr('controls');
-
-        $('body').addClass('overflow-hidden');
-        if ($(window).width() > 992) {
-            /!*clearInterval(init_apps_interval_slide);
-
-            if (stop_interval_sliding == undefined) {
-                start_clicking_from_num = element.index() + 1;
-                if (start_clicking_from_num == 8) {
-                    start_clicking_from_num = 0;
-                }
-
-                init_apps_interval_slide = setTimeout(function () {
-                    singleApplicationClick($('.applications-section .single-application').eq(start_clicking_from_num));
-                }, 10000);
-            }*!/
-        } else {
-            $('.applications-section .apps-list').hide();
-            $('.applications-section .info-section').fadeIn(500);
-        }
-
-        $('.applications-section .info-section .close-application').click(function() {
-            $('.applications-section .apps-list').fadeIn(500);
-            $('.applications-section .info-section').hide();
-        });
-
-        $('body').removeClass('overflow-hidden');
-    }
-
-    $('body').addClass('overflow-hidden');
-    if ($(window).width() > 992) {
-        singleApplicationClick($('.applications-section .single-application').eq(0));
-    }
-    $('body').removeClass('overflow-hidden');*/
+} else if ($('body').hasClass('how-it-works')) {
+    initSlidingContractFormLogic();
 } else if ($('body').hasClass('faq')) {
     if ($('.list .question').length > 0) {
         $('.list .question').click(function()   {
@@ -424,7 +509,7 @@ function optionsDescriptionsEqualHeight() {
 }*/
 
 //external generated form
-if ($('.show-external-form-button').length > 0) {
+/*if ($('.show-external-form-button').length > 0) {
     $('.show-external-form-button').click(function() {
         $('.custom-popup.external-form').addClass('visible');
 
@@ -438,7 +523,7 @@ if ($('.show-external-form-button').length > 0) {
 
         $('.custom-popup.external-form .wrapper').html('');
     });
-}
+}*/
 var homepage_video_time_watched = 0;
 var homepage_video_timer;
 
@@ -712,6 +797,15 @@ async function loggedOrNotLogic() {
 
         dcnHub.initMiniHub(miniHubParams);
     }
+
+    if ($('#append-big-hub-dentists').length) {
+        var bigHubParams = {
+            'element_id_to_append' : 'append-big-hub-dentists',
+            'type_hub' : 'dentists'
+        };
+
+        dcnHub.initBigHub(bigHubParams);
+    }
 }
 loggedOrNotLogic();
 
@@ -758,7 +852,7 @@ function bindGoogleAlikeButtonsEvents() {
     //google alike style for label/placeholders
     $('body').on('click', '.custom-google-label-style label', function() {
         $(this).addClass('active-label');
-        if ($('.custom-google-label-style').attr('data-input-blue-green-border') == 'true') {
+        if ($('.custom-google-label-style').attr('data-input-colorful-border') == 'true') {
             $(this).parent().find('input').addClass('blue-green-border');
         }
     });
@@ -767,12 +861,12 @@ function bindGoogleAlikeButtonsEvents() {
         var value = $(this).val().trim();
         if (value.length) {
             $(this).closest('.custom-google-label-style').find('label').addClass('active-label');
-            if ($(this).closest('.custom-google-label-style').attr('data-input-blue-green-border') == 'true') {
+            if ($(this).closest('.custom-google-label-style').attr('data-input-colorful-border') == 'true') {
                 $(this).addClass('blue-green-border');
             }
         } else {
             $(this).closest('.custom-google-label-style').find('label').removeClass('active-label');
-            if ($(this).closest('.custom-google-label-style').attr('data-input-blue-green-border') == 'true') {
+            if ($(this).closest('.custom-google-label-style').attr('data-input-colorful-border') == 'true') {
                 $(this).removeClass('blue-green-border');
             }
         }
@@ -780,20 +874,8 @@ function bindGoogleAlikeButtonsEvents() {
 }
 bindGoogleAlikeButtonsEvents();
 
-function initToolsPostsSlider()   {
-    //init slider for most popular posts
-    jQuery('.slider-with-tool-data').slick({
-        slidesToShow: 2,
-        infinite: false,
-        responsive: [
-            {
-                breakpoint: 1200,
-                settings: {
-                    slidesToShow: 1
-                }
-            }
-        ]
-    });
+function customErrorHandle(el, string) {
+    el.append('<div class="error-handle">'+string+'</div>');
 }
 
 function dateObjToFormattedDate(object) {
@@ -820,7 +902,7 @@ function dateObjToFormattedDate(object) {
 }
 bindTrackerClickDentistsBtnEvent();*/
 
-function bindTrackerClickDownloadBrochure() {
+/*function bindTrackerClickDownloadBrochure() {
     $(document).on('click', '.download-brochure-event-tracker', function(event) {
         event.preventDefault();
         fireGoogleAnalyticsEvent('Assets', 'Download', 'Brochure');
@@ -838,7 +920,7 @@ function bindTrackerClickDownloadDEBrochure() {
         window.open($(this).attr('href'));
     });
 }
-bindTrackerClickDownloadDEBrochure();
+bindTrackerClickDownloadDEBrochure();*/
 
 function bindTrackerClickDownloadFactsheet() {
     $(document).on('click', '.download-fact-sheet-event-tracker', function(event) {
@@ -920,3 +1002,55 @@ function initTooltips() {
         $('[data-toggle="tooltip"]').tooltip();
     }
 }
+
+function loadDeferImages() {
+    for(var i = 0, len = jQuery('img[data-defer-src]').length; i < len; i+=1) {
+        if(basic.isInViewport(jQuery('img[data-defer-src]').eq(i)) && jQuery('img[data-defer-src]').eq(i).attr('src') == undefined) {
+            jQuery('img[data-defer-src]').eq(i).attr('src', jQuery('img[data-defer-src]').eq(i).attr('data-defer-src'));
+        }
+    }
+}
+loadDeferImages();
+
+function initCustomCheckboxes() {
+    if ($('.custom-checkbox-style').length) {
+        for (var i = 0, len = $('.custom-checkbox-style').length; i < len; i+=1) {
+            if (!$('.custom-checkbox-style').eq(i).hasClass('already-custom-style')) {
+                $('.custom-checkbox-style').eq(i).prepend('<label for="'+$('.custom-checkbox-style').eq(i).find('input[type="checkbox"]').attr('id')+'" class="custom-checkbox"></label>');
+                $('.custom-checkbox-style').eq(i).addClass('already-custom-style');
+
+                if ($('.custom-checkbox-style').eq(i).find('input[type="checkbox"]').is(':checked')) {
+                    $('.custom-checkbox-style').eq(i).find('input[type="checkbox"]').closest('.custom-checkbox-style').find('.custom-checkbox').addClass('active').html('✓');
+                }
+            }
+        }
+
+        $('.custom-checkbox-style .custom-checkbox-input').unbind('change').on('change', function() {
+            if ($(this).is(':checked')) {
+                $(this).closest('.custom-checkbox-style').find('.custom-checkbox').addClass('active').html('✓');
+            } else {
+                $(this).closest('.custom-checkbox-style').find('.custom-checkbox').removeClass('active').html('');
+            }
+
+            if ($(this).attr('data-radio-group') != undefined) {
+                for (var i = 0, len = $('[data-radio-group="'+$(this).attr('data-radio-group')+'"]').length; i < len; i+=1) {
+                    if (!$(this).is($('[data-radio-group="'+$(this).attr('data-radio-group')+'"]').eq(i))) {
+                        $('[data-radio-group="'+$(this).attr('data-radio-group')+'"]').eq(i).prop('checked', false);
+                        $('[data-radio-group="'+$(this).attr('data-radio-group')+'"]').eq(i).closest('.custom-checkbox-style').find('.custom-checkbox').removeClass('active').html('');
+                    }
+                }
+            }
+        });
+    }
+}
+initCustomCheckboxes();
+
+function initFacebookChat() {
+    console.log(typeof FB, 'initFacebookChat');
+    if(typeof FB !== 'undefined') {
+        setTimeout( function() {
+            FB.CustomerChat.showDialog();
+        }, 60000);
+    }
+}
+initFacebookChat();

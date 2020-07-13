@@ -65,6 +65,17 @@
 }
 
 @font-face {
+    font-family: "Lato-Medium";
+    src: url("/assets/fonts/Lato-Medium.eot");
+    src: url("/assets/fonts/Lato-Medium.eot?#iefix") format("embedded-opentype"),
+    url("/assets/fonts/Lato-Medium.woff2") format("woff2"),
+    url("/assets/fonts/Lato-Medium.woff") format("woff"),
+    url("/assets/fonts/Lato-Medium.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
     font-family: "Calibri Light";
     src: url("/assets/fonts/calibril.eot");
     src: url("/assets/fonts/calibril.eot?#iefix") format("embedded-opentype"),
@@ -104,6 +115,10 @@
 
 .lato-light {
     font-family: "Lato-Light";
+}
+
+.lato-medium {
+    font-family: "Lato-Medium";
 }
 
 .calibri-bold {

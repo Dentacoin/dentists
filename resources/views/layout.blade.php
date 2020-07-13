@@ -80,6 +80,23 @@
     <!-- End Facebook Pixel Code -->
 </head>
 <body class="@if(!empty(Route::current())) {{Route::current()->getName()}} @else class-404 @endif @if((new \App\Http\Controllers\UserController())->checkSession()) logged-in @if((new \App\Http\Controllers\UserController())->checkPatientSession()) logged-patient @elseif((new \App\Http\Controllers\UserController())->checkDentistSession()) logged-dentist @endif @endif">
+    <div id="fb-root"></div>
+    <script>
+        window.fbAsyncInit = function() {
+            FB.init({
+                xfbml            : true,
+                version          : 'v7.0'
+            });
+        };
+
+        (function(d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));</script>
+
     @if(!empty(Route::current()))
         @php($header_menu = \App\Http\Controllers\Controller::instance()->getMenu('header'))
         @if(\App\Http\Controllers\UserController::instance()->checkSession())
@@ -279,6 +296,23 @@
             </figure>
         </div>
     </div>
+
+    @if (!empty((new \App\Http\Controllers\UserController())->checkSession()))
+        @php($userData = (new \App\Http\Controllers\APIRequestsController())->getUserData(session('logged_user')['id']))
+        @php($logged_in_greeting = "👋  Hi, ".(new \App\Http\Controllers\Controller())->prepareUserName($userData)."! Welcome to Dentacoin. Ask any question here!")
+    @else
+        @php($logged_in_greeting = "👋  Hi! Welcome to Dentacoin. Ask any question here!")
+    @endif
+
+    <!-- Your Chat Plugin code -->
+    <div class="fb-customerchat"
+         attribution=setup_tool
+         page_id="271015719968165"
+         theme_color="#0084ff"
+         logged_in_greeting="{{$logged_in_greeting}}"
+         logged_out_greeting="👋  Hi! Welcome to Dentacoin. Ask any question here!">
+    </div>
+
     <script src="https://dentacoin.com/assets/js/basic.js?v=1.0.73"></script>
     {{--<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCaVeHq_LOhQndssbmw-aDnlMwUG73yCdk&libraries=places&language=en"></script>--}}
     <script src="/dist/js/front-libs-script.js?v=1.0.73"></script>

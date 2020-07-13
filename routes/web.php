@@ -19,6 +19,10 @@ Route::group(['prefix' => '/', 'middleware' => 'frontEndMiddleware'], function (
 
     Route::get('/', 'HomeController@getView')->name('home');
 
+    Route::get('/how-it-works', 'HomeController@getHowItWorksView')->name('how-it-works');
+
+    Route::get('/home-redesign', 'HomeController@getHomeView')->name('home-redesign');
+
     Route::get('/faq', 'PagesController@getPageView')->name('faq');
 
     Route::get('/download-guides-assets', 'PagesController@getPageView')->name('download-guides-assets');
@@ -35,8 +39,6 @@ Route::group(['prefix' => '/', 'middleware' => 'frontEndMiddleware'], function (
 
     Route::post('/authenticate-user', 'UserController@authenticateUser')->name('authenticate-user');
 
-    Route::post('/invite-your-clinic', 'UserController@inviteYourClinic')->name('invite-your-clinic');
-
     Route::get('/custom-cookie', 'UserController@manageCustomCookie')->name('custom-cookie');
 
     //======================================= AJAX ========================================
@@ -44,6 +46,8 @@ Route::group(['prefix' => '/', 'middleware' => 'frontEndMiddleware'], function (
     Route::post('/check-email', 'UserController@checkEmail')->name('check-email');
 
     Route::post('/check-captcha', 'UserController@checkCaptcha')->name('check-captcha');
+
+    Route::post('/submit-hubspot-form', 'UserController@submitHubspotForm')->name('submit-hubspot-form');
 
     //======================================= REDIRECTS ========================================
 

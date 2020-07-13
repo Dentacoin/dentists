@@ -1,0 +1,242 @@
+.section-homepage-above-the-fold {
+    position: relative;
+    h1 {
+        font-weight: normal;
+    }
+    .upper-box {
+        position: absolute;
+        left: 0;
+        width: 100%;
+        top: 10%;
+        .visible-on-mobile {
+            display: none;
+        }
+        .btn-container {
+            .desktop {
+                display: inline-block;
+                @include breakpoint($lgl) {
+                    margin-top: 20px;
+                }
+                @include simple_transition(.3s);
+                img {
+                    width: 25px;
+                }
+            }
+        }
+        @include breakpoint($sm-down) {
+            position: static;
+            .visible-on-mobile {
+                display: block;
+            }
+            .mobile-white-bg {
+                background-color: white;
+                padding-top: 10px;
+                padding-bottom: 10px;
+                margin-right: -15px;
+                margin-left: -15px;
+                @include box-shadow(0px 12px 8px -3px rgba(0, 0, 0, 0.1));
+            }
+            .btn-container {
+                display: none;
+            }
+        }
+    }
+    .down-box {
+        position: absolute;
+        left: 0;
+        top: 67%;
+        margin-left: 60%;
+        width: 35%;
+    }
+    @media only screen and (max-width: 1650px) {
+        .down-box {
+            margin-left: 60%;
+            top: 65%;
+            width: 35%;
+        }
+    }
+    @media only screen and (max-width: 1100px) {
+        .down-box {
+            margin-left: 58%;
+            top: 65%;
+            width: 40%;
+        }
+    }
+    picture {
+        img {
+            width: 100%;
+        }
+    }
+    @include breakpoint($sm-down) {
+        text-align: center;
+        .upper-box {
+            padding-top: 30px;
+            background-image: url('/assets/uploads/mobile-background.jpg');
+            background-position: center bottom 0;
+            background-repeat: no-repeat;
+            background-size: cover;
+            .btn-container {
+                transform: translateY(50%);
+            }
+        }
+        picture {
+            display: none;
+        }
+        .down-box {
+            width: 100%;
+            position: static;
+            margin-left: 0;
+            padding-top: 50px;
+        }
+    }
+}
+
+.section-dentists-report {
+    margin-top: -8.6%;
+    background-color: #f5f5f5;
+    .single-report {
+        width: 20%;
+        @include breakpoint($sm-down) {
+            width: 100%;
+        }
+    }
+    @media only screen and (max-width: 1400px) {
+        margin-top: -12.6%;
+    }
+    @media only screen and (max-width: 992px) {
+        margin-top: 20px;
+    }
+}
+
+.section-how-to-become-dcn-partner {
+    .dentist-and-assistant-background {
+        position: relative;
+        max-height: 750px;
+        overflow: hidden;
+        &:after {
+            content: '';
+            position: absolute;
+            height: 100%;
+            width: 3px;
+            background-color: $dark_blue;
+            top: 0;
+            left: calc(67% + 12.5px - 1.5px);
+        }
+        .left-side-content {
+            width: 33%;
+            left: 67%;
+            padding-right: 15px;
+            @include vertical-align(absolute);
+            ul {
+                li {
+                    padding-left: 80px;
+                    position: relative;
+                    max-width: 340px;
+                    &:before {
+                        content: '';
+                        width: 25px;
+                        height: 25px;
+                        background-color: $dark_blue;
+                        position: absolute;
+                        left: 0;
+                        top: 25px;
+                        @include rounded(50%);
+                    }
+                }
+            }
+            .sign-up-now-and-text {
+                max-width: 260px;
+                margin-left: 80px;
+            }
+        }
+    }
+    @include breakpoint($max-lgl) {
+        .dentist-and-assistant-background {
+            .left-side-content {
+                ul {
+                    li {
+                        max-width: none;
+                        padding-left: 40px;
+                    }
+                }
+                .sign-up-now-and-text {
+                    max-width: none;
+                    margin-left: 40px;
+                }
+            }
+        }
+    }
+    @include breakpoint($md-down) {
+        .dentist-and-assistant-background {
+            position: relative;
+            max-height: none;
+            overflow: visible;
+            &:after {
+                display: none;
+            }
+            .left-side-content {
+                width: 100%;
+                padding-right: 15px;
+                padding-left: 15px;
+                position: relative;
+                left: 0;
+                @include clear_transform();
+                ul {
+                    li {
+                        max-width: none;
+                        padding-left: 60px;
+                        &:before {
+                            left: 10px;
+                        }
+                    }
+                }
+                &:after {
+                    content: '';
+                    position: absolute;
+                    height: 100%;
+                    width: 3px;
+                    background-color: $dark_blue;
+                    top: 0;
+                    left: 35px;
+                }
+            }
+        }
+    }
+}
+
+.section-dentacoin-stats {
+    .single {
+        width: 25%;
+        padding-left: 10px;
+        padding-right: 10px;
+        @include breakpoint($sm-down) {
+            width: 100%;
+            padding-bottom: 25px;
+        }
+    }
+}
+
+.section-partners-google-map {
+    iframe {
+        width: 100%;
+        border: 0;
+        height: 950px;
+        @include breakpoint($xs) {
+            height: 1100px;
+        }
+    }
+}
+
+.section-above-footer-options {
+    .single-option {
+        .image-shown-on-hover {
+            width: 0;
+            height: 0;
+            position: absolute;
+            &.active {
+                width: 200px;
+                height: 200px;
+            }
+        }
+    }
+}
