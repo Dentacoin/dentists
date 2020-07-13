@@ -28,7 +28,7 @@
     <link rel="stylesheet" type="text/css" href="/dist/css/front-libs-style.css?v=1.0.73">
     <link rel="stylesheet" type="text/css" href="/assets/css/style.css?v=1.0.73">
 
-    @if((!(new \App\Http\Controllers\UserController())->checkSession() && !empty(Route::current()) && (Route::current()->getName() == 'home')) || ((new \App\Http\Controllers\UserController())->checkSession() && !empty(Route::current()) && (Route::current()->getName() == 'logged-home' || Route::current()->getName() == 'home-redesign')))
+    @if((!(new \App\Http\Controllers\UserController())->checkSession() && !empty(Route::current()) && (Route::current()->getName() == 'home' || Route::current()->getName() == 'home-redesign')) || ((new \App\Http\Controllers\UserController())->checkSession() && !empty(Route::current()) && (Route::current()->getName() == 'logged-home' || Route::current()->getName() == 'home-redesign')))
         <link rel="stylesheet" type="text/css" href="//dentacoin.com/assets/libs/dentacoin-mini-hub/css/styles-big-hub.css?v=1.0.73">
     @endif
 
