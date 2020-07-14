@@ -306,6 +306,7 @@
 
 <!-- Your Chat Plugin code -->
 <div class="fb-customerchat"
+     greeting_dialog_display="hide"
      attribution=setup_tool
      page_id="271015719968165"
      theme_color="#0084ff"

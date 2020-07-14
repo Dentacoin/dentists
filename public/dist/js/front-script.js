@@ -1043,14 +1043,3 @@ function initCustomCheckboxes() {
     }
 }
 initCustomCheckboxes();
-
-/*
-function initFacebookChat() {
-    console.log(typeof FB, 'initFacebookChat');
-    if(typeof FB !== 'undefined') {
-        setTimeout( function() {
-            FB.CustomerChat.showDialog();
-        }, 60000);
-    }
-}
-initFacebookChat();*/

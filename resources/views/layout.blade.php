@@ -80,7 +80,7 @@
     <!-- End Facebook Pixel Code -->
 </head>
 <body class="@if(!empty(Route::current())) {{Route::current()->getName()}} @else class-404 @endif @if((new \App\Http\Controllers\UserController())->checkSession()) logged-in @if((new \App\Http\Controllers\UserController())->checkPatientSession()) logged-patient @elseif((new \App\Http\Controllers\UserController())->checkDentistSession()) logged-dentist @endif @endif">
-    {{--<div id="fb-root"></div>
+    <div id="fb-root"></div>
     <script>
         window.fbAsyncInit = function() {
             FB.init({
@@ -95,7 +95,7 @@
             js = d.createElement(s); js.id = id;
             js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
             fjs.parentNode.insertBefore(js, fjs);
-        }(document, 'script', 'facebook-jssdk'));</script>--}}
+        }(document, 'script', 'facebook-jssdk'));</script>
 
     @if(!empty(Route::current()))
         @php($header_menu = \App\Http\Controllers\Controller::instance()->getMenu('header'))
@@ -306,6 +306,7 @@
 
     <!-- Your Chat Plugin code -->
     <div class="fb-customerchat"
+         greeting_dialog_display="hide"
          attribution=setup_tool
          page_id="271015719968165"
          theme_color="#0084ff"
