@@ -1044,6 +1044,7 @@ function initCustomCheckboxes() {
 }
 initCustomCheckboxes();
 
+/*
 function initFacebookChat() {
     console.log(typeof FB, 'initFacebookChat');
     if(typeof FB !== 'undefined') {
@@ -1052,4 +1053,4 @@ function initFacebookChat() {
         }, 60000);
     }
 }
-initFacebookChat();
+initFacebookChat();*/
