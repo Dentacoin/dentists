@@ -14,7 +14,6 @@
 //Route::get('/refresh-captcha', 'Controller@refreshCaptcha')->name('refresh-captcha');
 
 Route::group(['prefix' => '/', 'middleware' => 'frontEndMiddleware'], function () {
-
     //======================================= PAGES ========================================
 
     Route::get('/', 'HomeController@getView')->name('home');

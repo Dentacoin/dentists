@@ -350,8 +350,16 @@ if (!$('body').hasClass('logged-in') && $('body').hasClass('home') || ($('body')
     if ($('.shortcode.contact-us').length && $('.shortcode.contact-us').attr('data-scroll-to-here') != undefined) {
         scrollToContactUsNow();
     }
+
+    if ($('body').hasClass('logged-home') || $('body').hasClass('home-redesign')) {
+        $('.change-on-logged-in-to-scroll-to-contact-us').html('CONTACT US').removeClass('dentist-register open-dentacoin-gateway').addClass('scroll-to-contact-us-now');
+    }
 } else if ($('body').hasClass('how-it-works')) {
     initSlidingContractFormLogic();
+
+    if ($('body').hasClass('logged-home')) {
+        $('.change-on-logged-in-to-scroll-to-contact-us').html('LEARN MORE').removeClass('dentist-register open-dentacoin-gateway').addClass('scroll-to-contact-us-now');
+    }
 } else if ($('body').hasClass('faq')) {
     if ($('.list .question').length > 0) {
         $('.list .question').click(function()   {

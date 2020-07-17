@@ -44,8 +44,14 @@
                         <div class="step one">
                             <div class="padding-bottom-20 field-parent inline-block-top">
                                 <div class="custom-google-label-style module" data-input-colorful-border="true">
-                                    <label for="email">Work Email Address:</label>
-                                    <input class="full-rounded form-field" name="email" maxlength="100" id="email" type="text"/>
+                                    @if ((new \App\Http\Controllers\UserController())->checkDentistSession())
+                                        @php($user_data = (new \App\Http\Controllers\APIRequestsController())->getUserData(session('logged_user')['id']))
+                                        <label for="email" class="active-label">Work Email Address:</label>
+                                        <input class="full-rounded form-field" name="email" maxlength="100" id="email" type="text" value="{{$user_data->email}}"/>
+                                    @else
+                                        <label for="email">Work Email Address:</label>
+                                        <input class="full-rounded form-field" name="email" maxlength="100" id="email" type="text"/>
+                                    @endif
                                 </div>
                             </div>
                             <div class="padding-bottom-20 field-parent inline-block-top">

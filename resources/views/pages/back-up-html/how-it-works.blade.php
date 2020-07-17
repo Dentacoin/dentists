@@ -9,7 +9,7 @@
                 <div class="col-xs-12 col-sm-5 col-sm-offset-7 col-md-6 col-md-offset-6 col-lg-4 color-white text-center-xs above-the-fold-content">
                     <h1 class="fs-46 fs-sm-36 fs-xs-22 lato-black">HOW IT WORKS</h1>
                     <p class="fs-36 fs-sm-26 fs-xs-18 padding-bottom-15">Learn how to take your practice to the next level with Dentacoin</p>
-                    <a href="javascript:void(0);" class="white-dark-blue-btn open-dentacoin-gateway dentist-register padding-left-30 padding-right-30">SIGN UP FREE</a>
+                    <a href="javascript:void(0);" class="white-dark-blue-btn open-dentacoin-gateway dentist-register change-on-logged-in-to-scroll-to-contact-us padding-left-30 padding-right-30">SIGN UP FREE</a>
                 </div>
             </div>
         </div>

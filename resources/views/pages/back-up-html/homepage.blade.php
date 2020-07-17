@@ -101,7 +101,7 @@
                     </li>
                 </ul>
                 <div class="padding-top-15 sign-up-now-and-text">
-                    <a href="javascript:void(0);" class="white-dark-blue-btn open-dentacoin-gateway dentist-register">SIGN UP NOW</a>
+                    <a href="javascript:void(0);" class="white-dark-blue-btn open-dentacoin-gateway dentist-register change-on-logged-in-to-scroll-to-contact-us">SIGN UP NOW</a>
                     <div class="padding-top-10 fs-16 padding-bottom-10">Our onboarding team will guide you through the process and coordinate your free promotion!</div>
                 </div>
             </div>
