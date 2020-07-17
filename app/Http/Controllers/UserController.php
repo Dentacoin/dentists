@@ -155,6 +155,6 @@ class UserController extends Controller {
             'route.required' => 'Route is required.'
         ]);
 
-        return redirect()->route($request->input('route'))->with(['success' => true, 'popup-html' => 'Thank you for your interest in Dentacoin. We will be in contact shortly. Meanwhile, feel free to book a call with our Onboarding team:<div class="text-center padding-top-30 padding-bottom-20"><a href="https://meetings.hubspot.com/betina-bogdanova" class="white-dark-blue-btn" target="_blank">BOOK A CALL</a></div>']);
+        return redirect()->route($request->input('route'))->with(['hubspot-form-submitted' => true]);
     }
 }

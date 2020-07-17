@@ -5070,18 +5070,21 @@ nav.sidenav {
     nav.sidenav .wrapper ul {
       padding-top: 70px; }
       nav.sidenav .wrapper ul li {
-        font-size: 20px;
-        border-bottom: 1px solid black;
-        padding: 10px 20px; }
+        font-size: 20px; }
         nav.sidenav .wrapper ul li a {
           display: block;
+          text-transform: uppercase;
+          color: #002248;
+          padding: 10px 35px;
           -webkit-transition: 0.3s;
           -moz-transition: 0.3s;
           -o-transition: 0.3s;
           -ms-transition: 0.3s;
           transition: 0.3s; }
-          nav.sidenav .wrapper ul li a:hover {
-            color: #002248; }
+          @media screen and (min-width: 992px) {
+            nav.sidenav .wrapper ul li a:hover {
+              color: white;
+              background-color: #002248; } }
         nav.sidenav .wrapper ul li:last-child {
           border: 0; }
   nav.sidenav.active {
@@ -5298,6 +5301,9 @@ nav.sidenav {
 .pac-container {
   z-index: 50000; }
 
+.fb-customerchat, .fb_dialog {
+  z-index: 9995 !important; }
+
 .white-dark-blue-btn, input[type='submit'].white-dark-blue-btn {
   font-size: 20px;
   color: white;
@@ -5315,9 +5321,10 @@ nav.sidenav {
   -o-transition: 0.3s;
   -ms-transition: 0.3s;
   transition: 0.3s; }
-  .white-dark-blue-btn:hover, input[type='submit'].white-dark-blue-btn:hover {
-    color: #002248;
-    background-color: white; }
+  @media screen and (min-width: 992px) {
+    .white-dark-blue-btn:hover, input[type='submit'].white-dark-blue-btn:hover {
+      color: #002248;
+      background-color: white; } }
   .white-dark-blue-btn:focus, input[type='submit'].white-dark-blue-btn:focus {
     color: white; }
   .white-dark-blue-btn.small, input[type='submit'].white-dark-blue-btn.small {
@@ -5342,9 +5349,10 @@ nav.sidenav {
   -o-transition: 0.3s;
   -ms-transition: 0.3s;
   transition: 0.3s; }
-  .dark-blue-light-blue-btn:hover, input[type='submit'].dark-blue-light-blue-btn:hover {
-    color: #69c3ea;
-    background-color: #002248; }
+  @media screen and (min-width: 992px) {
+    .dark-blue-light-blue-btn:hover, input[type='submit'].dark-blue-light-blue-btn:hover {
+      color: #69c3ea;
+      background-color: #002248; } }
   .dark-blue-light-blue-btn:focus, input[type='submit'].dark-blue-light-blue-btn:focus {
     color: #002248; }
 
@@ -5365,9 +5373,10 @@ nav.sidenav {
   -o-transition: 0.3s;
   -ms-transition: 0.3s;
   transition: 0.3s; }
-  .white-light-blue-btn:hover, input[type='submit'].white-light-blue-btn-btn:hover {
-    color: #679dca;
-    background-color: white; }
+  @media screen and (min-width: 992px) {
+    .white-light-blue-btn:hover, input[type='submit'].white-light-blue-btn-btn:hover {
+      color: #679dca;
+      background-color: white; } }
   .white-light-blue-btn:focus, input[type='submit'].white-light-blue-btn-btn:focus {
     color: white; }
   .white-light-blue-btn.white-border, input[type='submit'].white-light-blue-btn-btn.white-border {
@@ -5390,9 +5399,10 @@ nav.sidenav {
   -o-transition: 0.3s;
   -ms-transition: 0.3s;
   transition: 0.3s; }
-  .dark-blue-white-btn:hover {
-    color: white;
-    background-color: #002248; }
+  @media screen and (min-width: 992px) {
+    .dark-blue-white-btn:hover {
+      color: white;
+      background-color: #002248; } }
   .dark-blue-white-btn:focus {
     color: #002248; }
   .dark-blue-white-btn.blue-border {
@@ -5458,7 +5468,6 @@ nav.sidenav {
   padding: 12px 15px;
   background-color: white;
   font-size: 16px;
-  font-family: 'Calibri-Regular';
   border: 0;
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
@@ -5501,7 +5510,6 @@ nav.sidenav {
     color: #888888;
     font-weight: normal;
     top: 50%;
-    font-family: 'Calibri-Regular';
     -webkit-transform: translateY(-50%);
     -ms-transform: translateY(-50%);
     transform: translateY(-50%);
@@ -5711,6 +5719,8 @@ nav.sidenav {
     right: 0; }
   .shortcode.contact-us form .sliding-fields-container {
     width: 65%; }
+    .shortcode.contact-us form .sliding-fields-container.green-top-border {
+      border-top: 1.5px solid #11be7f; }
     .shortcode.contact-us form .sliding-fields-container .steps-container {
       overflow: hidden;
       padding-top: 10px; }
@@ -5855,16 +5865,6 @@ header {
   header .logo {
     padding-top: 10px;
     padding-bottom: 10px; }
-  header .hamburger {
-    font-size: 38px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    color: black;
-    margin-left: 20px;
-    margin-right: 10px; }
-    @media screen and (max-width: 767px) {
-      header .hamburger {
-        font-size: 34px; } }
   header .btns-container {
     text-align: right; }
     @media screen and (max-width: 767px) {
@@ -5915,8 +5915,6 @@ body.home {
     background: transparent;
     box-shadow: none; }
     body.home.logged-in header .logged-user-right-nav > .hidden-box-parent .color-white-on-hub {
-      color: white; }
-    body.home.logged-in header .logged-user-right-nav .hamburger {
       color: white; }
     @media screen and (max-width: 767px) {
       body.home.logged-in header {

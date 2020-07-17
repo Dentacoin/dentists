@@ -144,9 +144,10 @@
   -o-transition: 0.3s;
   -ms-transition: 0.3s;
   transition: 0.3s; }
-  .white-dark-blue-btn:hover, input[type='submit'].white-dark-blue-btn:hover {
-    color: #002248;
-    background-color: white; }
+  @media screen and (min-width: 992px) {
+    .white-dark-blue-btn:hover, input[type='submit'].white-dark-blue-btn:hover {
+      color: #002248;
+      background-color: white; } }
   .white-dark-blue-btn:focus, input[type='submit'].white-dark-blue-btn:focus {
     color: white; }
   .white-dark-blue-btn.small, input[type='submit'].white-dark-blue-btn.small {
@@ -171,9 +172,10 @@
   -o-transition: 0.3s;
   -ms-transition: 0.3s;
   transition: 0.3s; }
-  .dark-blue-light-blue-btn:hover, input[type='submit'].dark-blue-light-blue-btn:hover {
-    color: #69c3ea;
-    background-color: #002248; }
+  @media screen and (min-width: 992px) {
+    .dark-blue-light-blue-btn:hover, input[type='submit'].dark-blue-light-blue-btn:hover {
+      color: #69c3ea;
+      background-color: #002248; } }
   .dark-blue-light-blue-btn:focus, input[type='submit'].dark-blue-light-blue-btn:focus {
     color: #002248; }
 
@@ -194,9 +196,10 @@
   -o-transition: 0.3s;
   -ms-transition: 0.3s;
   transition: 0.3s; }
-  .white-light-blue-btn:hover, input[type='submit'].white-light-blue-btn-btn:hover {
-    color: #679dca;
-    background-color: white; }
+  @media screen and (min-width: 992px) {
+    .white-light-blue-btn:hover, input[type='submit'].white-light-blue-btn-btn:hover {
+      color: #679dca;
+      background-color: white; } }
   .white-light-blue-btn:focus, input[type='submit'].white-light-blue-btn-btn:focus {
     color: white; }
   .white-light-blue-btn.white-border, input[type='submit'].white-light-blue-btn-btn.white-border {
@@ -219,9 +222,10 @@
   -o-transition: 0.3s;
   -ms-transition: 0.3s;
   transition: 0.3s; }
-  .dark-blue-white-btn:hover {
-    color: white;
-    background-color: #002248; }
+  @media screen and (min-width: 992px) {
+    .dark-blue-white-btn:hover {
+      color: white;
+      background-color: #002248; } }
   .dark-blue-white-btn:focus {
     color: #002248; }
   .dark-blue-white-btn.blue-border {
@@ -287,7 +291,6 @@
   padding: 12px 15px;
   background-color: white;
   font-size: 16px;
-  font-family: 'Calibri-Regular';
   border: 0;
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
@@ -330,7 +333,6 @@
     color: #888888;
     font-weight: normal;
     top: 50%;
-    font-family: 'Calibri-Regular';
     -webkit-transform: translateY(-50%);
     -ms-transform: translateY(-50%);
     transform: translateY(-50%);

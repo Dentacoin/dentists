@@ -1182,13 +1182,17 @@ nav.sidenav {
             padding-top: 70px;
             li {
                 font-size: 20px;
-                border-bottom: 1px solid black;
-                padding: 10px 20px;
                 a {
                     display: block;
+                    text-transform: uppercase;
+                    color: $dark_blue;
+                    padding: 10px 35px;
                     @include simple_transition(.3s);
-                    &:hover {
-                        color: $dark_blue;
+                    @include breakpoint($md) {
+                        &:hover {
+                            color: white;
+                            background-color: $dark_blue;
+                        }
                     }
                 }
                 &:last-child {
@@ -1450,3 +1454,7 @@ nav.sidenav {
 
 .pac-container {
     z-index: 50000; }
+
+.fb-customerchat, .fb_dialog {
+    z-index: 9995 !important;  
+}

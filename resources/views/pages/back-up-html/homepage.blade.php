@@ -123,7 +123,7 @@
                     </div>
                     <div class="single inline-block-top">
                         <figure itemscope="" itemtype="http://schema.org/ImageObject" class="text-center"><img alt="Active Users &amp; Subscribers icon" class="max-width-80 margin-bottom-20" itemprop="contentUrl" data-defer-src="/assets/uploads/stats3.svg" /></figure>
-                        <div class="fs-50 fs-xs-45 lato-light padding-top-10">190K+</div>
+                        <div class="fs-50 fs-xs-45 lato-light padding-top-10">200K+</div>
                         <div class="fs-20 fs-xs-18 lato-semibold padding-bottom-xs-25">Active Users &amp; Subscribers</div>
                     </div>
                     <div class="single inline-block-top">

@@ -16,17 +16,6 @@ header {
         padding-top: 10px;
         padding-bottom: 10px;
     }
-    .hamburger {
-        font-size: 38px;
-        padding-top: 10px;
-        padding-bottom: 10px;
-        color: black;
-        margin-left: 20px;
-        margin-right: 10px;
-        @include breakpoint($xs) {
-            font-size: 34px;
-        }
-    }
     .btns-container {
         text-align: right;
         &.center-important {
@@ -90,9 +79,6 @@ body.home {
                     .color-white-on-hub {
                         color: white;
                     }
-                }
-                .hamburger {
-                    color: white;
                 }
             }
             @include breakpoint($xs)    {

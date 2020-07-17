@@ -8,9 +8,11 @@
     display: inline-block;
     @include rounded(4px);
     @include simple_transition(.3s);
-    &:hover {
-        color: $dark_blue;
-        background-color: white;
+    @include breakpoint($md) {
+        &:hover {
+            color: $dark_blue;
+            background-color: white;
+        }
     }
     &:focus {
         color: white;
@@ -33,9 +35,11 @@
     border: 2px solid #69c3ea;
     @include rounded(4px);  
     @include simple_transition(.3s);
-    &:hover {
-        color: #69c3ea;
-        background-color: $dark_blue;
+    @include breakpoint($md) {
+        &:hover {
+            color: #69c3ea;
+            background-color: $dark_blue;
+        }
     }
     &:focus {
         color: $dark_blue;
@@ -52,9 +56,11 @@
     display: inline-block;
     @include rounded(4px);
     @include simple_transition(.3s);
-    &:hover {
-        color: $light_blue;
-        background-color: white;
+    @include breakpoint($md) {
+        &:hover {
+            color: $light_blue;
+            background-color: white;
+        }
     }
     &:focus {
         color: white;
@@ -74,9 +80,11 @@
     display: inline-block;
     @include rounded(4px);
     @include simple_transition(.3s);
-    &:hover {
-        color: white;
-        background-color: $dark_blue;
+    @include breakpoint($md) {
+        &:hover {
+            color: white;
+            background-color: $dark_blue;
+        }
     }
     &:focus {
         color: $dark_blue;
@@ -143,7 +151,6 @@
     padding: 12px 15px;
     background-color: white;
     font-size: 16px;
-    font-family: 'Calibri-Regular';
     border: 0;
     @include rounded(4px);
     @include box-shadow(0px 2px 10px 0 rgba(0, 0, 0, 0.2));
@@ -179,7 +186,6 @@
             color: #888888;
             font-weight: normal;
             top: 50%;
-            font-family: 'Calibri-Regular';
             -webkit-transform: translateY(-50%);
             -ms-transform: translateY(-50%);
             transform: translateY(-50%);

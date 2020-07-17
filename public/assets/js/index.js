@@ -105,19 +105,23 @@ function initCaptchaRefreshEvent()  {
 initCaptchaRefreshEvent();
 
 function scrollToContactUsNow() {
-    $(document).on('click', '.scroll-to-contact-us-now', function() {
-        for(var i = 0, len = jQuery('img[data-defer-src]').length; i < len; i+=1) {
-            if(jQuery('img[data-defer-src]').eq(i).attr('src') === undefined) {
-                jQuery('img[data-defer-src]').eq(i).attr('src', jQuery('img[data-defer-src]').eq(i).attr('data-defer-src'));
-            }
+    for(var i = 0, len = jQuery('img[data-defer-src]').length; i < len; i+=1) {
+        if(jQuery('img[data-defer-src]').eq(i).attr('src') === undefined) {
+            jQuery('img[data-defer-src]').eq(i).attr('src', jQuery('img[data-defer-src]').eq(i).attr('data-defer-src'));
         }
+    }
 
-        $('html, body').animate({
-            scrollTop: $('.shortcode.contact-us').offset().top - $('header').outerHeight()
-        }, 300);
+    $('html, body').animate({
+        scrollTop: $('.shortcode.contact-us').offset().top - $('header').outerHeight()
+    }, 300);
+}
+
+function bindScrollToContactUsNowEvent() {
+    $(document).on('click', '.scroll-to-contact-us-now', function() {
+        scrollToContactUsNow();
     });
 }
-scrollToContactUsNow();
+bindScrollToContactUsNowEvent();
 
 function initSlidingContractFormLogic() {
     if ($('.sliding-fields-container').length) {
@@ -173,7 +177,7 @@ function initSlidingContractFormLogic() {
             var errors = false;
 
             if ($('.step.one [name="firstname"]').val().trim() == '') {
-                customErrorHandle($('.step.one [name="firstname"]').closest('.field-parent'), 'This field is required.');
+                customErrorHandle($('.step.one [name="firstname"]').closest('.field-parent'), 'Please complete this required field.');
                 errors = true;
             }
 
@@ -182,8 +186,8 @@ function initSlidingContractFormLogic() {
                 errors = true;
             }
 
-            if (!$('.step.one [name="hs_legal_basis"]').is(':checked')) {
-                customErrorHandle($('.step.one [name="hs_legal_basis"]').closest('.gdpr-checkbox'), 'Please check the checkbox.');
+            if (!$('.step.one #hs_legal_basis').is(':checked')) {
+                customErrorHandle($('.step.one #hs_legal_basis').closest('.gdpr-checkbox'), 'Please, accept the Privacy policy to proceed.');
                 errors = true;
             }
 
@@ -200,17 +204,17 @@ function initSlidingContractFormLogic() {
             var errors = false;
 
             if ($('.step.two [name="jobtitle"]').val().trim() == '') {
-                customErrorHandle($('.step.two [name="jobtitle"]').closest('.field-parent'), 'This field is required.');
+                customErrorHandle($('.step.two [name="jobtitle"]').closest('.field-parent'), 'Please complete this required field.');
                 errors = true;
             }
 
             if ($('.step.two [name="interested_in_"]').val().trim() == '' || $('.step.two [name="interested_in_"]').val().trim() == 'disabled') {
-                customErrorHandle($('.step.two [name="interested_in_"]').closest('.field-parent'), 'This field is required.');
+                customErrorHandle($('.step.two [name="interested_in_"]').closest('.field-parent'), 'Please complete this required field.');
                 errors = true;
             }
 
             if ($('.step.two #additional_information').length && $('.step.two #additional_information').val().trim() == '') {
-                customErrorHandle($('.step.two #additional_information').closest('.field-parent'), 'This field is required.');
+                customErrorHandle($('.step.two #additional_information').closest('.field-parent'), 'Please complete this required field.');
                 errors = true;
             }
 
@@ -342,6 +346,10 @@ if (!$('body').hasClass('logged-in') && $('body').hasClass('home') || ($('body')
         }
         $('.testimonials-slider-section .slick-list').animate({height: height}, 500);
     });
+
+    if ($('.shortcode.contact-us').length && $('.shortcode.contact-us').attr('data-scroll-to-here') != undefined) {
+        scrollToContactUsNow();
+    }
 } else if ($('body').hasClass('how-it-works')) {
     initSlidingContractFormLogic();
 } else if ($('body').hasClass('faq')) {
@@ -800,7 +808,8 @@ async function loggedOrNotLogic() {
     if ($('#append-big-hub-dentists').length) {
         var bigHubParams = {
             'element_id_to_append' : 'append-big-hub-dentists',
-            'type_hub' : 'dentists'
+            'type_hub' : 'dentists',
+            'hub_title' : 'USE FOR FREE WITH ONE PROFILE'
         };
 
         dcnHub.initBigHub(bigHubParams);

@@ -64,7 +64,7 @@
             </figure>
             <div class="row-content fs-18 inline-block padding-left-25 padding-right-25">
                 <h2 class="fs-46 fs-sm-36 fs-xs-26 dark-blue">Get FREE Promotion</h2>
-                <div class="padding-top-10 padding-bottom-25 line-height-30 fs-xs-16 line-height-xs-24">Our Marketing team will launch a promotional campaign without any charges for you. We will announce you as a new Dentacoin partner in a special article and promote you to our community of 190K users, followers on social media followers (Facebook, Instagram, Twitter, LinkedIn, Telegram) and subscribers. As a special bonus for limited time, you will get free advertising campaigns on Facebook and Google Ads.</div>
+                <div class="padding-top-10 padding-bottom-25 line-height-30 fs-xs-16 line-height-xs-24">Our Marketing team will launch a promotional campaign without any charges for you. We will announce you as a new Dentacoin partner in a special article and promote you to our community of 200K users, followers on social media followers (Facebook, Instagram, Twitter, LinkedIn, Telegram) and subscribers. As a special bonus for limited time, you will get free advertising campaigns on Facebook and Google Ads.</div>
                 <a href="javascript:void(0);" class="white-dark-blue-btn scroll-to-contact-us-now">START NOW</a>
             </div>
         </div>

@@ -24,6 +24,9 @@
             }
             .sliding-fields-container {
                 width: 65%;
+                &.green-top-border {
+                    border-top: 1.5px solid #11be7f;
+                }
                 .steps-container {
                     overflow: hidden;
                     padding-top: 10px;

@@ -109,7 +109,7 @@
                 <a href="javascript:void(0)" class="close-btn"><i class="fa fa-times" aria-hidden="true"></i></a>
                 <ul itemscope="" itemtype="http://schema.org/SiteNavigationElement">
                     @foreach($header_menu as $menu_el)
-                        <li><a itemprop="url" class="{{$menu_el->class_attribute}}" @if(!empty($menu_el->id_attribute)) id="{{$menu_el->id_attribute}}" @endif @if(!empty(Route::current()) && Route::current()->getName() != 'home' && strpos($menu_el->class_attribute, 'scrolling-to-section') !== false) href="{{route($route)}}#{{$menu_el->id_attribute}}" @else @if($menu_el->new_window) target="_blank" @endif href="{{$menu_el->url}}" @endif><span itemprop="name">{{$menu_el->name}}</span></a></li>
+                        <li class="lato-bold"><a itemprop="url" class="{{$menu_el->class_attribute}}" @if(!empty($menu_el->id_attribute)) id="{{$menu_el->id_attribute}}" @endif @if(!empty(Route::current()) && Route::current()->getName() != 'home' && strpos($menu_el->class_attribute, 'scrolling-to-section') !== false) href="{{route($route)}}#{{$menu_el->id_attribute}}" @else @if($menu_el->new_window) target="_blank" @endif href="{{$menu_el->url}}" @endif><span itemprop="name">{{$menu_el->name}}</span></a></li>
                     @endforeach
                 </ul>
             </div>
@@ -125,8 +125,12 @@
                 </figure>
                 @if(!(new \App\Http\Controllers\UserController())->checkSession())
                     <div class="col-xs-9 inline-block btns-container padding-right-xs-10">
-                        <a href="javascript:void(0)" class="white-dark-blue-btn open-dentacoin-gateway dentist-login inline-block" tabindex="-1">SIGN IN</a>
-                        <a href="javascript:void(0)" class="hamburger inline-block"><i class="fa fa-bars" aria-hidden="true"></i></a>
+                        <a href="javascript:void(0)" class="white-dark-blue-btn open-dentacoin-gateway dentist-login inline-block" tabindex="-1">SIGN UP</a>
+                        <figure itemscope="" itemtype="http://schema.org/Organization" class="inline-block margin-left-15 max-width-30">
+                            <a href="javascript:void(0)" class="hamburger display-block">
+                                <img src="{{URL::asset('assets/images/burger-menu.png') }}" itemprop="logo" class="width-100" alt="Hamburger icon"/>
+                            </a>
+                        </figure>
                     </div>
                 @else
                     @include('partials.logged-user-desktop-header-menu', ['profile_pages' => false])

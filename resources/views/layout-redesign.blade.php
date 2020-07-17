@@ -108,9 +108,14 @@
         <div class="wrapper">
             <a href="javascript:void(0)" class="close-btn"><i class="fa fa-times" aria-hidden="true"></i></a>
             <ul itemscope="" itemtype="http://schema.org/SiteNavigationElement">
-                @foreach($header_menu as $menu_el)
-                    <li><a itemprop="url" class="{{$menu_el->class_attribute}}" @if(!empty($menu_el->id_attribute)) id="{{$menu_el->id_attribute}}" @endif @if(!empty(Route::current()) && Route::current()->getName() != 'home-redesign' && strpos($menu_el->class_attribute, 'scrolling-to-section') !== false) href="{{route($route)}}#{{$menu_el->id_attribute}}" @else @if($menu_el->new_window) target="_blank" @endif href="{{$menu_el->url}}" @endif><span itemprop="name">{{$menu_el->name}}</span></a></li>
-                @endforeach
+                {{--@foreach($header_menu as $menu_el)
+                    <li class="lato-bold"><a itemprop="url" class="{{$menu_el->class_attribute}}" @if(!empty($menu_el->id_attribute)) id="{{$menu_el->id_attribute}}" @endif @if(!empty(Route::current()) && Route::current()->getName() != 'home-redesign' && strpos($menu_el->class_attribute, 'scrolling-to-section') !== false) href="{{route($route)}}#{{$menu_el->id_attribute}}" @else @if($menu_el->new_window) target="_blank" @endif href="{{$menu_el->url}}" @endif><span itemprop="name">{{$menu_el->name}}</span></a></li>
+                @endforeach--}}
+
+                <li class="lato-bold"><a itemprop="url" href="/how-it-works"><span itemprop="name">HOW IT WORKS</span></a></li>
+                <li class="lato-bold"><a itemprop="url" href="/download-guides-assets"><span itemprop="name">GUIDES & ASSETS</span></a></li>
+                <li class="lato-bold"><a itemprop="url" class="scrolling-to-section" id="contact-us" @if(!empty(Route::current()) && Route::current()->getName() != 'home-redesign') href="{{route($route)}}#contact-us" @endif><span itemprop="name">CONTACT US</span></a></li>
+                <li class="lato-bold"><a itemprop="url" href="/faq"><span itemprop="name">FAQ</span></a></li>
             </ul>
         </div>
     </nav>
@@ -125,8 +130,15 @@
             </figure>
             @if(!(new \App\Http\Controllers\UserController())->checkSession())
                 <div class="col-xs-9 inline-block btns-container padding-right-xs-10">
-                    <a href="javascript:void(0)" class="white-dark-blue-btn open-dentacoin-gateway dentist-login inline-block" tabindex="-1">SIGN IN</a>
-                    <a href="javascript:void(0)" class="hamburger inline-block"><i class="fa fa-bars" aria-hidden="true"></i></a>
+                    <a href="/how-it-works" class="fs-18 color-black calibri-bold inline-block padding-left-10 padding-right-10">How it works</a>
+                    <span class="inline-block padding-left-10 padding-right-10 fs-18 color-black">|</span>
+                    <a @if (Route::current()->getName() != 'home-redesign' && Route::current()->getName() != 'how-it-works') href="{{route('home-redesign')}}#contact-us" @else href="javascript:void(0);" id="contact-us" @endif class="fs-18 color-black calibri-bold inline-block padding-left-10 padding-right-10 @if (Route::current()->getName() == 'home-redesign' || Route::current()->getName() == 'how-it-works') scrolling-to-section @endif">Contact us</a>
+                    <a href="javascript:void(0)" class="white-dark-blue-btn open-dentacoin-gateway dentist-login inline-block margin-left-15" tabindex="-1">SIGN UP</a>
+                    <figure itemscope="" itemtype="http://schema.org/Organization" class="inline-block margin-left-15 max-width-30">
+                        <a href="javascript:void(0)" class="hamburger display-block">
+                            <img src="{{URL::asset('assets/images/burger-menu.png') }}" itemprop="logo" class="width-100" alt="Hamburger icon"/>
+                        </a>
+                    </figure>
                 </div>
             @else
                 @include('partials.logged-user-desktop-header-menu', ['profile_pages' => false])
@@ -136,24 +148,7 @@
 </header>
 <main class="main-container">@yield("content")</main>
 <footer class="padding-bottom-100 padding-bottom-sm-50 padding-bottom-xs-50">
-    <div class="container padding-top-50">
-        <div class="row">
-            <h2 class="fs-50 fs-xs-30 lato-light dark-blue text-center col-xs-12 padding-bottom-50 padding-bottom-xs-15">Subscribe for Our Newsletter</h2>
-        </div>
-        <div class="row newsletter-register">
-            <div class="col-xs-12 text-center">
-                <div id="mc_embed_signup">
-                    <form action="https://dentacoin.us16.list-manage.com/subscribe/post?u=61ace7d2b009198ca373cb213&amp;id=cd60f60a48" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank">
-                        <div id="mc_embed_signup_scroll">
-                            <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="Enter your email" required>
-                            <input type="hidden" name="b_61ace7d2b009198ca373cb213_cd60f60a48" tabindex="-1" value="">
-                            <div class="clear btn-container"><input type="submit" value="Sign Up" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
-                        </div>
-                        <div class="checkbox-row text-center"><input type="checkbox" required id="newsletter-privacy-policy"/><label for="newsletter-privacy-policy">I agree with <a href="//dentacoin.com/privacy-policy" target="_blank">Privacy Policy</a></label></div>
-                    </form>
-                </div>
-            </div>
-        </div>
+    <div class="container padding-top-20">
         {{--<div class="email-octopus-form-wrapper row newsletter-register">
             <div class="col-xs-12 col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">
                 <p class="email-octopus-success-message"></p>
@@ -195,6 +190,20 @@
                 </div>
             </div>
         @endif
+        <div class="row newsletter-register">
+            <div class="col-xs-12 text-center">
+                <div id="mc_embed_signup">
+                    <form action="https://dentacoin.us16.list-manage.com/subscribe/post?u=61ace7d2b009198ca373cb213&amp;id=cd60f60a48" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank">
+                        <div id="mc_embed_signup_scroll">
+                            <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="Enter your email" required>
+                            <input type="hidden" name="b_61ace7d2b009198ca373cb213_cd60f60a48" tabindex="-1" value="">
+                            <div class="clear btn-container"><input type="submit" value="Sign Up" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+                        </div>
+                        <div class="checkbox-row text-center"><input type="checkbox" required id="newsletter-privacy-policy"/><label for="newsletter-privacy-policy">I agree with <a href="//dentacoin.com/privacy-policy" target="_blank">Privacy Policy</a></label></div>
+                    </form>
+                </div>
+            </div>
+        </div>
         @if(!empty(Route::current()))
             @php($footer_menu = \App\Http\Controllers\Controller::instance()->getMenu('footer'))
         @endif
