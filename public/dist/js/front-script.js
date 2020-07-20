@@ -359,7 +359,7 @@ if (!$('body').hasClass('logged-in') && $('body').hasClass('home') || ($('body')
 } else if ($('body').hasClass('how-it-works')) {
     initSlidingContractFormLogic();
 
-    if ($('body').hasClass('logged-home')) {
+    if ($('body').hasClass('logged-in')) {
         $('.change-on-logged-in-to-scroll-to-contact-us').html('LEARN MORE').removeClass('dentist-register open-dentacoin-gateway').addClass('scroll-to-contact-us-now');
     }
 } else if ($('body').hasClass('faq')) {
