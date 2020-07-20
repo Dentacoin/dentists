@@ -58,7 +58,7 @@
         </div>
     </section>
     <section class="section-why-dcn-is-good padding-top-50">
-        <div class="fs-0 single-row padding-top-10 padding-bottom-10">
+        <div class="fs-0 single-row padding-top-30 padding-bottom-10">
             <figure itemscope="" itemtype="http://schema.org/ImageObject" class="inline-block-top">
                 <img alt="Get FREE promotion icon" class="width-100" itemprop="contentUrl" data-defer-src="/assets/uploads/get-free-promotion.png" />
             </figure>
