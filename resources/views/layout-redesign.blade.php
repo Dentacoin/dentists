@@ -82,10 +82,11 @@
 <body class="@if(!empty(Route::current())) {{Route::current()->getName()}} @else class-404 @endif @if((new \App\Http\Controllers\UserController())->checkSession()) logged-in @if((new \App\Http\Controllers\UserController())->checkPatientSession()) logged-patient @elseif((new \App\Http\Controllers\UserController())->checkDentistSession()) logged-dentist @endif @endif">
     <div id="fb-root"></div>
     <script>
-        /*window.fbAsyncInit = function() {
+        window.fbAsyncInit = function() {
             FB.init({
-                xfbml            : true,
-                version          : 'v7.0'
+                appId: '1906201509652855',
+                xfbml : true,
+                version : 'v7.0'
             });
         };
 
@@ -95,9 +96,7 @@
             js = d.createElement(s); js.id = id;
             js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
             fjs.parentNode.insertBefore(js, fjs);
-        }(document, 'script', 'facebook-jssdk'));
-    */
-    </script>
+        }(document, 'script', 'facebook-jssdk'));</script>
 
 @if(!empty(Route::current()))
     @php($header_menu = \App\Http\Controllers\Controller::instance()->getMenu('header'))
