@@ -8209,8 +8209,6 @@ header {
     height: 40px; }
     header.on-going-sticky-header .logo img {
       max-width: 30px; }
-    header.on-going-sticky-header .hide-on-scroll {
-      display: none; }
     header.on-going-sticky-header .white-dark-blue-btn {
       border: 0;
       background: transparent;
