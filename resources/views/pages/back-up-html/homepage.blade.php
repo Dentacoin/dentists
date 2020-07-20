@@ -8,13 +8,10 @@
             <div class="row">
                 <div class="col-xs-12 col-md-5 col-md-offset-6">
                     <figure itemscope="" itemtype="http://schema.org/ImageObject"><img alt="Text logo dark blue" class="max-width-310 max-width-xs-200" itemprop="contentUrl" src="/assets/uploads/text-logo-dark-blue.svg" /></figure>
-
                     <h1 class="fs-40 fs-lg-30 fs-md-30 fs-sm-30 fs-xs-28 lato-medium padding-bottom-40 padding-bottom-lg-25 padding-bottom-md-25 padding-bottom-sm-25 padding-bottom-xs-0 padding-top-15 line-height-50 line-height-lg-40 line-height-md-40 line-height-sm-40 line-height-xs-30">Boost patient loyalty and prevention with FREE apps and a digital dental currency</h1>
-
                     <figure class="visible-on-mobile" itemscope="" itemtype="http://schema.org/ImageObject">
                         <img alt="Dentist transperant background" itemprop="contentUrl" src="/assets/uploads/dentist-mobile.png" />
                     </figure>
-
                     <div class="fs-25 fs-lg-21 fs-md-21 fs-sm-21 fs-xs-16 padding-left-xs-15 padding-right-xs-15 line-height-30 line-height-xs-25 lato dark-blue padding-bottom-40 padding-bottom-xs-10 mobile-white-bg">“I am paid for prevention and my patients get rewards for better oral health. All at no cost for me.”</div>
                     <div class="inline-block-top mobile-white-bg display-block-xs display-block-sm">
                         <a class="white-dark-blue-btn scroll-to-contact-us-now" href="javascript:void(0);">LEARN MORE</a></div>

@@ -125,7 +125,7 @@
     <!-- Start of HubSpot Embed Code -->
     <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/4097841.js"></script>
     <!-- End of HubSpot Embed Code -->
-    <div class="bottom-inner-banner padding-top-60 padding-bottom-30">
+    <div class="bottom-inner-banner padding-top-60 padding-bottom-30 padding-top-lg-30 padding-bottom-lg-20 padding-top-md-30 padding-bottom-md-20">
         <div class="container-fluid">
             <div class="row fs-0">
                 <div class="col-xs-12 col-md-4 padding-bottom-xs-30 padding-bottom-sm-30">

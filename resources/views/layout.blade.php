@@ -126,9 +126,9 @@
                 @if(!(new \App\Http\Controllers\UserController())->checkSession())
                     <div class="col-xs-9 inline-block btns-container padding-right-xs-10">
                         <a href="javascript:void(0)" class="white-dark-blue-btn open-dentacoin-gateway dentist-register inline-block" tabindex="-1">SIGN UP</a>
-                        <figure itemscope="" itemtype="http://schema.org/Organization" class="inline-block margin-left-15 hamburger-icon">
+                        <figure itemscope="" itemtype="http://schema.org/ImageObject" class="inline-block margin-left-15 hamburger-icon">
                             <a href="javascript:void(0)" class="hamburger display-block">
-                                <img src="{{URL::asset('assets/images/burger-menu.png') }}" itemprop="logo" class="width-100" alt="Hamburger icon"/>
+                                <img src="{{URL::asset('assets/images/burger-menu.png') }}" itemprop="contentUrl" class="width-100" alt="Hamburger icon"/>
                             </a>
                         </figure>
                     </div>
