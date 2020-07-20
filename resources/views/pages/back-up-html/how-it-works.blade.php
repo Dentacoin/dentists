@@ -3,10 +3,10 @@
     <div class="header-banner module text-center">
         <h3 class="fs-21 color-white">Request your FREE, non-obligatory demo <a href="javascript:void(0);" class="margin-left-20 dark-blue-light-blue-btn scroll-to-contact-us-now">LEARN MORE</a></h3>
     </div>
-    <section class="section-how-it-works-above-the-fold padding-top-180 padding-bottom-180 padding-top-lg-110 padding-top-xs-15 padding-bottom-xs-15">
+    <section class="section-how-it-works-above-the-fold padding-top-270 padding-bottom-270 padding-top-lg-110 padding-bottom-lg-170  padding-top-md-110 padding-bottom-md-170 padding-top-sm-110 padding-bottom-sm-170 padding-top-xs-15 padding-bottom-xs-15">
         <div class="container">
             <div class="row">
-                <div class="col-xs-12 col-sm-5 col-sm-offset-7 col-md-6 col-md-offset-6 col-lg-4 color-white text-center-xs above-the-fold-content">
+                <div class="col-xs-12 col-sm-5 col-sm-offset-7 col-md-6 col-md-offset-6 col-lg-5 color-white text-center-xs above-the-fold-content">
                     <h1 class="fs-46 fs-sm-36 fs-xs-22 lato-black">HOW IT WORKS</h1>
                     <p class="fs-36 fs-sm-26 fs-xs-18 padding-bottom-15">Learn how to take your practice to the next level with Dentacoin</p>
                     <a href="javascript:void(0);" class="white-dark-blue-btn open-dentacoin-gateway dentist-register change-on-logged-in-to-scroll-to-contact-us padding-left-30 padding-right-30">SIGN UP FREE</a>
