@@ -823,7 +823,7 @@ async function loggedOrNotLogic() {
         var bigHubParams = {
             'element_id_to_append' : 'append-big-hub-dentists',
             'type_hub' : 'dentists',
-            'hub_title' : 'USE FOR FREE WITH ONE PROFILE'
+            'hub_title' : 'Use for Free with One Profile'
         };
 
         dcnHub.initBigHub(bigHubParams);

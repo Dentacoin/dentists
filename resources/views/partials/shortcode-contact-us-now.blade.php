@@ -4,8 +4,8 @@
         <h3 class="fs-28 fs-xs-20 dark-blue text-center-xs lato-light padding-bottom-30">and learn how to become a partner and get:</h3>
         <div class="checks max-width-xs-400 margin-0-auto fs-0">
             <div class="single-check inline-block-top">
-                <figure class="inline-block" itemscope="" itemtype="http://schema.org/ImageObject">
-                    <img alt="Green checkmark" class="width-100 max-width-40" itemprop="contentUrl" src="/assets/uploads/green-checkmark.svg" />
+                <figure class="inline-block width-100 max-width-40" itemscope="" itemtype="http://schema.org/ImageObject">
+                    <img alt="Green checkmark" class="width-100" itemprop="contentUrl" src="/assets/uploads/green-checkmark.svg" />
                 </figure>
                 <div class="left-side inline-block">
                     <h4 class="fs-22 calibri-bold">Free access</h4>
@@ -13,8 +13,8 @@
                 </div>
             </div>
             <div class="single-check inline-block-top">
-                <figure class="inline-block" itemscope="" itemtype="http://schema.org/ImageObject">
-                    <img alt="Green checkmark" class="width-100 max-width-40" itemprop="contentUrl" src="/assets/uploads/green-checkmark.svg" />
+                <figure class="inline-block width-100 max-width-40" itemscope="" itemtype="http://schema.org/ImageObject">
+                    <img alt="Green checkmark" class="width-100" itemprop="contentUrl" src="/assets/uploads/green-checkmark.svg" />
                 </figure>
                 <div class="left-side inline-block">
                     <h4 class="fs-22 calibri-bold">Digital rewards</h4>
@@ -22,8 +22,8 @@
                 </div>
             </div>
             <div class="single-check inline-block-top">
-                <figure class="inline-block" itemscope="" itemtype="http://schema.org/ImageObject">
-                    <img alt="Green checkmark" class="width-100 max-width-40" itemprop="contentUrl" src="/assets/uploads/green-checkmark.svg" />
+                <figure class="inline-block width-100 max-width-40" itemscope="" itemtype="http://schema.org/ImageObject">
+                    <img alt="Green checkmark" class="width-100" itemprop="contentUrl" src="/assets/uploads/green-checkmark.svg" />
                 </figure>
                 <div class="left-side inline-block">
                     <h4 class="fs-22 calibri-bold">Innovative payment option</h4>
@@ -129,24 +129,24 @@
         <div class="container-fluid">
             <div class="row fs-0">
                 <div class="col-xs-12 col-md-4 padding-bottom-xs-30 padding-bottom-sm-30">
-                    <figure class="inline-block" itemscope="" itemtype="http://schema.org/ImageObject">
-                        <img alt="Green checkmark" class="width-100 max-width-40" itemprop="contentUrl" src="/assets/uploads/green-checkmark.svg" />
+                    <figure class="inline-block width-100 max-width-40" itemscope="" itemtype="http://schema.org/ImageObject">
+                        <img alt="Green checkmark" class="width-100" itemprop="contentUrl" src="/assets/uploads/green-checkmark.svg" />
                     </figure>
                     <div class="left-side inline-block">
                         <h4 class="fs-22 fs-lg-20 fs-md-20 fs-sm-20 fs-xs-16 color-white">Free promotion among 200K+ people on Facebook, Instagram, Twitter, Telegram</h4>
                     </div>
                 </div>
                 <div class="col-xs-12 col-md-4 padding-bottom-xs-30 padding-bottom-sm-30">
-                    <figure class="inline-block" itemscope="" itemtype="http://schema.org/ImageObject">
-                        <img alt="Green checkmark" class="width-100 max-width-40" itemprop="contentUrl" src="/assets/uploads/green-checkmark.svg" />
+                    <figure class="inline-block width-100 max-width-40" itemscope="" itemtype="http://schema.org/ImageObject">
+                        <img alt="Green checkmark" class="width-100" itemprop="contentUrl" src="/assets/uploads/green-checkmark.svg" />
                     </figure>
                     <div class="left-side inline-block">
                         <h4 class="fs-22 fs-lg-20 fs-md-20 fs-sm-20 fs-xs-16 color-white">Free Google Ad of your profile on Dentacoin Trusted Reviews</h4>
                     </div>
                 </div>
                 <div class="col-xs-12 col-md-4 padding-bottom-xs-30 padding-bottom-sm-30">
-                    <figure class="inline-block" itemscope="" itemtype="http://schema.org/ImageObject">
-                        <img alt="Green checkmark" class="width-100 max-width-40" itemprop="contentUrl" src="/assets/uploads/green-checkmark.svg" />
+                    <figure class="inline-block width-100 max-width-40" itemscope="" itemtype="http://schema.org/ImageObject">
+                        <img alt="Green checkmark" class="width-100" itemprop="contentUrl" src="/assets/uploads/green-checkmark.svg" />
                     </figure>
                     <div class="left-side inline-block">
                         <h4 class="fs-22 fs-lg-20 fs-md-20 fs-sm-20 fs-xs-16 color-white">Onboarding bonus in Dentacoin (DCN) currency</h4>
