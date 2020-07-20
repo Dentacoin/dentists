@@ -66,17 +66,19 @@ header {
         }
     }
     &.on-going-sticky-header {
-        height: 40px;
+        height: 50px;
         .logo {
             img {
                 max-width: 30px;
             }
         }
         .white-dark-blue-btn {
-            border: 0;
-            background: transparent;
-            color: $dark_blue;
-            padding: 5px;
+            height: 50px;
+            line-height: 50px;
+            padding: 0 15px;
+            color: white;
+            background-color: #002248;
+            @include rounded(0);
         }
         .hamburger-icon {
             max-width: 25px;
