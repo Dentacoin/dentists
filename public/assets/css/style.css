@@ -8213,8 +8213,7 @@ header {
       border: 0;
       background: transparent;
       color: #002248;
-      padding: 5px;
-      margin: 0 !important; }
+      padding: 5px; }
     header.on-going-sticky-header .hamburger-icon {
       max-width: 25px; }
     header.on-going-sticky-header .logged-user-right-nav > .hidden-box-parent figure.header-avatar {
