@@ -126,7 +126,7 @@
         <div class="row fs-0">
             <figure itemscope="" itemtype="http://schema.org/Organization" class="col-xs-3 inline-block padding-left-xs-10 logo">
                 <a itemprop="url" @if((new \App\Http\Controllers\UserController())->checkSession()) href="{{ route('logged-home') }}" @else  href="{{ route('home-redesign') }}" @endif @if(!empty(Route::current())) @if(Route::current()->getName() == "home") tabindex="=-1" @endif @endif>
-                    <img src="@if((new \App\Http\Controllers\UserController())->checkSession() && Route::current()->getName() == 'home-redesign') {{URL::asset('assets/images/round-logo-white.svg') }} @else {{URL::asset('assets/images/logo.svg') }} @endif" itemprop="logo" alt="Dentacoin logo"/>
+                    <img src="{{ URL::asset('assets/images/logo.svg') }}" itemprop="logo" alt="Dentacoin logo"/>
                 </a>
             </figure>
             @if(!(new \App\Http\Controllers\UserController())->checkSession())

@@ -60,6 +60,7 @@ header {
                 width: 50px;
                 margin-left: 10px;
                 overflow: hidden;
+                @include simple_transition(.3s);
                 @include rounded(50%);
             }
         }
@@ -83,6 +84,13 @@ header {
         }
         .hamburger-icon {
             max-width: 25px;
+        }
+        .logged-user-right-nav {
+            > .hidden-box-parent {
+                figure.header-avatar {
+                    width: 30px;
+                }
+            }
         }
     }
     @include breakpoint($xs) {
