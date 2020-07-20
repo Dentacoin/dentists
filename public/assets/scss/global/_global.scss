@@ -44,6 +44,70 @@ body {
 }
 
 @for $i from 0 through 20 * 2 {
+    @include breakpoint($lg-only)    {
+        .padding-bottom-lg-#{$i * 5} {
+            padding-bottom: 0px + $i * 5!important;
+        }
+    }
+}
+
+@for $i from 0 through 20 * 2 {
+    @include breakpoint($lg-only) {
+        .padding-top-lg-#{$i * 5} {
+            padding-top: 0px + $i * 5 !important;
+        }
+    }
+}
+
+@for $i from 0 through 20 * 2 {
+    @include breakpoint($lg-only) {
+        .padding-left-lg-#{$i * 5} {
+            padding-left: 0px + $i * 5 !important;
+        }
+    }
+}
+
+@for $i from 0 through 20 * 2 {
+    @include breakpoint($lg-only) {
+        .padding-right-lg-#{$i * 5} {
+            padding-right: 0px + $i * 5 !important;
+        }
+    }
+}
+
+@for $i from 0 through 20 * 2 {
+    @include breakpoint($md-only)    {
+        .padding-bottom-md-#{$i * 5} {
+            padding-bottom: 0px + $i * 5!important;
+        }
+    }
+}
+
+@for $i from 0 through 20 * 2 {
+    @include breakpoint($md-only) {
+        .padding-top-md-#{$i * 5} {
+            padding-top: 0px + $i * 5 !important;
+        }
+    }
+}
+
+@for $i from 0 through 20 * 2 {
+    @include breakpoint($md-only) {
+        .padding-left-md-#{$i * 5} {
+            padding-left: 0px + $i * 5 !important;
+        }
+    }
+}
+
+@for $i from 0 through 20 * 2 {
+    @include breakpoint($md-only) {
+        .padding-right-md-#{$i * 5} {
+            padding-right: 0px + $i * 5 !important;
+        }
+    }
+}
+
+@for $i from 0 through 20 * 2 {
     @include breakpoint($sm-only)    {
         .padding-bottom-sm-#{$i * 5} {
             padding-bottom: 0px + $i * 5!important;
@@ -158,6 +222,14 @@ body {
 }
 
 @for $i from 0 through 100 {
+    @include breakpoint($lg-only) {
+        .fs-lg-#{$i} {
+            font-size: 0px + $i !important;
+        }
+    }
+}
+
+@for $i from 0 through 100 {
     @include breakpoint($md-only) {
         .fs-md-#{$i} {
             font-size: 0px + $i !important;
@@ -184,6 +256,30 @@ body {
 @for $i from 0 through 80 {
     .line-height-#{$i} {
         line-height: 0px + $i!important;
+    }
+}
+
+@for $i from 0 through 80 {
+    @include breakpoint($lg-only)    {
+        .line-height-lg-#{$i} {
+            line-height: 0px + $i!important;
+        }
+    }
+}
+
+@for $i from 0 through 80 {
+    @include breakpoint($md-only)    {
+        .line-height-md-#{$i} {
+            line-height: 0px + $i!important;
+        }
+    }
+}
+
+@for $i from 0 through 80 {
+    @include breakpoint($sm-only)    {
+        .line-height-sm-#{$i} {
+            line-height: 0px + $i!important;
+        }
     }
 }
 
@@ -215,6 +311,48 @@ body {
 
 .text-right {
     text-align: right !important;
+}
+
+.text-center-lg {
+    @include breakpoint($lg-only)    {
+        text-align: center !important;
+    }
+}
+
+.text-center-md {
+    @include breakpoint($md-only)    {
+        text-align: center !important;
+    }
+}
+
+.text-left-md {
+    @include breakpoint($md-only)    {
+        text-align: left !important;
+    }
+}
+
+.text-right-md {
+    @include breakpoint($md-only)    {
+        text-align: right !important;
+    }
+}
+
+.text-center-sm {
+    @include breakpoint($sm-only)    {
+        text-align: center !important;
+    }
+}
+
+.text-left-sm {
+    @include breakpoint($sm-only)    {
+        text-align: left !important;
+    }
+}
+
+.text-right-sm {
+    @include breakpoint($sm-only)    {
+        text-align: right !important;
+    }
 }
 
 .text-center-xs {
@@ -400,6 +538,10 @@ img {
 
 main.main-container {
     padding-top: 70px;
+    @include simple_transition(.3s);
+    &.on-going-sticky-header {
+        padding-top: 40px;
+    }
 }
 
 body.home {

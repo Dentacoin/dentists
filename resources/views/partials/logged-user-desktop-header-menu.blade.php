@@ -21,7 +21,7 @@
         </figure>
     </div>
     <a href="javascript:void(0)" class="hamburger inline-block"><i class="fa fa-bars" aria-hidden="true"></i></a>
-    <figure itemscope="" itemtype="http://schema.org/Organization" class="inline-block margin-left-15 max-width-30">
+    <figure itemscope="" itemtype="http://schema.org/Organization" class="inline-block margin-left-15 hamburger-icon">
         <a href="javascript:void(0)" class="hamburger display-block">
             <img src="{{URL::asset('assets/images/burger-menu.png') }}" itemprop="logo" class="width-100" alt="Hamburger icon"/>
         </a>

@@ -25,6 +25,8 @@ $(window).on('scroll', function()  {
     loadDeferImages();
 
     onDesktopScrollMakeStickySidebarDownloadAssetsPage();
+
+    makeHeaderSmallerOnScroll();
 });
 
 //init cookie events only if exists
@@ -628,18 +630,22 @@ function setLargeImages() {
 
 //scroll to sections events
 function initScrollingToEvents() {
-    if ($('body').hasClass('logged-home') || (!$('body').hasClass('logged-in') && $('body').hasClass('home'))) {
-        if ($('.scrolling-to-section').length > 0) {
-            $('.scrolling-to-section').click(function() {
+    if ($('.scrolling-to-section').length > 0) {
+        $('.scrolling-to-section').click(function() {
+            if ($('body').hasClass('home-redesign') || $('body').hasClass('how-it-works')) {
+
                 $(this).blur();
-                window.history.pushState($(this).find('span').html(), '', '/#'+$(this).attr('id'));
+                var currentHref = window.location.href.replace('#'+ $(this).attr('id'), '');
+                window.history.pushState($(this).find('span').html(), '', currentHref + '#'+ $(this).attr('id'));
                 $('html, body').animate({scrollTop: $('[data-scroll-here="'+$(this).attr('id')+'"]').offset().top - $('header').outerHeight()}, 300);
                 return false;
-            });
-        }
-    } else if ($('body').hasClass('logged-in')) {
-        $('.scrolling-to-section').click(function() {
-            window.location = '/home#' + $(this).attr('id');
+            } else {
+                if ($('body').hasClass('logged-in')) {
+                    window.location = '/home#' + $(this).attr('id');
+                } else {
+                    window.location = '/#' + $(this).attr('id');
+                }
+            }
         });
     }
 }
@@ -1027,6 +1033,16 @@ function loadDeferImages() {
     }
 }
 loadDeferImages();
+
+function makeHeaderSmallerOnScroll() {
+    if ($(window).scrollTop() > 0) {
+        $('header').addClass('on-going-sticky-header');
+        $('.main-container').addClass('on-going-sticky-header');
+    } else {
+        $('header').removeClass('on-going-sticky-header');
+        $('.main-container').removeClass('on-going-sticky-header');
+    }
+}
 
 function initCustomCheckboxes() {
     if ($('.custom-checkbox-style').length) {

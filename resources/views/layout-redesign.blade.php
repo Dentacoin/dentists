@@ -82,12 +82,12 @@
 <body class="@if(!empty(Route::current())) {{Route::current()->getName()}} @else class-404 @endif @if((new \App\Http\Controllers\UserController())->checkSession()) logged-in @if((new \App\Http\Controllers\UserController())->checkPatientSession()) logged-patient @elseif((new \App\Http\Controllers\UserController())->checkDentistSession()) logged-dentist @endif @endif">
     <div id="fb-root"></div>
     <script>
-        window.fbAsyncInit = function() {
+        /*window.fbAsyncInit = function() {
             FB.init({
                 xfbml            : true,
                 version          : 'v7.0'
             });
-        };
+        };*/
 
         (function(d, s, id) {
             var js, fjs = d.getElementsByTagName(s)[0];
@@ -123,18 +123,18 @@
 <header class="sticky-header">
     <div class="container">
         <div class="row fs-0">
-            <figure itemscope="" itemtype="http://schema.org/Organization" class="col-xs-3 inline-block padding-left-xs-10">
+            <figure itemscope="" itemtype="http://schema.org/Organization" class="col-xs-3 inline-block padding-left-xs-10 logo">
                 <a itemprop="url" @if((new \App\Http\Controllers\UserController())->checkSession()) href="{{ route('logged-home') }}" @else  href="{{ route('home-redesign') }}" @endif @if(!empty(Route::current())) @if(Route::current()->getName() == "home") tabindex="=-1" @endif @endif>
-                    <img src="@if((new \App\Http\Controllers\UserController())->checkSession() && Route::current()->getName() == 'home-redesign') {{URL::asset('assets/images/round-logo-white.svg') }} @else {{URL::asset('assets/images/logo.svg') }} @endif" itemprop="logo" class="max-width-40" alt="Dentacoin logo"/>
+                    <img src="@if((new \App\Http\Controllers\UserController())->checkSession() && Route::current()->getName() == 'home-redesign') {{URL::asset('assets/images/round-logo-white.svg') }} @else {{URL::asset('assets/images/logo.svg') }} @endif" itemprop="logo" alt="Dentacoin logo"/>
                 </a>
             </figure>
             @if(!(new \App\Http\Controllers\UserController())->checkSession())
                 <div class="col-xs-9 inline-block btns-container padding-right-xs-10">
-                    <a href="/how-it-works" class="hide-xs fs-18 color-black calibri-bold inline-block padding-left-10 padding-right-10">How it works</a>
-                    <span class="hide-xs inline-block padding-left-10 padding-right-10 fs-18 color-black">|</span>
-                    <a @if (Route::current()->getName() != 'home-redesign' && Route::current()->getName() != 'how-it-works') href="{{route('home-redesign')}}#contact-us" @else href="javascript:void(0);" id="contact-us" @endif class="hide-xs fs-18 color-black calibri-bold inline-block padding-left-10 padding-right-10 @if (Route::current()->getName() == 'home-redesign' || Route::current()->getName() == 'how-it-works') scrolling-to-section @endif">Contact us</a>
+                    <a href="/how-it-works" class="hide-xs fs-18 color-black calibri-bold inline-block padding-left-10 padding-right-10 hide-on-scroll">How it works</a>
+                    <span class="hide-xs inline-block padding-left-10 padding-right-10 fs-18 color-black hide-on-scroll">|</span>
+                    <a @if (Route::current()->getName() != 'home-redesign' && Route::current()->getName() != 'how-it-works') href="{{route('home-redesign')}}#contact-us" @else href="javascript:void(0);" id="contact-us" @endif class="hide-xs fs-18 color-black calibri-bold inline-block padding-left-10 padding-right-10 @if (Route::current()->getName() == 'home-redesign' || Route::current()->getName() == 'how-it-works') scrolling-to-section @endif hide-on-scroll">Contact us</a>
                     <a href="javascript:void(0)" class="white-dark-blue-btn open-dentacoin-gateway dentist-register inline-block margin-left-15" tabindex="-1">SIGN UP</a>
-                    <figure itemscope="" itemtype="http://schema.org/Organization" class="inline-block margin-left-15 max-width-30">
+                    <figure itemscope="" itemtype="http://schema.org/Organization" class="inline-block margin-left-15 hamburger-icon">
                         <a href="javascript:void(0)" class="hamburger display-block">
                             <img src="{{URL::asset('assets/images/burger-menu.png') }}" itemprop="logo" class="width-100" alt="Hamburger icon"/>
                         </a>
@@ -147,7 +147,7 @@
     </div>
 </header>
 <main class="main-container">@yield("content")</main>
-<footer class="padding-bottom-100 padding-bottom-sm-50 padding-bottom-xs-50">
+<footer class="padding-bottom-100 padding-bottom-sm-50 padding-bottom-xs-50 padding-bottom-lg-150">
     <div class="container padding-top-20">
         {{--<div class="email-octopus-form-wrapper row newsletter-register">
             <div class="col-xs-12 col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">

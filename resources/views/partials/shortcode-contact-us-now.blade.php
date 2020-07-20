@@ -1,7 +1,7 @@
 <section class="shortcode contact-us" @if(session('hubspot-form-submitted')) data-scroll-to-here="true" @endif data-scroll-here="contact-us">
-    <form class="padding-bottom-100 padding-top-60" name="Dentists website contact us" method="post" action="{{route('submit-hubspot-form')}}" id="Dentist's website">
+    <form class="padding-bottom-100 padding-top-60 padding-bottom-lg-45 padding-bottom-md-45 padding-bottom-sm-45 padding-bottom-xs-45" name="Dentists website contact us" method="post" action="{{route('submit-hubspot-form')}}" id="Dentist's website">
         <h2 class="fs-42 fs-xs-30 dark-blue text-center-xs">CONTACT US NOW</h2>
-        <h3 class="fs-26 fs-xs-20 dark-blue text-center-xs lato-light padding-bottom-35">and learn how to become a partner and get:</h3>
+        <h3 class="fs-28 fs-xs-20 dark-blue text-center-xs lato-light padding-bottom-30">and learn how to become a partner and get:</h3>
         <div class="checks max-width-xs-400 margin-0-auto fs-0">
             <div class="single-check inline-block-top">
                 <figure class="inline-block" itemscope="" itemtype="http://schema.org/ImageObject">
@@ -133,7 +133,7 @@
                         <img alt="Green checkmark" class="width-100 max-width-40" itemprop="contentUrl" src="/assets/uploads/green-checkmark.svg" />
                     </figure>
                     <div class="left-side inline-block">
-                        <h4 class="fs-22 fs-xs-16 color-white">Free promotion among 200K+ people on Facebook, Instagram, Twitter, Telegram</h4>
+                        <h4 class="fs-22 fs-lg-20 fs-md-20 fs-sm-20 fs-xs-16 color-white">Free promotion among 200K+ people on Facebook, Instagram, Twitter, Telegram</h4>
                     </div>
                 </div>
                 <div class="col-xs-12 col-md-4 padding-bottom-xs-30 padding-bottom-sm-30">
@@ -141,7 +141,7 @@
                         <img alt="Green checkmark" class="width-100 max-width-40" itemprop="contentUrl" src="/assets/uploads/green-checkmark.svg" />
                     </figure>
                     <div class="left-side inline-block">
-                        <h4 class="fs-22 fs-xs-16 color-white">Free Google Ad of your profile on Dentacoin Trusted Reviews</h4>
+                        <h4 class="fs-22 fs-lg-20 fs-md-20 fs-sm-20 fs-xs-16 color-white">Free Google Ad of your profile on Dentacoin Trusted Reviews</h4>
                     </div>
                 </div>
                 <div class="col-xs-12 col-md-4 padding-bottom-xs-30 padding-bottom-sm-30">
@@ -149,7 +149,7 @@
                         <img alt="Green checkmark" class="width-100 max-width-40" itemprop="contentUrl" src="/assets/uploads/green-checkmark.svg" />
                     </figure>
                     <div class="left-side inline-block">
-                        <h4 class="fs-22 fs-xs-16 color-white">Onboarding bonus in Dentacoin (DCN) currency</h4>
+                        <h4 class="fs-22 fs-lg-20 fs-md-20 fs-sm-20 fs-xs-16 color-white">Onboarding bonus in Dentacoin (DCN) currency</h4>
                     </div>
                 </div>
             </div>

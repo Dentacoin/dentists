@@ -2,29 +2,29 @@
 @section('content')
     <section class="section-homepage-above-the-fold">
         <div class="header-banner module text-center">
-            <h3 class="fs-22 color-white">Request your FREE, non-obligatory demo <a href="javascript:void(0);" class="margin-left-20 dark-blue-light-blue-btn scroll-to-contact-us-now">LEARN MORE</a></h3>
+            <h3 class="fs-21 color-white">Request your FREE, non-obligatory demo <a href="javascript:void(0);" class="margin-left-20 dark-blue-light-blue-btn scroll-to-contact-us-now">LEARN MORE</a></h3>
         </div>
         <div class="container-fluid upper-box">
             <div class="row">
                 <div class="col-xs-12 col-md-5 col-md-offset-6">
                     <figure itemscope="" itemtype="http://schema.org/ImageObject"><img alt="Text logo dark blue" class="max-width-310 max-width-xs-200" itemprop="contentUrl" src="/assets/uploads/text-logo-dark-blue.svg" /></figure>
 
-                    <h1 class="fs-40 fs-xs-28 lato-medium padding-bottom-40 padding-bottom-xs-0 padding-top-15 line-height-50 line-height-xs-30">Boost patient loyalty and prevention with FREE apps and a digital dental currency</h1>
+                    <h1 class="fs-40 fs-lg-30 fs-md-30 fs-sm-30 fs-xs-28 lato-medium padding-bottom-40 padding-bottom-lg-25 padding-bottom-md-25 padding-bottom-sm-25 padding-bottom-xs-0 padding-top-15 line-height-50 line-height-lg-40 line-height-md-40 line-height-sm-40 line-height-xs-30">Boost patient loyalty and prevention with FREE apps and a digital dental currency</h1>
 
                     <figure class="visible-on-mobile" itemscope="" itemtype="http://schema.org/ImageObject">
                         <img alt="Dentist transperant background" itemprop="contentUrl" src="/assets/uploads/dentist-mobile.png" />
                     </figure>
 
-                    <div class="fs-25 fs-xs-16 padding-left-xs-15 padding-right-xs-15 line-height-xs-25 lato dark-blue padding-bottom-40 padding-bottom-xs-10 line-height-30 mobile-white-bg">“I am paid for prevention and my patients get rewards for better oral health. All at no cost for me.”</div>
+                    <div class="fs-25 fs-lg-21 fs-md-21 fs-sm-21 fs-xs-16 padding-left-xs-15 padding-right-xs-15 line-height-30 line-height-xs-25 lato dark-blue padding-bottom-40 padding-bottom-xs-10 mobile-white-bg">“I am paid for prevention and my patients get rewards for better oral health. All at no cost for me.”</div>
                     <div class="inline-block-top mobile-white-bg display-block-xs display-block-sm">
                         <a class="white-dark-blue-btn scroll-to-contact-us-now" href="javascript:void(0);">LEARN MORE</a></div>
                 </div>
             </div>
         </div>
         <div class="container-fluid down-box padding-bottom-sm-20 padding-bottom-xs-30" data-scroll-here="bitcoin-dentistry">
-            <div class="fs-26 lato-bold color-black"><figure class="inline-block max-width-30 margin-right-5 fs-0" itemscope="" itemtype="http://schema.org/ImageObject"><img alt="Text logo dark blue" class="width-100" itemprop="contentUrl" src="/assets/images/logo.svg" /></figure> <span class="inline-block">&ldquo;The Bitcoin of Dentistry&rdquo;</span></div>
+            <div class="fs-30 fs-md-22 fs-sm-22 fs-xs-22 lato-bold color-black"><figure class="inline-block max-width-30 margin-right-5 fs-0" itemscope="" itemtype="http://schema.org/ImageObject"><img alt="Text logo dark blue" class="width-100" itemprop="contentUrl" src="/assets/images/logo.svg" /></figure> <span class="inline-block">&ldquo;The Bitcoin of Dentistry&rdquo;</span></div>
 
-            <div class="fs-18 fs-md-16 fs-xs-16 padding-bottom-20 padding-top-20 color-black text-left text-center-xs">Dentacoin is a digital dental currency used to reward your patients for taking oral health surveys, submitting reviews to you, improving their at-home hygiene. Your practice implements a digital patient loyalty program, gets additional payments, and is promoted among 200K+ patients free of charge.</div>
+            <div class="fs-20 fs-md-16 fs-sm-16 fs-xs-16 padding-bottom-20 padding-top-20 color-black text-left text-center-xs">Dentacoin is a digital dental currency used to reward your patients for taking oral health surveys, submitting reviews to you, improving their at-home hygiene. Your practice implements a digital patient loyalty program, gets additional payments, and is promoted among 200K+ patients free of charge.</div>
         </div>
         <picture>
             <source media="(min-width: 1400px)" srcset="/assets/uploads/dentist-large-screen-image.png" />
@@ -36,7 +36,7 @@
             <div class="row">
                 <div class="col-xs-12">
                     <h2 class="fs-42 fs-xs-26 dark-blue">Dentacoin Dentists Report*</h2>
-                    <p class="calibri-light fs-16" style="color: #555555">* Research among 1800 dentists using Dentacoin tools and currency.</p>
+                    <p class="fs-16" style="color: #555555">* Research among 1800 dentists using Dentacoin tools and currency.</p>
                 </div>
             </div>
             <div class="row padding-top-40">
@@ -71,7 +71,7 @@
             <div class="row">
                 <div class="col-xs-12">
                     <h2 class="fs-42 fs-xs-26">How to Become a Dentacoin Partner</h2>
-                    <div class="fs-26 fs-xs-20 calibri-light">Free of charge. No obligations.</div>
+                    <div class="fs-28 fs-xs-20 lato-light">Free of charge. No obligations.</div>
                 </div>
             </div>
         </div>
@@ -82,19 +82,19 @@
             <div class="left-side-content">
                 <ul class="padding-bottom-15">
                     <li class="fs-18 padding-bottom-15">
-                        <div class="fs-44 lato-black dark-blue">01</div>
+                        <div class="fs-44 fs-lg-35 fs-md-35 fs-sm-35 fs-xs-35 lato-black dark-blue">01</div>
                         <b class="lato-bold">Sign up for free</b>
                         <div class="color-light-blue">(up to 2 minutes)</div>
                         <div class="padding-top-5">It’s simple and gives you access to all apps.</div>
                     </li>
                     <li class="fs-18 padding-bottom-15">
-                        <div class="fs-44 lato-black dark-blue">02</div>
+                        <div class="fs-44 fs-lg-35 fs-md-35 fs-sm-35 fs-xs-35 lato-black dark-blue">02</div>
                         <b class="lato-bold">Wait for approval & email</b>
                         <div class="color-light-blue">(up to 72 hours)</div>
                         <div class="padding-top-5">Our representatives will send you more info.</div>
                     </li>
                     <li class="fs-18">
-                        <div class="fs-44 lato-black dark-blue">03</div>
+                        <div class="fs-44 fs-lg-35 fs-md-35 fs-sm-35 fs-xs-35 lato-black dark-blue">03</div>
                         <b class="lato-bold">Accept Dentacoin payments</b>
                         <div class="color-light-blue">(up to 2 minutes)</div>
                         <div class="padding-top-5">All you need is to open a virtual wallet.</div>
@@ -113,22 +113,22 @@
                 <div class="col-xs-12">
                     <div class="single inline-block-top">
                         <figure itemscope="" itemtype="http://schema.org/ImageObject" class="text-center"><img alt="Dentacoin Dentists icon" class="max-width-60 margin-bottom-5" itemprop="contentUrl" data-defer-src="/assets/uploads/stats1.svg" /></figure>
-                        <div class="fs-50 fs-xs-45 lato-light padding-top-10">1.9K+</div>
+                        <div class="fs-50 fs-lg-40 fs-md-40 fs-sm-40 fs-xs-40 lato-light padding-top-10">1.9K+</div>
                         <div class="fs-20 fs-xs-18 lato-semibold padding-bottom-xs-25">Dentacoin Dentists</div>
                     </div>
                     <div class="single inline-block-top">
                         <figure itemscope="" itemtype="http://schema.org/ImageObject" class="text-center"><img alt="Partner Locations icon" class="max-width-50" itemprop="contentUrl" data-defer-src="/assets/uploads/stats2.svg" /></figure>
-                        <div class="fs-50 fs-xs-45 lato-light padding-top-10">115+</div>
+                        <div class="fs-50 fs-lg-40 fs-md-40 fs-sm-40 fs-xs-40 lato-light padding-top-10">115+</div>
                         <div class="fs-20 fs-xs-18 lato-semibold padding-bottom-xs-25">Partner Locations Accepting DCN</div>
                     </div>
                     <div class="single inline-block-top">
                         <figure itemscope="" itemtype="http://schema.org/ImageObject" class="text-center"><img alt="Active Users &amp; Subscribers icon" class="max-width-80 margin-bottom-20" itemprop="contentUrl" data-defer-src="/assets/uploads/stats3.svg" /></figure>
-                        <div class="fs-50 fs-xs-45 lato-light padding-top-10">200K+</div>
+                        <div class="fs-50 fs-lg-40 fs-md-40 fs-sm-40 fs-xs-40 lato-light padding-top-10">200K+</div>
                         <div class="fs-20 fs-xs-18 lato-semibold padding-bottom-xs-25">Active Users &amp; Subscribers</div>
                     </div>
                     <div class="single inline-block-top">
                         <figure itemscope="" itemtype="http://schema.org/ImageObject" class="text-center"><img alt="Transactions icon" class="max-width-60 margin-bottom-10" itemprop="contentUrl" data-defer-src="/assets/uploads/stats5.svg" /></figure>
-                        <div class="fs-50 fs-xs-45 lato-light padding-top-10">230K+</div>
+                        <div class="fs-50 fs-lg-40 fs-md-40 fs-sm-40 fs-xs-40 lato-light padding-top-10">230K+</div>
                         <div class="fs-20 fs-xs-18 lato-semibold ">Transactions in DCN currency</div>
                     </div>
                 </div>
@@ -140,13 +140,13 @@
         <div class="container">
             <div class="row">
                 <div class="col-xs-12">
-                    <h2 class="fs-42 fs-xs-26 lato-light dark-blue text-center padding-bottom-50">Join The Largest Global Dental Community</h2>
+                    <h2 class="fs-42 fs-xs-26 dark-blue text-center padding-bottom-50">Join The Largest Global Dental Community</h2>
                 </div>
             </div>
         </div>
         @include('partials.shortcode-testimonials')
         <div class="header-banner module text-center">
-            <h3 class="fs-22 color-white">Request your FREE, non-obligatory demo <a href="javascript:void(0);" class="margin-left-20 dark-blue-light-blue-btn scroll-to-contact-us-now">LEARN MORE</a></h3>
+            <h3 class="fs-21 color-white">Request your FREE, non-obligatory demo <a href="javascript:void(0);" class="margin-left-20 dark-blue-light-blue-btn scroll-to-contact-us-now">LEARN MORE</a></h3>
         </div>
     </section>
     <section class="section-partners-google-map padding-top-40">

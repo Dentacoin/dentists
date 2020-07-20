@@ -13,7 +13,7 @@ body.home {
         position: absolute;
         left: 0;
         width: 100%;
-        top: 10%;
+        top: 15%;
         .visible-on-mobile {
             display: none;
         }
@@ -28,6 +28,12 @@ body.home {
                     width: 25px;
                 }
             }
+        }
+        @include breakpoint($lg-only) {
+            top: 10%;
+        }
+        @include breakpoint($md-down) {
+            top: 10%;
         }
         @include breakpoint($sm-down) {
             position: static;

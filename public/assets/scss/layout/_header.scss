@@ -9,12 +9,18 @@ header {
     z-index: 100;
     background-color: white;
     @include box-shadow(0 2px 10px 0 rgba(0,0,0,.1));
+    @include simple_transition(.3s);
     >.container {
         @include vertical-horizontal-align(absolute);
     }
     .logo {
-        padding-top: 10px;
-        padding-bottom: 10px;
+        img {
+            max-width: 40px;
+            @include simple_transition(.3s);
+        }
+    }
+    .hamburger-icon {
+        max-width: 30px;
     }
     .btns-container {
         text-align: right;
@@ -56,6 +62,27 @@ header {
                 overflow: hidden;
                 @include rounded(50%);
             }
+        }
+    }
+    &.on-going-sticky-header {
+        height: 40px;
+        .logo {
+            img {
+                max-width: 30px;
+            }
+        }
+        .hide-on-scroll {
+            display: none;
+        }
+        .white-dark-blue-btn {
+            border: 0;
+            background: transparent;
+            color: $dark_blue;
+            padding: 5px;
+            margin: 0 !important;
+        }
+        .hamburger-icon {
+            max-width: 25px;
         }
     }
     @include breakpoint($xs) {

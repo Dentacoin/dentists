@@ -1,9 +1,9 @@
 @extends('layout-redesign')
 @section('content')
     <div class="header-banner module text-center">
-        <h3 class="fs-22 color-white">Request your FREE, non-obligatory demo <a href="javascript:void(0);" class="margin-left-20 dark-blue-light-blue-btn scroll-to-contact-us-now">LEARN MORE</a></h3>
+        <h3 class="fs-21 color-white">Request your FREE, non-obligatory demo <a href="javascript:void(0);" class="margin-left-20 dark-blue-light-blue-btn scroll-to-contact-us-now">LEARN MORE</a></h3>
     </div>
-    <section class="section-how-it-works-above-the-fold padding-top-180 padding-bottom-180 padding-top-xs-15 padding-bottom-xs-15">
+    <section class="section-how-it-works-above-the-fold padding-top-180 padding-bottom-180 padding-top-lg-110 padding-top-xs-15 padding-bottom-xs-15">
         <div class="container">
             <div class="row">
                 <div class="col-xs-12 col-sm-5 col-sm-offset-7 col-md-6 col-md-offset-6 col-lg-4 color-white text-center-xs above-the-fold-content">
@@ -22,7 +22,7 @@
             <div class="row">
                 <div class="col-xs-12">
                     <h2 class="fs-42 fs-xs-26 dark-blue">Become Dentacoin Partner</h2>
-                    <div class="fs-26 fs-xs-20 calibri-light dark-blue">Join Dentacoin partner network in 3 simple steps:</div>
+                    <div class="fs-28 fs-xs-20 calibri-light dark-blue">Join Dentacoin partner network in 3 simple steps:</div>
                 </div>
             </div>
         </div>
@@ -59,30 +59,30 @@
     </section>
     <section class="section-why-dcn-is-good padding-top-50">
         <div class="fs-0 single-row padding-top-10 padding-bottom-10">
-            <figure itemscope="" itemtype="http://schema.org/ImageObject" class="inline-block">
+            <figure itemscope="" itemtype="http://schema.org/ImageObject" class="inline-block-top">
                 <img alt="Get FREE promotion icon" class="width-100" itemprop="contentUrl" data-defer-src="/assets/uploads/get-free-promotion.png" />
             </figure>
-            <div class="row-content fs-18 inline-block padding-left-25 padding-right-25">
+            <div class="row-content fs-18 inline-block-top padding-left-25 padding-right-25 padding-top-lg-10 padding-top-25">
                 <h2 class="fs-46 fs-sm-36 fs-xs-26 dark-blue">Get FREE Promotion</h2>
                 <div class="padding-top-10 padding-bottom-25 line-height-30 fs-xs-16 line-height-xs-24">Our Marketing team will launch a promotional campaign without any charges for you. We will announce you as a new Dentacoin partner in a special article and promote you to our community of 200K users, followers on social media followers (Facebook, Instagram, Twitter, LinkedIn, Telegram) and subscribers. As a special bonus for limited time, you will get free advertising campaigns on Facebook and Google Ads.</div>
                 <a href="javascript:void(0);" class="white-dark-blue-btn scroll-to-contact-us-now">START NOW</a>
             </div>
         </div>
         <div class="fs-0 display-flex single-row padding-top-10 padding-bottom-10">
-            <figure itemscope="" itemtype="http://schema.org/ImageObject" class="inline-block">
+            <figure itemscope="" itemtype="http://schema.org/ImageObject">
                 <img alt="Engage Patients icon" class="width-100" itemprop="contentUrl" data-defer-src="/assets/uploads/engage-patients.png" />
             </figure>
-            <div class="row-content fs-18 inline-block padding-left-25 padding-right-25">
+            <div class="row-content fs-18 padding-left-25 padding-right-25 padding-top-120 padding-top-lg-80">
                 <h2 class="fs-46 fs-sm-36 fs-xs-26 dark-blue">Engage Patients & Let them Earn Rewards</h2>
                 <div class="padding-top-10 padding-bottom-25 line-height-30 fs-xs-16 line-height-xs-24">Ask patients to rate your practice on Dentacoin Trusted Reviews, help them improve oral hygiene habits with DentaCare mobile app, and enable them to participate in paid online surveys on various dental topics on DentaVox.<br><br>Patients will get DCN tokens as a reward for their valuable actions on Dentacoin tools, which can be redeemed for payments of dental services.</div>
             </div>
         </div>
         <div class="fs-0 single-row padding-top-10 padding-bottom-10">
-            <figure itemscope="" itemtype="http://schema.org/ImageObject" class="inline-block">
+            <figure itemscope="" itemtype="http://schema.org/ImageObject" class="inline-block-top">
                 <img alt="Receive Crypto Payments icon" class="width-100" itemprop="contentUrl" data-defer-src="/assets/uploads/receive-crypto-payments.png" />
             </figure>
-            <div class="row-content fs-18 inline-block padding-left-25 padding-right-25">
-                <h2 class="fs-46 fs-sm-36 fs-xs-26 dark-blue">Receive Crypto Payments</h2>
+            <div class="row-content fs-18 inline-block-top padding-left-25 padding-right-25">
+                <h2 class="fs-46 fs-sm-36 fs-xs-26 dark-blue padding-top-120 padding-top-lg-100">Receive Crypto Payments</h2>
                 <div class="padding-top-10 padding-bottom-25 line-height-30 fs-xs-16 line-height-xs-24">Be among the pioneers and take advantage of a future-proof payment option in Dentacoin crypto currency. Receive payments from patients directly on your virtual wallet, without intermediaries or hidden costs.</div>
                 <a href="javascript:void(0);" class="white-dark-blue-btn scroll-to-contact-us-now">START NOW</a>
             </div>
