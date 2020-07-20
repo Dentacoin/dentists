@@ -24,7 +24,7 @@
             }
         }
         @include breakpoint($lg-only) {
-            top: 12%;
+            top: 10%;
         }
         @include breakpoint($md-down) {
             top: 10%;
@@ -50,15 +50,15 @@
     .down-box {
         position: absolute;
         left: 0;
-        top: 67%;
-        margin-left: 60%;
-        width: 35%;
+        top: 67%;  
+        margin-left: 55%;
+        width: 43%;
     }
     @media only screen and (max-width: 1400px) {
         .down-box {
-            margin-left: 60%;
-            top: 60%;
-            width: 35%;
+            margin-left: 55%;
+            top: 66%;
+            width: 42%;
         }
     }
     picture {
@@ -100,7 +100,7 @@
         }
     }
     @media only screen and (max-width: 1400px) {
-        margin-top: -20.5%;
+        margin-top: -10.7%;
     }
     @media only screen and (max-width: 992px) {
         margin-top: 20px;

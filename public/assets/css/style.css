@@ -8507,9 +8507,8 @@ footer .bottom-text a {
       width: 25%; } }
   @media only screen and (max-width: 1650px) {
     .intro-section .down-box {
-      margin-left: 60%;
-      top: 65%;
-      width: 35%; } }
+      margin-left: 55%;
+      width: 43%; } }
   @media only screen and (max-width: 1100px) {
     .intro-section .down-box {
       margin-left: 58%;
@@ -8975,7 +8974,7 @@ footer .bottom-text a {
         width: 25px; }
     @media screen and (min-width: 1200px) and (max-width: 1400px) {
       .section-homepage-above-the-fold .upper-box {
-        top: 12%; } }
+        top: 10%; } }
     @media screen and (max-width: 1199px) {
       .section-homepage-above-the-fold .upper-box {
         top: 10%; } }
@@ -9000,13 +8999,13 @@ footer .bottom-text a {
     position: absolute;
     left: 0;
     top: 67%;
-    margin-left: 60%;
-    width: 35%; }
+    margin-left: 55%;
+    width: 43%; }
   @media only screen and (max-width: 1400px) {
     .section-homepage-above-the-fold .down-box {
-      margin-left: 60%;
-      top: 60%;
-      width: 35%; } }
+      margin-left: 55%;
+      top: 66%;
+      width: 42%; } }
   .section-homepage-above-the-fold picture img {
     width: 100%; }
   @media screen and (max-width: 991px) {
@@ -9038,7 +9037,7 @@ footer .bottom-text a {
         width: 100%; } }
   @media only screen and (max-width: 1400px) {
     .section-dentists-report {
-      margin-top: -20.5%; } }
+      margin-top: -10.7%; } }
   @media only screen and (max-width: 992px) {
     .section-dentists-report {
       margin-top: 20px; } }
