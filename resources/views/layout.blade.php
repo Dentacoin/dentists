@@ -112,7 +112,7 @@
                 {{--@foreach($header_menu as $menu_el)
                     <li class="lato-bold"><a itemprop="url" class="{{$menu_el->class_attribute}}" @if(!empty($menu_el->id_attribute)) id="{{$menu_el->id_attribute}}" @endif @if(!empty(Route::current()) && Route::current()->getName() != 'home' && strpos($menu_el->class_attribute, 'scrolling-to-section') !== false) href="{{route($route)}}#{{$menu_el->id_attribute}}" @else @if($menu_el->new_window) target="_blank" @endif href="{{$menu_el->url}}" @endif><span itemprop="name">{{$menu_el->name}}</span></a></li>
                 @endforeach--}}
-                <li class="lato-bold"><a itemprop="url" href="/"><span itemprop="name">HOME</span></a></li>
+                <li class="lato-bold"><a itemprop="url" href="{{route($route)}}"><span itemprop="name">HOME</span></a></li>
                 <li class="lato-bold"><a itemprop="url" href="/how-it-works"><span itemprop="name">HOW IT WORKS</span></a></li>
                 <li class="lato-bold"><a itemprop="url" href="/download-guides-assets"><span itemprop="name">GUIDES & ASSETS</span></a></li>
                 <li class="lato-bold"><a itemprop="url" class="scrolling-to-section" id="contact-us" @if(!empty(Route::current()) && Route::current()->getName() != 'home') href="{{route($route)}}#contact-us" @endif><span itemprop="name">CONTACT US</span></a></li>
