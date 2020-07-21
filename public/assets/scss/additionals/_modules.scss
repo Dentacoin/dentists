@@ -303,6 +303,9 @@
             width: 100%;
             @include vertical-horizontal-align(absolute);
         }
+        @include breakpoint($lgll) {
+            background-position: left 25% bottom 0, center bottom 0;
+        }
         @include breakpoint($md-only) {
             background-position: left 5% bottom 0, center bottom 0;
         }

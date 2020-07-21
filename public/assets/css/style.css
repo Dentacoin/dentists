@@ -7936,6 +7936,9 @@ nav.sidenav {
     -webkit-transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%); }
+  @media screen and (min-width: 1800px) {
+    .module.header-banner {
+      background-position: left 25% bottom 0, center bottom 0; } }
   @media screen and (min-width: 992px) and (max-width: 1199px) {
     .module.header-banner {
       background-position: left 5% bottom 0, center bottom 0; } }
@@ -9218,6 +9221,11 @@ footer .bottom-text a {
     order: 2; }
   .section-why-dcn-is-good .single-row.display-flex .row-content {
     order: 1; }
+@media screen and (min-width: 1800px) {
+  .section-why-dcn-is-good .single-row figure {
+    width: 50%; }
+  .section-why-dcn-is-good .single-row .row-content {
+    width: 50%; } }
 @media screen and (min-width: 768px) and (max-width: 991px) {
   .section-why-dcn-is-good .single-row figure {
     width: 45%; }
