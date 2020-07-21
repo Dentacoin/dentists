@@ -110,7 +110,7 @@
             <a href="javascript:void(0)" class="close-btn"><i class="fa fa-times" aria-hidden="true"></i></a>
             <ul itemscope="" itemtype="http://schema.org/SiteNavigationElement">
                 {{--@foreach($header_menu as $menu_el)
-                    <li class="lato-bold"><a itemprop="url" class="{{$menu_el->class_attribute}}" @if(!empty($menu_el->id_attribute)) id="{{$menu_el->id_attribute}}" @endif @if(!empty(Route::current()) && Route::current()->getName() != 'home-redesign' && strpos($menu_el->class_attribute, 'scrolling-to-section') !== false) href="{{route($route)}}#{{$menu_el->id_attribute}}" @else @if($menu_el->new_window) target="_blank" @endif href="{{$menu_el->url}}" @endif><span itemprop="name">{{$menu_el->name}}</span></a></li>
+                    <li class="lato-bold"><a itemprop="url" class="{{$menu_el->class_attribute}}" @if(!empty($menu_el->id_attribute)) id="{{$menu_el->id_attribute}}" @endif @if(!empty(Route::current()) && Route::current()->getName() != 'home' && strpos($menu_el->class_attribute, 'scrolling-to-section') !== false) href="{{route($route)}}#{{$menu_el->id_attribute}}" @else @if($menu_el->new_window) target="_blank" @endif href="{{$menu_el->url}}" @endif><span itemprop="name">{{$menu_el->name}}</span></a></li>
                 @endforeach--}}
                 <li class="lato-bold"><a itemprop="url" href="/"><span itemprop="name">HOME</span></a></li>
                 <li class="lato-bold"><a itemprop="url" href="/how-it-works"><span itemprop="name">HOW IT WORKS</span></a></li>
