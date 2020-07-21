@@ -2,14 +2,22 @@
     &.contact-us {
         .thank-you-message {
             .message-text {
-                width: calc(100% - 120px);
+                width: calc(100% - 160px);
                 padding-right: 15px;
             }
             .dark-blue-light-blue-btn {
-                width: 120px;
+                width: 160px;
                 text-align: center;
                 padding-left: 0;
                 padding-right: 0;
+            }
+            @include breakpoint($xs) {
+                text-align: center;
+                .message-text {
+                    width: 100%;
+                    padding-right: 0;
+                    padding-bottom: 15px;
+                }
             }
         }
         form {

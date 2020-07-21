@@ -3,7 +3,7 @@
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
-    .mobile-dentist {
+    .mobile-dentist, .mobile-sign-up {
         display: none;
     }
     @include breakpoint($sm-only) {
@@ -14,7 +14,7 @@
         .above-the-fold-content {
             color: $dark_blue;
         }
-        .mobile-dentist {
+        .mobile-dentist, .mobile-sign-up {
             display: block;
         }
     }
@@ -75,6 +75,18 @@
                 width: 100%;
                 text-align: center;
             }
+        }
+    }
+    @include breakpoint($lgll) {
+        .get-free-promotion {
+            padding-right: 80px !important;
+            padding-top: 100px !important;
+        }
+        .engage-patients {
+            padding-left: 80px !important;
+        }
+        .receive-crypto-payments {
+            padding-right: 80px!important;
         }
     }
 }

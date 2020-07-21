@@ -60,7 +60,10 @@
         width: 43%;
     }
     @include breakpoint($lgll) {
-        top: 70%;
+        .down-box {
+            top: 70%;
+            width: 40%;
+        }
     }
     @media only screen and (max-width: 1400px) {
         .down-box {

@@ -32,6 +32,9 @@ header {
                 }
             }
         }
+        .active-link {
+            border-bottom: 2px solid $dark_blue;
+        }
     }
     .show-on-mobile {
         display: none;

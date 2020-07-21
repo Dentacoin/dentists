@@ -7992,13 +7992,20 @@ nav.sidenav {
     cursor: pointer; }
 
 .shortcode.contact-us .thank-you-message .message-text {
-  width: calc(100% - 120px);
+  width: calc(100% - 160px);
   padding-right: 15px; }
 .shortcode.contact-us .thank-you-message .dark-blue-light-blue-btn {
-  width: 120px;
+  width: 160px;
   text-align: center;
   padding-left: 0;
   padding-right: 0; }
+@media screen and (max-width: 767px) {
+  .shortcode.contact-us .thank-you-message {
+    text-align: center; }
+    .shortcode.contact-us .thank-you-message .message-text {
+      width: 100%;
+      padding-right: 0;
+      padding-bottom: 15px; } }
 .shortcode.contact-us form {
   position: relative;
   padding-left: 50px; }
@@ -8182,6 +8189,8 @@ header {
         text-align: center; }
         header .btns-container.center-important .register {
           padding: 5px 20px; } }
+    header .btns-container .active-link {
+      border-bottom: 2px solid #002248; }
   header .show-on-mobile {
     display: none; }
     @media screen and (max-width: 991px) {
@@ -9018,8 +9027,9 @@ footer .bottom-text a {
     margin-left: 55%;
     width: 43%; }
   @media screen and (min-width: 1800px) {
-    .section-homepage-above-the-fold {
-      top: 70%; } }
+    .section-homepage-above-the-fold .down-box {
+      top: 70%;
+      width: 40%; } }
   @media only screen and (max-width: 1400px) {
     .section-homepage-above-the-fold .down-box {
       margin-left: 55%;
@@ -9170,7 +9180,7 @@ footer .bottom-text a {
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover; }
-  .section-how-it-works-above-the-fold .mobile-dentist {
+  .section-how-it-works-above-the-fold .mobile-dentist, .section-how-it-works-above-the-fold .mobile-sign-up {
     display: none; }
   @media screen and (min-width: 768px) and (max-width: 991px) {
     .section-how-it-works-above-the-fold {
@@ -9180,7 +9190,7 @@ footer .bottom-text a {
       background: none; }
       .section-how-it-works-above-the-fold .above-the-fold-content {
         color: #002248; }
-      .section-how-it-works-above-the-fold .mobile-dentist {
+      .section-how-it-works-above-the-fold .mobile-dentist, .section-how-it-works-above-the-fold .mobile-sign-up {
         display: block; } }
 
 .section-become-dcn-partner .container-for-line-crossing-circles {
@@ -9221,6 +9231,14 @@ footer .bottom-text a {
   .section-why-dcn-is-good .single-row .row-content {
     width: 100%;
     text-align: center; } }
+@media screen and (min-width: 1800px) {
+  .section-why-dcn-is-good .get-free-promotion {
+    padding-right: 80px !important;
+    padding-top: 100px !important; }
+  .section-why-dcn-is-good .engage-patients {
+    padding-left: 80px !important; }
+  .section-why-dcn-is-good .receive-crypto-payments {
+    padding-right: 80px !important; } }
 
 @media screen and (min-width: 1366px) {
   .faq-container .options-section .container {

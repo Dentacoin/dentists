@@ -32,7 +32,7 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-xs-12">
-                    <h2 class="fs-42 fs-xs-26 dark-blue padding-bottom-xs-15">Dentacoin Dentists Report*</h2>
+                    <h2 class="fs-42 fs-xs-26 dark-blue padding-bottom-xs-10">Dentacoin Dentists Report*</h2>
                     <p class="fs-16" style="color: #555555">* Research among 1800 dentists using Dentacoin tools and currency.</p>
                 </div>
             </div>
