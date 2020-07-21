@@ -1,5 +1,17 @@
 .shortcode {
     &.contact-us {
+        .thank-you-message {
+            .message-text {
+                width: calc(100% - 120px);
+                padding-right: 15px;
+            }
+            .dark-blue-light-blue-btn {
+                width: 120px;
+                text-align: center;
+                padding-left: 0;
+                padding-right: 0;
+            }
+        }
         form {
             position: relative;
             padding-left: 50px;

@@ -23,6 +23,11 @@
                 }
             }
         }
+        @include breakpoint($lgll) {
+            .col-md-offset-6 {
+                margin-left: 46%;
+            }
+        }
         @include breakpoint($lg-only) {
             top: 10%;
         }
@@ -53,6 +58,9 @@
         top: 67%;
         margin-left: 55%;
         width: 43%;
+    }
+    @include breakpoint($lgll) {
+        top: 70%;
     }
     @media only screen and (max-width: 1400px) {
         .down-box {

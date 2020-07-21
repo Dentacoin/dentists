@@ -7991,6 +7991,14 @@ nav.sidenav {
   .module.custom-checkbox-style label {
     cursor: pointer; }
 
+.shortcode.contact-us .thank-you-message .message-text {
+  width: calc(100% - 120px);
+  padding-right: 15px; }
+.shortcode.contact-us .thank-you-message .dark-blue-light-blue-btn {
+  width: 120px;
+  text-align: center;
+  padding-left: 0;
+  padding-right: 0; }
 .shortcode.contact-us form {
   position: relative;
   padding-left: 50px; }
@@ -8977,6 +8985,9 @@ footer .bottom-text a {
           margin-top: 20px; } }
       .section-homepage-above-the-fold .upper-box .btn-container .desktop img {
         width: 25px; }
+    @media screen and (min-width: 1800px) {
+      .section-homepage-above-the-fold .upper-box .col-md-offset-6 {
+        margin-left: 46%; } }
     @media screen and (min-width: 1200px) and (max-width: 1365px) {
       .section-homepage-above-the-fold .upper-box {
         top: 10%; } }
@@ -9006,6 +9017,9 @@ footer .bottom-text a {
     top: 67%;
     margin-left: 55%;
     width: 43%; }
+  @media screen and (min-width: 1800px) {
+    .section-homepage-above-the-fold {
+      top: 70%; } }
   @media only screen and (max-width: 1400px) {
     .section-homepage-above-the-fold .down-box {
       margin-left: 55%;

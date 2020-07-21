@@ -6,7 +6,7 @@
         </div>
         <div class="container-fluid upper-box">
             <div class="row">
-                <div class="col-xs-12 col-md-5 col-md-offset-6">
+                <div class="col-xs-12 col-md-5 col-lg-4 col-md-offset-6">
                     <figure itemscope="" itemtype="http://schema.org/ImageObject"><img alt="Text logo dark blue" class="max-width-310 max-width-xs-200" itemprop="contentUrl" src="/assets/uploads/text-logo-dark-blue.svg" /></figure>
                     <h1 class="fs-40 fs-lg-30 fs-md-30 fs-sm-30 fs-xs-28 lato-medium padding-bottom-40 padding-bottom-lg-25 padding-bottom-md-25 padding-bottom-sm-25 padding-bottom-xs-0 padding-top-15 line-height-50 line-height-lg-40 line-height-md-40 line-height-sm-40 line-height-xs-30">Boost patient loyalty and prevention with FREE apps and a digital dental currency</h1>
                     <figure class="visible-on-mobile" itemscope="" itemtype="http://schema.org/ImageObject">
@@ -32,7 +32,7 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-xs-12">
-                    <h2 class="fs-42 fs-xs-26 dark-blue">Dentacoin Dentists Report*</h2>
+                    <h2 class="fs-42 fs-xs-26 dark-blue padding-bottom-xs-15">Dentacoin Dentists Report*</h2>
                     <p class="fs-16" style="color: #555555">* Research among 1800 dentists using Dentacoin tools and currency.</p>
                 </div>
             </div>
@@ -40,23 +40,23 @@
                 <div class="col-xs-12 fs-0">
                     <figure class="inline-block-top padding-left-10 padding-right-10 single-report padding-bottom-xs-35 padding-bottom-sm-35" itemscope="" itemtype="http://schema.org/ImageObject">
                         <img alt="Happier and healthier patients" class="width-100 max-width-120" itemprop="contentUrl" data-defer-src="/assets/uploads/report1.svg" />
-                        <figcaption class="fs-20 padding-top-10 max-width-280 margin-0-auto">Happier and healthier patients</figcaption>
+                        <figcaption class="fs-20 padding-top-10 max-width-280 margin-0-auto">Happier and healthier<br> patients</figcaption>
                     </figure>
                     <figure class="inline-block-top padding-left-10 padding-right-10 single-report padding-bottom-xs-35 padding-bottom-sm-35" itemscope="" itemtype="http://schema.org/ImageObject">
                         <img alt="Improved online presence and search rank" class="width-100 max-width-120" itemprop="contentUrl" data-defer-src="/assets/uploads/report2.svg" />
-                        <figcaption class="fs-20 padding-top-10 max-width-280 margin-0-auto">Improved online presence and search rank</figcaption>
+                        <figcaption class="fs-20 padding-top-10 max-width-280 margin-0-auto">Improved online presence<br> and search rank</figcaption>
                     </figure>
                     <figure class="inline-block-top padding-left-10 padding-right-10 single-report padding-bottom-xs-35 padding-bottom-sm-35" itemscope="" itemtype="http://schema.org/ImageObject">
                         <img alt="Additional income and innovative payments" class="width-100 max-width-120" itemprop="contentUrl" data-defer-src="/assets/uploads/report3.svg" />
-                        <figcaption class="fs-20 padding-top-10 max-width-280 margin-0-auto">Additional income and innovative payments</figcaption>
+                        <figcaption class="fs-20 padding-top-10 max-width-280 margin-0-auto">Additional income and<br> innovative payments</figcaption>
                     </figure>
                     <figure class="inline-block-top padding-left-10 padding-right-10 single-report padding-bottom-xs-35 padding-bottom-sm-35" itemscope="" itemtype="http://schema.org/ImageObject">
                         <img alt="Мarket overview via free DentaVox stats" class="width-100 max-width-120" itemprop="contentUrl" data-defer-src="/assets/uploads/report4.svg" />
-                        <figcaption class="fs-20 padding-top-10 max-width-280 margin-0-auto">Мarket overview via free DentaVox stats</figcaption>
+                        <figcaption class="fs-20 padding-top-10 max-width-280 margin-0-auto">Мarket overview via<br> free DentaVox stats</figcaption>
                     </figure>
                     <figure class="inline-block-top padding-left-10 padding-right-10 single-report padding-bottom-xs-35 padding-bottom-sm-35" itemscope="" itemtype="http://schema.org/ImageObject">
                         <img alt="Valuable feedback via Trusted Reviews" class="width-100 max-width-120" itemprop="contentUrl" data-defer-src="/assets/uploads/report5.svg" />
-                        <figcaption class="fs-20 padding-top-10 max-width-280 margin-0-auto">Valuable feedback via Trusted Reviews</figcaption>
+                        <figcaption class="fs-20 padding-top-10 max-width-280 margin-0-auto">Valuable feedback via<br> Trusted Reviews</figcaption>
                     </figure>
                 </div>
             </div>
