@@ -269,7 +269,7 @@ function initSlidingContractFormLogic() {
 }
 
 // ================== PAGES ==================
-if (!$('body').hasClass('logged-in') && $('body').hasClass('home') || ($('body').hasClass('logged-home') || $('body').hasClass('home-redesign'))) {
+if (!$('body').hasClass('logged-in') && $('body').hasClass('home') || ($('body').hasClass('logged-home') || $('body').hasClass('home'))) {
     var miniHubParams = {
         'element_id_to_bind' : 'header-avatar',
         'platform' : 'dentists',
@@ -353,7 +353,7 @@ if (!$('body').hasClass('logged-in') && $('body').hasClass('home') || ($('body')
         scrollToContactUsNow();
     }
 
-    if ($('body').hasClass('logged-home') || $('body').hasClass('home-redesign')) {
+    if ($('body').hasClass('logged-home') || $('body').hasClass('home')) {
         $('.change-on-logged-in-to-scroll-to-contact-us').html('CONTACT US').removeClass('dentist-register open-dentacoin-gateway').addClass('scroll-to-contact-us-now');
     }
 } else if ($('body').hasClass('how-it-works')) {
@@ -632,7 +632,7 @@ function setLargeImages() {
 function initScrollingToEvents() {
     if ($('.scrolling-to-section').length > 0) {
         $('.scrolling-to-section').click(function() {
-            if ($('body').hasClass('home-redesign') || $('body').hasClass('how-it-works')) {
+            if ($('body').hasClass('home') || $('body').hasClass('how-it-works')) {
 
                 $(this).blur();
                 var currentHref = window.location.href.replace('#'+ $(this).attr('id'), '');

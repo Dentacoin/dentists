@@ -1,4 +1,4 @@
-@extends('layout-redesign')
+@extends('layout')
 @section('content')
     <section class="section-homepage-above-the-fold">
         <div class="header-banner module text-center">
@@ -62,7 +62,7 @@
             </div>
         </div>
     </section>
-    @include('partials.shortcode-contact-us-now')
+    [shortcode type="contact-us-now"]
     <section class="section-how-to-become-dcn-partner">
         <div class="container-fluid text-center padding-top-70 padding-bottom-30 dark-blue">
             <div class="row">
@@ -132,7 +132,7 @@
             </div>
         </div>
     </section>
-    @include('partials.shortcode-applications')
+    [shortcode type="applications"]
     <section class="google-map-section padding-top-70 padding-top-xs-50" data-scroll-here="partners">
         <div class="container">
             <div class="row">
@@ -141,7 +141,7 @@
                 </div>
             </div>
         </div>
-        @include('partials.shortcode-testimonials')
+        [shortcode type="testimonials"]
         <div class="header-banner module text-center">
             <h3 class="fs-21 color-white">Request your FREE, non-obligatory demo <a href="javascript:void(0);" class="margin-left-20 dark-blue-light-blue-btn scroll-to-contact-us-now">LEARN MORE</a></h3>
         </div>

@@ -1,4 +1,4 @@
-@extends('layout-redesign')
+@extends('layout')
 @section('content')
     <div class="header-banner module text-center">
         <h3 class="fs-21 color-white">Request your FREE, non-obligatory demo <a href="javascript:void(0);" class="margin-left-20 dark-blue-light-blue-btn scroll-to-contact-us-now">LEARN MORE</a></h3>
