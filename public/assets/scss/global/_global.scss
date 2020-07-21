@@ -1600,3 +1600,7 @@ nav.sidenav {
 .fb-customerchat, .fb_dialog {
     z-index: 9995 !important;  
 }
+
+.active-link {
+    border-bottom: 2px solid $dark_blue;
+} 

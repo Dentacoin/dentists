@@ -8192,8 +8192,6 @@ header {
         text-align: center; }
         header .btns-container.center-important .register {
           padding: 5px 20px; } }
-    header .btns-container .active-link {
-      border-bottom: 2px solid #002248; }
   header .show-on-mobile {
     display: none; }
     @media screen and (max-width: 991px) {
