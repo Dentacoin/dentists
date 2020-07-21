@@ -242,7 +242,24 @@ function initSlidingContractFormLogic() {
             }
         }
 
-        $('.shortcode.contact-us form').on('submit', function(event) {
+        $('.shortcode.contact-us .next-step').click(function() {
+            switch($('.sliding-fields-container').attr('data-current-step')) {
+                case 'one':
+                    validateFirstStep();
+
+                    break;
+                case 'two':
+                    validateSecondStep();
+
+                    break;
+                case 'three':
+                    validateThirdStep(document.getElementsByClassName('contact-us-form')[0]);
+
+                    break;
+            }
+        });
+
+        /*$('.shortcode.contact-us form').on('submit', function(event) {
             event.preventDefault();
 
             var this_form_native = this;
@@ -260,7 +277,7 @@ function initSlidingContractFormLogic() {
 
                     break;
             }
-        });
+        });*/
 
         /*$('.sliding-fields-container .slide-step').click(function() {
 

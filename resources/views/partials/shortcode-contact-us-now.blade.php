@@ -1,5 +1,5 @@
 <section class="shortcode contact-us" @if(session('hubspot-form-submitted')) data-scroll-to-here="true" @endif data-scroll-here="contact-us">
-    <form class="padding-bottom-100 padding-top-60 padding-bottom-lg-45 padding-bottom-md-45 padding-bottom-sm-45 padding-bottom-xs-45" name="Dentists website contact us" method="post" action="{{route('submit-hubspot-form')}}">
+    <form class="padding-bottom-100 padding-top-60 padding-bottom-lg-45 padding-bottom-md-45 padding-bottom-sm-45 padding-bottom-xs-45 contact-us-form" id="Dentist's website" name="Dentists website contact us" method="post" action="{{route('submit-hubspot-form')}}">
         <h2 class="fs-42 fs-xs-30 dark-blue text-center-xs">CONTACT US NOW</h2>
         <h3 class="fs-28 fs-xs-20 dark-blue text-center-xs lato-light padding-bottom-30">and learn how to become a partner and get:</h3>
         <div class="checks max-width-xs-400 margin-0-auto fs-0">
@@ -116,7 +116,7 @@
                     {{--<a href="javascript:void(0);" class="white-dark-blue-btn padding-left-40 padding-right-40 slide-step inline-block display-block-xs">NEXT >></a>--}}
                     <input type="hidden" name="_token" value="{{csrf_token()}}">
                     <input type="hidden" name="route" value="{{Route::current()->getName()}}">
-                    <input type="submit" value="NEXT >>" class="white-dark-blue-btn padding-left-40 padding-right-40 inline-block display-block-xs"/>
+                    <a href="javascript:void(0);" class="next-step white-dark-blue-btn padding-left-40 padding-right-40 inline-block display-block-xs">NEXT >></a>
                 </div>
             @endif
         </div>
