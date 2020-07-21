@@ -228,7 +228,7 @@ function initSlidingContractFormLogic() {
             }
         }
 
-        function validateThirdStep(form) {
+        function validateThirdStep(form, btn) {
             $('.step.three .error-handle').remove();
             var errors = false;
 
@@ -238,11 +238,13 @@ function initSlidingContractFormLogic() {
             }
 
             if (!errors) {
-                form.submit();
+                btn.attr('type', 'submit');
+                btn.click();
             }
         }
 
         $('.shortcode.contact-us .next-step').click(function() {
+            var this_btn = $(this);
             switch($('.sliding-fields-container').attr('data-current-step')) {
                 case 'one':
                     validateFirstStep();
@@ -253,7 +255,7 @@ function initSlidingContractFormLogic() {
 
                     break;
                 case 'three':
-                    validateThirdStep(document.getElementsByClassName('contact-us-form')[0]);
+                    validateThirdStep(document.getElementsByClassName('contact-us-form')[0], this_btn);
 
                     break;
             }

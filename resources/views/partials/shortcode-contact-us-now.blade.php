@@ -116,7 +116,7 @@
                     {{--<a href="javascript:void(0);" class="white-dark-blue-btn padding-left-40 padding-right-40 slide-step inline-block display-block-xs">NEXT >></a>--}}
                     <input type="hidden" name="_token" value="{{csrf_token()}}">
                     <input type="hidden" name="route" value="{{Route::current()->getName()}}">
-                    <a href="javascript:void(0);" class="next-step white-dark-blue-btn padding-left-40 padding-right-40 inline-block display-block-xs">NEXT >></a>
+                    <input type="button" value="NEXT >>" class="next-step white-dark-blue-btn padding-left-40 padding-right-40 inline-block display-block-xs"/>
                 </div>
             @endif
         </div>
