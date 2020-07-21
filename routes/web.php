@@ -20,7 +20,7 @@ Route::group(['prefix' => '/', 'middleware' => 'frontEndMiddleware'], function (
 
     // Route::get('/home-redesign', 'HomeController@getHomeView')->name('home-redesign');
 
-    Route::get('/how-it-works', 'HomeController@getHowItWorksView')->name('how-it-works');
+    Route::get('/how-it-works', 'PagesController@getPageView')->name('how-it-works');
 
     Route::get('/faq', 'PagesController@getPageView')->name('faq');
 

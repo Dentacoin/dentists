@@ -91,7 +91,7 @@
             </div>
         </div>
     </section>
-    @include('partials.shortcode-contact-us-now')
+    [shortcode type="contact-us-now"]
     <section class="section-above-footer-options padding-top-80 padding-bottom-120 padding-bottom-xs-0 beige-bg" data-scroll-here="contacts">
         <div class="container">
             <div class="row text-center fs-0">
