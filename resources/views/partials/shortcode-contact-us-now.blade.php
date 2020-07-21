@@ -1,5 +1,5 @@
 <section class="shortcode contact-us" @if(session('hubspot-form-submitted')) data-scroll-to-here="true" @endif data-scroll-here="contact-us">
-    <form class="padding-bottom-100 padding-top-60 padding-bottom-lg-45 padding-bottom-md-45 padding-bottom-sm-45 padding-bottom-xs-45" name="Dentists website contact us" method="post" action="{{route('submit-hubspot-form')}}" id="Dentist's website">
+    <form class="padding-bottom-100 padding-top-60 padding-bottom-lg-45 padding-bottom-md-45 padding-bottom-sm-45 padding-bottom-xs-45" name="Dentists website contact us" method="post" action="{{route('submit-hubspot-form')}}">
         <h2 class="fs-42 fs-xs-30 dark-blue text-center-xs">CONTACT US NOW</h2>
         <h3 class="fs-28 fs-xs-20 dark-blue text-center-xs lato-light padding-bottom-30">and learn how to become a partner and get:</h3>
         <div class="checks max-width-xs-400 margin-0-auto fs-0">
@@ -65,7 +65,7 @@
                             <div class="gdpr-checkbox padding-left-10 padding-right-10">
                                 <div class="custom-checkbox-style module">
                                     <input type="checkbox" class="custom-checkbox-input" id="hs_legal_basis"/> <label for="hs_legal_basis" class="text-deco fs-16 padding-left-5">By submitting the form, you agree to our <a href="//dentacoin.com/privacy-policy" target="_blank" class="lato-bold">Privacy Policy</a></label>.
-                                    <input type="hidden" name="hs_legal_basis" value="Freely given consent from contact" />
+                                    <input type="text" name="hs_legal_basis" class="hide" value="Freely given consent from contact" />
                                 </div>
                             </div>
                         </div>
