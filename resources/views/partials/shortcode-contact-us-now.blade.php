@@ -65,6 +65,7 @@
                             <div class="gdpr-checkbox padding-left-10 padding-right-10">
                                 <div class="custom-checkbox-style module">
                                     <input type="checkbox" class="custom-checkbox-input" id="hs_legal_basis"/> <label for="hs_legal_basis" class="text-deco fs-16 padding-left-5">By submitting the form, you agree to our <a href="//dentacoin.com/privacy-policy" target="_blank" class="lato-bold">Privacy Policy</a>.</label>
+                                    <label for="hs_legal_basis" class="hide">hs_legal_basis</label>
                                     <input type="text" name="hs_legal_basis" class="hide" value="Freely given consent from contact" />
                                 </div>
                             </div>
