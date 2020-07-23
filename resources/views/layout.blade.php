@@ -25,17 +25,17 @@
     <style>
 
     </style>
-    <link rel="stylesheet" type="text/css" href="/dist/css/front-libs-style.css?v=1.0.74">
-    <link rel="stylesheet" type="text/css" href="/assets/css/style.css?v=1.0.74">
+    <link rel="stylesheet" type="text/css" href="/dist/css/front-libs-style.css?v=1.0.75">
+    <link rel="stylesheet" type="text/css" href="/assets/css/style.css?v=1.0.75">
 
     @if((!(new \App\Http\Controllers\UserController())->checkSession() && !empty(Route::current()) && (Route::current()->getName() == 'home')) || ((new \App\Http\Controllers\UserController())->checkSession() && !empty(Route::current()) && (Route::current()->getName() == 'logged-home' || Route::current()->getName() == 'home')))
-        <link rel="stylesheet" type="text/css" href="//dentacoin.com/assets/libs/dentacoin-mini-hub/css/styles-big-hub.css?v=1.0.74">
+        <link rel="stylesheet" type="text/css" href="//dentacoin.com/assets/libs/dentacoin-mini-hub/css/styles-big-hub.css?v=1.0.75">
     @endif
 
     @if((new \App\Http\Controllers\UserController())->checkSession())
-        <link rel="stylesheet" type="text/css" href="https://dentacoin.com/assets/libs/dentacoin-mini-hub/css/style.css?v=1.0.74">
+        <link rel="stylesheet" type="text/css" href="https://dentacoin.com/assets/libs/dentacoin-mini-hub/css/style.css?v=1.0.75">
     @elseif (!(new \App\Http\Controllers\UserController())->checkSession())
-        <link rel="stylesheet" type="text/css" href="https://dentacoin.com/assets/libs/dentacoin-login-gateway/css/dentacoin-login-gateway-style.css?v=1.0.74"/>
+        <link rel="stylesheet" type="text/css" href="https://dentacoin.com/assets/libs/dentacoin-login-gateway/css/dentacoin-login-gateway-style.css?v=1.0.75"/>
     @endif
     <script>
         var HOME_URL = '{{ route("home") }}';
@@ -138,7 +138,7 @@
                 <div class="col-xs-9 inline-block btns-container padding-right-xs-10">
                     <a href="/how-it-works" class="hide-xs fs-18 color-black calibri-bold inline-block padding-left-10 padding-right-10 @if (Route::current()->getName() == 'how-it-works') active-link @endif">How it works</a>
                     <span class="hide-xs inline-block padding-left-10 padding-right-10 fs-18 color-black">|</span>
-                    <a @if (Route::current()->getName() != 'home' && Route::current()->getName() != 'how-it-works') href="{{route('home')}}#contact-us" @else href="javascript:void(0);" id="contact-us" @endif class="hide-xs fs-18 color-black calibri-bold inline-block padding-left-10 padding-right-10 @if (Route::current()->getName() == 'home' || Route::current()->getName() == 'how-it-works') scrolling-to-section @endif">Contact us</a>
+                    <a @if (Route::current()->getName() != 'home' && Route::current()->getName() != 'how-it-works') href="{{route('home')}}#contact-us" @else href="javascript:void(0);" id="contact-us" @endif class="hide-xs fs-18 color-black calibri-bold inline-block padding-left-10 padding-right-10 @if (Route::current()->getName() == 'home' || Route::current()->getName() == 'how-it-works') scrolling-to-section @endif contact-us-header-event-tracker">Contact us</a>
                     <a href="javascript:void(0)" class="white-dark-blue-btn open-dentacoin-gateway dentist-register inline-block margin-left-15" tabindex="-1">SIGN UP</a>
                     <figure itemscope="" itemtype="http://schema.org/ImageObject" class="inline-block margin-left-15 hamburger-icon">
                         <a href="javascript:void(0)" class="hamburger display-block">
@@ -199,7 +199,7 @@
         <div class="row newsletter-register">
             <div class="col-xs-12 text-center">
                 <div id="mc_embed_signup">
-                    <form action="https://dentacoin.us16.list-manage.com/subscribe/post?u=61ace7d2b009198ca373cb213&amp;id=cd60f60a48" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank">
+                    <form action="https://dentacoin.us16.list-manage.com/subscribe/post?u=61ace7d2b009198ca373cb213&amp;id=993df5967d" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate newsletter-form" target="_blank">
                         <div id="mc_embed_signup_scroll">
                             <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="Enter your email" required>
                             <input type="hidden" name="b_61ace7d2b009198ca373cb213_cd60f60a48" tabindex="-1" value="">
@@ -329,18 +329,18 @@
      logged_out_greeting="👋  Hi! Welcome to Dentacoin. Ask any question here!">
 </div>
 
-<script src="https://dentacoin.com/assets/js/basic.js?v=1.0.74"></script>
+<script src="https://dentacoin.com/assets/js/basic.js?v=1.0.75"></script>
 {{--<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCaVeHq_LOhQndssbmw-aDnlMwUG73yCdk&libraries=places&language=en"></script>--}}
-<script src="/dist/js/front-libs-script.js?v=1.0.74"></script>
+<script src="/dist/js/front-libs-script.js?v=1.0.75"></script>
 @if((new \App\Http\Controllers\UserController())->checkSession() || (!(new \App\Http\Controllers\UserController())->checkSession() && !empty(Route::current()) && (Route::current()->getName() == 'home')))
-    <script src="https://dentacoin.com/assets/libs/dentacoin-mini-hub/js/init.js?v=1.0.74"></script>
+    <script src="https://dentacoin.com/assets/libs/dentacoin-mini-hub/js/init.js?v=1.0.75"></script>
 @endif
 @if (!(new \App\Http\Controllers\UserController())->checkSession())
     <script src="https://dentacoin.com/assets/libs/dentacoin-login-gateway/js/init.js?v=1.0.75"></script>
 @endif
 {{--<script src="/assets/js/address.js"></script>--}}
 @yield("script_block")
-<script src="/dist/js/front-script.js?v=1.0.74"></script>
+<script src="/dist/js/front-script.js?v=1.0.75"></script>
 {{--<script src="/assets/js/index.js"></script>--}}
 
 {{--Multiple errors from laravel validation--}}

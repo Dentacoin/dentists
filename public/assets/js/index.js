@@ -194,6 +194,9 @@ function initSlidingContractFormLogic() {
             }
 
             if (!errors) {
+                fireGoogleAnalyticsEvent('Contact Form', 'Next', 'Step 1');
+                fbq('track', 'ContactForm1');
+
                 $('.sliding-fields-container').attr('data-current-step', 'two').find('.steps-wrapper').addClass('scroll-to-second-step');
 
                 $('.bullet-navigation [data-step-bullet]').removeClass('active');
@@ -221,6 +224,9 @@ function initSlidingContractFormLogic() {
             }
 
             if (!errors) {
+                fireGoogleAnalyticsEvent('Contact Form', 'Next', 'Step 2');
+                fbq('track', 'ContactForm2');
+
                 $('.sliding-fields-container').attr('data-current-step', 'three').find('.steps-wrapper').addClass('scroll-to-third-step');
 
                 $('.bullet-navigation [data-step-bullet]').removeClass('active');
@@ -238,6 +244,9 @@ function initSlidingContractFormLogic() {
             }
 
             if (!errors) {
+                fireGoogleAnalyticsEvent('Contact Form', 'Next', 'Form Submission');
+                fbq('track', 'ContactFormSubmit');
+
                 btn.attr('type', 'submit');
                 btn.click();
             }
@@ -369,7 +378,6 @@ if (!$('body').hasClass('logged-in') && $('body').hasClass('home') || ($('body')
     });
 
     $('.testimonials-slider-section').on('afterChange', function(event, slick, currentSlide, nextSlide){
-        console.log('afterChange');
         $.event.trigger({
             type: 'setHubPosition',
             time: new Date()
@@ -380,14 +388,14 @@ if (!$('body').hasClass('logged-in') && $('body').hasClass('home') || ($('body')
         scrollToContactUsNow();
     }
 
-    if ($('body').hasClass('logged-home') || $('body').hasClass('home')) {
-        $('.change-on-logged-in-to-scroll-to-contact-us').html('CONTACT US').removeClass('dentist-register open-dentacoin-gateway').addClass('scroll-to-contact-us-now');
+    if ($('body').hasClass('logged-in')) {
+        $('.change-on-logged-in-to-scroll-to-contact-us').html('CONTACT US').removeClass('dentist-register open-dentacoin-gateway sign-up-steps-partner-event-tracker').addClass('scroll-to-contact-us-now contact-us-steps-partner-event-tracker');
     }
 } else if ($('body').hasClass('how-it-works')) {
     initSlidingContractFormLogic();
 
     if ($('body').hasClass('logged-in')) {
-        $('.change-on-logged-in-to-scroll-to-contact-us').html('LEARN MORE').removeClass('dentist-register open-dentacoin-gateway').addClass('scroll-to-contact-us-now');
+        $('.change-on-logged-in-to-scroll-to-contact-us').html('LEARN MORE').removeClass('dentist-register open-dentacoin-gateway learn-more-img-how-it-works-event-tracker').addClass('scroll-to-contact-us-now contact-us-how-it-works-header-event-tracker');
     }
 } else if ($('body').hasClass('faq')) {
     if ($('.list .question').length > 0) {
@@ -794,58 +802,6 @@ if (!$('body').hasClass('logged-in')) {
 }
 
 async function loggedOrNotLogic() {
-    if ($('body').hasClass('logged-in')) {
-        /*var add_overflow_hidden_on_hidden_box_show = false;
-        var sm_screen_width = false;
-        $('body').addClass('overflow-hidden');
-        if ($(window).width() < 992) {
-            add_overflow_hidden_on_hidden_box_show = true;
-            if ($(window).width() > 767) {
-                sm_screen_width = true;
-            }
-        }
-        $('body').removeClass('overflow-hidden');
-
-        if (sm_screen_width) {
-            $(document).on('click', 'body', function(){
-                if (!$('.hidden-box-parent').find(event.target).length) {
-                    $('.logged-user-right-nav .hidden-box').removeClass('show-this');
-                    $('.logged-user-right-nav .up-arrow').removeClass('show-this');
-                }
-            });
-        }
-
-        if (add_overflow_hidden_on_hidden_box_show) {
-            $('.logged-user-right-nav .user-name, .logged-user-right-nav .header-avatar').click(function() {
-                $('.logged-user-right-nav .hidden-box').toggleClass('show-this');
-                if (sm_screen_width) {
-                    $('.logged-user-right-nav .up-arrow').toggleClass('show-this');
-                } else {
-                    $('body').toggleClass('overflow-hidden');
-                }
-            });
-        } else {
-            $('.logged-user-right-nav > .hidden-box-parent').hover(function () {
-                $('.logged-user-right-nav .hidden-box').addClass('show-this');
-                $('.logged-user-right-nav .up-arrow').addClass('show-this');
-            }, function () {
-                $('.logged-user-right-nav .hidden-box').removeClass('show-this');
-                $('.logged-user-right-nav .up-arrow').removeClass('show-this');
-            });
-        }
-
-        $('.logged-user-right-nav .close-btn a').click(function() {
-            $('.logged-user-right-nav .hidden-box').removeClass('show-this');
-            if (add_overflow_hidden_on_hidden_box_show) {
-                $('body').removeClass('overflow-hidden');
-
-                if (sm_screen_width) {
-                    $('.logged-user-right-nav .up-arrow').removeClass('show-this');
-                }
-            }
-        });*/
-    }
-
     if ($('#append-big-hub-dentists').length) {
         var bigHubParams = {
             'element_id_to_append' : 'append-big-hub-dentists',
@@ -927,54 +883,170 @@ function customErrorHandle(el, string) {
     el.append('<div class="error-handle">'+string+'</div>');
 }
 
-function dateObjToFormattedDate(object) {
-    if (object.getDate() < 10) {
-        var date = '0' + object.getDate();
-    } else {
-        var date = object.getDate();
-    }
-
-    if (object.getMonth() + 1 < 10) {
-        var month = '0' + (object.getMonth() + 1);
-    } else {
-        var month = object.getMonth() + 1;
-    }
-    return date + '/' + month + '/' + object.getFullYear();
-}
-
 // =================================== GOOGLE ANALYTICS TRACKING LOGIC ======================================
 
-/*function bindTrackerClickDentistsBtnEvent() {
-    $(document).on('click', '.init-dentists-click-event', function() {
-        fireGoogleAnalyticsEvent('Tools', 'Click', 'Dentists');
+function bindTrackerContactUsHeader() {
+    $(document).on('click', '.contact-us-header-event-tracker', function(event) {
+        fireGoogleAnalyticsEvent('Contact Form', 'Contact Us', 'Header');
     });
 }
-bindTrackerClickDentistsBtnEvent();*/
+bindTrackerContactUsHeader();
 
-/*function bindTrackerClickDownloadBrochure() {
-    $(document).on('click', '.download-brochure-event-tracker', function(event) {
+function bindTrackerLearnMoreTopBanner() {
+    $(document).on('click', '.learn-more-top-banner-event-tracker', function(event) {
+        fireGoogleAnalyticsEvent('Contact Form', 'Learn More', 'Banner Up');
+    });
+}
+bindTrackerLearnMoreTopBanner();
+
+function bindTrackerLearnMoreHomepageAboveTheFoldSection() {
+    $(document).on('click', '.learn-more-homepage-above-the-fold-event-tracker', function(event) {
+        fireGoogleAnalyticsEvent('Contact Form', 'Learn More', 'Hero Img');
+    });
+}
+bindTrackerLearnMoreHomepageAboveTheFoldSection();
+
+function bindTrackerContactUsMenu() {
+    $(document).on('click', '.contact-us-menu-event-tracker', function(event) {
+        fireGoogleAnalyticsEvent('Contact Form', 'Contact Us', 'Menu');
+    });
+}
+bindTrackerContactUsMenu();
+
+function bindTrackerContactUsStepsPartner() {
+    $(document).on('click', '.contact-us-steps-partner-event-tracker', function(event) {
+        fireGoogleAnalyticsEvent('Contact Form', 'Contact Us', 'Steps Partner');
+    });
+}
+bindTrackerContactUsStepsPartner();
+
+function bindTrackerSignUpStepsPartner() {
+    $(document).on('click', '.sign-up-steps-partner-event-tracker', function(event) {
+        fireGoogleAnalyticsEvent('DentistRegistration', 'Sign Up', 'Steps Partner');
+    });
+}
+bindTrackerSignUpStepsPartner();
+
+function bindTrackerLearnMoreAboveMap() {
+    $(document).on('click', '.learn-more-above-map-event-tracker', function(event) {
+        fireGoogleAnalyticsEvent('Contact Form', 'Learn More', 'Banner Down');
+    });
+}
+bindTrackerLearnMoreAboveMap();
+
+function bindTrackerNewsletterSubscription() {
+    if ($('form.newsletter-form')) {
+        $('form.newsletter-form').on('submit', function(event) {
+            event.preventDefault();
+            var this_form_native = this;
+
+            fireGoogleAnalyticsEvent('Newsletter', 'Subscribe', 'Subscribe');
+            fbq('track', 'Newsletter');
+            this_form_native.submit();
+        });
+    }
+}
+bindTrackerNewsletterSubscription();
+
+function bindTrackerClickOpenDentacoinCompanyIntro() {
+    $(document).on('click', '.open-dentacoin-company-intro-event-tracker', function(event) {
         event.preventDefault();
-        fireGoogleAnalyticsEvent('Assets', 'Download', 'Brochure');
+        fireGoogleAnalyticsEvent('Assets', 'Download', 'Intro');
 
         window.open($(this).attr('href'));
     });
 }
-bindTrackerClickDownloadBrochure();
+bindTrackerClickOpenDentacoinCompanyIntro();
 
-function bindTrackerClickDownloadDEBrochure() {
-    $(document).on('click', '.download-de-brochure-event-tracker', function(event) {
+function bindTrackerClickOpenDentavoxTool() {
+    $(document).on('click', '.open-dentavox-tool-event-tracker', function(event) {
         event.preventDefault();
-        fireGoogleAnalyticsEvent('Assets', 'Download', 'DE Brochure');
+        fireGoogleAnalyticsEvent('Tools', 'Click', 'Vox');
 
         window.open($(this).attr('href'));
     });
 }
-bindTrackerClickDownloadDEBrochure();*/
+bindTrackerClickOpenDentavoxTool();
+
+function bindTrackerClickOpenDentacareTool() {
+    $(document).on('click', '.open-dentacare-tool-event-tracker', function(event) {
+        event.preventDefault();
+        fireGoogleAnalyticsEvent('Tools', 'Click', 'Dentacare');
+
+        window.open($(this).attr('href'));
+    });
+}
+bindTrackerClickOpenDentacareTool();
+
+function bindTrackerClickOpenAssuranceTool() {
+    $(document).on('click', '.open-assurance-tool-event-tracker', function(event) {
+        event.preventDefault();
+        fireGoogleAnalyticsEvent('Tools', 'Click', 'Assurance');
+
+        window.open($(this).attr('href'));
+    });
+}
+bindTrackerClickOpenAssuranceTool();
+
+function bindTrackerClickOpenTRPTool() {
+    $(document).on('click', '.open-trp-tool-event-tracker', function(event) {
+        event.preventDefault();
+        fireGoogleAnalyticsEvent('Tools', 'Click', 'TRP');
+
+        window.open($(this).attr('href'));
+    });
+}
+bindTrackerClickOpenTRPTool();
+
+function bindTrackerContactUsAfterVideo() {
+    $(document).on('click', '.contact-us-after-video-event-tracker', function(event) {
+        fireGoogleAnalyticsEvent('Contact Form', 'Contact Us', 'Icon Down');
+    });
+}
+bindTrackerContactUsAfterVideo();
+
+function bindTrackerLearnMoreHowItWorksTopBanner() {
+    $(document).on('click', '.learn-more-how-it-works-top-banner-event-tracker', function(event) {
+        fireGoogleAnalyticsEvent('Contact Form', 'Learn More', 'Banner Up');
+    });
+}
+bindTrackerLearnMoreHowItWorksTopBanner();
+
+function bindTrackerDentistRegisterHowItWorksTopBanner() {
+    $(document).on('click', '.dentist-register-how-it-works-top-banner-event-tracker', function(event) {
+        fireGoogleAnalyticsEvent('DentistRegistration', 'Sign Up', 'Hero Img');
+    });
+}
+bindTrackerDentistRegisterHowItWorksTopBanner();
+
+function bindTrackerLearnMoreHeroImgHowItWorksTopBanner() {
+    $(document).on('click', '.learn-more-img-how-it-works-event-tracker', function(event) {
+        fireGoogleAnalyticsEvent('Contract Form', 'Learn More', 'Hero Img');
+    });
+}
+bindTrackerLearnMoreHeroImgHowItWorksTopBanner();
+
+function bindTrackerStartNowFreePromoHowItWorksTopBanner() {
+    $(document).on('click', '.start-now-free-promo-how-it-works-event-tracker', function(event) {
+        fireGoogleAnalyticsEvent('Contract Form', 'Contact us', 'Free Promo');
+    });
+}
+bindTrackerStartNowFreePromoHowItWorksTopBanner();
+
+function bindTrackerStartNowPaymentsHowItWorksTopBanner() {
+    $(document).on('click', '.start-now-payments-how-it-works-event-tracker', function(event) {
+        fireGoogleAnalyticsEvent('Contract Form', 'Contact us', 'Payments');
+    });
+}
+bindTrackerStartNowPaymentsHowItWorksTopBanner();
+
+
+// /NEW =====================================
 
 function bindTrackerClickDownloadFactsheet() {
     $(document).on('click', '.download-fact-sheet-event-tracker', function(event) {
         event.preventDefault();
-        fireGoogleAnalyticsEvent('Assets', 'Download', 'Factsheet');
+        fireGoogleAnalyticsEvent('Assets', 'Download', 'Factsheet EN');
 
         window.open($(this).attr('href'));
     });
@@ -1014,14 +1086,6 @@ function bindTrackerTRPRegister() {
     });
 }
 bindTrackerTRPRegister();
-
-function bindTrackerClickFooterPlatforms() {
-    $(document).on('click', 'footer .init-event-tracker', function() {
-        var this_btn = $(this);
-        fireGoogleAnalyticsEvent('Tools', 'Click', this_btn.find('span').html().trim());
-    });
-}
-bindTrackerClickFooterPlatforms();
 
 $(document).on('click', '.logged-user-right-nav .application, .dentacoin-ecosystem-section .single-application, .applications-section .single-application', function() {
     var this_btn = $(this);
