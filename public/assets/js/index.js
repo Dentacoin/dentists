@@ -368,6 +368,14 @@ if (!$('body').hasClass('logged-in') && $('body').hasClass('home') || ($('body')
         $('.testimonials-slider-section .slick-list').animate({height: height}, 500);
     });
 
+    $('.testimonials-slider-section').on('afterChange', function(event, slick, currentSlide, nextSlide){
+        console.log('afterChange');
+        $.event.trigger({
+            type: 'setHubPosition',
+            time: new Date()
+        });
+    });
+
     if ($('.shortcode.contact-us').length && $('.shortcode.contact-us').attr('data-scroll-to-here') != undefined) {
         scrollToContactUsNow();
     }
