@@ -1040,6 +1040,131 @@ function bindTrackerStartNowPaymentsHowItWorksTopBanner() {
 }
 bindTrackerStartNowPaymentsHowItWorksTopBanner();
 
+function bindTrackerClickDownloadEnBrochureDentist() {
+    $(document).on('click', '.dentist-download-en-brochure-event-tracker', function(event) {
+        event.preventDefault();
+        fireGoogleAnalyticsEvent('Assets', 'Download', 'Brochure EN');
+
+        window.open($(this).attr('href'));
+    });
+}
+bindTrackerClickDownloadEnBrochureDentist();
+
+function bindTrackerClickDownloadDeBrochureDentist() {
+    $(document).on('click', '.dentist-download-de-brochure-event-tracker', function(event) {
+        event.preventDefault();
+        fireGoogleAnalyticsEvent('Assets', 'Download', 'Brochure DE');
+
+        window.open($(this).attr('href'));
+    });
+}
+bindTrackerClickDownloadDeBrochureDentist();
+
+function bindTrackerClickDownloadAllPDFGuides() {
+    $(document).on('click', '.download-all-pdf-guides-event-tracker', function(event) {
+        event.preventDefault();
+
+        if ($('.navigation-sidebar .page-nav a.active').attr('data-type') == 'dentists') {
+            fireGoogleAnalyticsEvent('Assets', 'Download', 'Guides All');
+        } else if ($('.navigation-sidebar .page-nav a.active').attr('data-type') == 'patients') {
+            fireGoogleAnalyticsEvent('Assets', 'Download', 'Patient Guides All');
+        }
+
+        window.open($(this).attr('href'));
+    });
+}
+bindTrackerClickDownloadAllPDFGuides();
+
+function bindTrackerClickPartnerBrochure() {
+    $(document).on('click', '.download-partner-brochure-event-tracker', function(event) {
+        event.preventDefault();
+        fireGoogleAnalyticsEvent('Assets', 'Download', 'Partner Brochure');
+
+        window.open($(this).attr('href'));
+    });
+}
+bindTrackerClickPartnerBrochure();
+
+function bindTrackerDownloadBadge() {
+    $(document).on('click', '.download-badge-event-tracker', function(event) {
+        event.preventDefault();
+        fireGoogleAnalyticsEvent('Assets', 'Download', 'Badge');
+
+        window.open($(this).attr('href'));
+    });
+}
+bindTrackerDownloadBadge();
+
+function bindTrackerDownloadBanner() {
+    $(document).on('click', '.download-banner-event-tracker', function(event) {
+        event.preventDefault();
+        fireGoogleAnalyticsEvent('Assets', 'Download', 'Banner');
+
+        window.open($(this).attr('href'));
+    });
+}
+bindTrackerDownloadBanner();
+
+function bindTrackerDownloadAllBanners() {
+    $(document).on('click', '.download-all-banners-event-tracker', function(event) {
+        event.preventDefault();
+        fireGoogleAnalyticsEvent('Assets', 'Download', 'Banners All');
+
+        window.open($(this).attr('href'));
+    });
+}
+bindTrackerDownloadAllBanners();
+
+function bindTrackerDownloadFacebookCover() {
+    $(document).on('click', '.download-facebook-cover-event-tracker', function(event) {
+        event.preventDefault();
+        fireGoogleAnalyticsEvent('Assets', 'Download', 'FB Cover');
+
+        window.open($(this).attr('href'));
+    });
+}
+bindTrackerDownloadFacebookCover();
+
+function bindTrackerDownloadAllFacebookCovers() {
+    $(document).on('click', '.download-all-facebook-covers-event-tracker', function(event) {
+        event.preventDefault();
+        fireGoogleAnalyticsEvent('Assets', 'Download', 'FB Covers All');
+
+        window.open($(this).attr('href'));
+    });
+}
+bindTrackerDownloadAllFacebookCovers();
+
+function bindTrackerDownloadLogo() {
+    $(document).on('click', '.download-logo-event-tracker', function(event) {
+        event.preventDefault();
+        fireGoogleAnalyticsEvent('Assets', 'Download', 'Logo');
+
+        window.open($(this).attr('href'));
+    });
+}
+bindTrackerDownloadLogo();
+
+function bindTrackerClickDownloadEnBrochurePatient() {
+    $(document).on('click', '.patient-download-en-brochure-event-tracker', function(event) {
+        event.preventDefault();
+        fireGoogleAnalyticsEvent('Assets', 'Download', 'Patient Brochure EN');
+
+        window.open($(this).attr('href'));
+    });
+}
+bindTrackerClickDownloadEnBrochurePatient();
+
+function bindTrackerClickDownloadDeBrochurePatient() {
+    $(document).on('click', '.patient-download-de-brochure-event-tracker', function(event) {
+        event.preventDefault();
+        fireGoogleAnalyticsEvent('Assets', 'Download', 'Patient Brochure DE');
+
+        window.open($(this).attr('href'));
+    });
+}
+bindTrackerClickDownloadDeBrochurePatient();
+
 
 // /NEW =====================================
 

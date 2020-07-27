@@ -25,17 +25,17 @@
     <style>
 
     </style>
-    <link rel="stylesheet" type="text/css" href="/dist/css/front-libs-style.css?v=1.0.75">
-    <link rel="stylesheet" type="text/css" href="/assets/css/style.css?v=1.0.75">
+    <link rel="stylesheet" type="text/css" href="/dist/css/front-libs-style.css?v=1.0.76">
+    <link rel="stylesheet" type="text/css" href="/assets/css/style.css?v=1.0.76">
 
     @if((!(new \App\Http\Controllers\UserController())->checkSession() && !empty(Route::current()) && (Route::current()->getName() == 'home')) || ((new \App\Http\Controllers\UserController())->checkSession() && !empty(Route::current()) && (Route::current()->getName() == 'logged-home' || Route::current()->getName() == 'home')))
-        <link rel="stylesheet" type="text/css" href="//dentacoin.com/assets/libs/dentacoin-mini-hub/css/styles-big-hub.css?v=1.0.75">
+        <link rel="stylesheet" type="text/css" href="//dentacoin.com/assets/libs/dentacoin-mini-hub/css/styles-big-hub.css?v=1.0.76">
     @endif
 
     @if((new \App\Http\Controllers\UserController())->checkSession())
-        <link rel="stylesheet" type="text/css" href="https://dentacoin.com/assets/libs/dentacoin-mini-hub/css/style.css?v=1.0.75">
+        <link rel="stylesheet" type="text/css" href="https://dentacoin.com/assets/libs/dentacoin-mini-hub/css/style.css?v=1.0.76">
     @elseif (!(new \App\Http\Controllers\UserController())->checkSession())
-        <link rel="stylesheet" type="text/css" href="https://dentacoin.com/assets/libs/dentacoin-login-gateway/css/dentacoin-login-gateway-style.css?v=1.0.75"/>
+        <link rel="stylesheet" type="text/css" href="https://dentacoin.com/assets/libs/dentacoin-login-gateway/css/dentacoin-login-gateway-style.css?v=1.0.76"/>
     @endif
     <script>
         var HOME_URL = '{{ route("home") }}';
@@ -329,18 +329,18 @@
      logged_out_greeting="👋  Hi! Welcome to Dentacoin. Ask any question here!">
 </div>
 
-<script src="https://dentacoin.com/assets/js/basic.js?v=1.0.75"></script>
+<script src="https://dentacoin.com/assets/js/basic.js?v=1.0.76"></script>
 {{--<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCaVeHq_LOhQndssbmw-aDnlMwUG73yCdk&libraries=places&language=en"></script>--}}
-<script src="/dist/js/front-libs-script.js?v=1.0.75"></script>
+<script src="/dist/js/front-libs-script.js?v=1.0.76"></script>
 @if((new \App\Http\Controllers\UserController())->checkSession() || (!(new \App\Http\Controllers\UserController())->checkSession() && !empty(Route::current()) && (Route::current()->getName() == 'home')))
-    <script src="https://dentacoin.com/assets/libs/dentacoin-mini-hub/js/init.js?v=1.0.75"></script>
+    <script src="https://dentacoin.com/assets/libs/dentacoin-mini-hub/js/init.js?v=1.0.76"></script>
 @endif
 @if (!(new \App\Http\Controllers\UserController())->checkSession())
-    <script src="https://dentacoin.com/assets/libs/dentacoin-login-gateway/js/init.js?v=1.0.75"></script>
+    <script src="https://dentacoin.com/assets/libs/dentacoin-login-gateway/js/init.js?v=1.0.76"></script>
 @endif
 {{--<script src="/assets/js/address.js"></script>--}}
 @yield("script_block")
-<script src="/dist/js/front-script.js?v=1.0.75"></script>
+<script src="/dist/js/front-script.js?v=1.0.76"></script>
 {{--<script src="/assets/js/index.js"></script>--}}
 
 {{--Multiple errors from laravel validation--}}
