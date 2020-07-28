@@ -953,7 +953,7 @@ function bindTrackerClickOpenDentacoinCompanyIntro() {
         event.preventDefault();
         fireGoogleAnalyticsEvent('Assets', 'Download', 'Intro');
 
-        window.open($(this).attr('href'));
+        window.open($(this).find('a').attr('href'));
     });
 }
 bindTrackerClickOpenDentacoinCompanyIntro();
@@ -963,7 +963,7 @@ function bindTrackerClickOpenDentavoxTool() {
         event.preventDefault();
         fireGoogleAnalyticsEvent('Tools', 'Click', 'Vox');
 
-        window.open($(this).attr('href'));
+        window.open($(this).find('a').attr('href'));
     });
 }
 bindTrackerClickOpenDentavoxTool();
@@ -973,7 +973,7 @@ function bindTrackerClickOpenDentacareTool() {
         event.preventDefault();
         fireGoogleAnalyticsEvent('Tools', 'Click', 'Dentacare');
 
-        window.open($(this).attr('href'));
+        window.open($(this).find('a').attr('href'));
     });
 }
 bindTrackerClickOpenDentacareTool();
@@ -983,7 +983,7 @@ function bindTrackerClickOpenAssuranceTool() {
         event.preventDefault();
         fireGoogleAnalyticsEvent('Tools', 'Click', 'Assurance');
 
-        window.open($(this).attr('href'));
+        window.open($(this).find('a').attr('href'));
     });
 }
 bindTrackerClickOpenAssuranceTool();
@@ -993,7 +993,7 @@ function bindTrackerClickOpenTRPTool() {
         event.preventDefault();
         fireGoogleAnalyticsEvent('Tools', 'Click', 'TRP');
 
-        window.open($(this).attr('href'));
+        window.open($(this).find('a').attr('href'));
     });
 }
 bindTrackerClickOpenTRPTool();
@@ -1183,7 +1183,7 @@ function bindTrackerClickDownloadFactsheet() {
         event.preventDefault();
         fireGoogleAnalyticsEvent('Assets', 'Download', 'Factsheet EN');
 
-        window.open($(this).attr('href'));
+        window.open($(this).find('a').attr('href'));
     });
 }
 bindTrackerClickDownloadFactsheet();
