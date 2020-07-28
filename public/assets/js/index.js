@@ -1165,6 +1165,16 @@ function bindTrackerClickDownloadDeBrochurePatient() {
 }
 bindTrackerClickDownloadDeBrochurePatient();
 
+function bindTrackerClickDownloadAllFiles() {
+    $(document).on('click', '.download-all-files-event-tracker', function(event) {
+        event.preventDefault();
+        fireGoogleAnalyticsEvent('Assets', 'Download', 'Assets All');
+
+        window.open($(this).attr('href'));
+    });
+}
+bindTrackerClickDownloadAllFiles();
+
 
 // /NEW =====================================
 
