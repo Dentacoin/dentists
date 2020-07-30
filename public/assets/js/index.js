@@ -1235,12 +1235,6 @@ function bindTrackerTRPRegister() {
 }
 bindTrackerTRPRegister();
 
-$(document).on('click', '.logged-user-right-nav .application, .dentacoin-ecosystem-section .single-application, .applications-section .single-application', function() {
-    var this_btn = $(this);
-
-    fireGoogleAnalyticsEvent('Tools', 'Click', this_btn.attr('data-platform'))
-});
-
 function fireGoogleAnalyticsEvent(category, action, label, value) {
     var event_obj = {
         'event_action' : action,
