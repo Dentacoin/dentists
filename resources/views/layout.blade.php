@@ -129,13 +129,13 @@
 <header class="sticky-header">
     <div class="container">
         <div class="row fs-0">
-            <figure itemscope="" itemtype="http://schema.org/Organization" class="col-xs-3 inline-block padding-left-xs-10 logo">
+            <figure itemscope="" itemtype="http://schema.org/Organization" class="col-xs-3 inline-block logo">
                 <a itemprop="url" @if((new \App\Http\Controllers\UserController())->checkSession()) href="{{ route('logged-home') }}" @else  href="{{ route('home') }}" @endif @if(!empty(Route::current())) @if(Route::current()->getName() == "home") tabindex="=-1" @endif @endif>
                     <img src="{{ URL::asset('assets/images/logo.svg') }}" itemprop="logo" alt="Dentacoin logo"/>
                 </a>
             </figure>
             @if(!(new \App\Http\Controllers\UserController())->checkSession())
-                <div class="col-xs-9 inline-block btns-container padding-right-xs-10">
+                <div class="col-xs-9 inline-block btns-container">
                     <a href="/how-it-works" class="hide-xs fs-18 color-black calibri-bold inline-block padding-left-10 padding-right-10 @if (Route::current()->getName() == 'how-it-works') active-link @endif">How it works</a>
                     <span class="hide-xs inline-block padding-left-10 padding-right-10 fs-18 color-black">|</span>
                     <a @if (Route::current()->getName() != 'home' && Route::current()->getName() != 'how-it-works') href="{{route('home')}}#contact-us" @else href="javascript:void(0);" id="contact-us" @endif class="hide-xs fs-18 color-black calibri-bold inline-block padding-left-10 padding-right-10 @if (Route::current()->getName() == 'home' || Route::current()->getName() == 'how-it-works') scrolling-to-section @endif contact-us-header-event-tracker">Contact us</a>
