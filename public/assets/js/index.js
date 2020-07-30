@@ -673,7 +673,6 @@ function initScrollingToEvents() {
                 var currentHref = window.location.href.replace('#'+ $(this).attr('id'), '');
                 window.history.pushState($(this).find('span').html(), '', currentHref + '#'+ $(this).attr('id'));
                 $('html, body').animate({scrollTop: $('[data-scroll-here="'+$(this).attr('id')+'"]').offset().top - $('header').outerHeight()}, 300);
-                return false;
             } else {
                 if ($('body').hasClass('logged-in')) {
                     window.location = '/home#' + $(this).attr('id');
@@ -887,7 +886,14 @@ function customErrorHandle(el, string) {
 
 function bindTrackerContactUsHeader() {
     $(document).on('click', '.contact-us-header-event-tracker', function(event) {
-        fireGoogleAnalyticsEvent('Contact Form', 'Contact Us', 'Header');
+        if ($('body').hasClass('home') || $('body').hasClass('how-it-works')) {
+            fireGoogleAnalyticsEvent('Contact Form', 'Contact Us', 'Header');
+        } else {
+            event.preventDefault();
+            fireGoogleAnalyticsEvent('Contact Form', 'Contact Us', 'Header');
+
+            window.open($(this).find('a').attr('href'));
+        }
     });
 }
 bindTrackerContactUsHeader();
@@ -908,7 +914,14 @@ bindTrackerLearnMoreHomepageAboveTheFoldSection();
 
 function bindTrackerContactUsMenu() {
     $(document).on('click', '.contact-us-menu-event-tracker', function(event) {
-        fireGoogleAnalyticsEvent('Contact Form', 'Contact Us', 'Menu');
+        if ($('body').hasClass('home') || $('body').hasClass('how-it-works')) {
+            fireGoogleAnalyticsEvent('Contact Form', 'Contact Us', 'Menu');
+        } else {
+            event.preventDefault();
+            fireGoogleAnalyticsEvent('Contact Form', 'Contact Us', 'Menu');
+
+            window.open($(this).find('a').attr('href'));
+        }
     });
 }
 bindTrackerContactUsMenu();
