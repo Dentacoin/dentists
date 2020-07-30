@@ -300,33 +300,13 @@ function initSlidingContractFormLogic() {
 
 // ================== PAGES ==================
 if (!$('body').hasClass('logged-in') && $('body').hasClass('home') || ($('body').hasClass('logged-home') || $('body').hasClass('home'))) {
-    var miniHubParams = {
-        'element_id_to_bind' : 'header-avatar',
-        'platform' : 'dentists',
-        'log_out_link' : 'https://dentists.dentacoin.com/user-logout'
-    };
-
-    if ($('body').hasClass('logged-patient')) {
-        miniHubParams.type_hub = 'mini-hub-patients';
-        if ($('body').hasClass('home')) {
-            miniHubParams.without_apps = true;
-        }
-    } else if ($('body').hasClass('logged-dentist')) {
-        miniHubParams.type_hub = 'mini-hub-dentists';
-        if ($('body').hasClass('home')) {
-            miniHubParams.without_apps = true;
-        }
-    }
-
-    dcnHub.initMiniHub(miniHubParams);
-
     initSlidingContractFormLogic();
 
     $('.below-options .single-option').hover(function () {
         $(this).addClass('active');
         $(document).bind('mousemove', imageFollowingCursorPosition);
     }, function () {
-        $('.below-options .single-option.active .image-shown-on-hover').removeClass('active')
+        $('.below-options .single-option.active .image-shown-on-hover').removeClass('active');
         $(this).removeClass('active');
         $(document).unbind('mousemove', imageFollowingCursorPosition);
     });
@@ -800,6 +780,26 @@ if (!$('body').hasClass('logged-in')) {
         console.log('patientAuthSuccessResponse');
         window.location.href = window.location.href + '?cross-login=true';
     });
+} else {
+    var miniHubParams = {
+        'element_id_to_bind' : 'header-avatar',
+        'platform' : 'dentists',
+        'log_out_link' : 'https://dentists.dentacoin.com/user-logout'
+    };
+
+    if ($('body').hasClass('logged-patient')) {
+        miniHubParams.type_hub = 'mini-hub-patients';
+        if ($('body').hasClass('home')) {
+            miniHubParams.without_apps = true;
+        }
+    } else if ($('body').hasClass('logged-dentist')) {
+        miniHubParams.type_hub = 'mini-hub-dentists';
+        if ($('body').hasClass('home')) {
+            miniHubParams.without_apps = true;
+        }
+    }
+
+    dcnHub.initMiniHub(miniHubParams);
 }
 
 async function loggedOrNotLogic() {
