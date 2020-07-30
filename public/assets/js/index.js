@@ -244,12 +244,14 @@ function initSlidingContractFormLogic() {
             }
 
             if (!errors) {
-                fireGoogleAnalyticsEvent('Contact Form', 'Next', 'Form Submission');
-                fbq('track', 'ContactFormSubmit');
-
                 btn.attr('type', 'submit');
                 btn.click();
             }
+        }
+
+        if ($('.thank-you-message').length) {
+            fireGoogleAnalyticsEvent('Contact Form', 'Next', 'Form Submission');
+            fbq('track', 'ContactFormSubmit');
         }
 
         $('.shortcode.contact-us .next-step').click(function() {
