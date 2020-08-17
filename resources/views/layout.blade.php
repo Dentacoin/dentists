@@ -29,7 +29,7 @@
     <link rel="stylesheet" type="text/css" href="/assets/css/style.css?v=1.0.79">
 
     @if((!(new \App\Http\Controllers\UserController())->checkSession() && !empty(Route::current()) && (Route::current()->getName() == 'home')) || ((new \App\Http\Controllers\UserController())->checkSession() && !empty(Route::current()) && (Route::current()->getName() == 'logged-home' || Route::current()->getName() == 'home')))
-        <link rel="stylesheet" type="text/css" href="//dentacoin.com/assets/libs/dentacoin-package/css/styles-big-hub.css?v={{time()}}">
+        <link rel="stylesheet" type="text/css" href="https://dentacoin.com/assets/libs/dentacoin-package/css/styles-big-hub.css?v={{time()}}">
     @endif
 
     @if((new \App\Http\Controllers\UserController())->checkSession())
@@ -39,7 +39,7 @@
     @endif
 
     @if(empty($_COOKIE['performance_cookies']) && empty($_COOKIE['functionality_cookies']) && empty($_COOKIE['marketing_cookies']) && empty($_COOKIE['strictly_necessary_policy']))
-        <link rel="stylesheet" type="text/css" href="/assets/libs/dentacoin-package/css/style-cookie.css?v={{time()}}">
+        <link rel="stylesheet" type="text/css" href="https://dentacoin.com/assets/libs/dentacoin-package/css/style-cookie.css?v={{time()}}">
     @endif
 
     <script>
