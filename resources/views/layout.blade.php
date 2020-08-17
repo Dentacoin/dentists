@@ -29,14 +29,19 @@
     <link rel="stylesheet" type="text/css" href="/assets/css/style.css?v=1.0.79">
 
     @if((!(new \App\Http\Controllers\UserController())->checkSession() && !empty(Route::current()) && (Route::current()->getName() == 'home')) || ((new \App\Http\Controllers\UserController())->checkSession() && !empty(Route::current()) && (Route::current()->getName() == 'logged-home' || Route::current()->getName() == 'home')))
-        <link rel="stylesheet" type="text/css" href="//dentacoin.com/assets/libs/dentacoin-mini-hub/css/styles-big-hub.css?v=1.0.79">
+        <link rel="stylesheet" type="text/css" href="//dentacoin.com/assets/libs/dentacoin-package/css/styles-big-hub.css?v={{time()}}">
     @endif
 
     @if((new \App\Http\Controllers\UserController())->checkSession())
-        <link rel="stylesheet" type="text/css" href="https://dentacoin.com/assets/libs/dentacoin-mini-hub/css/style.css?v=1.0.79">
+        <link rel="stylesheet" type="text/css" href="https://dentacoin.com/assets/libs/dentacoin-package/css/style.css?v={{time()}}">
     @elseif (!(new \App\Http\Controllers\UserController())->checkSession())
-        <link rel="stylesheet" type="text/css" href="https://dentacoin.com/assets/libs/dentacoin-login-gateway/css/dentacoin-login-gateway-style.css?v=1.0.79"/>
+        <link rel="stylesheet" type="text/css" href="https://dentacoin.com/assets/libs/dentacoin-login-gateway/css/dentacoin-login-gateway-style.css?v={{time()}}"/>
     @endif
+
+    @if(empty($_COOKIE['performance_cookies']) && empty($_COOKIE['functionality_cookies']) && empty($_COOKIE['marketing_cookies']) && empty($_COOKIE['strictly_necessary_policy']))
+        <link rel="stylesheet" type="text/css" href="/assets/libs/dentacoin-package/css/style-cookie.css?v={{time()}}">
+    @endif
+
     <script>
         var HOME_URL = '{{ route("home") }}';
     </script>
@@ -270,26 +275,6 @@
         <img src="//hub.dentacoin.com/custom-cookie?logout-token={{ urlencode(session('logout_token')) }}" class="hide"/>
     @endif
 @endif
-<div class="bottom-fixed-container">
-    {{--<a href="https://dentacoin.com/holiday-calendar-2019" target="_blank" class="display-block banner">
-        <picture itemscope="" itemtype="http://schema.org/ImageObject">
-            <source media="(max-width: 992px)" srcset="//dentacoin.com/assets/uploads/mobile-christmas-banner-small.gif"/>
-            <img src="//dentacoin.com/assets/uploads/christmas-banner.gif" alt="Holiday calendar banner" class="width-100" itemprop="contentUrl"/>
-        </picture>
-    </a>--}}
-    @if(empty($_COOKIE['performance_cookies']) && empty($_COOKIE['functionality_cookies']) && empty($_COOKIE['marketing_cookies']) && empty($_COOKIE['strictly_necessary_policy']))
-        <div class="privacy-policy-cookie">
-            <div class="container">
-                <div class="row">
-                    <div class="col-xs-12">
-                        <div class="text inline-block">This site uses cookies. Find out more on how we use cookies in our <a href="https://dentacoin.com/privacy-policy" class="link" target="_blank">Privacy Policy</a>. | <a href="javascript:void(0);" class="link adjust-cookies">Adjust cookies</a></div>
-                        <div class="button inline-block"><a href="javascript:void(0);" class="white-dark-blue-btn white-border accept-all">Accept all cookies</a></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    @endif
-</div>
 <div class="custom-popup external-form" id="custom-popup">
     <div class="popup-body">
         <button type="button" class="close-btn" data-dismiss="modal" aria-hidden="true">×</button>
@@ -332,11 +317,9 @@
 <script src="https://dentacoin.com/assets/js/basic.js?v=1.0.79"></script>
 {{--<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCaVeHq_LOhQndssbmw-aDnlMwUG73yCdk&libraries=places&language=en"></script>--}}
 <script src="/dist/js/front-libs-script.js?v=1.0.79"></script>
-@if((new \App\Http\Controllers\UserController())->checkSession() || (!(new \App\Http\Controllers\UserController())->checkSession() && !empty(Route::current()) && (Route::current()->getName() == 'home')))
-    <script src="https://dentacoin.com/assets/libs/dentacoin-mini-hub/js/init.js?v=1.0.79"></script>
-@endif
+<script src="https://dentacoin.com/assets/libs/dentacoin-package/js/init.js?v={{time()}}"></script>
 @if (!(new \App\Http\Controllers\UserController())->checkSession())
-    <script src="https://dentacoin.com/assets/libs/dentacoin-login-gateway/js/init.js?v=1.0.79"></script>
+    <script src="https://dentacoin.com/assets/libs/dentacoin-login-gateway/js/init.js?v={{time()}}"></script>
 @endif
 {{--<script src="/assets/js/address.js"></script>--}}
 @yield("script_block")
