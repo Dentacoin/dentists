@@ -1261,7 +1261,7 @@ initCustomCheckboxes();
 
 if (typeof(dcnCookie) != undefined) {
     dcnCookie.init({
-        'google_app_id' : 'UA-97167262-1',
+        'google_app_id' : 'UA-97167262-3',
         'fb_app_id' : '2366034370318681'
     });
 }

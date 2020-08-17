@@ -25,8 +25,8 @@
     <style>
 
     </style>
-    <link rel="stylesheet" type="text/css" href="/dist/css/front-libs-style.css?v=1.0.79">
-    <link rel="stylesheet" type="text/css" href="/assets/css/style.css?v=1.0.79">
+    <link rel="stylesheet" type="text/css" href="/dist/css/front-libs-style.css?v=1.0.80">
+    <link rel="stylesheet" type="text/css" href="/assets/css/style.css?v=1.0.80">
 
     @if((!(new \App\Http\Controllers\UserController())->checkSession() && !empty(Route::current()) && (Route::current()->getName() == 'home')) || ((new \App\Http\Controllers\UserController())->checkSession() && !empty(Route::current()) && (Route::current()->getName() == 'logged-home' || Route::current()->getName() == 'home')))
         <link rel="stylesheet" type="text/css" href="https://dentacoin.com/assets/libs/dentacoin-package/css/styles-big-hub.css?v={{time()}}">
@@ -314,16 +314,16 @@
      logged_out_greeting="👋  Hi! Welcome to Dentacoin. Ask any question here!">
 </div>
 
-<script src="https://dentacoin.com/assets/js/basic.js?v=1.0.79"></script>
+<script src="https://dentacoin.com/assets/js/basic.js?v=1.0.80"></script>
 {{--<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCaVeHq_LOhQndssbmw-aDnlMwUG73yCdk&libraries=places&language=en"></script>--}}
-<script src="/dist/js/front-libs-script.js?v=1.0.79"></script>
+<script src="/dist/js/front-libs-script.js?v=1.0.80"></script>
 <script src="https://dentacoin.com/assets/libs/dentacoin-package/js/init.js?v={{time()}}"></script>
 @if (!(new \App\Http\Controllers\UserController())->checkSession())
     <script src="https://dentacoin.com/assets/libs/dentacoin-login-gateway/js/init.js?v={{time()}}"></script>
 @endif
 {{--<script src="/assets/js/address.js"></script>--}}
 @yield("script_block")
-<script src="/dist/js/front-script.js?v=1.0.79"></script>
+<script src="/dist/js/front-script.js?v=1.0.80"></script>
 {{--<script src="/assets/js/index.js"></script>--}}
 
 {{--Multiple errors from laravel validation--}}
