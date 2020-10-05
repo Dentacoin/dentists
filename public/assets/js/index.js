@@ -675,23 +675,6 @@ function fixButtonsFocus() {
 }
 fixButtonsFocus();
 
-//checking if submitted email is valid
-function newsletterRegisterValidation() {
-    $('.newsletter-register form').on('submit', function(event)  {
-        var this_form = $(this);
-        var error = false;
-        if (!basic.validateEmail(this_form.find('input[type="email"]').val().trim()))    {
-            error = true;
-        }else if (!this_form.find('#newsletter-privacy-policy').is(':checked'))  {
-            error = true;
-        }
-
-        if (!error) {
-        }
-    });
-}
-newsletterRegisterValidation();
-
 if ($('.newsletter-register').length) {
     // remove this function, because its already part of basic.js
     function initCustomCheckboxes(parent, type) {
