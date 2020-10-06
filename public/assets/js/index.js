@@ -74,6 +74,8 @@ bindScrollToContactUsNowEvent();
 
 function initSlidingContractFormLogic() {
     if ($('.sliding-fields-container').length) {
+        basic.initCustomCheckboxes('.sliding-fields-container');
+
         $('.sliding-fields-container .step.two [name="interested_in_"]').on('change', function() {
             if ($(this).val() == 'Other (please specify)') {
                 $('.step.two').append('<div class="padding-bottom-20 field-parent on-right-side inline-block-top select-other-value"><div class="custom-google-label-style module" data-input-colorful-border="true"><label for="additional_information">Other:</label><input class="full-rounded form-field" name="additional_information" maxlength="100" id="additional_information" type="text"/></div></div>');
@@ -676,6 +678,8 @@ function fixButtonsFocus() {
 fixButtonsFocus();
 
 if ($('.newsletter-register').length) {
+    basic.initCustomCheckboxes('.newsletter-register');
+
     $('.newsletter-register form').on('submit', function (event) {
         event.preventDefault();
         var this_form_native = this;
@@ -1232,9 +1236,6 @@ function makeHeaderSmallerOnScroll() {
         $('.main-container').removeClass('on-going-sticky-header');
     }
 }
-
-
-basic.initCustomCheckboxes();
 
 if (typeof(dcnCookie) != undefined) {
     dcnCookie.init({
