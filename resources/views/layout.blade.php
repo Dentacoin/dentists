@@ -131,7 +131,7 @@
         </div>
     </nav>
 @endif
-<header class="sticky-header">
+<header class="sticky-header hide-on-hub-open">
     <div class="container">
         <div class="row fs-0">
             <figure itemscope="" itemtype="http://schema.org/Organization" class="col-xs-3 inline-block logo">
@@ -158,7 +158,7 @@
     </div>
 </header>
 <main class="main-container">@yield("content")</main>
-<footer class="padding-bottom-100 padding-bottom-sm-50 padding-bottom-xs-50 padding-bottom-lg-150">
+<footer class="padding-bottom-100 padding-bottom-sm-50 padding-bottom-xs-50 padding-bottom-lg-150 hide-on-hub-open">
     <div class="container padding-top-20">
         {{--<div class="email-octopus-form-wrapper row newsletter-register">
             <div class="col-xs-12 col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">
