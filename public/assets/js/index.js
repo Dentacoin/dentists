@@ -1233,38 +1233,8 @@ function makeHeaderSmallerOnScroll() {
     }
 }
 
-function initCustomCheckboxes() {
-    if ($('.custom-checkbox-style').length) {
-        for (var i = 0, len = $('.custom-checkbox-style').length; i < len; i+=1) {
-            if (!$('.custom-checkbox-style').eq(i).hasClass('already-custom-style')) {
-                $('.custom-checkbox-style').eq(i).prepend('<label for="'+$('.custom-checkbox-style').eq(i).find('input[type="checkbox"]').attr('id')+'" class="custom-checkbox"></label>');
-                $('.custom-checkbox-style').eq(i).addClass('already-custom-style');
 
-                if ($('.custom-checkbox-style').eq(i).find('input[type="checkbox"]').is(':checked')) {
-                    $('.custom-checkbox-style').eq(i).find('input[type="checkbox"]').closest('.custom-checkbox-style').find('.custom-checkbox').addClass('active').html('✓');
-                }
-            }
-        }
-
-        $('.custom-checkbox-style .custom-checkbox-input').unbind('change').on('change', function() {
-            if ($(this).is(':checked')) {
-                $(this).closest('.custom-checkbox-style').find('.custom-checkbox').addClass('active').html('✓');
-            } else {
-                $(this).closest('.custom-checkbox-style').find('.custom-checkbox').removeClass('active').html('');
-            }
-
-            if ($(this).attr('data-radio-group') != undefined) {
-                for (var i = 0, len = $('[data-radio-group="'+$(this).attr('data-radio-group')+'"]').length; i < len; i+=1) {
-                    if (!$(this).is($('[data-radio-group="'+$(this).attr('data-radio-group')+'"]').eq(i))) {
-                        $('[data-radio-group="'+$(this).attr('data-radio-group')+'"]').eq(i).prop('checked', false);
-                        $('[data-radio-group="'+$(this).attr('data-radio-group')+'"]').eq(i).closest('.custom-checkbox-style').find('.custom-checkbox').removeClass('active').html('');
-                    }
-                }
-            }
-        });
-    }
-}
-initCustomCheckboxes();
+basic.initCustomCheckboxes();
 
 if (typeof(dcnCookie) != undefined) {
     dcnCookie.init({
