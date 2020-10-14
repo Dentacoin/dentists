@@ -134,7 +134,7 @@
                     <img src="{{ URL::asset('assets/images/logo.svg') }}" itemprop="logo" alt="Dentacoin logo"/>
                 </a>
             </figure>
-            @if(!(new \App\Http\Controllers\UserController())->checkSession())
+            @if(!(new \App\Http\Controllers\UserController())->checkSession() && !empty(Route::current()))
                 <div class="col-xs-9 inline-block btns-container">
                     <a href="/how-it-works" class="hide-xs fs-18 color-black calibri-bold inline-block padding-left-10 padding-right-10 @if (Route::current()->getName() == 'how-it-works') active-link @endif">How it works</a>
                     <span class="hide-xs inline-block padding-left-10 padding-right-10 fs-18 color-black">|</span>
