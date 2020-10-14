@@ -8,11 +8,11 @@
         <div class="container-fluid upper-box">
             <div class="row">
                 <div class="col-xs-12 col-md-5 col-lg-4 col-md-offset-6">
-                    <figure itemscope="" itemtype="http://schema.org/ImageObject"><img alt="Text logo dark blue" class="max-width-310 max-width-xs-200" itemprop="contentUrl" src="/assets/uploads/text-logo-dark-blue.svg" /></figure>
+                    <figure itemscope="" itemtype="http://schema.org/ImageObject"><img alt="Text logo dark blue" class="max-width-310 max-width-xs-200" itemprop="contentUrl" data-defer-src="/assets/uploads/text-logo-dark-blue.svg" /></figure>
 
                     <h1 class="fs-40 fs-lg-30 fs-md-30 fs-sm-30 fs-xs-28 lato-medium padding-bottom-40 padding-bottom-lg-25 padding-bottom-md-25 padding-bottom-sm-25 padding-bottom-xs-0 padding-top-15 line-height-50 line-height-lg-40 line-height-md-40 line-height-sm-40 line-height-xs-30">Boost patient loyalty and prevention with FREE apps and a digital dental currency</h1>
 
-                    <figure class="visible-on-mobile" itemscope="" itemtype="http://schema.org/ImageObject"><img alt="Dentist transperant background" itemprop="contentUrl" src="/assets/uploads/dentist-mobile.png" /></figure>
+                    <figure class="visible-on-mobile" itemscope="" itemtype="http://schema.org/ImageObject"><img alt="Dentist transperant background" itemprop="contentUrl" data-defer-src="/assets/uploads/dentist-mobile.png" /></figure>
 
                     <div class="fs-25 fs-lg-21 fs-md-21 fs-sm-21 fs-xs-16 padding-left-xs-15 padding-right-xs-15 line-height-30 line-height-xs-25 lato dark-blue padding-bottom-40 padding-bottom-xs-10 mobile-white-bg">&ldquo;I am paid for prevention and my patients get rewards for better oral health. All at no cost for me.&rdquo;</div>
 
@@ -23,12 +23,12 @@
 
         <div class="container-fluid down-box padding-bottom-sm-20 padding-bottom-xs-30" data-scroll-here="bitcoin-dentistry">
             <div class="fs-30 fs-md-22 fs-sm-22 fs-xs-22 lato-bold color-black">
-                <figure class="inline-block max-width-30 margin-right-5 fs-0" itemscope="" itemtype="http://schema.org/ImageObject"><img alt="Text logo dark blue" class="width-100" itemprop="contentUrl" src="/assets/images/logo.svg" /></figure>
+                <figure class="inline-block max-width-30 margin-right-5 fs-0" itemscope="" itemtype="http://schema.org/ImageObject"><img alt="Text logo dark blue" class="width-100" itemprop="contentUrl" data-defer-src="/assets/images/logo.svg" /></figure>
                 <span class="inline-block">&ldquo;The Bitcoin of Dentistry&rdquo;</span></div>
 
             <div class="fs-20 fs-md-16 fs-sm-16 fs-xs-16 padding-bottom-20 padding-top-20 color-black text-left text-center-xs">Dentacoin is a digital dental currency used to reward your patients for taking oral health surveys, submitting reviews to you, improving their at-home hygiene. Your practice implements a digital patient loyalty program, gets additional payments, and is promoted among 200K+ patients free of charge.</div>
         </div>
-        <picture> <source media="(min-width: 1400px)" srcset="/assets/uploads/dentist-large-screen-image.png" /> <img alt="Dentist" src="/assets/uploads/dentist-image.png" /> </picture></section>
+        <picture> <source media="(min-width: 1400px)" srcset="/assets/uploads/dentist-large-screen-image.png" /> <img alt="Dentist" data-defer-src="/assets/uploads/dentist-image.png" /> </picture></section>
 
     <section class="section-dentists-report text-center padding-top-40 padding-bottom-100 hide-on-hub-open">
         <div class="container-fluid">

@@ -25,6 +25,21 @@
     <style>
 
     </style>
+
+    {{--@if(!empty(Route::current()))
+        @switch(Route::current()->getName())
+            @case('home')
+            <link rel="preload" href="/assets/fonts/Lato-Bold.woff2" as="font" crossorigin>
+            @break
+            @case('faq')
+            <link rel="preload" href="/assets/fonts/Lato-Bold.woff2" as="font" crossorigin>
+            @break
+        @endswitch
+        <link rel="preload" href="/assets/fonts/Lato-Semibold.woff2" as="font" crossorigin>
+        <link rel="preload" href="/assets/fonts/Lato-Regular.woff2" as="font" crossorigin>
+        <link rel="preload" href="/assets/fonts/Lato-Black.woff2" as="font" crossorigin>
+    @endif--}}
+
     <link rel="stylesheet" type="text/css" href="/dist/css/front-libs-style.css?v=1.0.82">
     <link rel="stylesheet" type="text/css" href="/assets/css/style.css?v=1.0.82">
 
@@ -76,22 +91,6 @@
 </head>
 <body class="@if(!empty(Route::current())) {{Route::current()->getName()}} @else class-404 @endif @if((new \App\Http\Controllers\UserController())->checkSession()) logged-in @if((new \App\Http\Controllers\UserController())->checkPatientSession()) logged-patient @elseif((new \App\Http\Controllers\UserController())->checkDentistSession()) logged-dentist @endif @endif">
     <div id="fb-root"></div>
-    <script>
-        window.fbAsyncInit = function() {
-            FB.init({
-                appId: '1906201509652855',
-                xfbml : true,
-                version : 'v7.0'
-            });
-        };
-
-        (function(d, s, id) {
-            var js, fjs = d.getElementsByTagName(s)[0];
-            if (d.getElementById(id)) return;
-            js = d.createElement(s); js.id = id;
-            js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
-            fjs.parentNode.insertBefore(js, fjs);
-        }(document, 'script', 'facebook-jssdk'));</script>
 
 @if(!empty(Route::current()))
     @php($header_menu = \App\Http\Controllers\Controller::instance()->getMenu('header'))
@@ -295,6 +294,22 @@
     @php($logged_in_greeting = "👋  Hi! Welcome to Dentacoin. Ask any question here!")
 @endif
 
+    <script async>
+        window.fbAsyncInit = function() {
+            FB.init({
+                appId: '1906201509652855',
+                xfbml : true,
+                version : 'v7.0'
+            });
+        };
+
+        (function(d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));</script>
 <!-- Your Chat Plugin code -->
 <div class="fb-customerchat"
      greeting_dialog_display="hide"

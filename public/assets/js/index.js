@@ -22,7 +22,7 @@ $(window).on('resize', function(){
 });
 
 $(window).on('scroll', function()  {
-    projectData.general_logic.data.loadDeferImages();
+    projectData.general_logic.data.loadDeferResources();
 
     onDesktopScrollMakeStickySidebarDownloadAssetsPage();
 
@@ -571,7 +571,7 @@ var projectData = {
             projectData.general_logic.data.miniHub();
         },
         data: {
-            loadDeferImages: function () {
+            loadDeferResources: function () {
                 for (var i = 0, len = jQuery('[data-defer-src]').length; i < len; i += 1) {
                     if (basic.isInViewport(jQuery('[data-defer-src]').eq(i)) && jQuery('[data-defer-src]').eq(i).attr('src') == undefined) {
                         jQuery('[data-defer-src]').eq(i).attr('src', jQuery('[data-defer-src]').eq(i).attr('data-defer-src'));
@@ -1091,7 +1091,7 @@ var projectData = {
     }
 };
 
-projectData.general_logic.data.loadDeferImages();
+projectData.general_logic.data.loadDeferResources();
 
 if ($('body').hasClass('logged-in')) {
     projectData.pages.logged_in();
