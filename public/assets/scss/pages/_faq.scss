@@ -39,6 +39,9 @@
                     }
                     .question-content {
                         display: none;
+                        a {
+                            text-decoration: underline;
+                        }
                     }
                 }
             }

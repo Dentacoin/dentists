@@ -13,15 +13,9 @@ mix.disableSuccessNotifications();
 
 /* ===== PUBLIC =====*/
 mix.styles([
-    'public/assets/libs/emailoctopus/emailoctopus.css',
-    /*'node_modules/bootstrap/dist/css/bootstrap.min.css',*/
     'public/assets/libs/bootstrap/css/bootstrap.min.css',
-    'node_modules/admin-lte/plugins/datatables/dataTables.bootstrap.css',
     'public/assets/libs/font-awesome/css/font-awesome.min.css',
-    'node_modules/slick-carousel/slick/slick.css',
-    'node_modules/bootstrap-select/dist/css/bootstrap-select.min.css',
-    'public/assets/libs/combobox/combobox.css',
-    'public/assets/libs/croppie/croppie.css',
+    /*'node_modules/bootstrap-select/dist/css/bootstrap-select.min.css',*/
 ], 'public/dist/css/front-libs-style.css');
 
 mix.styles([
@@ -30,25 +24,26 @@ mix.styles([
 
 mix.scripts([
     'node_modules/jquery/dist/jquery.min.js',
-    /*'public/assets/libs/emailoctopus/emailoctopus.js',*/
-    /*'node_modules/bootstrap/dist/js/bootstrap.min.js',*/
     'public/assets/libs/bootstrap/js/bootstrap.min.js',
     'node_modules/bootbox.js/bootbox.min.js',
-    'node_modules/slick-carousel/slick/slick.min.js',
-    'node_modules/bootstrap-select/dist/js/bootstrap-select.min.js',
-    'node_modules/datatables.net/js/jquery.dataTables.min.js',
-    'public/assets/libs/combobox/combobox.js',
+    /*'node_modules/bootstrap-select/dist/js/bootstrap-select.min.js',*/
     'node_modules/clipboard/dist/clipboard.min.js',
-    'public/assets/libs/croppie/croppie.min.js',
-    'public/assets/libs/truffle-contract/truffle-contract-compiled.js',
 ], 'public/dist/js/front-libs-script.js');
 
 mix.scripts([
     /*mix.open('https://dentacoin.com/assets/js/basic.js'),*/
     /*'public/assets/js/basic.js',*/
-    'public/assets/js/address.js',
     'public/assets/js/index.js'
 ], 'public/dist/js/front-script.js');
+
+// slick slider lib
+mix.styles([
+    'node_modules/slick-carousel/slick/slick.css',
+], 'public/dist/libs/slick/slick.min.css');
+
+mix.scripts([
+    'node_modules/slick-carousel/slick/slick.min.js',
+], 'public/dist/libs/slick/slick.min.js');
 /* ===== /PUBLIC =====*/
 
 /* ===== ADMIN =====*/

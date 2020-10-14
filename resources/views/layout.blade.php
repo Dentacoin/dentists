@@ -25,21 +25,11 @@
     <style>
 
     </style>
-    <link rel="stylesheet" type="text/css" href="/dist/css/front-libs-style.css?v=1.0.81">
-    <link rel="stylesheet" type="text/css" href="/assets/css/style.css?v=1.0.81">
-
-    @if((!(new \App\Http\Controllers\UserController())->checkSession() && !empty(Route::current()) && (Route::current()->getName() == 'home')) || ((new \App\Http\Controllers\UserController())->checkSession() && !empty(Route::current()) && (Route::current()->getName() == 'logged-home' || Route::current()->getName() == 'home')))
-        <link rel="stylesheet" type="text/css" href="https://dentacoin.com/assets/libs/dentacoin-package/css/styles-big-hub.css?v={{time()}}">
-    @endif
+    <link rel="stylesheet" type="text/css" href="/dist/css/front-libs-style.css?v=1.0.82">
+    <link rel="stylesheet" type="text/css" href="/assets/css/style.css?v=1.0.82">
 
     @if((new \App\Http\Controllers\UserController())->checkSession())
         <link rel="stylesheet" type="text/css" href="https://dentacoin.com/assets/libs/dentacoin-package/css/style.css?v={{time()}}">
-    @elseif (!(new \App\Http\Controllers\UserController())->checkSession())
-        <link rel="stylesheet" type="text/css" href="https://dentacoin.com/assets/libs/dentacoin-login-gateway/css/dentacoin-login-gateway-style.css?v={{time()}}"/>
-    @endif
-
-    @if(empty($_COOKIE['performance_cookies']) && empty($_COOKIE['functionality_cookies']) && empty($_COOKIE['marketing_cookies']) && empty($_COOKIE['strictly_necessary_policy']))
-        <link rel="stylesheet" type="text/css" href="https://dentacoin.com/assets/libs/dentacoin-package/css/style-cookie.css?v={{time()}}">
     @endif
 
     <script>
@@ -121,12 +111,6 @@
                         </a>
                     </li>
                 @endforeach
-
-                {{--<li class="lato-bold"><a itemprop="url" href="{{route($route)}}"><span itemprop="name">HOME</span></a></li>
-                <li class="lato-bold"><a itemprop="url" href="/how-it-works"><span itemprop="name">HOW IT WORKS</span></a></li>
-                <li class="lato-bold"><a itemprop="url" href="/download-guides-assets"><span itemprop="name">GUIDES & ASSETS</span></a></li>
-                <li class="lato-bold"><a itemprop="url" class="scrolling-to-section" id="contact-us" @if(!empty(Route::current()) && Route::current()->getName() != 'home') href="{{route($route)}}#contact-us" @endif><span itemprop="name">CONTACT US</span></a></li>
-                <li class="lato-bold"><a itemprop="url" href="/faq"><span itemprop="name">FAQ</span></a></li>--}}
             </ul>
         </div>
     </nav>
@@ -192,7 +176,7 @@
                             <li class="inline-block">
                                 <a itemprop="sameAs" target="_blank" href="{{$social->link}}">
                                     <figure itemscope="" itemtype="http://schema.org/ImageObject">
-                                        <img src="//dentacoin.com/assets/uploads/{{$social->media_name}}" alt="{{$social->media_alt}}" itemprop="contentUrl"/>
+                                        <img data-defer-src="//dentacoin.com/assets/uploads/{{$social->media_name}}" alt="{{$social->media_alt}}" itemprop="contentUrl"/>
                                     </figure>
                                 </a>
                             </li>
@@ -321,16 +305,15 @@
      logged_out_greeting="👋  Hi! Welcome to Dentacoin. Ask any question here!">
 </div>
 
-<script src="https://dentacoin.com/assets/js/basic.js?v=1.0.81"></script>
+<script src="https://dentacoin.com/assets/js/basic.js?v=1.0.82"></script>
 {{--<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCaVeHq_LOhQndssbmw-aDnlMwUG73yCdk&libraries=places&language=en"></script>--}}
-<script src="/dist/js/front-libs-script.js?v=1.0.81"></script>
-<script src="https://dentacoin.com/assets/libs/dentacoin-package/js/init.js?v={{time()}}"></script>
+<script src="/dist/js/front-libs-script.js?v=1.0.82"></script>
 @if (!(new \App\Http\Controllers\UserController())->checkSession())
     <script src="https://dentacoin.com/assets/libs/dentacoin-login-gateway/js/init.js?v={{time()}}"></script>
 @endif
 {{--<script src="/assets/js/address.js"></script>--}}
 @yield("script_block")
-<script src="/dist/js/front-script.js?v=1.0.81"></script>
+<script src="/dist/js/front-script.js?v=1.0.82"></script>
 {{--<script src="/assets/js/index.js"></script>--}}
 
 {{--Multiple errors from laravel validation--}}

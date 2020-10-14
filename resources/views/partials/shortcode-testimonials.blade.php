@@ -9,9 +9,9 @@
                             <div class="img-title-job fs-0">
                                 <figure itemscope="" itemtype="http://schema.org/ImageObject" class="inline-block-top">
                                     @if(empty($testimonial->media_name))
-                                        <img src="/assets/images/avatar-icon.svg" alt="" itemprop="contentUrl"/>
+                                        <img data-defer-src="/assets/images/avatar-icon.svg" alt="Avatar icon" itemprop="contentUrl"/>
                                     @else
-                                        <img src="//dentacoin.com/assets/uploads/{{$testimonial->media_name}}" alt="{{$testimonial->media_alt}}" itemprop="contentUrl"/>
+                                        <img data-defer-src="//dentacoin.com/assets/uploads/{{$testimonial->media_name}}" alt="{{$testimonial->media_alt}}" itemprop="contentUrl"/>
                                     @endif
                                 </figure>
                                 <div class="title-job inline-block-top">
