@@ -108,7 +108,7 @@
 
                                 <div class="col-xs-12 col-sm-6"><iframe class="changeable-src-on-user-type-change" data-dentist="https://www.youtube.com/embed/069iE0JZNbA" data-patient="https://www.youtube.com/embed/sblWhuc3amQ" data-defer-src="https://www.youtube.com/embed/069iE0JZNbA"></iframe>
 
-                                    <div class="padding-top-20 text-center btn-container"><a class="dark-blue-white-btn blue-border fs-16 share-video" href="javascript:void(0);"><i aria-hidden="true" class="fa fa-share-alt"></i> SHARE VIDEO</a></div>
+                                    <div class="padding-top-20 text-center btn-container"><a class="dark-blue-white-btn blue-border fs-16 share-video" href="javascript:void(0);">SHARE VIDEO</a></div>
                                 </div>
                             </div>
                         </div>
@@ -131,7 +131,7 @@
 
                                 <div class="col-xs-12 col-sm-6"><iframe class="changeable-src-on-user-type-change" data-dentist="https://www.youtube.com/embed/osKBgdDKO0s" data-patient="https://www.youtube.com/embed/00aQuj2bz3A" data-defer-src="https://www.youtube.com/embed/osKBgdDKO0s"></iframe>
 
-                                    <div class="padding-top-20 text-center btn-container"><a class="dark-blue-white-btn blue-border fs-16 share-video" href="javascript:void(0);"><i aria-hidden="true" class="fa fa-share-alt"></i> SHARE VIDEO</a></div>
+                                    <div class="padding-top-20 text-center btn-container"><a class="dark-blue-white-btn blue-border fs-16 share-video" href="javascript:void(0);">SHARE VIDEO</a></div>
                                 </div>
                             </div>
                         </div>
@@ -154,7 +154,7 @@
 
                                 <div class="col-xs-12 col-sm-6"><iframe class="changeable-src-on-user-type-change" data-dentist="https://www.youtube.com/embed/gJKNNw4WxHo" data-patient="https://www.youtube.com/embed/J2LyV-QtjDk" data-defer-src="https://www.youtube.com/embed/gJKNNw4WxHo"></iframe>
 
-                                    <div class="padding-top-20 text-center btn-container"><a class="dark-blue-white-btn blue-border fs-16 share-video" href="javascript:void(0);"><i aria-hidden="true" class="fa fa-share-alt"></i> SHARE VIDEO</a></div>
+                                    <div class="padding-top-20 text-center btn-container"><a class="dark-blue-white-btn blue-border fs-16 share-video" href="javascript:void(0);">SHARE VIDEO</a></div>
                                 </div>
                             </div>
                         </div>
@@ -177,7 +177,7 @@
 
                                 <div class="col-xs-12 col-sm-6"><iframe class="changeable-src-on-user-type-change" data-dentist="https://www.youtube.com/embed/u5k3PPXGmOY" data-patient="https://www.youtube.com/embed/5IhNTiFchRs" data-defer-src="https://www.youtube.com/embed/u5k3PPXGmOY"></iframe>
 
-                                    <div class="padding-top-20 text-center btn-container"><a class="dark-blue-white-btn blue-border fs-16 share-video" href="javascript:void(0);"><i aria-hidden="true" class="fa fa-share-alt"></i> SHARE VIDEO</a></div>
+                                    <div class="padding-top-20 text-center btn-container"><a class="dark-blue-white-btn blue-border fs-16 share-video" href="javascript:void(0);">SHARE VIDEO</a></div>
                                 </div>
                             </div>
                         </div>
@@ -200,7 +200,7 @@
 
                                 <div class="col-xs-12 col-sm-6"><iframe class="changeable-src-on-user-type-change" data-dentist="https://www.youtube.com/embed/stGTpVOaQiM" data-patient="https://www.youtube.com/embed/dBYm5qUIjP8" data-defer-src="https://www.youtube.com/embed/stGTpVOaQiM"></iframe>
 
-                                    <div class="padding-top-20 text-center btn-container"><a class="dark-blue-white-btn blue-border fs-16 share-video" href="javascript:void(0);"><i aria-hidden="true" class="fa fa-share-alt"></i> SHARE VIDEO</a></div>
+                                    <div class="padding-top-20 text-center btn-container"><a class="dark-blue-white-btn blue-border fs-16 share-video" href="javascript:void(0);">SHARE VIDEO</a></div>
                                 </div>
                             </div>
                         </div>
@@ -223,7 +223,7 @@
 
                                 <div class="col-xs-12 col-sm-6"><iframe class="changeable-src-on-user-type-change" data-dentist="https://www.youtube.com/embed/L0gsFuEqUzk" data-patient="https://www.youtube.com/embed/G3hxcSxAi8I" data-defer-src="https://www.youtube.com/embed/L0gsFuEqUzk"></iframe>
 
-                                    <div class="padding-top-20 text-center btn-container"><a class="dark-blue-white-btn blue-border fs-16 share-video" href="javascript:void(0);"><i aria-hidden="true" class="fa fa-share-alt"></i> SHARE VIDEO</a></div>
+                                    <div class="padding-top-20 text-center btn-container"><a class="dark-blue-white-btn blue-border fs-16 share-video" href="javascript:void(0);">SHARE VIDEO</a></div>
                                 </div>
                             </div>
                         </div>
@@ -246,7 +246,7 @@
 
                                 <div class="col-xs-12 col-sm-6"><iframe class="changeable-src-on-user-type-change" data-dentist="https://www.youtube.com/embed/vbXdXhI1PZU" data-patient="https://www.youtube.com/embed/Nqz6dkts0XU" data-defer-src="https://www.youtube.com/embed/vbXdXhI1PZU"></iframe>
 
-                                    <div class="padding-top-20 text-center btn-container"><a class="dark-blue-white-btn blue-border fs-16 share-video" href="javascript:void(0);"><i aria-hidden="true" class="fa fa-share-alt"></i> SHARE VIDEO</a></div>
+                                    <div class="padding-top-20 text-center btn-container"><a class="dark-blue-white-btn blue-border fs-16 share-video" href="javascript:void(0);">SHARE VIDEO</a></div>
                                 </div>
                             </div>
                         </div>

@@ -1100,7 +1100,7 @@ body.home {
                     form {
                         padding: 0 50px;
                         text-align: left;
-                        .error-handle {
+                        .error-handror-handle {
                             display: block;
                         }
                         &#enrich-profile {
@@ -1346,11 +1346,12 @@ nav.sidenav {
         position: relative;
         overflow-y: auto;
         .close-btn {
-            top: 18px;
-            right: 39px;
+            top: 15px;
+            right: 30px;
             position: absolute;
-            font-size: 30px;
+            font-size: 32px;
             color: black;
+            font-weight: bold;
         }
         ul {
             padding-top: 70px;

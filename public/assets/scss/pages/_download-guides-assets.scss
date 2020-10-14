@@ -6,16 +6,12 @@
         width: 45px;
         height: 45px;
         font-size: 0;
-        color: $dark_blue;
         text-align: center;
         background-color: white;
         z-index: 1000;
         border: 1.5px solid $dark_blue;
         @include rounded(50%);
         @include box-shadow(0 1px 10px 0.5px rgba(0,0,0,.5));
-        i {
-            font-size: 36px;
-        }
     }
     .navigation-sidebar {
         color: #aaaaaa;

@@ -101,7 +101,7 @@
     @endif
     <nav class="sidenav">
         <div class="wrapper">
-            <a href="javascript:void(0)" class="close-btn"><i class="fa fa-times" aria-hidden="true"></i></a>
+            <a href="javascript:void(0)" class="close-btn">×</a>
             <ul itemscope="" itemtype="http://schema.org/SiteNavigationElement">
                 @foreach($header_menu as $menu_el)
                     <li class="lato-bold">

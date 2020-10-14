@@ -223,7 +223,7 @@ function onDesktopScrollMakeStickySidebarDownloadAssetsPage() {
         } else {
             if ($(window).scrollTop() > 300 && !appendedMobileStickyScrollUp) {
                 appendedMobileStickyScrollUp = true;
-                $('.page-download-assets').append('<button class="sticky-caret"><i class="fa fa-caret-up" aria-hidden="true"></i></button>');
+                $('.page-download-assets').append('<button class="sticky-caret"><img alt="Caret icon" src="/assets/images/caret-icon.svg" class="width-100 max-width-20"/></button>');
 
                 $('.sticky-caret').click(function() {
                     $('html, body').animate({scrollTop: 0}, 300);
