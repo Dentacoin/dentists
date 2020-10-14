@@ -134,20 +134,22 @@
                     <img src="{{ URL::asset('assets/images/logo.svg') }}" itemprop="logo" alt="Dentacoin logo"/>
                 </a>
             </figure>
-            @if(!(new \App\Http\Controllers\UserController())->checkSession() && !empty(Route::current()))
-                <div class="col-xs-9 inline-block btns-container">
-                    <a href="/how-it-works" class="hide-xs fs-18 color-black calibri-bold inline-block padding-left-10 padding-right-10 @if (Route::current()->getName() == 'how-it-works') active-link @endif">How it works</a>
-                    <span class="hide-xs inline-block padding-left-10 padding-right-10 fs-18 color-black">|</span>
-                    <a @if (Route::current()->getName() != 'home' && Route::current()->getName() != 'how-it-works') href="{{route('home')}}#contact-us" @else href="javascript:void(0);" id="contact-us" @endif class="hide-xs fs-18 color-black calibri-bold inline-block padding-left-10 padding-right-10 @if (Route::current()->getName() == 'home' || Route::current()->getName() == 'how-it-works') scrolling-to-section @endif contact-us-header-event-tracker">Contact us</a>
-                    <a href="javascript:void(0)" class="white-dark-blue-btn open-dentacoin-gateway dentist-register inline-block margin-left-15" tabindex="-1">SIGN UP</a>
-                    <figure itemscope="" itemtype="http://schema.org/ImageObject" class="inline-block margin-left-15 hamburger-icon">
-                        <a href="javascript:void(0)" class="hamburger display-block">
-                            <img src="{{URL::asset('assets/images/burger-menu.png') }}" itemprop="contentUrl" class="width-100" alt="Hamburger icon"/>
-                        </a>
-                    </figure>
-                </div>
-            @else
-                @include('partials.logged-user-desktop-header-menu', ['profile_pages' => false])
+            @if(!empty(Route::current()))
+                @if(!(new \App\Http\Controllers\UserController())->checkSession()))
+                    <div class="col-xs-9 inline-block btns-container">
+                        <a href="/how-it-works" class="hide-xs fs-18 color-black calibri-bold inline-block padding-left-10 padding-right-10 @if (Route::current()->getName() == 'how-it-works') active-link @endif">How it works</a>
+                        <span class="hide-xs inline-block padding-left-10 padding-right-10 fs-18 color-black">|</span>
+                        <a @if (Route::current()->getName() != 'home' && Route::current()->getName() != 'how-it-works') href="{{route('home')}}#contact-us" @else href="javascript:void(0);" id="contact-us" @endif class="hide-xs fs-18 color-black calibri-bold inline-block padding-left-10 padding-right-10 @if (Route::current()->getName() == 'home' || Route::current()->getName() == 'how-it-works') scrolling-to-section @endif contact-us-header-event-tracker">Contact us</a>
+                        <a href="javascript:void(0)" class="white-dark-blue-btn open-dentacoin-gateway dentist-register inline-block margin-left-15" tabindex="-1">SIGN UP</a>
+                        <figure itemscope="" itemtype="http://schema.org/ImageObject" class="inline-block margin-left-15 hamburger-icon">
+                            <a href="javascript:void(0)" class="hamburger display-block">
+                                <img src="{{URL::asset('assets/images/burger-menu.png') }}" itemprop="contentUrl" class="width-100" alt="Hamburger icon"/>
+                            </a>
+                        </figure>
+                    </div>
+                @else
+                    @include('partials.logged-user-desktop-header-menu', ['profile_pages' => false])
+                @endif
             @endif
         </div>
     </div>
