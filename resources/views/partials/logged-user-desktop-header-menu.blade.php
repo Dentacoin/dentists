@@ -1,7 +1,7 @@
-<div class="col-xs-9 padding-left-xs-0 logged-user-right-nav inline-block text-right @if(Route::current()->getName() != 'home') with-hub @endif">
-    <a href="/how-it-works" class="hide-xs fs-18 color-black calibri-bold inline-block padding-left-10 padding-right-10 @if (Route::current()->getName() == 'how-it-works') active-link @endif">How it works</a>
+<div class="col-xs-9 padding-left-xs-0 logged-user-right-nav inline-block text-right @if(!empty(Route::current()) && Route::current()->getName() != 'home') with-hub @endif">
+    <a href="/how-it-works" class="hide-xs fs-18 color-black calibri-bold inline-block padding-left-10 padding-right-10 @if (!empty(Route::current()) && Route::current()->getName() == 'how-it-works') active-link @endif">How it works</a>
     <span class="hide-xs inline-block padding-left-10 padding-right-10 fs-18 color-black">|</span>
-    <a @if (Route::current()->getName() != 'home' && Route::current()->getName() != 'how-it-works') href="/home#contact-us" @else href="javascript:void(0);" id="contact-us" @endif class="hide-xs fs-18 color-black calibri-bold inline-block padding-left-10 padding-right-10 @if (Route::current()->getName() == 'home' || Route::current()->getName() == 'how-it-works') scrolling-to-section @endif margin-right-20">Contact us</a>
+    <a @if (!empty(Route::current()) && Route::current()->getName() != 'home' && Route::current()->getName() != 'how-it-works') href="/home#contact-us" @else href="javascript:void(0);" id="contact-us" @endif class="hide-xs fs-18 color-black calibri-bold inline-block padding-left-10 padding-right-10 @if (!empty(Route::current()) && Route::current()->getName() == 'home' || Route::current()->getName() == 'how-it-works') scrolling-to-section @endif margin-right-20">Contact us</a>
     <div class="hidden-box-parent">
         @php($user_data = (new \App\Http\Controllers\APIRequestsController())->getUserData(session('logged_user')['id']))
         <div class="inline-block fs-14 fs-xs-12 padding-right-10 padding-right-xs-0 color-white-on-hub">
