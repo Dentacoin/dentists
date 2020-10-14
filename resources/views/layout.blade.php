@@ -27,34 +27,29 @@
     </style>
 
     @if(!empty(Route::current()))
-        @switch(Route::current()->getName())
-            @case('home')
-                <link rel="preload" href="/assets/fonts/Lato-Bold.woff2" as="font" crossorigin>
-                <link rel="preload" href="/assets/fonts/Calibri-Bold.woff2" as="font" crossorigin>
-                <link rel="preload" href="/assets/fonts/Lato-Semibold.woff2" as="font" crossorigin>
-                <link rel="preload" href="/assets/fonts/Lato-Medium.woff2" as="font" crossorigin>
-                <link rel="preload" href="/assets/fonts/Lato-Light.woff2" as="font" crossorigin>
-                <link rel="preload" href="/assets/fonts/Lato-Black.woff2" as="font" crossorigin>
-                <link rel="preload" href="/assets/fonts/calibril.woff2" as="font" crossorigin>
-            @break
-            @case('how-it-works')
-                <link rel="preload" href="/assets/fonts/Calibri-Bold.woff2" as="font" crossorigin>
-                <link rel="preload" href="/assets/fonts/Lato-Bold.woff2" as="font" crossorigin>
-                <link rel="preload" href="/assets/fonts/Lato-Regular.woff2" as="font" crossorigin>
-                <link rel="preload" href="/assets/fonts/Lato-Black.woff2" as="font" crossorigin>
-                <link rel="preload" href="/assets/fonts/Lato-Light.woff2" as="font" crossorigin>
-                <link rel="preload" href="/assets/fonts/Lato-Semibold.woff2" as="font" crossorigin>
-                <link rel="preload" href="/assets/fonts/calibril.woff2" as="font" crossorigin>
-            @break
-            @case('download-guides-assets')
-                <link rel="preload" href="/assets/fonts/Lato-Bold.woff2" as="font" crossorigin>
-                <link rel="preload" href="/assets/fonts/Calibri-Bold.woff2" as="font" crossorigin>
-            @break
-            @case('faq')
-                <link rel="preload" href="/assets/fonts/Lato-Bold.woff2" as="font" crossorigin>
-                <link rel="preload" href="/assets/fonts/Calibri-Bold.woff2" as="font" crossorigin>
-            @break
-        @endswitch
+        @if (Route::current()->getName() == 'home')
+            <link rel="preload" href="/assets/fonts/Lato-Bold.woff2" as="font" crossorigin>
+            <link rel="preload" href="/assets/fonts/Calibri-Bold.woff2" as="font" crossorigin>
+            <link rel="preload" href="/assets/fonts/Lato-Semibold.woff2" as="font" crossorigin>
+            <link rel="preload" href="/assets/fonts/Lato-Medium.woff2" as="font" crossorigin>
+            <link rel="preload" href="/assets/fonts/Lato-Light.woff2" as="font" crossorigin>
+            <link rel="preload" href="/assets/fonts/Lato-Black.woff2" as="font" crossorigin>
+            <link rel="preload" href="/assets/fonts/calibril.woff2" as="font" crossorigin>
+        @elseif (Route::current()->getName() == 'how-it-works')
+            <link rel="preload" href="/assets/fonts/Calibri-Bold.woff2" as="font" crossorigin>
+            <link rel="preload" href="/assets/fonts/Lato-Bold.woff2" as="font" crossorigin>
+            <link rel="preload" href="/assets/fonts/Lato-Regular.woff2" as="font" crossorigin>
+            <link rel="preload" href="/assets/fonts/Lato-Black.woff2" as="font" crossorigin>
+            <link rel="preload" href="/assets/fonts/Lato-Light.woff2" as="font" crossorigin>
+            <link rel="preload" href="/assets/fonts/Lato-Semibold.woff2" as="font" crossorigin>
+            <link rel="preload" href="/assets/fonts/calibril.woff2" as="font" crossorigin>
+        @elseif (Route::current()->getName() == 'download-guides-assets')
+            <link rel="preload" href="/assets/fonts/Lato-Bold.woff2" as="font" crossorigin>
+            <link rel="preload" href="/assets/fonts/Calibri-Bold.woff2" as="font" crossorigin>
+        @elseif (Route::current()->getName() == 'faq')
+            <link rel="preload" href="/assets/fonts/Lato-Bold.woff2" as="font" crossorigin>
+            <link rel="preload" href="/assets/fonts/Calibri-Bold.woff2" as="font" crossorigin>
+        @endif
     @endif
 
     <link rel="stylesheet" type="text/css" href="/dist/css/front-libs-style.css?v=1.0.82">
