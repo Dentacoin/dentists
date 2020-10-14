@@ -4,5 +4,6 @@
     "/dist/js/front-libs-script.js": "/dist/js/front-libs-script.js",
     "/dist/js/front-script.js": "/dist/js/front-script.js",
     "/dist/libs/slick/slick.min.css": "/dist/libs/slick/slick.min.css",
-    "/dist/libs/slick/slick.min.js": "/dist/libs/slick/slick.min.js"
+    "/dist/libs/slick/slick.min.js": "/dist/libs/slick/slick.min.js",
+    "/dist/libs/clipboard/clipboard.min.js": "/dist/libs/clipboard/clipboard.min.js"
 }

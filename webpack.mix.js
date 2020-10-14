@@ -27,7 +27,6 @@ mix.scripts([
     'public/assets/libs/bootstrap/js/bootstrap.min.js',
     'node_modules/bootbox.js/bootbox.min.js',
     /*'node_modules/bootstrap-select/dist/js/bootstrap-select.min.js',*/
-    'node_modules/clipboard/dist/clipboard.min.js',
 ], 'public/dist/js/front-libs-script.js');
 
 mix.scripts([
@@ -44,6 +43,12 @@ mix.styles([
 mix.scripts([
     'node_modules/slick-carousel/slick/slick.min.js',
 ], 'public/dist/libs/slick/slick.min.js');
+
+//clipboard lib
+mix.scripts([
+    'node_modules/clipboard/dist/clipboard.min.js',
+], 'public/dist/libs/clipboard/clipboard.min.js');
+
 /* ===== /PUBLIC =====*/
 
 /* ===== ADMIN =====*/

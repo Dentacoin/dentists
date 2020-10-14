@@ -477,7 +477,14 @@ var projectData = {
                         }
                     });
 
-                    $('.share-video').click(function() {
+                    $('.share-video').click(async function() {
+                        // load slick lib
+                        if (!hasOwnProperty.call(loadedLibs, 'clipboard')) {
+                            console.log('clipboard loaded');
+                            loadedLibs.clipboard = true;
+                            await $.getScript('/dist/libs/clipboard/clipboard.min.js', function() {});
+                        }
+
                         var videoLinkRaw = $(this).closest('.section-content').find('iframe').attr('src');
                         var videoLink = encodeURIComponent(videoLinkRaw);
 
