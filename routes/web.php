@@ -19,8 +19,8 @@ Route::group(['prefix' => '/', 'middleware' => 'frontEndMiddleware'], function (
     Route::get('/', 'HomeController@getView')->name('home');
 
     Route::get('/test', function() {
-        var_dump(stripos($_SERVER['HTTP_USER_AGENT'], 'Speed Insights') === false);
-        var_dump($_SERVER['HTTP_USER_AGENT']);
+        echo '<div style="font-size: 30px;">' . stripos($_SERVER['HTTP_USER_AGENT'], 'Speed Insights') === false . '</div>';
+        echo '<br><br><br><div style="font-size: 30px;">' . $_SERVER['HTTP_USER_AGENT'] . '</div>';
 
         die();
     })->name('test');
