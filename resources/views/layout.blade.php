@@ -26,7 +26,7 @@
 
     </style>
 
-   {{-- @if(!empty(Route::current()))
+    @if(!empty(Route::current()))
         @if (Route::current()->getName() == 'home')
             <link rel="preload" href="/assets/fonts/Lato-Bold.woff2" as="font" crossorigin>
             <link rel="preload" href="/assets/fonts/Calibri-Bold.woff2" as="font" crossorigin>
@@ -50,7 +50,7 @@
             <link rel="preload" href="/assets/fonts/Lato-Bold.woff2" as="font" crossorigin>
             <link rel="preload" href="/assets/fonts/Calibri-Bold.woff2" as="font" crossorigin>
         @endif
-    @endif--}}
+    @endif
 
     <link media="all" rel="stylesheet" type="text/css" href="/dist/css/front-libs-style.css?v=1.0.82">
     <link media="all" rel="stylesheet" type="text/css" href="/assets/css/style.css?v=1.0.82">
