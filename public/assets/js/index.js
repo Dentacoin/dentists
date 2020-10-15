@@ -288,7 +288,7 @@ var projectData = {
                     if (!hasOwnProperty.call(loadedLibs, 'slick')) {
                         console.log('slick loaded');
                         loadedLibs.slick = true;
-                        $('head').append('<link rel="preload" as="style" onload="this.rel=\'stylesheet\'" type="text/css" href="/dist/libs/slick/slick.min.css"/>');
+                        $('head').append('<link media="all" rel="preload" as="style" onload="this.rel=\'stylesheet\'" type="text/css" href="/dist/libs/slick/slick.min.css"/>');
                         await $.getScript('/dist/libs/slick/slick.min.js', function() {});
                     }
 
@@ -369,7 +369,7 @@ var projectData = {
                         async function initBigHub() {
                             if (!hasOwnProperty.call(loadedLibs, 'bigHubStyle')) {
                                 loadedLibs.bigHubStyle = true;
-                                $('head').append('<link rel="preload" as="style" onload="this.rel=\'stylesheet\'" type="text/css" href="//dentacoin.com/assets/libs/dentacoin-package/css/styles-big-hub.css?v='+new Date().getTime()+'"/>');
+                                $('head').append('<link media="all" rel="preload" as="style" onload="this.rel=\'stylesheet\'" type="text/css" href="//dentacoin.com/assets/libs/dentacoin-package/css/styles-big-hub.css?v='+new Date().getTime()+'"/>');
                             }
 
                             if (!hasOwnProperty.call(loadedLibs, 'dentacoinPackageJs')) {
@@ -513,7 +513,7 @@ var projectData = {
                     if (!hasOwnProperty.call(loadedLibs, 'slick')) {
                         console.log('slick loaded');
                         loadedLibs.slick = true;
-                        $('head').append('<link rel="preload" as="style" onload="this.rel=\'stylesheet\'" type="text/css" href="/dist/libs/slick/slick.min.css"/>');
+                        $('head').append('<link media="all" rel="preload" as="style" onload="this.rel=\'stylesheet\'" type="text/css" href="/dist/libs/slick/slick.min.css"/>');
                         await $.getScript('/dist/libs/slick/slick.min.js', function() {});
                     }
 
@@ -593,7 +593,7 @@ var projectData = {
                 if (basic.cookies.get('performance_cookies') == '' && basic.cookies.get('performance_cookies') == '' && basic.cookies.get('performance_cookies') == '' && basic.cookies.get('performance_cookies') == '') {
                     console.log('dentacoinPackageJs loaded');
                     loadedLibs.dentacoinPackageJs = true;
-                    $('head').append('<link rel="preload" as="style" onload="this.rel=\'stylesheet\'" type="text/css" href="//dentacoin.com/assets/libs/dentacoin-package/css/style-cookie.css?v=' + new Date().getTime() + '"/>');
+                    $('head').append('<link media="all" rel="preload" as="style" onload="this.rel=\'stylesheet\'" type="text/css" href="//dentacoin.com/assets/libs/dentacoin-package/css/style-cookie.css?v=' + new Date().getTime() + '"/>');
                     await $.getScript('//dentacoin.com/assets/libs/dentacoin-package/js/init.js?v=' + new Date().getTime(), function () {
                     });
 
@@ -905,34 +905,6 @@ var projectData = {
             $(document).on('click', '.open-dentacoin-company-intro-event-tracker', function(event) {
                 event.preventDefault();
                 projectData.events.fireGoogleAnalyticsEvent('Assets', 'Download', 'Intro');
-
-                window.open($(this).find('a').attr('href'));
-            });
-
-            $(document).on('click', '.open-dentavox-tool-event-tracker', function(event) {
-                event.preventDefault();
-                projectData.events.fireGoogleAnalyticsEvent('Tools', 'Click', 'Vox');
-
-                window.open($(this).find('a').attr('href'));
-            });
-
-            $(document).on('click', '.open-dentacare-tool-event-tracker', function(event) {
-                event.preventDefault();
-                projectData.events.fireGoogleAnalyticsEvent('Tools', 'Click', 'Dentacare');
-
-                window.open($(this).find('a').attr('href'));
-            });
-
-            $(document).on('click', '.open-assurance-tool-event-tracker', function(event) {
-                event.preventDefault();
-                projectData.events.fireGoogleAnalyticsEvent('Tools', 'Click', 'Assurance');
-
-                window.open($(this).find('a').attr('href'));
-            });
-
-            $(document).on('click', '.open-trp-tool-event-tracker', function(event) {
-                event.preventDefault();
-                projectData.events.fireGoogleAnalyticsEvent('Tools', 'Click', 'TRP');
 
                 window.open($(this).find('a').attr('href'));
             });

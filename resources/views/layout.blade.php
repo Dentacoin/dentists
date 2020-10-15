@@ -52,8 +52,8 @@
         @endif
     @endif--}}
 
-    <link rel="stylesheet" type="text/css" href="/dist/css/front-libs-style.css?v=1.0.82">
-    <link rel="stylesheet" type="text/css" href="/assets/css/style.css?v=1.0.82">
+    <link media="all" rel="stylesheet" type="text/css" href="/dist/css/front-libs-style.css?v=1.0.82">
+    <link media="all" rel="stylesheet" type="text/css" href="/assets/css/style.css?v=1.0.82">
 
     @if((new \App\Http\Controllers\UserController())->checkSession())
         <link rel="stylesheet" type="text/css" href="https://dentacoin.com/assets/libs/dentacoin-package/css/style.css?v={{time()}}">
@@ -329,15 +329,15 @@
      logged_out_greeting="👋  Hi! Welcome to Dentacoin. Ask any question here!">
 </div>--}}
 
-<script src="https://dentacoin.com/assets/js/basic.js?v=1.0.82"></script>
+<script defer src="https://dentacoin.com/assets/js/basic.js?v=1.0.82"></script>
 {{--<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCaVeHq_LOhQndssbmw-aDnlMwUG73yCdk&libraries=places&language=en"></script>--}}
-<script src="/dist/js/front-libs-script.js?v=1.0.82"></script>
+<script defer src="/dist/js/front-libs-script.js?v=1.0.82"></script>
 @if (!(new \App\Http\Controllers\UserController())->checkSession())
     <script src="https://dentacoin.com/assets/libs/dentacoin-login-gateway/js/init.js?v={{time()}}"></script>
 @endif
 {{--<script src="/assets/js/address.js"></script>--}}
 @yield("script_block")
-<script src="/dist/js/front-script.js?v=1.0.82"></script>
+<script defer src="/dist/js/front-script.js?v=1.0.82"></script>
 {{--<script src="/assets/js/index.js"></script>--}}
 
 {{--Multiple errors from laravel validation--}}
