@@ -571,6 +571,17 @@ var projectData = {
             projectData.general_logic.data.miniHub();
         },
         data: {
+            showLoader: function() {
+                if (!$('.camping-loader').hasClass('loaded')) {
+                    $('.camping-loader').html('<div class="response-layer"><div class="wrapper"><picture itemscope="" itemtype="http://schema.org/ImageObject"><source media="(max-width: 768px)" srcset="//dentacoin.com/assets/uploads/dcn-flipping-coin-logo-loader-v3-mobile.gif"><img itemprop="contentUrl" src="//dentacoin.com/assets/uploads/dcn-flipping-coin-logo-loader-v3_desktop.gif" class="max-width-250 max-width-xs-200" alt="Loader"></picture></div></div>').addClass('loaded');
+                    $('.camping-loader .response-layer').show();
+                } else {
+                    $('.camping-loader .response-layer').show();
+                }
+            },
+            hideLoader: function() {
+                $('.camping-loader .response-layer').hide();
+            },
             loadDeferResources: function () {
                 for (var i = 0, len = jQuery('[data-defer-src]').length; i < len; i += 1) {
                     if (basic.isInViewport(jQuery('[data-defer-src]').eq(i)) && jQuery('[data-defer-src]').eq(i).attr('src') == undefined) {
