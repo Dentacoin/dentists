@@ -26,7 +26,7 @@
 
     </style>
 
-    @if(!empty(Route::current()))
+   {{-- @if(!empty(Route::current()))
         @if (Route::current()->getName() == 'home')
             <link rel="preload" href="/assets/fonts/Lato-Bold.woff2" as="font" crossorigin>
             <link rel="preload" href="/assets/fonts/Calibri-Bold.woff2" as="font" crossorigin>
@@ -50,7 +50,7 @@
             <link rel="preload" href="/assets/fonts/Lato-Bold.woff2" as="font" crossorigin>
             <link rel="preload" href="/assets/fonts/Calibri-Bold.woff2" as="font" crossorigin>
         @endif
-    @endif
+    @endif--}}
 
     <link rel="stylesheet" type="text/css" href="/dist/css/front-libs-style.css?v=1.0.82">
     <link rel="stylesheet" type="text/css" href="/assets/css/style.css?v=1.0.82">
@@ -308,7 +308,7 @@
     @php($logged_in_greeting = "👋  Hi! Welcome to Dentacoin. Ask any question here!")
 @endif
 
-    <script async>
+    {{--<script async>
         window.fbAsyncInit = function() {
             FB.init({
                 appId: '1906201509652855',
@@ -332,7 +332,7 @@
      theme_color="#0084ff"
      logged_in_greeting="{{$logged_in_greeting}}"
      logged_out_greeting="👋  Hi! Welcome to Dentacoin. Ask any question here!">
-</div>
+</div>--}}
 
 <script src="https://dentacoin.com/assets/js/basic.js?v=1.0.82"></script>
 {{--<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCaVeHq_LOhQndssbmw-aDnlMwUG73yCdk&libraries=places&language=en"></script>--}}
