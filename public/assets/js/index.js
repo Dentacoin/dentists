@@ -1,10 +1,6 @@
 var get_params = basic.getGETParameters();
 var loadedLibs = {};
 
-$(document).ready(function() {
-
-});
-
 $(window).on('load', function() {
     scrollToSection();
 });
@@ -903,10 +899,8 @@ var projectData = {
             }
 
             $(document).on('click', '.open-dentacoin-company-intro-event-tracker', function(event) {
-                event.preventDefault();
+                console.log('open-dentacoin-company-intro-event-tracker');
                 projectData.events.fireGoogleAnalyticsEvent('Assets', 'Download', 'Intro');
-
-                window.open($(this).find('a').attr('href'));
             });
 
             $(document).on('click', '.contact-us-after-video-event-tracker', function(event) {
