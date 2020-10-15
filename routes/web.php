@@ -18,7 +18,12 @@ Route::group(['prefix' => '/', 'middleware' => 'frontEndMiddleware'], function (
 
     Route::get('/', 'HomeController@getView')->name('home');
 
-    // Route::get('/home-redesign', 'HomeController@getHomeView')->name('home-redesign');
+    Route::get('/test', function() {
+        var_dump(stripos($_SERVER['HTTP_USER_AGENT'], 'Speed Insights') === false);
+        var_dump($_SERVER['HTTP_USER_AGENT']);
+
+        die();
+    })->name('test');
 
     Route::get('/how-it-works', 'PagesController@getPageView')->name('how-it-works');
 
