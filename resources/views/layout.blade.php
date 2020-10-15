@@ -333,7 +333,7 @@
 {{--<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCaVeHq_LOhQndssbmw-aDnlMwUG73yCdk&libraries=places&language=en"></script>--}}
 <script defer src="/dist/js/front-libs-script.js?v=1.0.82"></script>
 @if (!(new \App\Http\Controllers\UserController())->checkSession())
-    <script src="https://dentacoin.com/assets/libs/dentacoin-login-gateway/js/init.js?v={{time()}}"></script>
+    <script defer src="https://dentacoin.com/assets/libs/dentacoin-login-gateway/js/init.js?v={{time()}}"></script>
 @endif
 {{--<script src="/assets/js/address.js"></script>--}}
 @yield("script_block")
