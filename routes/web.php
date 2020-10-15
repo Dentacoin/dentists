@@ -18,13 +18,6 @@ Route::group(['prefix' => '/', 'middleware' => 'frontEndMiddleware'], function (
 
     Route::get('/', 'HomeController@getView')->name('home');
 
-    Route::get('/test', function() {
-        echo '<div style="font-size: 30px;">' . stripos($_SERVER['HTTP_USER_AGENT'], 'Speed Insights') === false . '</div>';
-        echo '<br><br><br><div style="font-size: 30px;">' . $_SERVER['HTTP_USER_AGENT'] . '</div>';
-
-        die();
-    })->name('test');
-
     Route::get('/how-it-works', 'PagesController@getPageView')->name('how-it-works');
 
     Route::get('/faq', 'PagesController@getPageView')->name('faq');
