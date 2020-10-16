@@ -93,8 +93,9 @@ class Controller extends BaseController
         // add item to the sitemap (url, date, priority, freq)
 
         $sitemap->add(URL::to('/'), '2018-11-25T20:10:00+02:00', '1.0', 'daily');
-        $sitemap->add(URL::to('faq'), '2018-11-25T20:10:00+02:00', '0.8', 'weekly');
-        $sitemap->add(URL::to('download-assets'), '2018-11-25T20:10:00+02:00', '0.7', 'monthly');
+        $sitemap->add(URL::to('how-it-works'), '2020-09-25T20:10:00+02:00', '1.0', 'weekly');
+        $sitemap->add(URL::to('faq'), '2018-11-25T20:10:00+02:00', '0.8', 'monthly');
+        $sitemap->add(URL::to('download-guides-assets'), '2018-11-25T20:10:00+02:00', '0.7', 'monthly');
 
         // get all posts from db
         //$posts = DB::table('posts')->orderBy('created_at', 'desc')->get();
