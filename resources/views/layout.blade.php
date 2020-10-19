@@ -115,7 +115,7 @@
     <div id="fb-root"></div>
 
 @if(!empty(Route::current()))
-    @php($header_menu = \App\Http\Controllers\Controller::instance()->getMenu('header'))
+    @php($headerMenu = (new \App\Http\Controllers\Admin\MenuController())->getMenu('header'))
     @if(\App\Http\Controllers\UserController::instance()->checkSession())
         @php($route = 'logged-home')
     @else
@@ -125,7 +125,13 @@
         <div class="wrapper">
             <a href="javascript:void(0)" class="close-btn">×</a>
             <ul itemscope="" itemtype="http://schema.org/SiteNavigationElement">
-                @foreach($header_menu as $menu_el)
+                @foreach($headerMenu as $menu_el)
+                    @if (isset($mobile))
+                        @if(($mobile && !filter_var($menu_el->mobile_visible, FILTER_VALIDATE_BOOLEAN)) || (!$mobile && !filter_var($menu_el->desktop_visible, FILTER_VALIDATE_BOOLEAN)))
+                            @continue
+                        @endif
+                    @endif
+
                     <li class="lato-bold">
                         <a itemprop="url" class="{{$menu_el->class_attribute}}" @if(!empty($menu_el->id_attribute)) id="{{$menu_el->id_attribute}}" @endif @if(!empty(Route::current()) && Route::current()->getName() != 'home' && strpos($menu_el->class_attribute, 'scrolling-to-section') !== false) href="{{route($route)}}#{{$menu_el->id_attribute}}" @else @if(!empty($menu_el->id_attribute) && $menu_el->id_attribute == 'homepage') @if(\App\Http\Controllers\UserController::instance()->checkSession()) href="{{ route('logged-home') }}" @else href="{{ route('home') }}" @endif @else href="{{$menu_el->url}}" @if($menu_el->new_window) target="_blank" @endif @endif @endif>
                             <span itemprop="name">{{$menu_el->name}}</span>
@@ -230,24 +236,33 @@
             </div>
         </div>
         @if(!empty(Route::current()))
-            @php($footer_menu = \App\Http\Controllers\Controller::instance()->getMenu('footer'))
+            @php($footerMenu = (new \App\Http\Controllers\Admin\MenuController())->getMenu('footer'))
         @endif
-        @if(!empty($footer_menu))
+        @if(!empty($footerMenu))
             <div class="row menu">
                 <nav class="col-xs-12">
                     <ul itemscope="" itemtype="http://schema.org/SiteNavigationElement">
                         @php($show_separator = false)
-                        @foreach($footer_menu as $el)
+                        @foreach($footerMenu as $el)
+                            @if (isset($mobile))
+                                @if(($mobile && !filter_var($el->mobile_visible, FILTER_VALIDATE_BOOLEAN)) || (!$mobile && !filter_var($el->desktop_visible, FILTER_VALIDATE_BOOLEAN)))
+                                    @continue
+                                @endif
+                            @endif
+
+                            @php($submenu = (new \App\Http\Controllers\Admin\MenuController())->getMenuChildrenElementsByParentId($el->id))
                             @if($show_separator)
                                 <li class="inline-block separator">|</li>
                             @endif
-                            <li class="inline-block @if(!empty($el->class_attribute)) {{$el->class_attribute}} @endif @if($el->url == '//dentacoin.com/assets/uploads/dentacoin-fact-sheet.pdf') has-submenu padding-right-xs-20 @endif">
+                            <li class="inline-block @if(sizeof($submenu)) has-submenu padding-right-15 padding-right-xs-20 @endif @if(!empty($el->class_attribute)) {{$el->class_attribute}} @endif @if($el->url == '//dentacoin.com/assets/uploads/dentacoin-fact-sheet.pdf') has-submenu padding-right-xs-20 @endif">
                                 <a @if($el->new_window) target="_blank" @endif itemprop="url" href="{{$el->url}}"><span itemprop="name">{{$el->name}}</span></a>
-                                @if($el->url == '//dentacoin.com/assets/uploads/dentacoin-fact-sheet.pdf')
+                                @if (sizeof($submenu))
                                     <ul itemscope="" itemtype="http://schema.org/SiteNavigationElement" class="submenu">
-                                        <li>
-                                            <a href="//dentacoin.com/assets/uploads/was-ist-dentacoin.pdf" itemprop="url" target="_blank"  class="download-de-fact-sheet-event-tracker"><span itemprop="name">Fact Sheet DE</span></a>
-                                        </li>
+                                        @foreach($submenu as $submenu_el)
+                                            <li @if(!empty($submenu_el->class_attribute)) class="{{$submenu_el->class_attribute}}" @endif @if(!empty($submenu_el->id_attribute)) id="{{$submenu_el->id_attribute}}" @endif>
+                                                <a @if($submenu_el->new_window) target="_blank" @endif href="{{$submenu_el->url}}" itemprop="url"><span itemprop="name">{{$submenu_el->name}}</span></a>
+                                            </li>
+                                        @endforeach
                                     </ul>
                                 @endif
                             </li>
