@@ -254,7 +254,7 @@
                             @if($show_separator)
                                 <li class="inline-block separator">|</li>
                             @endif
-                            <li class="inline-block @if(sizeof($submenu)) has-submenu padding-right-15 padding-right-xs-20 @endif @if(!empty($el->class_attribute)) {{$el->class_attribute}} @endif @if($el->url == '//dentacoin.com/assets/uploads/dentacoin-fact-sheet.pdf') has-submenu padding-right-xs-20 @endif">
+                            <li class="inline-block @if(sizeof($submenu)) has-submenu padding-right-15 padding-right-xs-20 @endif @if(!empty($el->class_attribute)) {{$el->class_attribute}} @endif">
                                 <a @if($el->new_window) target="_blank" @endif itemprop="url" href="{{$el->url}}"><span itemprop="name">{{$el->name}}</span></a>
                                 @if (sizeof($submenu))
                                     <ul itemscope="" itemtype="http://schema.org/SiteNavigationElement" class="submenu">
