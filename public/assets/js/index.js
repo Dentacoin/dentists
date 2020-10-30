@@ -294,7 +294,6 @@ var projectData = {
                         autoplay: true,
                         autoplaySpeed: 8000,
                         dots: true,
-                        adaptiveHeight: true,
                         responsive: [
                             {
                                 breakpoint: 1200,
@@ -322,11 +321,32 @@ var projectData = {
                         ]
                     });
 
+                    if ($('.google-map-section iframe').length) {
+                        console.log('iframeHeightListenerInit');
+                        window.addEventListener('message', function(event) {
+                            var height = event.data.data.height;
+
+                            console.log(height, 'height');
+                            if(event.data.event_id === 'iframe_size_event' && (height != undefined && height > 0)){
+                                $('.google-map-section iframe').height(height + 50);
+                            }
+                        });
+                    }
+
+                    // set initial slider height
+                    var initialHeight = 0;
+                    for(var i = 0, len = $('.single-testimonial.slick-slide.slick-active').length; i < len; i+=1)  {
+                        if ($('.single-testimonial.slick-slide.slick-active').eq(i).height() > initialHeight) {
+                            initialHeight = $('.single-testimonial.slick-slide.slick-active').eq(i).height();
+                        }
+                    }
+                    $('.testimonials-slider-section .slick-list').animate({height: initialHeight}, 500);
+
                     $('.testimonials-slider-section').on('beforeChange', function(event, slick, currentSlide, nextSlide){
                         var height = 0;
-                        for(var i = 0, len = 4; i < len; i+=1)  {
-                            if ($('.slick-slide').eq((nextSlide + 4) + i).height() > height) {
-                                height = $('.slick-slide').eq((nextSlide + 4) + i).height();
+                        for(var i = 0, len = $('.single-testimonial.slick-slide.slick-active').length; i < len; i+=1)  {
+                            if ($('.slick-slide').eq((nextSlide + $('.single-testimonial.slick-slide.slick-active').length) + i).height() > height) {
+                                height = $('.slick-slide').eq((nextSlide + $('.single-testimonial.slick-slide.slick-active').length) + i).height();
                             }
                         }
                         $('.testimonials-slider-section .slick-list').animate({height: height}, 500);
@@ -337,6 +357,8 @@ var projectData = {
                             type: 'setHubPosition',
                             time: new Date()
                         });
+
+                        projectData.general_logic.data.loadDeferResources();
                     });
 
                     if ($('.shortcode.contact-us').length && $('.shortcode.contact-us').attr('data-scroll-to-here') != undefined) {

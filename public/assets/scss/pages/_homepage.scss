@@ -231,10 +231,7 @@ body.home {
     iframe {
         width: 100%;
         border: 0;
-        height: 950px;
-        @include breakpoint($xs) {
-            height: 1100px;
-        }
+        height: 500px;
     }
 }
 .how-to-become-dentacoin-dentist-section {
