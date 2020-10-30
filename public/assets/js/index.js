@@ -324,11 +324,12 @@ var projectData = {
                     if ($('.google-map-section iframe').length) {
                         console.log('iframeHeightListenerInit');
                         window.addEventListener('message', function(event) {
-                            var height = event.data.data.height;
-
-                            console.log(height, 'height');
-                            if(event.data.event_id === 'iframe_size_event' && (height != undefined && height > 0)){
-                                $('.google-map-section iframe').height(height + 50);
+                            if(event.data.event_id === 'iframe_size_event'){
+                                var height = event.data.data.height;
+                                console.log(height, 'height');
+                                if (height != undefined && height > 0) {
+                                    $('.google-map-section iframe').height(height + 50);
+                                }
                             }
                         });
                     }
