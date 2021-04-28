@@ -38,7 +38,7 @@
                         <div class="lato-bold fs-26">Thank you for your interest in Dentacoin.</div>
                         <div class="padding-top-5 fs-20">We will be in contact shortly. Meanwhile, feel free to talk to our Onboarding team:</div>
                     </div>
-                    <a href="https://meetings.hubspot.com/betina-bogdanova" target="_blank" class="dark-blue-light-blue-btn inline-block">BOOK A CALL</a>
+                    <a href="https://meetings.hubspot.com/zhaklin-stoykova" target="_blank" class="dark-blue-light-blue-btn inline-block">BOOK A CALL</a>
                 </div>
             @else
                 <div class="steps-container">
