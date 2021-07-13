@@ -59,9 +59,10 @@ header {
             figure.header-avatar {
                 width: 50px;
                 margin-left: 10px;
-                overflow: hidden;
                 @include simple_transition(.3s);
-                @include rounded(50%);
+                img {
+                    @include rounded(50%);
+                }
             }
         }
     }

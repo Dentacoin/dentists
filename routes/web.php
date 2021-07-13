@@ -46,6 +46,10 @@ Route::group(['prefix' => '/', 'middleware' => 'frontEndMiddleware'], function (
 
     Route::post('/submit-hubspot-form', 'UserController@submitHubspotForm')->name('submit-hubspot-form');
 
+    Route::post('/get-unseen-notifications-count', function() {
+        return (new \App\Http\Controllers\APIRequestsController())->getUnseenNotificationsCount(true);
+    })->middleware('HandleUserSession')->name('get-unseen-notifications-count');
+
     //======================================= REDIRECTS ========================================
 
     Route::get('answers', function() {

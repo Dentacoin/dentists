@@ -635,7 +635,8 @@ var projectData = {
                 var miniHubParams = {
                     'element_id_to_bind': 'header-avatar',
                     'platform': 'dentists',
-                    'log_out_link': 'https://dentists.dentacoin.com/user-logout'
+                    'log_out_link': 'https://dentists.dentacoin.com/user-logout',
+                    'notifications_counter': true
                 };
 
                 if ($('body').hasClass('logged-patient')) {
