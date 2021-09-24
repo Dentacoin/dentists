@@ -203,4 +203,15 @@ class Controller extends BaseController
             return $userData->name;
         }
     }
+
+    public function getDentacoinLocations($id) {
+        return DB::connection('mysql2')->table('map_locations')
+            ->leftJoin('map_countries', 'map_locations.country_id', '=', 'map_countries.id')
+            ->leftJoin('clinics', 'map_locations.clinic_id', '=', 'clinics.id')
+            ->leftJoin('location_types', 'map_locations.type_id', '=', 'location_types.id')
+            ->leftJoin('media as clinic_media', 'clinics.media_id', '=', 'clinic_media.id')
+            ->select('map_locations.*', 'clinics.name as clinic_name', 'clinics.link as website', 'clinics.link as clinic_link', 'location_types.id as location_type_id', 'clinic_media.name as clinic_media', 'clinic_media.alt as clinic_media_alt', 'map_countries.code as country_code', 'map_countries.name as country_name')
+            ->where(array('map_locations.type_id' => $id))
+            ->get()->toArray();
+    }
 }
