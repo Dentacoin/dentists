@@ -282,7 +282,7 @@
         </div>
     </div>
 </footer>
-@if(!empty(Route::current()) && empty($_COOKIE['hide-holiday-calendar-banner']) && strtotime('2021/11/30 00:00:00') < time())
+@if(!empty(Route::current()) && empty($_COOKIE['hide-holiday-calendar-banner']) && strtotime('2021/11/30 00:00:00') < time() && time() < strtotime('2022/01/02 00:00:00'))
     <div class="bottom-fixed-promo-banner fs-0">
         <a href="javascript:void(0);" class="close-banner">×</a>
         <a href="https://dentacoin.com/holiday-calendar/2021" target="_blank">
