@@ -472,6 +472,8 @@ var projectData = {
                         for (var i = 0, len = $('.changeable-attr-on-user-type-change').length; i < len; i+=1) {
                             $('.changeable-attr-on-user-type-change').eq(i).attr('data-scroll-to', $('.changeable-attr-on-user-type-change').eq(i).attr('data-patient'));
                         }
+
+                        window.scrollTo(0, $(window).scrollTop() + 10);
                     }
 
                     $('.mobile-nav-opener a').click(function() {
@@ -558,7 +560,7 @@ var projectData = {
                             if (get_params.type == 'patient') {
                                 $('.navigation-sidebar .page-nav a').removeClass('active');
                                 $('.navigation-sidebar .page-nav a[data-type="patients"]').addClass('active');
-                                ifPatient();
+                                ifPatient(true);
                             } else if (get_params.type == 'dentist-promo-banners') {
                                 $('button[data-scroll-to="scroll-to-badges"]').click();
                             }
