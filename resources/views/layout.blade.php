@@ -282,7 +282,7 @@
         </div>
     </div>
 </footer>
-@if(!empty(Route::current()) && empty($_COOKIE['hide-holiday-calendar-banner']) && strtotime('2021/11/30 00:00:00') < time() && time() < strtotime('2022/01/02 00:00:00'))
+{{--@if(!empty(Route::current()) && empty($_COOKIE['hide-holiday-calendar-banner']) && strtotime('2021/11/30 00:00:00') < time() && time() < strtotime('2022/01/02 00:00:00'))
     <div class="bottom-fixed-promo-banner fs-0">
         <a href="javascript:void(0);" class="close-banner">×</a>
         <a href="https://dentacoin.com/holiday-calendar/2021" target="_blank">
@@ -303,7 +303,7 @@
             </div>
         </a>
     </div>
-@endif
+@endif--}}
 @php($crossLogin = \Illuminate\Support\Facades\Input::get('cross-login'))
 @if(\App\Http\Controllers\UserController::instance()->checkSession() && !empty($crossLogin))
     @php($slug = (new \App\Http\Controllers\Controller())->encrypt(session('logged_user')['id'], getenv('API_ENCRYPTION_METHOD'), getenv('API_ENCRYPTION_KEY')))
