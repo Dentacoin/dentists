@@ -496,6 +496,15 @@ var projectData = {
                         if (this_btn.attr('data-type') != undefined) {
                             $('.'+this_btn.attr('data-type')).addClass('hover');
                         }
+
+                        var whitelistedButtons = ['scroll-to-how-to-become-dentist', 'scroll-to-trusted-reviews', 'scroll-to-dentavox', 'scroll-to-assurance', 'scroll-to-dentacoin-wallet', 'scroll-to-dentacare-app', 'scroll-to-jawsofbattle-app', 'scroll-to-badges', 'scroll-to-banners', 'scroll-to-covers', 'scroll-to-promo-banners', 'scroll-to-dcn-logo'];
+                        if (whitelistedButtons.includes(this_btn.attr('data-scroll-to'))) {
+                            if ($('.navigation-sidebar .page-nav a[data-type="patients"]').hasClass('active')) {
+                                history.pushState({},'', '?type=patient&section=' + this_btn.attr('data-scroll-to').replace('scroll-to-', ''));
+                            } else {
+                                history.pushState({},'', '?section=' + this_btn.attr('data-scroll-to').replace('scroll-to-', ''));
+                            }
+                        }
                     });
 
                     $('.share-video').click(async function() {
@@ -556,13 +565,47 @@ var projectData = {
                     });
 
                     $(window).on('load', function() {
+                        if (basic.property_exists(get_params, 'type') || basic.property_exists(get_params, 'section')) {
+                            for (var i = 0, len = jQuery('[data-defer-src]').length; i < len; i+=1) {
+                                if (jQuery('[data-defer-src]').eq(i).attr('src') == undefined) {
+                                    jQuery('[data-defer-src]').eq(i).attr('src', jQuery('[data-defer-src]').eq(i).attr('data-defer-src'));
+                                }
+                            }
+                        }
+
                         if (basic.property_exists(get_params, 'type')) {
                             if (get_params.type == 'patient') {
                                 $('.navigation-sidebar .page-nav a').removeClass('active');
                                 $('.navigation-sidebar .page-nav a[data-type="patients"]').addClass('active');
                                 ifPatient(true);
-                            } else if (get_params.type == 'dentist-promo-banners') {
+                            }
+                        }
+
+                        if (basic.property_exists(get_params, 'section')) {
+                            if (get_params.section == 'how-to-become-dentist') {
+                                $('button[data-scroll-to="scroll-to-how-to-become-dentist"]').click();
+                            } else if (get_params.section == 'trusted-reviews') {
+                                $('button[data-scroll-to="scroll-to-trusted-reviews"]').click();
+                            } else if (get_params.section == 'dentavox') {
+                                $('button[data-scroll-to="scroll-to-dentavox"]').click();
+                            } else if (get_params.section == 'assurance') {
+                                $('button[data-scroll-to="scroll-to-assurance"]').click();
+                            } else if (get_params.section == 'dentacoin-wallet') {
+                                $('button[data-scroll-to="scroll-to-dentacoin-wallet"]').click();
+                            } else if (get_params.section == 'dentacare-app') {
+                                $('button[data-scroll-to="scroll-to-dentacare-app"]').click();
+                            } else if (get_params.section == 'jawsofbattle-app') {
+                                $('button[data-scroll-to="scroll-to-jawsofbattle-app"]').click();
+                            } else if (get_params.section == 'dentist-promo-banners' || (basic.property_exists(get_params, 'type') && get_params.type == 'badges')) {
                                 $('button[data-scroll-to="scroll-to-badges"]').click();
+                            } else if (get_params.section == 'banners') {
+                                $('button[data-scroll-to="scroll-to-banners"]').click();
+                            } else if (get_params.section == 'covers') {
+                                $('button[data-scroll-to="scroll-to-covers"]').click();
+                            } else if (get_params.section == 'promo-banners') {
+                                $('button[data-scroll-to="scroll-to-promo-banners"]').click();
+                            } else if (get_params.section == 'dcn-logo') {
+                                $('button[data-scroll-to="scroll-to-dcn-logo"]').click();
                             }
                         }
                     });
