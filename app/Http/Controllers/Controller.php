@@ -47,29 +47,6 @@ class Controller extends BaseController
         return Page::where(array('slug' => $route))->get()->first();
     }
 
-    /*public function getCurrentDcnUsdRate()  {
-        //API connection
-        $curl = curl_init();
-        curl_setopt_array($curl, array(
-            CURLOPT_RETURNTRANSFER => 1,
-            CURLOPT_URL => 'https://api.coinmarketcap.com/v1/ticker/dentacoin/?convert=USD',
-            CURLOPT_SSL_VERIFYPEER => 0
-        ));
-        curl_setopt($curl, CURLOPT_HTTPHEADER, array('Content-Type: application/json'));
-        $resp = json_decode(curl_exec($curl));
-        curl_close($curl);
-
-        if(sizeof($resp) > 0)   {
-            if(property_exists($resp[0], 'price_usd'))  {
-                return (float)$resp[0]->price_usd;
-            }else {
-                return 0;
-            }
-        } else {
-            return 0;
-        }
-    }*/
-
     protected function isMobile()   {
         return (new Agent())->isMobile();
     }
@@ -78,6 +55,7 @@ class Controller extends BaseController
         return DB::connection('mysql2')->table('socials')->leftJoin('media', 'socials.media_id', '=', 'media.id')->select('socials.*', 'media.name as media_name', 'media.alt as media_alt')->orderByRaw('socials.order_id ASC')->get();
     }
 
+    // method that generates https://dentists.dentacoin.com/sitemap.xml
     protected function getSitemap() {
         $sitemap = App::make("sitemap");
         // set cache (key (string), duration in minutes (Carbon|Datetime|int), turn on/off (boolean))
@@ -152,6 +130,7 @@ class Controller extends BaseController
         return $data;
     }
 
+    // asymmetric encryption
     public function encrypt($raw_text, $algorithm, $key) {
         $length = openssl_cipher_iv_length($algorithm);
         $iv = openssl_random_pseudo_bytes($length);
@@ -161,6 +140,7 @@ class Controller extends BaseController
         return $encrypted_with_iv;
     }
 
+    // asymmetric decryption
     public function decrypt($encrypted_text) {
         list($data, $iv) = explode('|', $encrypted_text);
         $iv = base64_decode($iv);

@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Route;
 
 class PagesController extends Controller
 {
+    // create shortcodes logic for admin pages CKEditors
     public function shortcodeExtractor($html) {
         $pattern = '/\[shortcode(.*?)?\](?:(.+?)?\[\/shortcode\])?/';
         $data = array();

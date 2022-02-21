@@ -80,6 +80,7 @@ class UserController extends Controller {
         return $countries[$id - 1]->name;
     }
 
+    // method used to create the cross login between platforms, every platform has such method and the requests between platforms are being made with img tags
     protected function manageCustomCookie(Request $request) {
         if(!empty(Input::get('slug')) && !empty(Input::get('type')) && !empty(Input::get('token'))) {
             //logging
@@ -123,6 +124,7 @@ class UserController extends Controller {
         }
     }
 
+    // used by the DCN Login gateway to create session
     protected function authenticateUser(Request $request) {
         $this->validate($request, [
             'token' => 'required',

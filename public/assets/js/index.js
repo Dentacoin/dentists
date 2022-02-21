@@ -3,9 +3,7 @@ var loadedLibs = {};
 
 $(window).on('load', function() {
     scrollToSection();
-});
 
-$(window).on("load", function()   {
     if (!$('body').hasClass('logged-in') && $('body').hasClass('home') || $('body').hasClass('logged-home') || $('body').hasClass('faq')) {
         optionsDescriptionsEqualHeight();
     }
@@ -647,6 +645,7 @@ var projectData = {
                 $('.camping-loader .response-layer').hide();
             },
             loadDeferResources: function () {
+                // lazy load images
                 for (var i = 0, len = jQuery('[data-defer-src]').length; i < len; i += 1) {
                     if (basic.isInViewport(jQuery('[data-defer-src]').eq(i)) && jQuery('[data-defer-src]').eq(i).attr('src') == undefined) {
                         jQuery('[data-defer-src]').eq(i).attr('src', jQuery('[data-defer-src]').eq(i).attr('data-defer-src'));
@@ -670,6 +669,7 @@ var projectData = {
                 }
             },
             miniHub: async function () {
+                // initialization of the mini hub located below user avatars
                 if (!hasOwnProperty.call(loadedLibs, 'dentacoinPackageJs')) {
                     loadedLibs.dentacoinPackageJs = true;
                     console.log('dentacoinPackageJs loaded');
@@ -699,6 +699,7 @@ var projectData = {
                 dcnHub.initMiniHub(miniHubParams);
             },
             newsletter: function() {
+                // newslettor form located in the footer
                 if ($('.newsletter-register').length) {
                     basic.initCustomCheckboxes('.newsletter-register');
 
@@ -1080,6 +1081,8 @@ if ($('body').hasClass('logged-in')) {
 
 projectData.events.eventTrackers();
 
+/*
+// banner promoting the holiday calendar campaign
 if ($('.bottom-fixed-promo-banner').length) {
     $('.bottom-fixed-promo-banner .close-banner').click(function() {
         $('footer').removeClass('extra-bottom-padding');
@@ -1091,4 +1094,4 @@ if ($('.bottom-fixed-promo-banner').length) {
         now.setTime(time);
         document.cookie = 'hide-holiday-calendar-banner=1; expires=' + now.toUTCString() + ';domain=dentists.dentacoin.com;path=/;';
     });
-}
+}*/
