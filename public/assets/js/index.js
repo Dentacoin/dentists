@@ -587,35 +587,37 @@ var projectData = {
                                 }
                             }
 
-                            if (get_params.section == 'how-to-become-dentist') {
-                                $('button[data-scroll-to="scroll-to-how-to-become-dentist"]').click();
-                            } else if (get_params.section == 'trusted-reviews') {
-                                $('button[data-scroll-to="scroll-to-trusted-reviews"]').click();
-                            } else if (get_params.section == 'hubapp') {
-                                $('button[data-scroll-to="scroll-to-hubapp"]').click();
-                            } else if (get_params.section == 'dcn-payments') {
-                                $('button[data-scroll-to="scroll-to-dcn-payments"]').click();
-                            } else if (get_params.section == 'dentavox') {
-                                $('button[data-scroll-to="scroll-to-dentavox"]').click();
-                            } else if (get_params.section == 'assurance') {
-                                $('button[data-scroll-to="scroll-to-assurance"]').click();
-                            } else if (get_params.section == 'dentacoin-wallet') {
-                                $('button[data-scroll-to="scroll-to-dentacoin-wallet"]').click();
-                            } else if (get_params.section == 'dentacare-app') {
-                                $('button[data-scroll-to="scroll-to-dentacare-app"]').click();
-                            } else if (get_params.section == 'jawsofbattle-app') {
-                                $('button[data-scroll-to="scroll-to-jawsofbattle-app"]').click();
-                            } else if (get_params.section == 'dentist-promo-banners' || (basic.property_exists(get_params, 'type') && get_params.type == 'badges')) {
-                                $('button[data-scroll-to="scroll-to-badges"]').click();
-                            } else if (get_params.section == 'banners') {
-                                $('button[data-scroll-to="scroll-to-banners"]').click();
-                            } else if (get_params.section == 'covers') {
-                                $('button[data-scroll-to="scroll-to-covers"]').click();
-                            } else if (get_params.section == 'promo-banners') {
-                                $('button[data-scroll-to="scroll-to-promo-banners"]').click();
-                            } else if (get_params.section == 'dcn-logo') {
-                                $('button[data-scroll-to="scroll-to-dcn-logo"]').click();
-                            }
+                            setTimeout(function() {
+                                if (get_params.section == 'how-to-become-dentist') {
+                                    $('button[data-scroll-to="scroll-to-how-to-become-dentist"]').click();
+                                } else if (get_params.section == 'trusted-reviews') {
+                                    $('button[data-scroll-to="scroll-to-trusted-reviews"]').click();
+                                } else if (get_params.section == 'hubapp') {
+                                    $('button[data-scroll-to="scroll-to-hubapp"]').click();
+                                } else if (get_params.section == 'dcn-payments') {
+                                    $('button[data-scroll-to="scroll-to-dcn-payments"]').click();
+                                } else if (get_params.section == 'dentavox') {
+                                    $('button[data-scroll-to="scroll-to-dentavox"]').click();
+                                } else if (get_params.section == 'assurance') {
+                                    $('button[data-scroll-to="scroll-to-assurance"]').click();
+                                } else if (get_params.section == 'dentacoin-wallet') {
+                                    $('button[data-scroll-to="scroll-to-dentacoin-wallet"]').click();
+                                } else if (get_params.section == 'dentacare-app') {
+                                    $('button[data-scroll-to="scroll-to-dentacare-app"]').click();
+                                } else if (get_params.section == 'jawsofbattle-app') {
+                                    $('button[data-scroll-to="scroll-to-jawsofbattle-app"]').click();
+                                } else if (get_params.section == 'dentist-promo-banners' || (basic.property_exists(get_params, 'type') && get_params.type == 'badges')) {
+                                    $('button[data-scroll-to="scroll-to-badges"]').click();
+                                } else if (get_params.section == 'banners') {
+                                    $('button[data-scroll-to="scroll-to-banners"]').click();
+                                } else if (get_params.section == 'covers') {
+                                    $('button[data-scroll-to="scroll-to-covers"]').click();
+                                } else if (get_params.section == 'promo-banners') {
+                                    $('button[data-scroll-to="scroll-to-promo-banners"]').click();
+                                } else if (get_params.section == 'dcn-logo') {
+                                    $('button[data-scroll-to="scroll-to-dcn-logo"]').click();
+                                }
+                            }, 1000);
                         }
                     });
                 }
