@@ -617,7 +617,7 @@ var projectData = {
                                 } else if (get_params.section == 'dcn-logo') {
                                     $('button[data-scroll-to="scroll-to-dcn-logo"]').click();
                                 }
-                            }, 1000);
+                            }, 2000);
                         }
                     });
                 }
