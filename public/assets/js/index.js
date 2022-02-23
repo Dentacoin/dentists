@@ -495,7 +495,7 @@ var projectData = {
                             $('.'+this_btn.attr('data-type')).addClass('hover');
                         }
 
-                        var whitelistedButtons = ['scroll-to-how-to-become-dentist', 'scroll-to-trusted-reviews', 'scroll-to-dentavox', 'scroll-to-assurance', 'scroll-to-dentacoin-wallet', 'scroll-to-dentacare-app', 'scroll-to-jawsofbattle-app', 'scroll-to-badges', 'scroll-to-banners', 'scroll-to-covers', 'scroll-to-promo-banners', 'scroll-to-dcn-logo'];
+                        var whitelistedButtons = ['scroll-to-how-to-become-dentist', 'scroll-to-trusted-reviews', 'scroll-to-hubapp', 'scroll-to-dcn-payments', 'scroll-to-dentavox', 'scroll-to-assurance', 'scroll-to-dentacoin-wallet', 'scroll-to-dentacare-app', 'scroll-to-jawsofbattle-app', 'scroll-to-badges', 'scroll-to-banners', 'scroll-to-covers', 'scroll-to-promo-banners', 'scroll-to-dcn-logo'];
                         if (whitelistedButtons.includes(this_btn.attr('data-scroll-to'))) {
                             if ($('.navigation-sidebar .page-nav a[data-type="patients"]').hasClass('active')) {
                                 history.pushState({},'', '?type=patient&section=' + this_btn.attr('data-scroll-to').replace('scroll-to-', ''));
@@ -584,6 +584,10 @@ var projectData = {
                                 $('button[data-scroll-to="scroll-to-how-to-become-dentist"]').click();
                             } else if (get_params.section == 'trusted-reviews') {
                                 $('button[data-scroll-to="scroll-to-trusted-reviews"]').click();
+                            } else if (get_params.section == 'hubapp') {
+                                $('button[data-scroll-to="scroll-to-hubapp"]').click();
+                            } else if (get_params.section == 'dcn-payments') {
+                                $('button[data-scroll-to="scroll-to-dcn-payments"]').click();
                             } else if (get_params.section == 'dentavox') {
                                 $('button[data-scroll-to="scroll-to-dentavox"]').click();
                             } else if (get_params.section == 'assurance') {
