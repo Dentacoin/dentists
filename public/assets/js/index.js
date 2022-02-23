@@ -580,6 +580,13 @@ var projectData = {
                         }
 
                         if (basic.property_exists(get_params, 'section')) {
+                            // force load all images
+                            for (var i = 0, len = jQuery('[data-defer-src]').length; i < len; i += 1) {
+                                if (jQuery('[data-defer-src]').eq(i).attr('src') == undefined) {
+                                    jQuery('[data-defer-src]').eq(i).attr('src', jQuery('[data-defer-src]').eq(i).attr('data-defer-src'));
+                                }
+                            }
+
                             if (get_params.section == 'how-to-become-dentist') {
                                 $('button[data-scroll-to="scroll-to-how-to-become-dentist"]').click();
                             } else if (get_params.section == 'trusted-reviews') {
