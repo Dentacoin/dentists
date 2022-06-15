@@ -212,7 +212,7 @@
                 </div>
             </div>
         @endif
-        <div class="row newsletter-register">
+        {{--<div class="row newsletter-register">
             <div class="col-xs-12 text-center">
                 <div id="mc_embed_signup" class="form-container">
                     <form action="https://dentacoin.us16.list-manage.com/subscribe/post?u=61ace7d2b009198ca373cb213&amp;id=4922e47c9a" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank">
@@ -232,7 +232,7 @@
                     </form>
                 </div>
             </div>
-        </div>
+        </div>--}}
         @if(!empty(Route::current()))
             @php($footerMenu = (new \App\Http\Controllers\Admin\MenuController())->getMenu('footer'))
         @endif
